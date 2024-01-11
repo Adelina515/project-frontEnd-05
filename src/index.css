@@ -1,5 +1,22 @@
 @import-normalize; /* bring in normalize.css styles */
 
+:root{
+  --background-color:#040404;
+  --success-color:#3CBF61;
+  --error-color:#d80027;
+  --invent-color:rgb(239,237,232); /*white*/
+  --calender-invalid-date-color:rgba(var(var(--invent-color),0.2));
+  --input-border-color:rgba(var(--invent-color),0.3);
+  --calender-arrow-color:rgba(var(var(--invent-color),0.4));
+  --calender-week-day-color:rgba(var(--invent-color),0.5);
+  --plaseholder-color:rgba(var(var(--invent-color),0.6));
+  --decorate-color:#E6533C; /*orande */
+  --accent-color:#EF8964; /*orange_1 */
+  --addition-color:#EFA082; /*beige*/
+  
+  
+
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
