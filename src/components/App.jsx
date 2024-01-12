@@ -1,8 +1,8 @@
 import { lazy } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
-import { RestrictedRoute } from './RestrictedRoute';
-import { PrivateRoute } from './PrivateRoute';
+// import { RestrictedRoute } from './RestrictedRoute';
+// import { PrivateRoute } from './PrivateRoute';
 
 const Main = lazy(() => import('../pages/Main'));
 const Welcome = lazy(() => import('../pages/Welcome'));
