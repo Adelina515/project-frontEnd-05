@@ -5,9 +5,9 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 
 const Main = lazy(() => import('../pages/Main'));
-const Welcome = lazy(() => import('../pages/Welcome'));
-const SignUp = lazy(() => import('../pages/SignUp'));
-const SignIn = lazy(() => import('../pages//SignIn'));
+const Welcome = lazy(() => import('../pages/WelcomePage/WelcomePage'));
+const SignUp = lazy(() => import('../pages/SignUpPage/SignUpPage'));
+const SignIn = lazy(() => import('../pages/SignInPage/SignInPage'));
 const Diary = lazy(() => import('../pages/Diary'));
 const Products = lazy(() => import('../pages/Products'));
 const Exercises = lazy(() => import('../pages/Exercises'));
