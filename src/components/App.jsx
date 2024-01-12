@@ -22,39 +22,46 @@ export const App = () => {
           <Route path="*" element={<Navigate to="/" />} />
           <Route
             path="/welcome"
-            element={<RestrictedRoute redirectTo="/" component={<Welcome />} />}
+            element={<Welcome to="/" />}
+            // element={<RestrictedRoute redirectTo="/" component={<Welcome />} />}
           />
           <Route
             path="/signup"
-            element={<RestrictedRoute redirectTo="/" component={<SignUp />} />}
+            element={<SignUp to="/" />}
+            // element={<RestrictedRoute redirectTo="/" component={<SignUp />} />}
           />
           <Route
             path="/signin"
-            element={<RestrictedRoute redirectTo="/" component={<SignIn />} />}
+            element={<SignIn to="/" />}
+            // element={<RestrictedRoute redirectTo="/" component={<SignIn />} />}
           />
           <Route
             path="/profile"
-            element={
-              <PrivateRoute redirectTo="/signin" component={<Profile />} />
-            }
+            element={<Profile to="/" />}
+            // element={
+            //   <PrivateRoute redirectTo="/signin" component={<Profile />} />
+            // }
           />
           <Route
             path="/diary"
-            element={
-              <PrivateRoute redirectTo="/signin" component={<Diary />} />
-            }
+            element={<Diary to="/" />}
+            // element={
+            //   <PrivateRoute redirectTo="/signin" component={<Diary />} />
+            // }
           />
           <Route
             path="/products"
-            element={
-              <PrivateRoute redirectTo="/signin" component={<Products />} />
-            }
+            element={<Products to="/" />}
+            // element={
+            //   <PrivateRoute redirectTo="/signin" component={<Products />} />
+            // }
           />
           <Route
             path="/exercises"
-            element={
-              <PrivateRoute redirectTo="/signin" component={<Exercises />} />
-            }
+            element={<Exercises to="/" />}
+            // element={
+            //   <PrivateRoute redirectTo="/signin" component={<Exercises />} />
+            // }
           />
         </Route>
       </Routes>
