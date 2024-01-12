@@ -1,0 +1,17 @@
+.btn{
+    align-self: flex-start;
+    padding:12px 40px;
+    text-align:center;
+    border:none;
+    border-radius: 12px;
+    background-color:var(--decorate-color);
+    color:var(--invent-color);
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.13; /* 112.5% */
+    cursor: pointer;
+}
+.btn:hover,.btn:focus{
+    background-color: var(--accent-color);
+}

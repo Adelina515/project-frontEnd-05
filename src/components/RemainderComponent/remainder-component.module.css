@@ -1,0 +1,9 @@
+.textRemainder{
+    display: inline;
+    color: rgba(239, 237, 232, 0.60);
+    /* font-feature-settings: 'clig' off, 'liga' off; */
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5; /* 150% */
+}
