@@ -1,5 +1,20 @@
 @import-normalize; /* bring in normalize.css styles */
 
+:root{
+  --background-color:#040404;
+  --success-color: #3CBF61;
+  --error-color:#d80027;
+  --invent-color:rgb(239,237,232); /*white*/
+  --calendar-invalid-date:rgba(var(--invent-color),0.2);  /* white with trancparent 0.2 */
+  --input-border-color:rgba(var(--invent-color),0.3);   /* white with trancparent 0.3*/
+  --calendar-arrow-color:rgba(var(--invent-color),0.4);  /* white with trancparent 0.4 */
+  --calendar-weekdays-color:rgba(var(--invent-color),0.5); /* white with trancparent 0.5 */
+  --placeholder-color:rgba(var(--invent-color),0.6);       /* white with trancparent 0.6 */
+  --decorate-color:#E6533C; /*orange*/;
+  --accent-color:#EF8964; /*orange_1*/;
+  --rare-color:#EFA082; /*beige*/;
+ 
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
