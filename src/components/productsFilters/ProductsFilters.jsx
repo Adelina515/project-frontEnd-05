@@ -1,4 +1,4 @@
-import css from './productsFilters.module.css';
+import css from './ProductsFilters.module.css';
 import svg from '../../img/sprite/symbol-defs.svg';
 import { useState } from 'react';
 // import { useDebounce } from 'use-debounce';
