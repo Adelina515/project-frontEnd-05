@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/project-frontEnd-05/static/css/main.1bfdec9a.css",
-    "main.js": "/project-frontEnd-05/static/js/main.0572e4a3.js",
+    "main.css": "/project-frontEnd-05/static/css/main.35640e02.css",
+    "main.js": "/project-frontEnd-05/static/js/main.7836cba6.js",
     "static/js/894.42082c5a.chunk.js": "/project-frontEnd-05/static/js/894.42082c5a.chunk.js",
-    "static/css/354.f3a603ae.chunk.css": "/project-frontEnd-05/static/css/354.f3a603ae.chunk.css",
-    "static/js/354.e855fe2d.chunk.js": "/project-frontEnd-05/static/js/354.e855fe2d.chunk.js",
+    "static/css/172.4791f120.chunk.css": "/project-frontEnd-05/static/css/172.4791f120.chunk.css",
+    "static/js/172.6a49080e.chunk.js": "/project-frontEnd-05/static/js/172.6a49080e.chunk.js",
     "static/css/220.fbe09348.chunk.css": "/project-frontEnd-05/static/css/220.fbe09348.chunk.css",
     "static/js/220.01fdb680.chunk.js": "/project-frontEnd-05/static/js/220.01fdb680.chunk.js",
     "static/css/147.b55c2610.chunk.css": "/project-frontEnd-05/static/css/147.b55c2610.chunk.css",
@@ -16,11 +16,11 @@
     "static/js/876.7767e5cc.chunk.js": "/project-frontEnd-05/static/js/876.7767e5cc.chunk.js",
     "static/media/symbol-defs.svg": "/project-frontEnd-05/static/media/symbol-defs.69add66f1cad53fb10f5c2d6e97cf6f6.svg",
     "index.html": "/project-frontEnd-05/index.html",
-    "main.1bfdec9a.css.map": "/project-frontEnd-05/static/css/main.1bfdec9a.css.map",
-    "main.0572e4a3.js.map": "/project-frontEnd-05/static/js/main.0572e4a3.js.map",
+    "main.35640e02.css.map": "/project-frontEnd-05/static/css/main.35640e02.css.map",
+    "main.7836cba6.js.map": "/project-frontEnd-05/static/js/main.7836cba6.js.map",
     "894.42082c5a.chunk.js.map": "/project-frontEnd-05/static/js/894.42082c5a.chunk.js.map",
-    "354.f3a603ae.chunk.css.map": "/project-frontEnd-05/static/css/354.f3a603ae.chunk.css.map",
-    "354.e855fe2d.chunk.js.map": "/project-frontEnd-05/static/js/354.e855fe2d.chunk.js.map",
+    "172.4791f120.chunk.css.map": "/project-frontEnd-05/static/css/172.4791f120.chunk.css.map",
+    "172.6a49080e.chunk.js.map": "/project-frontEnd-05/static/js/172.6a49080e.chunk.js.map",
     "220.fbe09348.chunk.css.map": "/project-frontEnd-05/static/css/220.fbe09348.chunk.css.map",
     "220.01fdb680.chunk.js.map": "/project-frontEnd-05/static/js/220.01fdb680.chunk.js.map",
     "147.b55c2610.chunk.css.map": "/project-frontEnd-05/static/css/147.b55c2610.chunk.css.map",
@@ -32,7 +32,7 @@
     "876.7767e5cc.chunk.js.map": "/project-frontEnd-05/static/js/876.7767e5cc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1bfdec9a.css",
-    "static/js/main.0572e4a3.js"
+    "static/css/main.35640e02.css",
+    "static/js/main.7836cba6.js"
   ]
 }
