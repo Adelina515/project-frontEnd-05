@@ -1,19 +1,46 @@
 @import-normalize; /* bring in normalize.css styles */
-
-:root{
-  --background-color:#040404;
-  --success-color: #3CBF61;
-  --error-color:#d80027;
-  --invent-color:rgb(239,237,232); /*white*/
-  --calendar-invalid-date:rgba(var(--invent-color),0.2);  /* white with trancparent 0.2 */
-  --input-border-color:rgba(var(--invent-color),0.3);   /* white with trancparent 0.3*/
-  --calendar-arrow-color:rgba(var(--invent-color),0.4);  /* white with trancparent 0.4 */
-  --calendar-weekdays-color:rgba(var(--invent-color),0.5); /* white with trancparent 0.5 */
-  --placeholder-color:rgba(var(--invent-color),0.6);       /* white with trancparent 0.6 */
-  --decorate-color:#E6533C; /*orange*/;
-  --accent-color:#EF8964; /*orange_1*/;
-  --rare-color:#EFA082; /*beige*/;
- 
+/* * {
+  box-sizing: border-box;
+}
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+} */
+:root {
+  --background-color: #040404;
+  --success-color: #3cbf61;
+  --error-color: #d80027;
+  --invent-color: rgb(239, 237, 232); /*white*/
+  --calendar-invalid-date: rgba(
+    var(--invent-color),
+    0.2
+  ); /* white with trancparent 0.2 */
+  --input-border-color: rgba(
+    var(--invent-color),
+    0.3
+  ); /* white with trancparent 0.3*/
+  --calendar-arrow-color: rgba(
+    var(--invent-color),
+    0.4
+  ); /* white with trancparent 0.4 */
+  --calendar-weekdays-color: rgba(
+    var(--invent-color),
+    0.5
+  ); /* white with trancparent 0.5 */
+  --placeholder-color: rgba(
+    var(--invent-color),
+    0.6
+  ); /* white with trancparent 0.6 */
+  --decorate-color: #e6533c; /*orange*/
+  --accent-color: #ef8964; /*orange_1*/
+  --rare-color: #efa082; /*beige*/
 }
 body {
   margin: 0;

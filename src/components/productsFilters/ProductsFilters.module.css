@@ -1,0 +1,133 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.search {
+  position: relative;
+  width: 100%;
+}
+.input {
+  color: #efede8;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  background-color: transparent;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 237, 232, 0.3);
+  width: 100%;
+  outline: none;
+}
+.input:hover,
+.input:focus,
+.input:not(:placeholder-shown) {
+  border-color: #e6533c;
+}
+.input:not(:placeholder-shown) + .svgSearchClose {
+  display: flex;
+}
+.input::placeholder {
+  color: #efede8;
+  opacity: 1;
+}
+.svgSearch {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+.svgSearchClose {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  top: 14px;
+  right: 34px;
+}
+
+.arrowCat {
+  transform: scaleY(-100%);
+}
+.arrowRec {
+  transform: scaleY(-100%);
+}
+.categories {
+  position: relative;
+  width: 100%;
+  max-width: 146px;
+}
+.filterListWrapper {
+  position: absolute;
+  top: 50px;
+  padding: 14px;
+  padding-right: 7px;
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  z-index: 1;
+}
+.filterList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: auto;
+  max-height: 222px;
+  overflow-y: auto;
+}
+.filterList::-webkit-scrollbar {
+  position: absolute;
+  top: 0;
+  right: 7px;
+  width: 6px;
+}
+.filterList::-webkit-scrollbar-thumb {
+  background-color: rgba(239, 237, 232, 0.1);
+  border-radius: 12px;
+}
+.recommended {
+  position: relative;
+  width: 100%;
+  max-width: 173px;
+}
+.recommendedList {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: auto;
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  padding: 14px;
+  z-index: 1;
+}
+.filterLabel {
+  color: #efede8;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  background-color: transparent;
+  text-transform: capitalize;
+  padding: 14px;
+  padding-right: 32px;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 237, 232, 0.3);
+  text-overflow: ellipsis; /* enables ellipsis */
+  white-space: nowrap; /* keeps the text in a single line */
+  overflow: hidden;
+}
+.filterItem {
+  color: #efede8;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  background-color: transparent;
+  text-transform: capitalize;
+}
