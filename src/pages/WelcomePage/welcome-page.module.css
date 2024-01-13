@@ -6,8 +6,10 @@
     padding-top: 90.5px;
     margin-left:auto;
     margin-right: auto;
-    background-color: #040404;;
+    background-color: var(--background-color);
+    /* position: relative; */
 }
+
 .mainTitle{
 width:335px;
 font-family: Roboto;
@@ -15,41 +17,90 @@ font-size: 38px;
 font-weight: 500;
 line-height: 1.05; /* 105.263% */
 letter-spacing: 0.38px;
-color: #efede8;
+color: var(--invent-color);
 margin-bottom:40px;
+display: block;
+
 }
-.part{
-    position:relativ;
-}
+.wrapper{
+   position: relative;
+} 
+
 .btnList{
     display: flex;
-    flex-direction:row;
     gap:14px;
 }
 .btnSignUp{
     padding:12px 40px;
     border-radius: 12px;
-    background-color: #E6533C;
-    color: #EFEDE8;
+    background-color:var(--decorate-color);
+    color:var(--invent-color);
     font-family: Roboto;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.13; /* 112.5% */
 }
 .btnSignUp:hover,.btnSignUp:focus{
-    background-color: #EF8964;
+    background-color: var(--accent-color)
 }
 .btnSignIn{
     padding:12px 40px;
     border-radius: 12px;
     background-color:transparent; 
-    border:1px solid rgba(239, 237, 232, 0.30);
-    color: #EFEDE8;
+    border: 1px solid var(--input-border-color);
+    color:var(--invent-color);
     font-family: Roboto;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.13; /* 112.5% */
 }
 .btnSignIn:hover,.btnSignIn:focus{
-    border:1px solid #E6533C;
+    border:1px solid var(--decorate-color);
+}
+.iconLoop{
+    width:98px;
+    height:35px;
+    position: absolute;
+    top: 43px;
+    left: -8px;
+}
+@media screen and (min-width: 768px) {
+    .container{
+        width:768px;
+        padding-top:140.9px;
+        padding-left: 16px;
+    }
+    .mainTitle{
+        margin-bottom: 64px;
+        width:598px;
+        font-size: 70px;
+        line-height: 1.1; /* 111.429% */
+        letter-spacing: 0.7px;
+    }
+    .btnSignUp{
+        padding:16px 60px;
+        font-size: 20px;
+        line-height: 1.2; /* 120% */
+    }
+    .btnSignIn{
+        padding:16px 60px;
+        font-size: 20px;
+        line-height: 1.2; /* 120% */
+    }
+    .btnList{
+        gap:20px
+    }
+    .iconLoop{
+        width:185px;
+        height:67px;
+        top:80px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container{
+        width:1440px;
+        padding-top:151.9px;
+        padding-left: 80px;
+    }
 }

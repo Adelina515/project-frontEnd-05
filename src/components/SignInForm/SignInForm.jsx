@@ -5,8 +5,10 @@ const SignInForm = () =>{
     return(
         <>
 <form className={css.form}>
+            <div className={css.inputWrapper}>
               <input  type="email"name="email" placeholder="Email" className={css.input}required/>
                <input type="text" name="password" placeholder="Password" className={css.input}required/>
+               </div>
                <AuthButton children="Sign In"/>
             </form>
             </>

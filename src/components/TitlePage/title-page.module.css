@@ -1,8 +1,14 @@
 .titlePage{
-    color: #EFEDE8;
+    color:var(--invent-color);
     /* Headline style_mobile/H2 */
     font-family: Roboto;
     font-size: 24px;
     font-weight: 700;
     line-height: 1.17; /* 116.667% */
+}
+@media screen and (min-width: 768px) {
+    .titlePage{
+        font-size: 32px;
+        line-height: 1.38; /* 137.5% */
+    }
 }
