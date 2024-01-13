@@ -1,0 +1,115 @@
+.diaryItem:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.elem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 16px;
+    gap: 8px;
+}
+
+.elementCont {
+    display: flex;
+}
+
+.elementCont tr:nth-last-child(-n + 4) {
+    margin-bottom: 0px;
+}
+
+.elementCont tr:last-child {
+    margin-left: 8px;
+}
+
+.elementCont tr:nth-last-child(n + 3) {
+    margin-right: 16px;
+}
+
+
+.nameCateg {
+    max-width: 70px;
+
+    color: #ef8964;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    overflow: hidden;
+    /*ховаємо текст який за межі*/
+    white-space: nowrap;
+    /*запобігає переносу*/
+    text-overflow: ellipsis;
+    /*три крапки для відсіченого тексту*/
+}
+
+.nameValue {
+    padding: 10px 14px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(239, 237, 232, 0.3);
+    color: #efede8;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.28;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.elementCont .nameValue {
+    width: 75px;
+}
+
+.elementCont .element:last-child {
+    width: 24px;
+}
+
+.recommendCont {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.productRecommend {
+    width: 14px;
+    height: 14px;
+    border-radius: 10px;
+    background: #419b09;
+}
+
+.productNotRecommend {
+    width: 14px;
+    height: 14px;
+    border-radius: 10px;
+    background: #e9101d;
+}
+
+.trashValue {
+    cursor: pointer;
+}
+
+/*.trashImg {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    stroke: #a82b2b;
+
+    transition: all 0.3s ease;
+}
+
+.trashImg:is(:hover, :focus) {
+    stroke: #a82b2b;
+    transform: scale(1.1);
+}*/
+
+.nameTrash {
+    visibility: hidden;
+}
+
+@media (max-width: 375px) {
+    .elementCont .nameValue {
+        width: 100%;
+    }
+}
