@@ -1,47 +1,53 @@
-.container{
-    height: 100vh;
-    width:375px;
-    padding-left:20px;
-    padding-right:20px;
-    padding-top: 90.5px;
-    margin-left:auto;
-    margin-right: auto;
-    background-color: var(--background-color);
+.container {
+  height: 100vh;
+  width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 90.5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--background-color);
 }
-.text{
-    width:335px;
-    color: var(--input-border-color);
-    /* Body text_mobile/1 */
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.29; /* 128.571% */
-    margin-bottom:28px;
-    margin-top: 14px;
+.text {
+  width: 335px;
+  color: var(--input-border-color);
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29; /* 128.571% */
+  margin-bottom: 28px;
+  margin-top: 14px;
 }
 
-.link{
-    display:inline;
-color:var(--invent-color);
-/* font-feature-settings: 'clig' off, 'liga' off; */
-font-family: Roboto;
-font-size: 12px;
-font-weight: 400;
-line-height: 1.5;
-text-decoration-line: underline;
+.link {
+  display: inline;
+  color: var(--invent-color);
+  /* font-feature-settings: 'clig' off, 'liga' off; */
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration-line: underline;
 }
 @media screen and (min-width: 768px) {
-    .container{
-        width:768px;
-        padding-top:140.9px;
-        padding-left: 16px;
-    }
-    .text{
-        width:496px;
-        font-size: 16px;
-        line-height: 1.5; /* 150% */
-        margin-top: 16px;
-        margin-bottom: 32px;
-    }
-    
+  .container {
+    width: 768px;
+    padding-top: 140.9px;
+    padding-left: 16px;
+  }
+  .text {
+    width: 496px;
+    font-size: 16px;
+    line-height: 1.5; /* 150% */
+    margin-top: 16px;
+    margin-bottom: 32px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding-top: 151.9px;
+    padding-left: 96px;
+  }
 }

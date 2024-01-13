@@ -2,6 +2,11 @@ import css from "./sign-in-form.module.css";
 import AuthButton from "../../btn/AuthButton/AuthButton";
 
 const SignInForm = () =>{
+
+    // const initialValues = {
+    //     email:"",
+    //     password:""
+    // }
     return(
         <>
 <form className={css.form}>
