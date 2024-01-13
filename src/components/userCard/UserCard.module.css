@@ -1,0 +1,49 @@
+
+
+.dailyContainer {
+  display: flex;
+  flex-direction: column;
+  width: 165px;
+  height: 96px;
+  padding: 14px;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 237, 232, 0.2);
+  background-color: red; /* примечание: используйте переменную --color */
+
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    width: 209px;
+    height: 108px;
+    padding: 14px 18px;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 214px;
+    height: 108px;
+    padding: 14px 18px;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  fill: var(--orange-color);
+  stroke: var(--orange-color);
+}
+
+.text {
+  color: rgba(239, 237, 232, 0.8);
+  font-family: 'RobotoRegular';
+  }
