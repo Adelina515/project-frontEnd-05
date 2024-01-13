@@ -1,0 +1,48 @@
+.dayProducts {
+    margin-top: 40px;
+    padding: 16px;
+
+    max-width: 335px;
+    max-height: 824px;
+    overflow-y: hidden;
+
+    border-radius: 12px;
+    background-color: hsla(43, 18%, 92%, 0.05);
+    border: 1px solid rgba(239, 237, 232, 0.2);
+}
+
+.dayScroll {
+    overflow-y: auto;
+    /*автоматично повляється смуга прогрутки*/
+    max-height: 203px;
+    /*padding-bottom: 8px;*/
+
+}
+
+.diaryMen {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 22px;
+}
+
+.DiaryZag {
+    color: rgba(239, 237, 232, 0.5);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.28;
+}
+
+.dayScroll::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 12px;
+}
+
+.dayScroll::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background: rgba(239, 237, 232, 0.1);
+}
+
+.dayScroll::-webkit-scrollbar-track {
+    border-radius: 12px;
+}
