@@ -25,6 +25,9 @@
     line-height: 1.5; /* 150% */
     outline:none;
 }
+input:focus{
+    border-color:var(--decorate-color);
+}
 ::placeholder{
     color: var(--placeholder-color);
     font-family: Roboto;
