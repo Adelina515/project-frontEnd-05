@@ -1,6 +1,6 @@
 .textRemainder{
     display: inline;
-    color: rgba(239, 237, 232, 0.60);
+    color: var(--placeholder-color);
     /* font-feature-settings: 'clig' off, 'liga' off; */
     font-family: Roboto;
     font-size: 12px;
