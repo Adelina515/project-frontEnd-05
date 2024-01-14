@@ -1,0 +1,65 @@
+.DayExercises {
+    margin-top: 40px;
+    max-width: 335px;
+    max-height: 1064px;
+    padding: 16px;
+    overflow-y: hidden;
+    background-color: rgba(239, 237, 232, 0.05);
+    border: 1px solid rgba(239, 237, 232, 0.2);
+    border-radius: 12px;
+}
+
+.dayScroll {
+    overflow-y: auto;
+    max-height: 1032px;
+}
+
+.dayNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 22px;
+}
+
+.dayZag {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.28;
+    color: rgba(239, 237, 232, 0.5);
+
+}
+
+.dayScroll::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 12px;
+}
+
+.dayScroll::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background: rgba(239, 237, 232, 0.1);
+
+}
+
+.dayScroll::-webkit-scrollbar-track {
+    border-radius: 12px;
+}
+
+
+.Butt {
+    background-color: transparent;
+    border: none;
+    color: #e6533c;
+    font-size: 14px;
+    gap: 8px;
+    line-height: 1.28;
+    padding: 0;
+    position: relative;
+    text-align: start;
+    width: 101px;
+}
+
+.iconStrilka {
+    width: 16px;
+    height: 16px;
+    stroke: #a82b2b;
+}

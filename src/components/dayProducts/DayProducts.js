@@ -1,7 +1,9 @@
 import css from './DayProducts.module.css';
 import ProductsTable from './productsTable/ProductsTable';
-//import EmptyList from '';
+import sprite from '../../img/sprite/symbol-defs.svg';
+import { Link } from 'react-router-dom';
 
+//import EmptyList from '';
 
 const DayProducts = () => {
       const diaryProducts = [
@@ -18,7 +20,12 @@ const DayProducts = () => {
             <div className = {css.dayScroll}>
                 <div className={ css.diaryMen}> 
                     <h3 className = {css.DiaryZag}>Products</h3>
-                    <button>Add products</button>
+                    <Link to="/products" className={css.Butt}>
+            Add product
+            <svg className={css.iconStrilka} width="98px" height="35px">
+              <use href={`${sprite}#icon-next-arrow-gray`}></use>
+            </svg>
+          </Link>
                 </div>
             
                <ProductsTable products={diaryProducts}/>
@@ -29,4 +36,5 @@ const DayProducts = () => {
 }
 
 export default DayProducts;
+
 
