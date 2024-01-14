@@ -2,12 +2,12 @@ import css from "./DayExercises.module.css";
 import { Link } from 'react-router-dom';
 
 import ExercisesTable from "./exercisesTable/ExercisesTable";
+import EmList from '../emList/EmList.jsx';
 
 import sprite from '../../img/sprite/symbol-defs.svg';
 //import { selectDiaryExercises } from '../../redux/diary/diarySelectors';
 
 
-import EmList from "../emList/EmList.jsx";
 
 const DayExercises = () => {
   //  const diaryExercises = useSelector(selectDiaryProducts);
