@@ -1,0 +1,17 @@
+.exerciseCategoryContainer{
+    display: flex;
+    gap: 28px;
+}
+.activeCat{
+    position: relative;
+}
+.activeCat::after{
+    content: "";
+    background-color: var(--accent-color);
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    top: 22px;
+    left:0;
+    border-radius: 2px;
+}
