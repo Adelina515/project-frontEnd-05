@@ -3,7 +3,7 @@
     padding: 16px;
 
     max-width: 335px;
-    max-height: 824px;
+    max-height: 1064px;
     overflow-y: hidden;
 
     border-radius: 12px;
@@ -14,8 +14,8 @@
 .dayScroll {
     overflow-y: auto;
     /*автоматично повляється смуга прогрутки*/
-    max-height: 203px;
-    /*padding-bottom: 8px;*/
+    max-height: 1032px;
+    padding-bottom: 8px;
 
 }
 
@@ -45,4 +45,23 @@
 
 .dayScroll::-webkit-scrollbar-track {
     border-radius: 12px;
+}
+
+.Butt {
+    background-color: transparent;
+        border: none;
+        color: #e6533c;
+        font-size: 14px;
+        gap: 8px;
+        line-height: 1.28;
+        padding: 0;
+        position: relative;
+        text-align: start;
+        width: 101px;
+}
+
+.iconStrilka {
+    width: 16px;
+        height: 16px;
+        stroke: #a82b2b;
 }

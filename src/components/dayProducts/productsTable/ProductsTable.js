@@ -1,7 +1,7 @@
 import css from './ProductsTable.module.css';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
-
+import sprite from '../../../img/sprite/symbol-defs.svg';
 
 
 const ProductsTable = (props) => {
@@ -57,7 +57,11 @@ const ProductsTable = (props) => {
                     <th className={`${css.nameCateg} ${css.nameTrash}`}>
                       Trash
                     </th>
-                    <td>Кошик</td>
+                    <td> 
+                      <svg className={css.iconTresh} width="98px" height="35px">
+                        <use href={`${sprite}#icon-trash`}></use>
+                      </svg>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -75,4 +79,3 @@ ProductsTable.propTypes = {
 };
 
 export default ProductsTable;
-
