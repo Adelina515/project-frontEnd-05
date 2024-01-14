@@ -1,13 +1,14 @@
-.container {
+/* .container {
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
   max-width: 375px;
   background-color: var(--background-color);
-}
+} */
 .wrapper {
   padding: 40px 0px 80px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  background-color: var(--background-color);
 }
