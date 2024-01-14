@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+@import 'normalize.css'; /* bring in normalize.css styles */
 
 /* * {
   box-sizing: border-box;
@@ -42,9 +42,8 @@ ul {
   --decorate-color: #e6533c; /*orange*/
   --accent-color: #ef8964; /*orange_1*/
   --rare-color: #efa082; /*beige*/
-
 }
-a{
+a {
   text-decoration: none;
 }
 
