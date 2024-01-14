@@ -50,7 +50,7 @@ export default function Diary() {
     return (
         <div className ={css.diaryPage}>
             <div className={css.calendarCont}>
-                    <TitlePage title="Diary" />
+                    <TitlePage children = "Diary" />
 
                 <div className ={css.calendar}>
                     <DaySwitch handleDate={handleDate}/>
