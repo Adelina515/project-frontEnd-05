@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 
 import ExercisesTable from "./exercisesTable/ExercisesTable";
 
-import sprite from '../../img/sprite/symbol-defs.svg'
+import sprite from '../../img/sprite/symbol-defs.svg';
+//import { selectDiaryExercises } from '../../redux/diary/diarySelectors';
 
-//import EmptyList from "../EmptyList/EmptyList";
+
+import EmList from "../emList/EmList.jsx";
 
 const DayExercises = () => {
+  //  const diaryExercises = useSelector(selectDiaryProducts);
+
 const diaryExercises = [
   {
     _id: 1,
@@ -32,8 +36,11 @@ const diaryExercises = [
             </svg>
           </Link>
           </div>
-                 <ExercisesTable exercises={diaryExercises} />
-        </div>
+ {diaryExercises.length === 0 ? (
+            <EmList itemName={"exercises"} />
+          ) : (
+            <ExercisesTable exercises={diaryExercises} />
+          )}        </div>
       </div>
     </>
   );
