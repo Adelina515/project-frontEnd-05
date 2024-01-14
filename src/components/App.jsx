@@ -11,7 +11,7 @@ const Welcome = lazy(() => import('../pages/WelcomePage/WelcomePage'));
 const SignUp = lazy(() => import('../pages/SignUpPage/SignUpPage'));
 const SignIn = lazy(() => import('../pages/SignInPage/SignInPage'));
 const Diary = lazy(() => import('../pages/Diary'));
-const Products = lazy(() => import('../pages/Products'));
+const Products = lazy(() => import('../pages/ProductsPage/ProductsPage'));
 const Exercises = lazy(() => import('../pages/Exercises'));
 const Profile = lazy(() => import('../pages/Profile'));
 

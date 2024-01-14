@@ -1,3 +1,7 @@
+.diaryList {
+    max-width: 335px;
+}
+
 .diaryItem:not(:last-child) {
     margin-bottom: 40px;
 }
@@ -25,7 +29,6 @@
 .elementCont tr:nth-last-child(n + 3) {
     margin-right: 16px;
 }
-
 
 .nameCateg {
     max-width: 70px;
@@ -90,19 +93,18 @@
     cursor: pointer;
 }
 
-/*.trashImg {
+.iconTresh {
     cursor: pointer;
     width: 20px;
     height: 20px;
-    stroke: #a82b2b;
+    fill: #a82b2b;
 
-    transition: all 0.3s ease;
 }
 
-.trashImg:is(:hover, :focus) {
-    stroke: #a82b2b;
-    transform: scale(1.1);
-}*/
+.iconTresh:hover,
+.iconTresh:focus {
+    fill: #a82b2b;
+}
 
 .nameTrash {
     visibility: hidden;
