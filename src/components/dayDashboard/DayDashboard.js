@@ -2,7 +2,7 @@
 import React from 'react';
 //import { useSelector } from 'react-redux';
 import css from './DayDashboard.module.css';
-import StatisticsItem from '../StatisticsItem/StatisticsItem';
+import StatisticsItem from '../StatisticsItem/StatisticsItem.jsx';
 
 
 
