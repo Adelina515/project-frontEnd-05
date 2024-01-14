@@ -1,4 +1,4 @@
-import { toast } from "react-toastify";
+/*import { toast } from "react-toastify";
 import notifyOptions from "../../utils/NotifyOptions";
 import "react-toastify/dist/ReactToastify.css";
 import { createAsyncThunk } from "@reduxjs/toolkit";
@@ -9,10 +9,10 @@ import {
   BACKEND_DIARY_EXERCISES_URL,
   BACKEND_DIARY_PRODUCTS_URL,
   BACKEND_DIARY_URL,
-} from "../../utils/const";
+} from "../../utils/const";*/
 
 /*для виклику HTTP GET запиту для отримання даних з щоденника*/ 
-export const fetchAllDiary = createAsyncThunk(
+/*export const fetchAllDiary = createAsyncThunk(
   "diary/fetchAllDiary",
   async (params, thunkAPI) => {
     try {
@@ -27,9 +27,9 @@ export const fetchAllDiary = createAsyncThunk(
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-);
+);*/
 /*для виклику HTTP POST запиту для додавання нового продукту в щоденник*/ 
-export const addProductDiary = createAsyncThunk(
+/*export const addProductDiary = createAsyncThunk(
   "diary/addProductDiary",
   async (credentials, thunkAPI) => {
 
@@ -40,16 +40,16 @@ export const addProductDiary = createAsyncThunk(
         BACKEND_DIARY_PRODUCTS_URL,
         credentials
       );
-      toast.success("Product successfully added to diary!", notifyOptions);/*інформування про успішні події */
+      toast.success("Product successfully added to diary!", notifyOptions);
       return data;
     } catch (error) {
       toast.error("Oops... Something went wrong! Try again!", notifyOptions);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-);
+);*/
 /*для виклику HTTP DELETE запиту для видалення продукту з щоденника*/
-export const deleteProductDiary = createAsyncThunk(
+/*export const deleteProductDiary = createAsyncThunk(
   "diary/deleteProductDiary",
   async (idProduct, thunkAPI) => {
     try {
@@ -67,9 +67,9 @@ export const deleteProductDiary = createAsyncThunk(
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-);
+);*/
 /* для виклику HTTP POST запиту для додавання нової вправи в щоденник */
-export const addExercisesDiary = createAsyncThunk(
+/*export const addExercisesDiary = createAsyncThunk(
   "diary/addExercisesDiary",
   async (credentials, thunkAPI) => {
 
@@ -88,9 +88,9 @@ export const addExercisesDiary = createAsyncThunk(
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-);
+);*/
 /*Видалення нової вправи з щоденника */
-export const deleteExercisesDiary = createAsyncThunk(
+/*export const deleteExercisesDiary = createAsyncThunk(
   "diary/deleteExercisesDiary",
   async (idExercises, thunkAPI) => {
     try {
@@ -105,4 +105,4 @@ export const deleteExercisesDiary = createAsyncThunk(
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-);
+);*/
