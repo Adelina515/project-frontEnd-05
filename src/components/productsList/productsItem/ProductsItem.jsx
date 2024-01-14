@@ -1,9 +1,9 @@
 import css from './ProductsItem.module.css';
 import svg from '../../../img/sprite/symbol-defs.svg';
 export const ProductsListItem = ({ data, openModal }) => {
-  // console.log(data);
   const { calories, category, title, weight, groupBloodNotAllowed } = data;
   const fixedTitle = title[0].toUpperCase() + title.slice(1).toLowerCase();
+  console.log(groupBloodNotAllowed);
   return (
     <li className={css.card}>
       <div className={css.upperContent}>
