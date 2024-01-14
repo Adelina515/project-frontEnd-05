@@ -1,31 +1,36 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import styles from './UserCard.module.css'
-import { selectUsersAvatar, selectUser } from '../../redux/UserPageCntrls/selectors.jsx';
+import css from './UserCard.module.css';
+import {
+  selectUsersAvatar
+} from '../../redux/UserPageCntrls/selectors.jsx';  /// selectUser,
+import sprite from "../../img/sprite/symbol-defs.svg"
 
- import { updateAvatar } from '../../redux/UserPageCntrls/UserPageCntrls.jsx';
-import svg from "../../../src/assets/spriteSvg.svg"
-import tryalUserImg from "../../assets/logo-removebg-preview.png"
-import capy from "../../assets/capi_negate.jpg" 
+import { updateAvatar } from '../../redux/UserPageCntrls/UserPageCntrls.jsx';
+
 
 export const UserProfile = () => {
   const dispatch = useDispatch();
   const userAvatar = useSelector(selectUsersAvatar);
- const [avatar, setAvatar] = useState(userAvatar.avatarURL);
+  const [avatarURL, setAvatarURL] = useState(userAvatar);
 
-  const avatarUser = <img src={tryalUserImg} width="10%" alt="Avatar" />;
-  const avatarStandart =  <img src={capy} width="10%" alt="Avatar" />;
+  const avatarUser = <img src={avatarURL} className={css.photo} width="100%" alt="Avatar" />;
+  const avatarStandart = (
+<svg fill="#000" width="62" height="62">
+<use href={`${sprite}#icon-user`}></use>
+</svg>)
+
 
   const handleAvatarChange = event => {
     // console.log("handleAvatarChange")
-     const file = event.target.files[0];
+    const file = event.target.files[0];
     // console.log("handleAvatarChange", file)
-     if (file) {
+    if (file) {
       const blob = new Blob([file]);
       const objectURL = URL.createObjectURL(blob);
-      console.log(objectURL, "objectURL") 
-     setAvatar(objectURL);
-     }
+      console.log(objectURL, 'objectURL');
+      setAvatarURL(objectURL);
+    }
 
     try {
       dispatch(updateAvatar(file));
@@ -36,57 +41,34 @@ export const UserProfile = () => {
   };
 
   return (
-    <div >
-      <div>
-       {avatarUser ? avatarUser : avatarStandart} 
-      </div>
+    <div className={css.wrapperPage} style={{ backgroundColor: "#040404" }}>
+    
+
+      <div className={css.avatar}>{avatarURL ? avatarUser : avatarStandart}</div>
+
       <form id="upload-form">
-        <input type="file" id="file-input" name="file" style={{ display: 'none' }} onChange={handleAvatarChange} />
+        <input
+          type="file"
+          id="file-input"
+          name="file"
+          style={{ display: 'none' }}
+          onChange={handleAvatarChange}
+        />
+
         <label htmlFor="file-input">
-          <div>
-            <svg width="24" height="24" viewBox= "0 0 24 24" >
-              <use xlinkHref={`${svg}#github1`}></use>
-            </svg>
+         
+          <div className={css.button}>
+<svg width="24" height="24" viewBox="0 0 24 24">
+              <use xlinkHref={`${sprite}#icon-plus`}></use> </svg> 
           </div>
         </label>
       </form>
-      <p>{"user.name(Anna Rybachok)"}</p>
-      <p>User</p>
 
+      <p className={css.titleName}>{'Anna Rybachok'}</p>
+      <p className={css.subtitle}>User</p>
 
-      <div className={styles.dailyContainer}>
-      <div className="wrapper">
-        <svg className="svg-icon">
-          <use href={`${svg}#linkedin`} />
-        </svg>
-        <p className="text">"text"</p>
-      </div>
-      <p className="value">""value"</p>
-    </div>
-
-    <div className="daily-container">
-      <div className="wrapper">
-        <svg className="svg-icon">
-          <use href={`${svg}#linkedin`} />
-        </svg>
-        <p className="text">"text"</p>
-      </div>
-      <p className="value">""value"</p>
-    </div>
-
+   
     </div>
   );
 };
 
-
-// import PropTypes from 'prop-types';
-
-
-// Daily.propTypes = {
-//   color: PropTypes.string.isRequired,
-//   iconId: PropTypes.string.isRequired,
-//   text: PropTypes.string.isRequired,
-//   value: PropTypes.string.isRequired,
-// };
-
-// export default Daily;

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+// import axios from 'axios';
 
 const initialState = {
     userData: {
@@ -73,7 +73,7 @@ export const updateUserData = createAsyncThunk(
         //   headers: { 'content-type': 'multipart/form-data' },
         // });
         console.log(formData, "formData")
-  return file
+  return 
       //  return res.data;
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);

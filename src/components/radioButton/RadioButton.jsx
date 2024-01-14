@@ -1,3 +1,4 @@
+import css from "./RadioButton.module.css"
 export const RadioButton = ({ id, name, value, checked, label, onChange }) => (
     <div className="radio">
       <input
@@ -9,7 +10,7 @@ export const RadioButton = ({ id, name, value, checked, label, onChange }) => (
         checked={checked}
         onChange={onChange}
       />
-      <label className="radio-label" htmlFor={id}>
+      <label className={css.radioLabel} htmlFor={id}>
         {label}
       </label>
     </div>

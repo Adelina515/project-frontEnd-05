@@ -1,5 +1,7 @@
 import { lazy } from 'react';
+
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+
 import { Layout } from './Layout';
 // import { RestrictedRoute } from './RestrictedRoute';
 // import { PrivateRoute } from './PrivateRoute';
@@ -15,9 +17,10 @@ const Profile = lazy(() => import('../pages/Profile'));
 
 export const App = () => {
   return (
+
     <BrowserRouter>
       <Routes>
-        <BrowserRouter path="/" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
           <Route path="*" element={<Navigate to="/" />} />
           <Route
@@ -63,9 +66,9 @@ export const App = () => {
             //   <PrivateRoute redirectTo="/signin" component={<Exercises />} />
             // }
           />
-        </BrowserRouter>
+        </Route>
       </Routes>
-      </BrowserRouter>
-   
+    </BrowserRouter>
+
   );
 };

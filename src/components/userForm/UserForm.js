@@ -1,18 +1,18 @@
- import { parseISO } from 'date-fns';
-import { useDispatch, useSelector } from 'react-redux';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { parseISO } from 'date-fns';
+import { useDispatch } from 'react-redux'; ///useSelector 
+import { Formik, Field, Form } from 'formik'; /// ErrorMessage 
 import * as Yup from 'yup';
 
 // import StyledDatepicker from '../Datepicker/StyledDatepicker';
 import { RadioButton } from 'components/radioButton/RadioButton';
-import css from './UserForm.module.css'
+import css from './UserForm.module.css';
 
 // import { selectUser } from '../../redux/auth/selectors';
 import { updateUserData } from '../../redux/UserPageCntrls/UserPageCntrls.jsx';
 
 export const UserForm = () => {
   const dispatch = useDispatch();
-  const  userData =  {
+  const userData = {
     name: null,
     email: null,
     height: 160,
@@ -22,8 +22,8 @@ export const UserForm = () => {
     blood: 1,
     sex: 'male',
     levelActivity: 2,
-  }
- //// useSelector("selectUser"); ///////////
+  };
+  //// useSelector("selectUser"); ///////////
 
   const bloodOptions = [
     { id: '1', value: '1', label: '1' },
@@ -94,136 +94,148 @@ export const UserForm = () => {
   });
 
   const handleSubmit = values => {
-   
     const sendData = {
       ...values,
     };
-    console.log(sendData)
+    console.log(sendData);
     dispatch(updateUserData(sendData)); ////////////////////////////////
   };
 
-  return ( <Formik
-    initialValues={initialValues}
-    validationSchema={validationSchema}
-    onSubmit={handleSubmit}
-  >
-    {formik => (
-      <Form  style={{ backgroundColor: '#000' }}>
-        <div className={css.formContainer}>
-          <div>
-            <p className={css.sectionTitle}>Basic info</p>
-            <Field name="name" type="text" placeholder="Your name" className={css.input} />
+  return (
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
+      {formik => (
+        <Form style={{ backgroundColor: "#040404" }}>
+          <div className={css.formContainer}>
+            <div>
+              <p className={css.sectionTitle}>Basic info</p>
+              <Field
+                name="name"
+                type="text"
+                placeholder="Your name"
+                className={css.input}
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="email"
+                defaultValue={'user.email'}
+                className={css.input}
+                readOnly
+                disabled
+              />
+            </div>
           </div>
-          <div>
-            <input
-              type="text"
-              name="email"
-              defaultValue={"user.email"}
-              className={css.input}
-            //   style={{ color: 'rgba(239, 237, 232, 0.60)' }}
-              readOnly
-              disabled
-            />
-          </div>
-        </div>
 
-        <div className={css.wrapperInputField}>
-          <div className={css.wrapper}>
+          <div className={css.wrapperInputField}>
+            <div className={css.wrapper}>
+              <div className={css.wrappInput}>
+                <Field
+                  type="number"
+                  name="height"
+                  id="height"
+                  placeholder=""
+                  className={css.inputField}
+                />
+                <label htmlFor="height">Height</label>
+              </div>
+            </div>
             <div className={css.wrappInput}>
               <Field
                 type="number"
-                name="height"
-                id="height"
+                name="currentWeight"
+                id="currentWeight"
                 placeholder=""
                 className={css.inputField}
               />
-              <label htmlFor="height">Height</label>
+              <label htmlFor="currentWeight">Current Weight</label>
             </div>
           </div>
-        </div>
+         
 
-        <div className={css.wrapperInputField}>
-          <div className={css.wrappInput}>
-            <Field
-              type="number"
-              name="desiredWeight"
-              id="desiredWeight"
-              placeholder=""
-              className={css.inputField}
-            />
-            <label htmlFor="desiredWeight">Desired Weight</label>
-          </div>
-          <input
-                type="date"
-                name="birthday"
-                id="birthday"
-                value={formik.values.birthday}
-                onChange={formik.handleChange}
+          <div className={css.wrapperInputField}>
+            
+            <div className={css.wrappInput}>
+              <Field
+                type="number"
+                name="desiredWeight"
+                id="desiredWeight"
+                placeholder=""
                 className={css.inputField}
               />
-          {/* <StyledDatepicker
-            selectedDate={formik.values.birthday}
-            setSelectedDate={date => {
-              const formattedDate = parseISO(date.toISOString());
-              formik.setFieldValue('birthday', formattedDate);
-            }}
-          /> */}
-        </div>
+              <label htmlFor="desiredWeight">Desired Weight</label>
+            </div>
+            <div className={css.wrappInput}>
+            <input
+              type="date"
+              name="birthday"
+              id="birthday"
+              value={formik.values.birthday}
+              onChange={formik.handleChange}
+              className={css.inputField}
+            />
+              <label htmlFor="birthday">Date of birthday</label>
+              </div>
+           
+          </div>
 
-        <div className={css.wrapperRadio}>
-          <div style={{ display: 'flex', marginRight: '20px' }}>
+          <div className={css.wrapperRadio}>
             <div style={{ display: 'flex', marginRight: '20px' }}>
-              {bloodOptions.map(option => (
-                <RadioButton
-                  key={option.id}
-                  id={option.id}
-                  name="blood"
-                  value={option.value}
-                  checked={formik.values.blood === option.value}
-                  label={option.label}
-                  onChange={() => formik.setFieldValue('blood', option.value)}
-                />
-              ))}
+              <div style={{ display: 'flex', marginRight: '20px' }}>
+                {bloodOptions.map(option => (
+                  <RadioButton
+                    key={option.id}
+                    id={option.id}
+                    name="blood"
+                    value={option.value}
+                    checked={formik.values.blood === option.value}
+                    label={option.label}
+                    onChange={() => formik.setFieldValue('blood', option.value)}
+                  />
+                ))}
+              </div>
+
+              <div style={{ display: 'flex' }}>
+                {sexOptions.map(option => (
+                  <RadioButton
+                    key={option.id}
+                    id={option.id}
+                    name="sex"
+                    value={option.value}
+                    checked={formik.values.sex === option.value}
+                    label={option.label}
+                    onChange={() => formik.setFieldValue('sex', option.value)}
+                  />
+                ))}
+              </div>
             </div>
 
-            <div style={{ display: 'flex' }}>
-              {sexOptions.map(option => (
-                <RadioButton
+            <div >
+              {levelOptions.map(option => (
+                <RadioButton className={css.wrapperLevel} 
                   key={option.id}
                   id={option.id}
-                  name="sex"
+                  name="levelActivity"
                   value={option.value}
-                  checked={formik.values.sex === option.value}
+                  checked={formik.values.levelActivity === option.value}
                   label={option.label}
-                  onChange={() => formik.setFieldValue('sex', option.value)}
+                  onChange={() =>
+                    formik.setFieldValue('levelActivity', option.value)
+                  }
                 />
               ))}
             </div>
           </div>
 
-          <div className={css.wrapperLevel}>
-            {levelOptions.map(option => (
-              <RadioButton
-                key={option.id}
-                id={option.id}
-                name="levelActivity"
-                value={option.value}
-                checked={formik.values.levelActivity === option.value}
-                label={option.label}
-                onChange={() =>
-                  formik.setFieldValue('levelActivity', option.value)
-                }
-              />
-            ))}
-          </div>
-        </div>
-
-        <button type="submit" className={css.button}>
-          Save
-        </button>
-      </Form>
-    )}
-  </Formik>
-);
+          <button type="submit" className={css.button}>
+            Save
+          </button>
+        </Form>
+      )}
+    </Formik>
+  );
 };
-
