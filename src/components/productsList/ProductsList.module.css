@@ -3,4 +3,35 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  height: 487px;
+  overflow-y: auto;
+}
+.productsList::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .productsList {
+    row-gap: 32px;
+    column-gap: 16px;
+    height: 660px;
+    justify-content: flex-start;
+  }
+  .productsList::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+  }
+  .productsList::-webkit-scrollbar-track {
+    background-color: rgba(239, 237, 232, 0.1);
+    border-radius: 12px;
+  }
+  .productsList::-webkit-scrollbar-thumb {
+    background-color: #ef8964;
+    border-radius: 12px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .productsList {
+    height: 487px;
+    width: 850px;
+  }
 }
