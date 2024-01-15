@@ -1,41 +1,24 @@
 import css from './ProductsFilters.module.css';
 import svg from '../../img/sprite/symbol-defs.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import {
+  fetchCategories,
+  fetchProducts,
+} from '../../redux/products/productsOperations';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFilter } from '../../redux/products/productsSelectors';
+import { interFilter } from '../../redux/products/prFiltersSlice';
 // import { useDebounce } from 'use-debounce';
 
-const data = [
-  'alcoholic drinks',
-  'berries',
-  'cereals',
-  'dairy',
-  'dried fruits',
-  'eggs',
-  'fish',
-  'flour',
-  'fruits',
-  'meat',
-  'mushrooms',
-  'nuts',
-  'oils and fats',
-  'poppy',
-  'sausage',
-  'seeds',
-  'sesame',
-  'soft drinks',
-  'vegetables and herbs',
-];
-const initParams = {
-  search: '',
-  category: '',
-  recommended: '',
-};
-const initOpen = { category: false, recommended: false };
+const initOpen = { category: false, allowed: false };
 
 export const ProductsFilters = () => {
+  const dispatch = useDispatch();
+  const [categories, setCategories] = useState(null);
   const [query, setQuery] = useState('');
-  const [params, setParams] = useState(initParams);
   const [isOpen, setOpen] = useState(initOpen);
-
+  const filters = useSelector(selectFilter);
+  console.log(filters);
   const handleOpen = e => {
     const type = e.currentTarget.dataset.type;
     setOpen(prev => ({ ...initOpen, [type]: !prev[type] }));
@@ -43,19 +26,41 @@ export const ProductsFilters = () => {
   const handlePick = e => {
     if (e.target.nodeName !== 'LI') return;
     const type = e.currentTarget.dataset.type;
+    let value;
+    if (e.target.textContent === 'Recommended') {
+      value = 'yes';
+    } else if (e.target.textContent === 'Not recommended') {
+      value = 'no';
+    } else {
+      value = e.target.textContent;
+    }
 
-    setParams({ ...params, [type]: e.target.textContent });
+    const addFilter = { ...filters, [type]: value };
+    dispatch(interFilter(addFilter));
+    dispatch(fetchProducts(addFilter));
     setOpen(initOpen);
   };
   const handleQuery = e => {
     console.log(e.target.value);
     setQuery(e.target.value);
+    const addInput = { ...filters, searchQuery: e.target.value };
+    dispatch(interFilter(addInput));
+    dispatch(fetchProducts(addInput));
   };
   const resetQuery = () => {
     setQuery('');
   };
+
+  useEffect(() => {
+    const getCategories = async () => {
+      const result = await fetchCategories();
+      setCategories(result);
+    };
+    getCategories();
+  }, []);
   return (
     <div className={css.filters}>
+      <p className={css.text}>Filters</p>
       <div className={css.search}>
         <svg className={css.svgSearch}>
           <use href={`${svg}#icon-search`}></use>
@@ -78,7 +83,7 @@ export const ProductsFilters = () => {
           onClick={handleOpen}
           data-type="category"
         >
-          {params.category === '' ? 'Categories' : params.category}
+          {filters.category === '' ? 'Categories' : filters.category}
         </p>
         <svg
           className={`${css.svgSearch} ${isOpen.category ? css.arrowCat : ''}`}
@@ -92,7 +97,7 @@ export const ProductsFilters = () => {
               onClick={handlePick}
               data-type="category"
             >
-              {data.map((item, index) => {
+              {categories.map((item, index) => {
                 return (
                   <li className={css.filterItem} key={index}>
                     {item}
@@ -104,25 +109,19 @@ export const ProductsFilters = () => {
         )}
       </div>
       <div className={css.recommended}>
-        <p
-          className={css.filterLabel}
-          onClick={handleOpen}
-          data-type="recommended"
-        >
-          {params.recommended === '' ? 'All' : params.recommended}
+        <p className={css.filterLabel} onClick={handleOpen} data-type="allowed">
+          {filters.allowed === '' ? 'All' : filters.allowed}
         </p>
         <svg
-          className={`${css.svgSearch} ${
-            isOpen.recommended ? css.arrowRec : ''
-          }`}
+          className={`${css.svgSearch} ${isOpen.allowed ? css.arrowRec : ''}`}
         >
           <use href={`${svg}#icon-arrow-down`}></use>
         </svg>
-        {isOpen.recommended && (
+        {isOpen.allowed && (
           <ul
             className={css.recommendedList}
             onClick={handlePick}
-            data-type="recommended"
+            data-type="allowed"
           >
             <li className={css.filterItem}>All</li>
             <li className={css.filterItem}>Recommended</li>

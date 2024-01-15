@@ -4,6 +4,7 @@ import { ProductsFilters } from 'components/productsFilters/ProductsFilters';
 import { ProductsList } from 'components/productsList/ProductsList';
 import { ProductsModal } from 'components/productsModal/ProductsModal';
 import { useState } from 'react';
+import { Container } from '../../components/Container/Container';
 
 const ProductsPage = () => {
   const [open, setOpen] = useState(false);
@@ -15,14 +16,17 @@ const ProductsPage = () => {
     setOpen(true);
   };
   return (
-    <>
-      <div className={css.wrapper}>
-        <TitlePage children="Products" className={css.wrapper} />
-        <ProductsFilters />
-        <ProductsList openModal={handleOpen} />
-      </div>
+    <div className={css.productsPage}>
+      <Container>
+        <div className={css.wrapper}>
+          <TitlePage children="Products" className={css.wrapper} />
+          <ProductsFilters />
+          <ProductsList openModal={handleOpen} />
+        </div>
+      </Container>
+      {/* <div className={css.container}></div> */}
       <ProductsModal isOpen={open} onClose={handleClose} />
-    </>
+    </div>
   );
 };
 export default ProductsPage;

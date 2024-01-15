@@ -3,6 +3,9 @@
   flex-wrap: wrap;
   gap: 16px;
 }
+.text {
+  display: none;
+}
 .search {
   position: relative;
   width: 100%;
@@ -59,8 +62,9 @@
 }
 .categories {
   position: relative;
-  width: 100%;
+  width: auto;
   max-width: 146px;
+  flex-grow: 1;
 }
 .filterListWrapper {
   position: absolute;
@@ -91,8 +95,9 @@
 }
 .recommended {
   position: relative;
-  width: 100%;
+  width: auto;
   max-width: 173px;
+  flex-grow: 2;
 }
 .recommendedList {
   position: absolute;
@@ -130,4 +135,50 @@
   line-height: 1.28;
   background-color: transparent;
   text-transform: capitalize;
+}
+
+@media screen and (min-width: 768px) {
+  .filters {
+    flex-wrap: nowrap;
+  }
+  .input {
+    flex-shrink: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .search {
+    width: 236px;
+    flex-shrink: 0;
+  }
+  .filterLabel {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .categories {
+    max-width: 192px;
+    flex-shrink: 0;
+  }
+  .recommended {
+    max-width: 204px;
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .filters {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 664px;
+  }
+  .text {
+    position: absolute;
+    right: 0;
+    top: -26px;
+    display: block;
+    color: rgba(239, 237, 232, 0.5);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.28;
+  }
 }
