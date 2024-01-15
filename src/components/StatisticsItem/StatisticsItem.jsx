@@ -36,6 +36,10 @@ const StatisticsItem = ({
   );
 };
 
+
+
+
+
 StatisticsItem.propTypes = {
   statisticsName: PropTypes.string.isRequired,
   statisticsIcon: PropTypes.string.isRequired,
