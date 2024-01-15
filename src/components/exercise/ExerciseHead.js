@@ -1,7 +1,7 @@
 import React from 'react';
 import TitlePage from 'components/TitlePage/TitlePage';
 
-import css from './Exercises.module.css';
+import css from '../../pages/Exercises.module.css';
 
 function ExerciseHead({exCat, setExCat}) {
     const handleChangeCat=(e)=>{
