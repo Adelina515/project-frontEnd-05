@@ -24,8 +24,8 @@
     line-height: 1.5; /* 150% */
     outline:none;
 }
-input:focus{
-    border-color:var(--decorate-color);
+.input:focus{
+    border: 1px solid var(--decorate-color);
 }
 ::placeholder{
     color: var(--placeholder-color);
@@ -48,6 +48,9 @@ input:focus{
     .input{
         width:364px;
         height:52px;
+    }
+    .input:focus{
+        border-color:var(--decorate-color);
     }
     ::placeholder{
         font-size: 16px;

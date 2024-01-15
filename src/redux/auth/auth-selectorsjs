@@ -1,0 +1,1 @@
+export const selectIsUserLogin = ({auth})=> auth.isLogin;

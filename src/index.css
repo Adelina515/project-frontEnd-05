@@ -19,26 +19,11 @@ ul {
   --success-color: #3cbf61;
   --error-color: #d80027;
   --invent-color: rgb(239, 237, 232); /*white*/
-  --calendar-invalid-date: rgba(
-    var(--invent-color),
-    0.2
-  ); /* white with trancparent 0.2 */
-  --input-border-color: rgba(
-    var(--invent-color),
-    0.3
-  ); /* white with trancparent 0.3*/
-  --calendar-arrow-color: rgba(
-    var(--invent-color),
-    0.4
-  ); /* white with trancparent 0.4 */
-  --calendar-weekdays-color: rgba(
-    var(--invent-color),
-    0.5
-  ); /* white with trancparent 0.5 */
-  --placeholder-color: rgba(
-    var(--invent-color),
-    0.6
-  ); /* white with trancparent 0.6 */
+  --calendar-invalid-date: rgba(239, 237, 232, 0.2); /* white with trancparent 0.2 */
+  --input-border-color: rgba(239, 237, 232, 0.3);  /* white with trancparent 0.3*/
+  --calendar-arrow-color: rgba(239, 237, 232, 0.3);   /* white with trancparent 0.4 */
+  --calendar-weekdays-color: rgba(239, 237, 232, 0.3);  /* white with trancparent 0.5 */
+  --placeholder-color: rgba(239, 237, 232, 0.6);         /* white with trancparent 0.6 */
   --decorate-color: #e6533c; /*orange*/
   --accent-color: #ef8964; /*orange_1*/
   --rare-color: #efa082; /*beige*/
