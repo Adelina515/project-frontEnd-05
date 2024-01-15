@@ -2,10 +2,12 @@ import css from './DayProducts.module.css';
 import ProductsTable from './productsTable/ProductsTable';
 import sprite from '../../img/sprite/symbol-defs.svg';
 import { Link } from 'react-router-dom';
+//import { selectDiaryProducts } from '../../redux/diary/diarySelectors';
 
-//import EmptyList from '';
+import EmList from '../emList/EmList.jsx';
 
 const DayProducts = () => {
+  //  const diaryProducts = useSelector(selectDiaryProducts);
       const diaryProducts = [
     {
       _id: '1',
@@ -26,9 +28,13 @@ const DayProducts = () => {
               <use href={`${sprite}#icon-next-arrow-gray`}></use>
             </svg>
           </Link>
-                </div>
+          </div>
+          {diaryProducts.length === 0 ? (
+          <EmList itemName={"products"} />
+        ) : (
+            <ProductsTable products={diaryProducts} />
+        )}
             
-               <ProductsTable products={diaryProducts}/>
             </div>
 
         </div> 

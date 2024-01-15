@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const ProductsPage = () => {
   const [open, setOpen] = useState(false);
-  const handleClose = () => {
+  const handleClose = e => {
     setOpen(false);
   };
 
@@ -15,14 +15,14 @@ const ProductsPage = () => {
     setOpen(true);
   };
   return (
-    <div className={css.container}>
+    <>
       <div className={css.wrapper}>
         <TitlePage children="Products" className={css.wrapper} />
         <ProductsFilters />
         <ProductsList openModal={handleOpen} />
       </div>
       <ProductsModal isOpen={open} onClose={handleClose} />
-    </div>
+    </>
   );
 };
 export default ProductsPage;

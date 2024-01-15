@@ -1,8 +1,11 @@
 import { lazy } from 'react';
+
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+
 import { useDispatch } from "react-redux";
 import { useEffect } from 'react';
 import {current} from "../redux/auth/auth-operations";
+
 import { Layout } from './Layout';
 // import { RestrictedRoute } from './RestrictedRoute';
 // import { PrivateRoute } from './PrivateRoute';
@@ -22,6 +25,7 @@ export const App = () => {
     dispatch(current())
   },[dispatch])
   return (
+
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -73,5 +77,6 @@ export const App = () => {
         </Route>
       </Routes>
     </BrowserRouter>
+
   );
 };
