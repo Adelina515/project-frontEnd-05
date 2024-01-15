@@ -1,5 +1,5 @@
 import css from './StatisticsItem.module.css';
-import Icon from '../dayDashboard/Icon';
+import Icon from '../Icon';
 import PropTypes from 'prop-types';
 
 const StatisticsItem = ({
