@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import css from './Exercises.module.css';
+// import css from './Exercises.module.css';
 import ExerciseHead from '../components/exercise/ExerciseHead';
 import axios from 'axios';
 import ExerciseCategoriesList from '../components/exercise/ExerciseCategoriesList';
@@ -35,7 +35,7 @@ function Exercises(props) {
         setArr([]);
         navigate("/exercises")
     }
-  }, [setArr, exCat]);
+  }, [setArr, exCat, filter, name, navigate]);
 
 
   if (!name || !filter) {
