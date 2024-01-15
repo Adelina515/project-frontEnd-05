@@ -1,16 +1,21 @@
 import css from './sign-in-form.module.css';
+import { useDispatch } from "react-redux";
 import { Formik, Form, Field } from 'formik';
 import AuthButton from '../../btn/AuthButton/AuthButton';
 import { signInSchema } from '../../schemas/auth/auth-schemas';
+import {login} from "../../redux/auth/auth-operations";
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
   const initialValues = {
     email: '',
     password: '',
   };
-  const handleSubmit = values => {
+  const handleSubmit = (values, { resetForm }) => {
     console.log(values);
-  };
+    dispatch(login(values));
+    resetForm();
+};
   return (
     <>
       <Formik
