@@ -7,8 +7,8 @@ import { nanoid } from '@reduxjs/toolkit';
 
 function ExerciseList({ name, filter }) {
   const [arr, setArr] = useState([]);
-  const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
+  // const [page, setPage] = useState(1);
+  // const [totalPages, setTotalPages] = useState(0);
   axios.defaults.baseURL =
     'https://power-pulse-backend.onrender.com/exercises/filter';
   useEffect(() => {
