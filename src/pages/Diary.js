@@ -12,7 +12,7 @@ import DayExercises from '../components/dayExercises/DayExercises';
 //import { useDispatch } from "react-redux";
 import { /*useEffect,*/ useState } from "react";
 
-
+import formatDate from '../function/formatData';
 
 export default function Diary() {
 
@@ -31,15 +31,6 @@ export default function Diary() {
     fetchDate();
   }, [dispatch, selectedDate]);*/
 
-
-
-/*для форматування дати, переданої як аргумент, у рядок у форматі "рік-місяць-день" */
-  const formatDate = (date) => {
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const year = date.getFullYear();
-  return `${year}-${month}-${day}`;
-  };
 /*Обробка вибраної дати */
    const handleDate = async (date) => {
     const formatedDate = formatDate(date);
