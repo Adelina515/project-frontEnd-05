@@ -1,108 +1,107 @@
-/*import { toast } from "react-toastify";
-import notifyOptions from "../../utils/NotifyOptions";
-import "react-toastify/dist/ReactToastify.css";
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { instance } from "../services/instanceAPI";
-import { token } from "../services/tokenAPI";
-import { tokenState } from "../services/tokenState";
-import {
-  BACKEND_DIARY_EXERCISES_URL,
-  BACKEND_DIARY_PRODUCTS_URL,
-  BACKEND_DIARY_URL,
-} from "../../utils/const";*/
 
-/*для виклику HTTP GET запиту для отримання даних з щоденника*/ 
-/*export const fetchAllDiary = createAsyncThunk(
-  "diary/fetchAllDiary",
-  async (params, thunkAPI) => {
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+
+
+axios.defaults.baseURL = 'https://power-pulse-backend.onrender.com/';
+
+
+export const fetchAllDiary = createAsyncThunk(
+  'fetchAllDiary',
+  async (date, { rejectWithValue }) => {
     try {
-      token.set(tokenState(thunkAPI));
-      const paramsURL = Object.keys(params)
-        .map((key) => `${key}=${params[key]}`)
-        .join("&");
-      const { data } = await instance.get(`${BACKEND_DIARY_URL}?${paramsURL}`);
+      const { data } = await axios.get(`/?date=${date}`);
       return data;
     } catch (error) {
-      toast.error("Oops... Something went wrong! Try again!", notifyOptions);
-      return thunkAPI.rejectWithValue(error.message);
+      toast.error('Oops... Something went wrong! Try again!');
+      return rejectWithValue('Oops... Something went wrong!');
     }
-  }
-);*/
-/*для виклику HTTP POST запиту для додавання нового продукту в щоденник*/ 
-/*export const addProductDiary = createAsyncThunk(
-  "diary/addProductDiary",
-  async (credentials, thunkAPI) => {
+  },
+);
 
+export const addProductDiary = createAsyncThunk(
+  'addProductDiary',
+  async (productDetails, { rejectWithValue }) => {
+    try {
+      const {
+        productId, //string
+        date, //string yyyy-mm-dd
+        grams, //number
+        category, //string
+        calories,//number
+        
+      } = productDetails;
+      await axios.post('/products', {
+        productId,
+        date,
+        grams,
+        category,
+        calories,
+        
+      });
+      console.log('productDetailsAdd', productDetails);
+
+      toast.success(`Product successfully added to diary!`);
+      return;
+    } catch (error) {
+      toast.error('Oops... Something went wrong! Try again!');
+      return rejectWithValue('Oops... Something went wrong!');
+    }
+  },
+);
+
+export const deleteProductDiary = createAsyncThunk(
+  'deleteProductDiary',
+  async (productDetails, { rejectWithValue }) => {
+    const { id, date } = productDetails;
 
     try {
-      token.set(tokenState(thunkAPI));
-      const { data } = await instance.post(
-        BACKEND_DIARY_PRODUCTS_URL,
-        credentials
-      );
-      toast.success("Product successfully added to diary!", notifyOptions);
-      return data;
-    } catch (error) {
-      toast.error("Oops... Something went wrong! Try again!", notifyOptions);
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);*/
-/*для виклику HTTP DELETE запиту для видалення продукту з щоденника*/
-/*export const deleteProductDiary = createAsyncThunk(
-  "diary/deleteProductDiary",
-  async (idProduct, thunkAPI) => {
-    try {
-      token.set(tokenState(thunkAPI));
-      const { data } = await instance.delete(
-        `${BACKEND_DIARY_PRODUCTS_URL}/${idProduct}`
-      );
-      toast.success(
-        "Product successfully deleted from diary!",
-        notifyOptions
-      );
-      return data;
-    } catch (error) {
-      toast.error("Oops... Something went wrong! Try again!", notifyOptions);
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);*/
-/* для виклику HTTP POST запиту для додавання нової вправи в щоденник */
-/*export const addExercisesDiary = createAsyncThunk(
-  "diary/addExercisesDiary",
-  async (credentials, thunkAPI) => {
+      await axios.delete(`/products?id=${id}&date=${date}`);
 
-
-    try {
-      token.set(tokenState(thunkAPI));
-      const { data } = await instance.post(
-        BACKEND_DIARY_EXERCISES_URL,
-        credentials
-      );
-      toast.success("Exercises successfully added!", notifyOptions);
-      return data;
+      return id;
     } catch (error) {
-      toast.error("Oops... Something went wrong! Try again!", notifyOptions);
+      toast.error('Oops... Something went wrong! Try again!');
+      return rejectWithValue('Oops... Something went wrong!');
+    }
+  },
+);
 
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);*/
-/*Видалення нової вправи з щоденника */
-/*export const deleteExercisesDiary = createAsyncThunk(
-  "diary/deleteExercisesDiary",
-  async (idExercises, thunkAPI) => {
+export const addExercisesDiary = createAsyncThunk(
+  'addExercisesDiary',
+  async (exercise, thunkAPI) => {
+    console.log('exercise', exercise);
+    const {
+      exerciseId,//string
+      date, //string yyyy-mm-dd
+      duration,//number
+      burnedCalories,//number
+    } = exercise;
     try {
-      token.set(tokenState(thunkAPI));
-      const { data } = await instance.delete(
-        `${BACKEND_DIARY_EXERCISES_URL}/${idExercises}`
-      );
-      toast.success("Exercises successfully deleted!", notifyOptions);
-      return data;
-    } catch (error) {
-      toast.error("Oops... Something went wrong! Try again!", notifyOptions);
-      return thunkAPI.rejectWithValue(error.message);
+      const response = await axios.post('/exercises', {
+        exerciseId,
+        date,
+        duration,
+        burnedCalories,
+      });
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
-  }
-);*/
+  },
+);
+
+export const deleteExercisesDiary = createAsyncThunk(
+  'deleteExercisesDiary',
+  async (exerciseDetails, { rejectWithValue }) => {
+    console.log('exerciseDetailsDELETE', exerciseDetails);
+    try {
+      const { id, date } = exerciseDetails;
+      await axios.delete(`/exercises?date=${date}&id=${id}`);
+      return id;
+    } catch (error) {
+      toast.error('Oops... Something went wrong! Try again!');
+      return rejectWithValue('Oops... Something went wrong!');
+    }
+  },
+);

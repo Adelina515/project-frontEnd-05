@@ -1,0 +1,50 @@
+.dayDashboard {
+    margin-top: 40px;
+}
+
+.statisticList {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 13px;
+    row-gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.adviceWrap {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    
+}
+
+.adviceIconWrap {
+    width: 24px;
+    height: 24px;
+
+    background-color: #efa082;
+    border-radius: 50%;
+}
+
+.exclamationIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.adviceText {
+    color: rgba(239, 237, 232, 0.3);
+    font-size: 14px;
+    line-height: 1.28;
+
+    max-width: 303px;
+}
+
+@media screen and (max-width: 365px) {
+    .statisticList {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+}
