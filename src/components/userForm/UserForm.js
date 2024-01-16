@@ -1,35 +1,30 @@
 import { parseISO } from 'date-fns';
-import { useDispatch } from 'react-redux'; ///useSelector 
-import { Formik, Field, Form } from 'formik'; /// ErrorMessage 
+import { useDispatch } from 'react-redux'; ///useSelector
+import { Formik, Field, Form } from 'formik'; /// ErrorMessage
 import * as Yup from 'yup';
+import { updateProfileParamsTh } from '../../redux/UserPageCntrls/UserPageOperations';
 
-// import StyledDatepicker from '../Datepicker/StyledDatepicker';
 import { RadioButton } from 'components/radioButton/RadioButton';
 import css from './UserForm.module.css';
 
-// import { selectUser } from '../../redux/auth/selectors';
-import { updateUserData } from '../../redux/UserPageCntrls/UserPageCntrls.jsx';
-
-export const UserForm = () => {
+export const UserForm = ({
+  name,
+  height,
+  currentWeight,
+  desiredWeight,
+  birthday,
+  blood,
+  sex,
+  levelActivity,
+  email,
+}) => {
   const dispatch = useDispatch();
-  const userData = {
-    name: null,
-    email: null,
-    height: 160,
-    currentWeight: 60,
-    desiredWeight: 55,
-    birthday: '08.01.1987',
-    blood: 1,
-    sex: 'male',
-    levelActivity: 2,
-  };
-  //// useSelector("selectUser"); ///////////
 
   const bloodOptions = [
-    { id: '1', value: '1', label: '1' },
-    { id: '2', value: '2', label: '2' },
-    { id: '3', value: '3', label: '3' },
-    { id: '4', value: '4', label: '4' },
+    { id: '1', value: 1, label: '1' },
+    { id: '2', value: 2, label: '2' },
+    { id: '3', value: 3, label: '3' },
+    { id: '4', value: 4, label: '4' },
   ];
 
   const sexOptions = [
@@ -40,43 +35,54 @@ export const UserForm = () => {
   const levelOptions = [
     {
       id: 'level-1',
-      value: '1',
+      value: 1,
       label: 'Sedentary lifestyle (little or no physical activity)',
     },
     {
       id: 'level-2',
-      value: '2',
+      value: 2,
       label: 'Light activity (light exercises/sports 1-3 days per week)',
     },
     {
       id: 'level-3',
-      value: '3',
+      value: 3,
       label: 'Moderately active (moderate exercises/sports 3-5 days per week)',
     },
     {
       id: 'level-4',
-      value: '4',
+      value: 4,
       label: 'Very active (intense exercises/sports 6-7 days per week)',
     },
     {
       id: 'level-5',
-      value: '5',
+      value: 5,
       label:
         'Extremely active (very strenuous exercises/sports and physical work)',
     },
   ];
 
-  const formattedDate = parseISO(userData.birthday);
+  const handleSubmit = values => {
+    const sendData = {
+      ...values,
+    };
+   // console.log(sendData);
+    dispatch(updateProfileParamsTh(sendData)); ////////////////////////////////
+  };
+
+  if (!name) {
+    return <div>Loading...</div>;
+  }
+  const formattedDate = parseISO(birthday);
 
   const initialValues = {
-    name: userData.name || 'Name',
-    height: userData.height || '150',
-    currentWeight: userData.currentWeight || '35',
-    desiredWeight: userData.desiredWeight || '35',
-    birthday: formattedDate || '2005-01-01',
-    blood: (userData.blood ?? '1').toString() || '1',
-    sex: userData.sex || 'male',
-    levelActivity: (userData.levelActivity ?? '1').toString() || '1',
+    name: name,
+    height: height,
+    currentWeight: currentWeight,
+    desiredWeight: desiredWeight,
+    birthday: formattedDate,
+    blood: blood || 1,
+    sex: sex || 'male',
+    levelActivity: levelActivity || '1',
   };
 
   const validationSchema = Yup.object({
@@ -91,15 +97,8 @@ export const UserForm = () => {
       .positive('Weight must be positive')
       .required('Desired weight is required'),
     birthday: Yup.date().required('Birthday is required'),
+    blood: Yup.number(),
   });
-
-  const handleSubmit = values => {
-    const sendData = {
-      ...values,
-    };
-    console.log(sendData);
-    dispatch(updateUserData(sendData)); ////////////////////////////////
-  };
 
   return (
     <Formik
@@ -108,22 +107,24 @@ export const UserForm = () => {
       onSubmit={handleSubmit}
     >
       {formik => (
-        <Form style={{ backgroundColor: "#040404" }}>
+        <Form>
           <div className={css.formContainer}>
             <div>
               <p className={css.sectionTitle}>Basic info</p>
-              <Field
+              <input
                 name="name"
                 type="text"
-                placeholder="Your name"
                 className={css.input}
+                defaultValue={name}
+                readOnly
+                disabled
               />
             </div>
             <div>
               <input
                 type="text"
                 name="email"
-                defaultValue={'user.email'}
+                defaultValue={email}
                 className={css.input}
                 readOnly
                 disabled
@@ -155,10 +156,8 @@ export const UserForm = () => {
               <label htmlFor="currentWeight">Current Weight</label>
             </div>
           </div>
-         
 
           <div className={css.wrapperInputField}>
-            
             <div className={css.wrappInput}>
               <Field
                 type="number"
@@ -170,17 +169,16 @@ export const UserForm = () => {
               <label htmlFor="desiredWeight">Desired Weight</label>
             </div>
             <div className={css.wrappInput}>
-            <input
-              type="date"
-              name="birthday"
-              id="birthday"
-              value={formik.values.birthday}
-              onChange={formik.handleChange}
-              className={css.inputField}
-            />
+              <input
+                type="date"
+                name="birthday"
+                id="birthday"
+                value={formik.values.birthday}
+                onChange={formik.handleChange}
+                className={css.inputField}
+              />
               <label htmlFor="birthday">Date of birthday</label>
-              </div>
-           
+            </div>
           </div>
 
           <div className={css.wrapperRadio}>
@@ -214,9 +212,10 @@ export const UserForm = () => {
               </div>
             </div>
 
-            <div >
+            <div>
               {levelOptions.map(option => (
-                <RadioButton className={css.wrapperLevel} 
+                <RadioButton
+                  className={css.wrapperLevel}
                   key={option.id}
                   id={option.id}
                   name="levelActivity"
