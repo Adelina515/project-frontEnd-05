@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const filterInitState = {
   searchQuery: '',
   category: '',
-  allowed: '',
+  allowed: 'All',
 };
 
 const filterSlice = createSlice({

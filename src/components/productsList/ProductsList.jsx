@@ -4,26 +4,37 @@ import { ProductsListItem } from './productsItem/ProductsItem';
 import { useEffect } from 'react';
 import { fetchProducts } from '../../redux/products/productsOperations';
 import {
+  selectError,
   selectProducts,
-  selectFilter,
 } from '../../redux/products/productsSelectors';
+import { ProductsError } from './productsError/ProductsError';
 export const ProductsList = ({ openModal }) => {
   const dispatch = useDispatch();
   const data = useSelector(selectProducts);
-  const filter = useSelector(selectFilter);
-  console.log(filter);
-
+  const error = useSelector(selectError);
+  // const filter = useSelector(selectFilter);
+  // console.log(error);
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
   return (
-    <ul className={css.productsList}>
-      {data &&
-        data.map(({ _id, ...card }) => {
-          return (
-            <ProductsListItem key={_id} data={card} openModal={openModal} />
-          );
-        })}
-    </ul>
+    <>
+      {error ? (
+        <ProductsError />
+      ) : (
+        <ul className={css.productsList}>
+          {data &&
+            data.map(card => {
+              return (
+                <ProductsListItem
+                  key={card._id}
+                  data={card}
+                  openModal={openModal}
+                />
+              );
+            })}
+        </ul>
+      )}
+    </>
   );
 };

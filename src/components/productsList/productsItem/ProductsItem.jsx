@@ -1,12 +1,13 @@
 import css from './ProductsItem.module.css';
 import svg from '../../../img/sprite/symbol-defs.svg';
 import { useInView } from 'react-intersection-observer';
+import { useSelector } from 'react-redux';
+
 export const ProductsListItem = ({ data, openModal }) => {
-  const { calories, category, title, weight } = data;
+  const userBlood = useSelector(state => state.profile.blood);
+  const { calories, category, title, weight, groupBloodNotAllowed } = data;
   const fixedTitle = title[0].toUpperCase() + title.slice(1).toLowerCase();
-  // console.log(groupBloodNotAllowed);
   const { ref, inView } = useInView({
-    /* Optional options */
     threshold: 0.5,
     triggerOnce: true,
   });
@@ -20,13 +21,21 @@ export const ProductsListItem = ({ data, openModal }) => {
             </div>
             <div className={css.cardStatus}>
               <svg className={css.statusCircle}>
-                <use href={`${svg}#icon-circle-green`}></use>
+                {groupBloodNotAllowed[userBlood] ? (
+                  <use href={`${svg}#icon-circle-green`}></use>
+                ) : (
+                  <use href={`${svg}#icon-circle-red`}></use>
+                )}
               </svg>
-              <p className={css.statusText}>Recommended</p>
+              <p className={css.statusText}>
+                {groupBloodNotAllowed[userBlood]
+                  ? 'Recommended'
+                  : 'Not recommended'}
+              </p>
               <button
                 type="button"
                 className={css.statusBtn}
-                onClick={openModal}
+                onClick={() => openModal(data)}
               >
                 Add
                 <svg className={css.svgBtn}>
