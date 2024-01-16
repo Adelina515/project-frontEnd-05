@@ -1,84 +1,66 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createAsyncThunk } from '@reduxjs/toolkit';
-// import axios from 'axios';
-
+import {
+  getCurrentUserDataTh,
+  updateProfileParamsTh,
+  updateProfileAvatarTh,
+} from './UserPageOperations';
 const initialState = {
-    userData: {
-     //  name: null,
-     //  email: null,
-      height: 160,
-      currentWeight: 60,
-      desiredWeight: 55,
-      birthday: '08.01.1987',
-      blood: 1,
-      sex: 'male',
-      levelActivity: 2,
-     
-    },
-    // token: null,
-    // isLoggedIn: false,
-   /// goToParams: false,
-    isUpdateUserData: false,
-    avatarURL: ""
-  };
+  name: null,
+  email: null,
+  height: 0,
+  currentWeight: 60,
+  desiredWeight: 55,
+  birthday: '2005-01-01',
+  blood: 1,
+  sex: 'male',
+  levelActivity: 2,
+  avatarURL: '',
+  bmr: 0,
+};
 
-  
-  const profileSlice = createSlice({
-    name: 'profile',
-    initialState,
-    extraReducers: builder =>
-      builder
-       
-        .addCase(updateUserData.pending, (state, action) => state)
-        .addCase(updateUserData.fulfilled, (state, action) => {
-          state.userData = action.payload;
-        })
-        .addCase(updateUserData.rejected, (state, action) => {
-          state.isLoggedIn = true;
-        //  state.goToParams = false;
-        })
-        .addCase(updateAvatar.pending, (state, action) => state)
-        .addCase(updateAvatar.fulfilled, (state, action) => {
-          state.avatarURL = action.payload;
-        })
-        .addCase(updateAvatar.rejected, (state, action) => {
-          state.isLoggedIn = true;
-        //  state.goToParams = false;
-        })
-       
-         })
-//        
-export const updateUserData = createAsyncThunk(
-    'profile/updateUserData',
-    async (params, thunkAPI) => {
-      try {
-      //   const res = await axios.patch('/profile', params);
-       // return res.data;
-       return params
-      } catch (error) {
-        return thunkAPI.rejectWithValue(error.message);
-      }
+const profileSlice = createSlice({
+  name: 'profile',
+  initialState,
+  reducers: {
+    setCurrentUserData: (state, action) => {
+      return { ...state, ...action.payload };
     },
-  );
+  },
+  extraReducers: builder =>
+    builder
+      .addCase(getCurrentUserDataTh.pending, (state, { payload }) => state)
+      .addCase(getCurrentUserDataTh.fulfilled, (state, { payload }) => {
+        state.name = payload.name;
+        state.email = payload.email;
+        state.height = payload.height;
+        state.currentWeight = payload.currentWeight;
+        state.desiredWeight = payload.desiredWeight;
+        state.birthday = payload.birthday;
+        state.blood = payload.blood;
+        state.sex = payload.sex;
+        state.levelActivity = payload.levelActivity;
+        state.avatarURL = payload.avatarURL;
+        state.bmr = payload.bmr;
+      })
+      .addCase(getCurrentUserDataTh.rejected, (state, { payload }) => state)
+      .addCase(updateProfileParamsTh.fulfilled, (state, { payload }) => {
+        state.name = payload.name;
+        state.email = payload.email;
+        state.height = payload.height;
+        state.currentWeight = payload.currentWeight;
+        state.desiredWeight = payload.desiredWeight;
+        state.birthday = payload.birthday;
+        state.blood = payload.blood;
+        state.sex = payload.sex;
+        state.levelActivity = payload.levelActivity;
+        state.avatarURL = payload.avatarURL;
+        state.bmr = payload.bmr;
+      })
+      .addCase(updateProfileParamsTh.rejected, (state, action) => state)
+      .addCase(updateProfileAvatarTh.fulfilled, (state, { payload }) => {
+        state.avatarURL = payload.avatarURL;
+      }),
+});
 
-  export const updateAvatar = createAsyncThunk(
-    'profile/updateAvatar',
-    async (file, thunkAPI) => {
-      try {
-        console.log(file, "file in updateAvatar")
-        const formData = new FormData();
-        formData.append('avatar', file);
-  
-        // const res = await axios.patch('profile', formData, {
-        //   headers: { 'content-type': 'multipart/form-data' },
-        // });
-        console.log(formData, "formData")
-  return 
-      //  return res.data;
-      } catch (error) {
-        return thunkAPI.rejectWithValue(error.message);
-      }
-    },
-  );
-  
-  export const profileReducer = profileSlice.reducer;
+export const { setCurrentUserData } = profileSlice.actions;
+export const profileReducer = profileSlice.reducer;
