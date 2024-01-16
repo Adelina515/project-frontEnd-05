@@ -18,7 +18,7 @@ export const ProductsFilters = () => {
   const [query, setQuery] = useState('');
   const [isOpen, setOpen] = useState(initOpen);
   const filters = useSelector(selectFilter);
-  console.log(filters);
+  // console.log(filters);
   const handleOpen = e => {
     const type = e.currentTarget.dataset.type;
     setOpen(prev => ({ ...initOpen, [type]: !prev[type] }));
@@ -110,7 +110,10 @@ export const ProductsFilters = () => {
       </div>
       <div className={css.recommended}>
         <p className={css.filterLabel} onClick={handleOpen} data-type="allowed">
-          {filters.allowed === '' ? 'All' : filters.allowed}
+          {/* {filters.allowed === '' ? 'All' : filters.allowed} */}
+          {filters.allowed === 'All' && 'All'}
+          {filters.allowed === 'yes' && 'Recommended'}
+          {filters.allowed === 'no' && 'Not recommended'}
         </p>
         <svg
           className={`${css.svgSearch} ${isOpen.allowed ? css.arrowRec : ''}`}
