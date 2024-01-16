@@ -18,6 +18,7 @@ export const AddProductForm = ({ data }) => {
       grams: Number(e.target.elements.amount.value),
       calories: countCalories,
     };
+    console.log(add);
   };
   return (
     <form className={css.form} onSubmit={addToDiary}>
