@@ -28,8 +28,9 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
-  text-decoration-line: underline;
+  
 }
+
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;

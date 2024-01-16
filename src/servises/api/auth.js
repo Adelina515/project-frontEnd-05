@@ -24,6 +24,7 @@ export  const logout = async ()=> {
         return data;
         
       } catch (error) {
+        clearToken();
         throw new Error(error.message);
       }
   }
