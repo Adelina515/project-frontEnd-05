@@ -1,0 +1,13 @@
+.logotipe {
+  width: 126px;
+}
+
+@media screen and (min-width: 768px) {
+  .logotipe {
+    width: 151px;
+    
+  }
+}
+
+@media screen and (min-width: 1440px) {
+}

@@ -1,0 +1,16 @@
+.iconSettings {
+  width: 24px;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .iconSettings {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .iconSettings {
+    margin-left: 32px;
+  }
+}

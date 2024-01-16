@@ -1,0 +1,17 @@
+.btnList {
+  list-style: none;
+  gap: 16px;
+  display: none;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 1440px) {
+  .btnList {
+    display: flex;
+    margin-left: auto;
+  }
+}
