@@ -6,20 +6,20 @@ import DayDashboard from '../components/dayDashboard/DayDashboard';
 import DayProducts from '../components/dayProducts/DayProducts';
 import DayExercises from '../components/dayExercises/DayExercises';
 
-//import { fetchAllDiary } from "../redux/diary/diaryOperations";
+import { fetchAllDiary } from "../redux/diary/diaryOperations";
 
 
-//import { useDispatch } from "react-redux";
-import { /*useEffect,*/ useState } from "react";
+import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 
 import formatDate from '../function/formatData';
 
 export default function Diary() {
 
-     //const dispatch = useDispatch();
-    const [/*selectedDate,*/ setSelectedDate] = useState(null);/*початкова дата не обрана*/
+     const dispatch = useDispatch();
+    const [selectedDate, setSelectedDate] = useState(null);/*початкова дата не обрана*/
     /*Данні щоденника мають змінюватись при змінні  selectedDate*/
-     /*useEffect(() => {
+     useEffect(() => {
     const fetchDate = () => {
       if (selectedDate) {
         const date = {
@@ -29,7 +29,7 @@ export default function Diary() {
       }
     };
     fetchDate();
-  }, [dispatch, selectedDate]);*/
+  }, [dispatch, selectedDate]);
 
 /*Обробка вибраної дати */
    const handleDate = async (date) => {
