@@ -4,6 +4,7 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import TitlePage from '../../components/TitlePage/TitlePage';
 import RemainderComponent from 'components/RemainderComponent/RemainderComponent';
 
+
 const SignUpPage = ({ onSubmit }) => {
   return (
     <div className={css.container}>

@@ -2,10 +2,9 @@ import css from "./welcome-page.module.css";
 import { NavLink } from "react-router-dom";
 import sprite from "../../img/sprite/symbol-defs.svg";
 
-
 const WelcomePage=()=>{
     return(
-        <div className={css.container}>
+      <div className={css.container}>
         <div className={css.wrapper}>
          <h1 className={css.mainTitle}>Transforming your body shape with Power Pulse</h1>
           

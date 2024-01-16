@@ -6,6 +6,7 @@ import { signUpSchema } from '../../schemas/auth/auth-schemas';
 import { register } from '../../redux/auth/auth-operations';
 import sprite from '../../img/sprite/symbol-defs.svg';
 
+
 const SignUpForm = () => {
   const dispatch = useDispatch();
   const initialValues = {
