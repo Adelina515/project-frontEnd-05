@@ -2,12 +2,14 @@ import css from './DayProducts.module.css';
 import ProductsTable from './productsTable/ProductsTable';
 import sprite from '../../img/sprite/symbol-defs.svg';
 import { Link } from 'react-router-dom';
-//import { selectDiaryProducts } from '../../redux/diary/diarySelectors';
+/*import { selectDiaryProducts } from '../../redux/diary/diarySelectors';*/
 
 import EmList from '../emList/EmList.jsx';
+/*import { useSelector } from "react-redux";*/
+
 
 const DayProducts = () => {
-  //  const diaryProducts = useSelector(selectDiaryProducts);
+ // const diaryProducts = useSelector(selectDiaryProducts);
       const diaryProducts = [
     {
       _id: '1',
