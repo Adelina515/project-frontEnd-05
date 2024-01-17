@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 // const token =
-//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTU3YWJjZWI1ZjgyMWQ3MGM4YzQwYiIsImlhdCI6MTcwNTQyNzE2MiwiZXhwIjoxNzA1NTA5OTYyfQ.Y3BN8GkeG4P4n3G9lSX53IFMPA_tvZXWxrXmnbp6F60';
+//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTU3YWJjZWI1ZjgyMWQ3MGM4YzQwYiIsImlhdCI6MTcwNTUxOTEwMSwiZXhwIjoxNzA1NjAxOTAxfQ.hXLtcnpt_s0sTQa-jFR63l94KHMKD2KKPaszxSOLpus';
 // axios.defaults.baseURL = 'https://power-pulse-backend.onrender.com/';
 // axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 // const params = {
@@ -13,7 +13,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 // };
 
 export const fetchProducts = createAsyncThunk(
-  'products/fetchAll',
+  'products/fetchProducts',
   async (filter, { rejectWithValue }) => {
     try {
       const params = { ...filter, limit: 500 };
