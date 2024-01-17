@@ -3,13 +3,15 @@ import { Daily } from 'components/daily/Daily';
 import { UserProfile } from 'components/userCard/UserCard';
 import { UserForm } from 'components/userForm/UserForm';
 import { useEffect } from 'react';
-import { getCurrentUserDataTh } from '../redux/UserPageCntrls/UserPageOperations';
+import { getCurrentUserDataTh } from '../../redux/UserPageCntrls/UserPageOperations';
 import { useDispatch, useSelector } from 'react-redux';
 import { LogOutBtn } from 'btn/logOutBtn/LogOutBtn';
 // import { selectIsUserLogin } from '../redux/auth/auth-selectors';
-import { logout } from '../servises/api/auth';
-import {selectUserToken} from '../redux/UserPageCntrls/selectors';
-import { setToken } from '../redux/UserPageCntrls/UserPageApi';
+import { logout } from '../../servises/api/auth';
+import {selectUserToken} from '../../redux/UserPageCntrls/selectors';
+import { setToken } from '../../redux/UserPageCntrls/UserPageApi';
+import css from './ProfilePage.module.css'
+import { ExclamationMark } from 'components/exclamation/Exclamation';
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -17,7 +19,10 @@ export default function Profile() {
   const userToken=useSelector(selectUserToken)
   console.log(userToken, "userToken")
   setToken(userToken);
+// import { useDispatch, useSelector } from 'react-redux';
+ // import {selectIsUserLogin} from /*redux/auth/auth-selectors*/
 
+ // const isLogin = useSelector(selectIsUserLogin);
   const onLogout =() =>{
     dispatch(logout())
   }
@@ -28,9 +33,11 @@ export default function Profile() {
       try {
         await dispatch(getCurrentUserDataTh(userToken));
     //    console.log(currentUserData, 'currentUserData');
-
+        // Обновляем состояние после получения данных
+        // handleProfileUpdate(currentUserData);
       } catch (error) {
         console.error('Ошибка при получении данных пользователя:', error);
+        // Добавьте обработку ошибки, например, отображение сообщения об ошибке или перенаправление на страницу входа
       }
     };
 
@@ -38,17 +45,16 @@ export default function Profile() {
    
 },[dispatch, userToken]);
 
-  
+  // Показывать заглушку или другой контент, если данных нет
   if (!state) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div>
-      <p>profile</p>
+    <div className={css.container}>
       <TitlePage children={'Profile Settings'} />
       <UserProfile name={state?.name} avatar={state?.avatarURL} userToken = {userToken}/>
-      <div >
+      <div className={css.wrapper}>
         <Daily
           color="#E6533C"
           iconId={'icon-fork-filled'}
@@ -61,13 +67,9 @@ export default function Profile() {
           text={'Daily physical activity'}
           value={'110 min'}
         />
-     <div>
-      <svg>
-
-      </svg>
-      <p>We understand that each individual is unique, so the entire approach to diet is relative and tailored to your unique body and goals.</p>
-     </div>
+    
       </div> 
+     <ExclamationMark/>
       <LogOutBtn onLogout={onLogout} />
       <UserForm
       userToken = {userToken}

@@ -30,6 +30,8 @@ const profileSlice = createSlice({
     builder
       .addCase(getCurrentUserDataTh.pending, (state, { payload }) => state)
       .addCase(getCurrentUserDataTh.fulfilled, (state, { payload }) => {
+        if (payload) {
+        console.log(payload, "payload")
         state.name = payload.name;
         state.email = payload.email;
         state.height = payload.height;
@@ -40,7 +42,7 @@ const profileSlice = createSlice({
         state.sex = payload.sex;
         state.levelActivity = payload.levelActivity;
         state.avatarURL = payload.avatarURL;
-        state.bmr = payload.bmr;
+        state.bmr = payload.bmr;}
       })
       .addCase(getCurrentUserDataTh.rejected, (state, { payload }) => state)
       .addCase(updateProfileParamsTh.fulfilled, (state, { payload }) => {
