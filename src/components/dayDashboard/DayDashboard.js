@@ -1,51 +1,88 @@
 
 import React from 'react';
-//import { useSelector } from 'react-redux';
+/*import { useSelector } from 'react-redux';*/
 import css from './DayDashboard.module.css';
 import StatisticsItem from './StatisticsItem/StatisticsItem';
+/*import { useDispatch } from "react-redux";
+
+
+import { useEffect } from 'react';
+
+import { fetchAllDiary } from "../../redux/diary/diaryOperations";*/
+
+
 
 
 
 const DayDashboard = () => {
+/*const dispatch = useDispatch();
+  const {
+    dailyCalorieIntake,
+    caloriesConsumed,
+    caloriesRemaining,
+    dailyPhysicalActivity,
+    caloriesBurned,
+    sportsRemaining,
+  } = useSelector(state => state.stats.dailyStatistics);
+
+  
+   useEffect(() => {
+    dispatch((fetchAllDiary()));
+  }, [dispatch]);
+*/
+
+    /*const isCaloriesRemaining =
+    caloriesConsumed < dailyCalorieIntake ? `positive` : `negative`;
+  const isSportsRemaining =
+    sportsRemaining > 0 ? `positive` : `negative`;*/
+
+  
+ 
+
 
   return (
     <div className={css.dayDashboard}>
       <ul className={css.statisticList}>
         <StatisticsItem
           statisticsName={'Daily calorie intake'}
-                  /*statisticsValue={`${}`}*/
+          /*statisticsValue={`${dailyCalorieIntake}`}*/
             statisticsIcon={'icon-fork-filled'}
           statisticPrimary
         />
         <StatisticsItem
           statisticsName={'Daily physical activity'}
-        /*statisticsValue={`${} min`}*/
+          /*statisticsValue={`${dailyPhysicalActivity} min`}*/
             statisticsIcon={'icon-dumbbell-filled'}
 
           statisticPrimary
         />
         <StatisticsItem
           statisticsName={'Сalories consumed'}
-                  /*statisticsValue={`${}`}*/
+          /*statisticsValue={`${caloriesConsumed}`}*/
                 statisticsIcon={'icon-apple-filled'}
 
         />
         <StatisticsItem
           statisticsName={'Сalories burned'}
-                  /*statisticsValue={`${}`}*/
+          /*statisticsValue={`${caloriesBurned}`}*/
                               statisticsIcon={'icon-burn-filled'}
 
         />
         <StatisticsItem
           statisticsName={'Calories remaining'}
-                  /*statisticsValue={`${}`}*/
-            statisticsIcon={'icon-bubble-filled'}
+         /* statisticsValue={`${caloriesRemaining}`}*/
+          statisticsIcon={'icon-bubble-filled'}
+                    /*fulfilledNorm={isCaloriesRemaining}*/
+
 
         />
         <StatisticsItem
           statisticsName={'Sports remaining'}
-          /*statisticsValue={} */ 
-        statisticsIcon={'icon-running-filled'}
+ /*statisticsValue={
+            isSportsRemaining === 'positive'
+              ? `+${sportsRemaining} min`
+              : `${sportsRemaining} min`
+          }   */     statisticsIcon={'icon-running-filled'}
 
         />
       </ul>

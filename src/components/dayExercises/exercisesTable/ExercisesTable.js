@@ -2,12 +2,26 @@ import css from './ExercisesTable.module.css';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import sprite from '../../../img/sprite/symbol-defs.svg';
+import { useDispatch } from 'react-redux';
 
-const ExercisesTable = (props) => {
-    const { exercises } = props;
-    const capitalizedWord = (word) => {
+import { deleteExercisesDiary } from '../../../redux/diary/diaryOperations';
+
+const ExercisesTable = ({exercises}) => {
+    /*const { exercises } = props;*/
+    
+  
+  const capitalizedWord = (word) => {
   return word.substring(0, 1).toUpperCase() + word.substring(1);
-};
+  };
+  
+  const dispatch = useDispatch();
+
+
+  const deleteExercise = (_id) => {
+    dispatch(deleteExercisesDiary(_id));
+  }
+
+
     return (
          <>
       <ul className={css.diaryMainList}>
@@ -50,7 +64,7 @@ const ExercisesTable = (props) => {
                     <th className={`${css.nameCategory} ${css.nameTrash}`}>
                       Trash
                     </th>
-                    <td> 
+                    <td onClick={() => deleteExercise(_id)}> 
                       <svg className={css.iconTresh} width="98px" height="35px">
                         <use href={`${sprite}#icon-trash`}></use>
                       </svg>

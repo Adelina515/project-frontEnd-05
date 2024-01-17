@@ -3,9 +3,22 @@ import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import sprite from '../../../img/sprite/symbol-defs.svg';
 
+import { deleteProductDiary } from '../../../redux/diary/diaryOperations';
 
-const ProductsTable = (props) => {
-      const { products } = props; // Отримуємо products з props
+
+
+import { useDispatch } from 'react-redux';
+
+
+
+const ProductsTable = ( { products }) => {
+  /* const { products } = props; */
+  
+  const dispatch = useDispatch();
+
+  const deleteProduct = (_id) => {
+    dispatch(deleteProductDiary(_id))
+  }
 
     const capitalizedWord = (word) => {
   return word.substring(0, 1).toUpperCase() + word.substring(1);
@@ -13,7 +26,7 @@ const ProductsTable = (props) => {
     return (
        <ul className={css.diaryList}>
       {products.map(
-        ({ _id, title, category, calories, amount, recommended }, i) => {
+        ({ _id, title, category, calories, amount, recommended }) => {
           return (
             <li key={nanoid()} className={css.diaryItem}>
               <table className={css.table}>
@@ -57,7 +70,7 @@ const ProductsTable = (props) => {
                     <th className={`${css.nameCateg} ${css.nameTrash}`}>
                       Trash
                     </th>
-                    <td> 
+                    <td onClick={() => deleteProduct(_id)}> 
                       <svg className={css.iconTresh} width="98px" height="35px">
                         <use href={`${sprite}#icon-trash`}></use>
                       </svg>
