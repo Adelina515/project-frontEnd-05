@@ -1,0 +1,70 @@
+.body {
+  display: flex;
+  align-items: center;
+}
+
+.dateButton {
+  width: 129px;
+  height: 32px;
+  color: #EFEDE8;
+  font-weight: 700;
+  line-height: 32px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.calendarIconBody {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border:2px solid #EF8964;
+  border-radius: 4px;
+  top: 2px;
+  position: relative;
+  margin-left: 15px;
+}
+
+.calendarIconLine {
+  background: #EF8964;
+  width: 16px;
+  height: 2px;
+  position: absolute;
+  top: 5px;
+  text-align: center;
+}
+
+.calendarIconLine span {
+  display: inline-block;
+  width: 2px;
+  height: 5px;
+  background: #EF8964;
+  transform: translate(-3px, -19px);
+  box-sizing: border-box;
+  margin-left: 4px;
+}
+
+.arrowsBody {
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-items: center;
+}
+
+.arrowsBody span {
+  margin-left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #EFEDE8;
+  border-left: 3px solid #EFEDE8;
+  cursor: pointer;
+}
+
+.arrowsLeft {
+  transform: rotate(315deg);
+}
+
+.arrowsRight {
+  transform: rotate(135deg);
+}
+
