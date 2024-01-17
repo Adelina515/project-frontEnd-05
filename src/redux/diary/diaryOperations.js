@@ -68,7 +68,7 @@ export const deleteExercisesDiary = createAsyncThunk(
   'deleteExercisesDiary',
   async (credential, { rejectWithValue }) => {
     try {
-      const { data } = await axios.delete('/diary/exercises/', {
+      const { data } = await axios.delete('/diary/exercises/:exerciseId', {
        exerciseId: credential,
       });
       return data;
