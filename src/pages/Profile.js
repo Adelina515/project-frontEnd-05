@@ -2,31 +2,26 @@ import TitlePage from 'components/TitlePage/TitlePage';
 import { Daily } from 'components/daily/Daily';
 import { UserProfile } from 'components/userCard/UserCard';
 import { UserForm } from 'components/userForm/UserForm';
-import { useEffect } from 'react';
-import { getCurrentUserDataTh } from '../redux/UserPageCntrls/UserPageOperations';
+
 import { useDispatch, useSelector } from 'react-redux';
+import { LogOutBtn } from 'btn/logOutBtn/LogOutBtn';
+
+import { logout } from '../servises/api/auth';
+ import {selectUserToken} from '../redux/UserPageCntrls/selectors';
 
 export default function Profile() {
   const dispatch = useDispatch();
-  const state = useSelector(state => state.profile);
+  const state = useSelector(state => state.auth.user);
+   const userToken=useSelector(selectUserToken)
+   console.log(userToken, "userToken")
+  console.log(state, "state in PP")
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        await dispatch(getCurrentUserDataTh());
-    //    console.log(currentUserData, 'currentUserData');
-        // Обновляем состояние после получения данных
-        // handleProfileUpdate(currentUserData);
-      } catch (error) {
-        console.error('Ошибка при получении данных пользователя:', error);
-        // Добавьте обработку ошибки, например, отображение сообщения об ошибке или перенаправление на страницу входа
-      }
-    };
+  const onLogout =() =>{
+    dispatch(logout())
+  }
 
-    fetchData();
-  }, [dispatch]);
 
-  // Показывать заглушку или другой контент, если данных нет
+  
   if (!state) {
     return <div>Loading...</div>;
   }
@@ -35,8 +30,8 @@ export default function Profile() {
     <div>
       <p>profile</p>
       <TitlePage children={'Profile Settings'} />
-      <UserProfile name={state?.name} avatar={state?.avatarURL} />
-      <div style={{ display: 'flex', margin: 'auto', gap: '20px' }}>
+      <UserProfile name={state?.name} avatar={state?.avatarURL} userToken = {userToken}/>
+      <div >
         <Daily
           color="#E6533C"
           iconId={'icon-fork-filled'}
@@ -49,8 +44,16 @@ export default function Profile() {
           text={'Daily physical activity'}
           value={'110 min'}
         />
-      </div>
+     <div>
+      <svg>
+
+      </svg>
+      <p>We understand that each individual is unique, so the entire approach to diet is relative and tailored to your unique body and goals.</p>
+     </div>
+      </div> 
+      <LogOutBtn onLogout={onLogout} />
       <UserForm
+      userToken = {userToken}
         name={state.name}
         height={state.height}
         currentWeight={state.currentWeight}

@@ -5,14 +5,15 @@ import ExercisesTable from "./exercisesTable/ExercisesTable";
 import EmList from '../emList/EmList.jsx';
 
 import sprite from '../../img/sprite/symbol-defs.svg';
-//import { selectDiaryExercises } from '../../redux/diary/diarySelectors';
+import { selectDiaryExercises } from '../../redux/diary/diarySelectors';
+import { useSelector } from "react-redux";
 
 
 
 const DayExercises = () => {
-  //  const diaryExercises = useSelector(selectDiaryProducts);
+   const exercisesInDiary = useSelector(selectDiaryExercises);
 
-const diaryExercises = [
+/*const diaryExercises = [
   {
     _id: 1,
     bodyPart: 'legs',
@@ -22,7 +23,7 @@ const diaryExercises = [
     calories: 200,
     time: '15 minutes'
   },
-];
+];*/
   return (
     <>
       <div className= {css.DayExercises}>
@@ -36,10 +37,10 @@ const diaryExercises = [
             </svg>
           </Link>
           </div>
- {diaryExercises.length === 0 ? (
+ {exercisesInDiary.length === 0 ? (
             <EmList itemName={"exercises"} />
           ) : (
-            <ExercisesTable exercises={diaryExercises} />
+            <ExercisesTable exercises={exercisesInDiary} />
           )}        </div>
       </div>
     </>

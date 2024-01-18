@@ -9,6 +9,7 @@ export const signup = async credentials => {
 export const signin = async credentials => {
   const { data } = await instance.post('/api/auth/login', credentials);
   setToken(data.token);
+  console.log(data, "data in API sign in")
   return data;
 };
 export const logout = async () => {
@@ -25,4 +26,4 @@ export const getCurrentUser = async token => {
     clearToken();
     throw new Error(error.message);
   }
-};
+

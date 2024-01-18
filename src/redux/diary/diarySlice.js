@@ -3,10 +3,14 @@ import { addExercisesDiary, addProductDiary, deleteExercisesDiary, deleteProduct
 import { handleFulfilledAddExercises, handleFulfilledAddProduct, handleFulfilledAllDiary, handleFulfilledDeleteExercises, handleFulfilledDeleteProduct, handlePending, handleRejected } from './diaryReducers';
 
 const initialState = {
-    diaryProducts: [],
-    diaryExercises: [],
+    productsInDiary: [],
+    exercisesInDiary: [],
+    burnedCaloriesByDate: 0,
+    consumedCaloriesByDate: 0,
+    sportsRemaining: 0,
     isLoading: false,
-    error: null
+    error: null,
+
 };
 
 const diarySlice = createSlice({

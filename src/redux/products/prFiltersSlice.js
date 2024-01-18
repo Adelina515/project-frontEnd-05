@@ -13,15 +13,6 @@ const filterSlice = createSlice({
     interFilter(state, action) {
       return (state = action.payload);
     },
-    // typeQuery(state, action) {
-    //   return (state = { ...state, searchQuery: action.payload });
-    // },
-    // pickCategory(state, action) {
-    //   return (state = { ...state, category: action.payload });
-    // },
-    // pickAllowed(state, action) {
-    //   return (state = { ...state, allowed: action.payload });
-    // },
   },
 });
 
