@@ -7,7 +7,7 @@ const WelcomePage = () => {
     <div className={css.heroContainer}>
       <div className={css.leftSide}>
         <div className={css.contentWrapper}>
-          <div>
+          
           <h1 className={css.mainTitle}>
             Transforming your body shape with Power Pulse
           </h1>
@@ -15,7 +15,7 @@ const WelcomePage = () => {
           <svg className={css.iconLoop} width="98px" height="35px">
             <use href={`${sprite}#icon-loop`}></use>
           </svg>
-          </div>
+          
 
         <div className={css.btnList}>
           <NavLink to="/signup" className={css.btnSignUp}>
