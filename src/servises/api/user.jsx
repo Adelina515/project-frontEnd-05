@@ -1,5 +1,5 @@
 import instance from '../../instance/instance';
-import { setToken, clearToken } from '../../instance/instance';
+import { setToken } from '../../instance/instance';
 import { getCurrentUser } from '../api/auth';
 
 export const updateProfileAvatar = async ({ avatar, userToken }) => {

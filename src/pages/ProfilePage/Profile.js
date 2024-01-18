@@ -2,14 +2,13 @@ import TitlePage from 'components/TitlePage/TitlePage';
 import { Daily } from 'components/daily/Daily';
 import { UserProfile } from 'components/userCard/UserCard';
 import { UserForm } from 'components/userForm/UserForm';
-import { useEffect } from 'react';
-import { getCurrentUserDataTh } from '../../redux/UserPageCntrls/UserPageOperations';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { LogOutBtn } from 'btn/logOutBtn/LogOutBtn';
 // import { selectIsUserLogin } from '../redux/auth/auth-selectors';
 import { logout } from '../../servises/api/auth';
 import {selectUserToken} from '../../redux/UserPageCntrls/selectors';
-import { setToken } from '../../redux/UserPageCntrls/UserPageApi';
+
 import css from './ProfilePage.module.css'
 import { ExclamationMark } from 'components/exclamation/Exclamation';
 

@@ -4,7 +4,7 @@ import { authReducer } from './auth/auth-slice';
 import storage from 'redux-persist/lib/storage';
 import { persistStore, persistReducer } from 'redux-persist';
 
-import { profileReducer } from './UserPageCntrls/UserPageCntrls';
+
 import { productReducer } from './products/productsReducer';
 
 const placeholderReducer = (state = {}, action) => {
