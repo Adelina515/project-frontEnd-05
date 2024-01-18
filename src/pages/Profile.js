@@ -5,7 +5,7 @@ import { UserForm } from 'components/userForm/UserForm';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { LogOutBtn } from 'btn/logOutBtn/LogOutBtn';
-import { setToken } from 'instance/instance';
+
 import { logout } from '../servises/api/auth';
  import {selectUserToken} from '../redux/UserPageCntrls/selectors';
 
