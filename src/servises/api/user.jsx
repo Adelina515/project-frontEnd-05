@@ -12,7 +12,7 @@ export const updateProfileAvatar = async ({ avatar, userToken }) => {
     const formData = new FormData();
     formData.append('avatar', avatar);
 
-    const res = await instance.patch('auth/avatars', formData, {
+    const res = await instance.patch('/api/auth/avatars', formData, {
       headers: { 'content-type': 'multipart/form-data' },
     });
 
@@ -61,7 +61,7 @@ export const updateProfileParams = async ({ newParams, userToken }) => {
     // Если есть изменения, отправляем PATCH-запрос
     if (Object.keys(changes).length > 0) {
       //  console.log('changes>0');
-      const response = await instance.patch('auth/params', newParams);
+      const response = await instance.patch('/api/auth/params', newParams);
       return response.data;
     } else {
       console.log('Нет изменений в параметрах профиля.');
