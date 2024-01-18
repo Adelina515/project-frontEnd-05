@@ -26,7 +26,7 @@ const ExercisesTable = ({exercises}) => {
          <>
       <ul className={css.diaryMainList}>
         {exercises.map(
-          ({ _id, bodyPart, equipment, name, target, calories, time }) => (
+          ({ _id, bodyPart, equipment, name, target, burnedCalories, time }) => (
             <li key={nanoid()} className={css.diaryMainItem}>
               <table className={css.table}>
                 <tbody className={css.bodyTable}>
@@ -54,7 +54,7 @@ const ExercisesTable = ({exercises}) => {
                   </tr>
                   <tr className={css.element}>
                     <th className={css.nameCategory}>Burned Calories</th>
-                    <td className={css.nameValue}>{calories}</td>
+                    <td className={css.nameValue}>{burnedCalories}</td>
                   </tr>
                   <tr className={css.element}>
                     <th className={css.nameCategory}>Time</th>

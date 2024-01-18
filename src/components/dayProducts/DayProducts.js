@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import EmList from '../emList/EmList.jsx';
 
 const DayProducts = () => {
-   const diaryProducts = useSelector(selectDiaryProducts);
+   const productsInDiary = useSelector(selectDiaryProducts);
       /*const diaryProducts = [
     {
       _id: '1',
@@ -30,10 +30,10 @@ const DayProducts = () => {
             </svg>
           </Link>
           </div>
-          {diaryProducts.length === 0 ? (
+          {productsInDiary.length === 0 ? (
           <EmList itemName={"products"} />
         ) : (
-            <ProductsTable products={diaryProducts} />
+            <ProductsTable products={productsInDiary} />
         )}
             
             </div>
