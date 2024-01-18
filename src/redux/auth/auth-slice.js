@@ -8,6 +8,7 @@ const initialState = {
   token: '',
   loading: false,
   isLogin: false,
+  isRefreshing:false,
   error: null,
 };
 const authSlice = createSlice({
@@ -60,16 +61,19 @@ const authSlice = createSlice({
       .addCase(current.pending, state => {
         state.loading = false;
         state.error = null;
+        state.isRefreshing=true;
       })
       .addCase(current.fulfilled, (state, { payload }) => {
         state.user = payload.user;
         state.token = payload.token;
         state.isLogin = true;
+        state.isRefreshing = false;
         
       })
       .addCase(current.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
+        state.isRefreshing = false;
       });
   },
 });
