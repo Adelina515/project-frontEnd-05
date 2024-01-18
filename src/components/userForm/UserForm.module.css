@@ -2,16 +2,21 @@
 @import "../../index.css"; 
 
 .formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
 }
 
 @media screen and (min-width: 768px) {
   .formContainer {
+    margin: auto;
     margin-top: 40px;
-    display: flex;
+flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
     width: 700px;
+   
   }
 }
 
@@ -26,7 +31,22 @@
   }
 }
 
+.wrInput{
+  position: relative;
+  label {
+    color: var(--calendar-weekdays-color);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+  position: absolute;
+  top: -10px;
+ left: 4px;
+    display: flex;
+  }
+}
 .input {
+ 
   width: 335px;
   padding: 14px;
   margin-bottom: 14px;
@@ -43,15 +63,26 @@
   }
 }
 
+
 .wrapperInputField {
   display: inline-flex;
   align-items: flex-end;
   margin-top: 20px;
   gap: 14px;
+  
 }
+.wrapperFields{
+  display: flex;
+justify-content: center;
+  flex-wrap: wrap;
 
+column-gap: 14px;
+
+
+}
+/* 
 .wrapper {
-  margin-right: 14px;}
+  margin-right: 14px;} */
 
   @media screen and (min-width: 768px) {
     .wrapper {  margin-right: 14px;
@@ -60,8 +91,9 @@
 
 .inputField {
   width: 165px;
-  padding: 14px 0;
-  display: inline-flex; /* добавлено */
+  /* padding: 14px 0; */
+  padding: 14px;
+  /* display: inline-flex; добавлено */
   align-items: center; /* добавлено */
   gap: 10px;
   border-radius: 12px;
@@ -69,6 +101,7 @@
   background-color: transparent;
   color: var(--calendar-weekdays-color);
 }
+
 
 .label {
   color: var(--calendar-weekdays-color);
@@ -90,14 +123,21 @@
   pointer-events: none;
   transition: top 0.2s ease 0s, left 0.2s ease 0s, transform 0.2s ease 0s;
   color: var(--normal-color); */
+
+  .forRadio{
+    display: flex;
+  margin-right: 20px;
+  }
 .wrapperRadio {
   margin-top: 30px;
   display: flex;
-  flex-wrap: wrap;}
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 
-  @media screen and (min-width: 1440px) {
-    .wrapperRadio {  display: block;
-  }
+  /* @media screen and (min-width: 1440px) {
+   
 
   .radio {
     position: relative;
@@ -171,7 +211,7 @@
   .radioInput:checked + .radioLabel::after {
     opacity: 1;
   }
-}
+} */
 
 .button {
   margin: 40px 0px 80px 20px;
@@ -204,15 +244,15 @@
   margin-top: 40px;
 
   label {
-    position: absolute;
-   
     color: var(--calendar-weekdays-color);
-  
+    font-family: Roboto;
     font-size: 14px;
-    bottom: 50px;
-   
-    width: 100%;
-    color: var(--calendar-weekdays-color);
+    font-style: normal;
+    font-weight: 400;
+  position: absolute;
+  top: -10px;
+ left: 4px;
     display: flex;
   }
+  
 }

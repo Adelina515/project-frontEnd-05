@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'; ///useSelector
 import { Formik, Field, Form } from 'formik'; /// ErrorMessage
 import * as Yup from 'yup';
 import { updateProfileParamsTh } from '../../redux/UserPageCntrls/UserPageOperations';
-
+import toast from 'react-hot-toast';
 import { RadioButton } from 'components/radioButton/RadioButton';
 import css from './UserForm.module.css';
 
@@ -17,6 +17,7 @@ export const UserForm = ({
   sex,
   levelActivity,
   email,
+  userToken
 }) => {
   const dispatch = useDispatch();
 
@@ -61,12 +62,26 @@ export const UserForm = ({
     },
   ];
 
-  const handleSubmit = values => {
-    const sendData = {
-      ...values,
-    };
-   // console.log(sendData);
-    dispatch(updateProfileParamsTh(sendData)); ////////////////////////////////
+  const handleSubmit = async (values) => {
+    try {
+      const newParams = {
+        ...values,
+      };
+
+      // Dispatch the updateProfileParamsTh action
+      await dispatch(updateProfileParamsTh({ newParams, userToken }));
+
+      // Show success notification
+      toast.success('Profile updated successfully!', {
+        duration: 3000,
+      });
+    } catch (error) {
+      // Show error notification
+      toast.error('Error updating profile. Please try again.', {
+        duration: 3000,
+      });
+      console.error('Error updating profile:', error);
+    }
   };
 
   if (!name) {
@@ -109,8 +124,8 @@ export const UserForm = ({
       {formik => (
         <Form>
           <div className={css.formContainer}>
-            <div>
-              <p className={css.sectionTitle}>Basic info</p>
+            <div className={css.wrInput}>
+          
               <input
                 name="name"
                 type="text"
@@ -118,9 +133,11 @@ export const UserForm = ({
                 defaultValue={name}
                 readOnly
                 disabled
-              />
+              />  
+              <label className={css.label} htmlFor="name">Name</label>
             </div>
-            <div>
+            <div className={css.wrInput}>
+           
               <input
                 type="text"
                 name="email"
@@ -128,10 +145,11 @@ export const UserForm = ({
                 className={css.input}
                 readOnly
                 disabled
-              />
+              /> 
+              <label htmlFor="email" className={css.label} >Email</label>
             </div>
           </div>
-
+<div className={css.wrapperFields}>
           <div className={css.wrapperInputField}>
             <div className={css.wrapper}>
               <div className={css.wrappInput}>
@@ -142,7 +160,7 @@ export const UserForm = ({
                   placeholder=""
                   className={css.inputField}
                 />
-                <label htmlFor="height">Height</label>
+                <label htmlFor="height" className={css.label} >Height</label>
               </div>
             </div>
             <div className={css.wrappInput}>
@@ -153,7 +171,7 @@ export const UserForm = ({
                 placeholder=""
                 className={css.inputField}
               />
-              <label htmlFor="currentWeight">Current Weight</label>
+              <label htmlFor="currentWeight"className={css.label} >Current Weight</label>
             </div>
           </div>
 
@@ -166,7 +184,7 @@ export const UserForm = ({
                 placeholder=""
                 className={css.inputField}
               />
-              <label htmlFor="desiredWeight">Desired Weight</label>
+              <label htmlFor="desiredWeight" className={css.label} >Desired Weight</label>
             </div>
             <div className={css.wrappInput}>
               <input
@@ -177,13 +195,14 @@ export const UserForm = ({
                 onChange={formik.handleChange}
                 className={css.inputField}
               />
-              <label htmlFor="birthday">Date of birthday</label>
+              <label htmlFor="birthday" className={css.label} >Date of birthday</label>
             </div>
+          </div>
           </div>
 
           <div className={css.wrapperRadio}>
-            <div style={{ display: 'flex', marginRight: '20px' }}>
-              <div style={{ display: 'flex', marginRight: '20px' }}>
+            <div  className={css.forRadio}>
+              <div className={css.forRadio}>
                 {bloodOptions.map(option => (
                   <RadioButton
                     key={option.id}

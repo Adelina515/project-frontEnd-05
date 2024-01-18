@@ -14,6 +14,14 @@ const productsSlice = createSlice({
     items: [],
     // isLoading: false,
     error: null,
+    success: false,
+  },
+  reducers: {
+    handleSuccess(state, action) {
+      console.log(state.success);
+      console.log(action.payload);
+      state.success = action.payload;
+    },
   },
   extraReducers: builder =>
     builder
@@ -25,5 +33,5 @@ const productsSlice = createSlice({
         state.items = action.payload.result;
       }),
 });
-
+export const { handleSuccess } = productsSlice.actions;
 export const productsReducer = productsSlice.reducer;

@@ -31,6 +31,7 @@
     max-width: 1440px;
   }
   .productsPage {
+    height: 85vh;
     background-image: linear-gradient(
         89deg,
         #040404 1.1%,

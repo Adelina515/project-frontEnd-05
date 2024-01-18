@@ -3,6 +3,7 @@ import { register } from './auth-operations';
 import { login } from './auth-operations';
 import { logout } from './auth-operations';
 import { current } from './auth-operations';
+import { updateProfileAvatarTh, updateProfileParamsTh } from '../../redux/UserPageCntrls/UserPageOperations.jsx';
 const initialState = {
   user: {},
   token: '',
@@ -64,7 +65,7 @@ const authSlice = createSlice({
         state.isRefreshing=true;
       })
       .addCase(current.fulfilled, (state, { payload }) => {
-        state.user = payload.user;
+        state.user = {...payload};
         state.token = payload.token;
         state.isLogin = true;
         state.isRefreshing = false;
@@ -73,8 +74,39 @@ const authSlice = createSlice({
       .addCase(current.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
+
         state.isRefreshing = false;
       });
+
+      })
+      .addCase(updateProfileParamsTh.pending, state => {
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(updateProfileParamsTh.fulfilled, (state, { payload }) => {
+        state.user = payload.user;
+        state.token = payload.token;
+        state.isLogin = true;
+        
+      })
+      .addCase(updateProfileParamsTh.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+      .addCase(updateProfileAvatarTh.pending, state => {
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(updateProfileAvatarTh.fulfilled, (state, { payload }) => {
+        state.user.avatarURL = payload.user.avatarURL;
+        state.token = payload.token;
+        state.isLogin = true;   
+      })
+      .addCase(updateProfileAvatarTh.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+
   },
 });
 export const authReducer = authSlice.reducer;
