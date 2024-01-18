@@ -5,11 +5,18 @@ import { diaryReducer } from './diary/diarySlice';
 import { authReducer } from './auth/auth-slice';
 
 import storage from 'redux-persist/lib/storage';
-import { persistStore, persistReducer } from 'redux-persist';
-
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
 
 import { productReducer } from './products/productsReducer';
-
 
 const placeholderReducer = (state = {}, action) => {
   // Placeholder reducer that simply returns the current state
@@ -31,8 +38,14 @@ export const store = configureStore({
 
     auth: persistedReducer,
     products: productReducer,
-
   },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+  devTools: process.env.NODE_ENV === 'development',
 });
 
 export const persistor = persistStore(store);
