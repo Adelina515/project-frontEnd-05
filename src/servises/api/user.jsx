@@ -4,7 +4,7 @@ import { getCurrentUser } from '../api/auth';
 
 export const updateProfileAvatar = async ({ avatar, userToken }) => {
   console.log(avatar, 'newParams');
- // console.log(userToken, 'userToken in Avatar');
+  // console.log(userToken, 'userToken in Avatar');
 
   try {
     setToken(userToken);
@@ -28,9 +28,9 @@ export const updateProfileParams = async ({ newParams, userToken }) => {
   // console.log(newParams, 'newParams');
   try {
     setToken(userToken);
-   // console.log(userToken, 'userToken in UpdateProfile');
-   // console.log(newParams, 'newParams in UpdateProfile');
-    const currentUserParams = await getCurrentUser( userToken );
+    // console.log(userToken, 'userToken in UpdateProfile');
+    // console.log(newParams, 'newParams in UpdateProfile');
+    const currentUserParams = await getCurrentUser(userToken);
 
     const changes = {};
 

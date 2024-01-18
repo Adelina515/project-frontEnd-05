@@ -16,12 +16,13 @@ import { fetchAllDiary } from "../../redux/diary/diaryOperations";*/
 
 const DayDashboard = () => {
 /*const dispatch = useDispatch();
+const dispatch = useDispatch();
+  const { consumedCaloriesByDate, burnedCaloriesByDate, sportsRemaining } = useSelector((state) => state.diary);
   const {
     dailyCalorieIntake,
-    caloriesConsumed,
-    caloriesRemaining,
+    consumedCaloriesByDate,
     dailyPhysicalActivity,
-    caloriesBurned,
+    burnedCaloriesByDate,
     sportsRemaining,
   } = useSelector(state => state.stats.dailyStatistics);
 
@@ -30,9 +31,10 @@ const DayDashboard = () => {
     dispatch((fetchAllDiary()));
   }, [dispatch]);
 */
+  /*const caloriesRemaining = dailyCalorieIntake - consumedCaloriesByDate;*/
 
     /*const isCaloriesRemaining =
-    caloriesConsumed < dailyCalorieIntake ? `positive` : `negative`;
+    consumedCaloriesByDate < dailyCalorieIntake ? `positive` : `negative`;
   const isSportsRemaining =
     sportsRemaining > 0 ? `positive` : `negative`;*/
 
@@ -58,13 +60,13 @@ const DayDashboard = () => {
         />
         <StatisticsItem
           statisticsName={'Сalories consumed'}
-          /*statisticsValue={`${caloriesConsumed}`}*/
+          /*statisticsValue={`${consumedCaloriesByDate}`}*/
                 statisticsIcon={'icon-apple-filled'}
 
         />
         <StatisticsItem
           statisticsName={'Сalories burned'}
-          /*statisticsValue={`${caloriesBurned}`}*/
+          /*statisticsValue={`${burnedCaloriesByDate}`}*/
                               statisticsIcon={'icon-burn-filled'}
 
         />

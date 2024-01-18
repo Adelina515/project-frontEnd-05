@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 
 
 const ProductsTable = ( { products }) => {
-  /* const { products } = props; */
+  /*const { products } = props;*/
   
   const dispatch = useDispatch();
 
@@ -26,7 +26,7 @@ const ProductsTable = ( { products }) => {
     return (
        <ul className={css.diaryList}>
       {products.map(
-        ({ _id, title, category, calories, amount, recommended }) => {
+        ({ _id, title, category, calories, weight, recommended }) => {
           return (
             <li key={nanoid()} className={css.diaryItem}>
               <table className={css.table}>
@@ -49,7 +49,7 @@ const ProductsTable = ( { products }) => {
                   </tr>
                   <tr className={css.elem}>
                     <th className={css.nameCateg}>Weight</th>
-                    <td className={css.nameValue}>{amount}</td>
+                    <td className={css.nameValue}>{weight}</td>
                   </tr>
                   <tr className={css.elem}>
                     <th className={css.nameCateg}>Recommend</th>
