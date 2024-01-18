@@ -1,48 +1,40 @@
 import React, { useEffect, useState } from 'react';
-// import css from './Exercises.module.css';
 import ExerciseHead from '../components/exercise/ExerciseHead';
-import axios from 'axios';
+
+import instance from 'instance/instance';
 import ExerciseCategoriesList from '../components/exercise/ExerciseCategoriesList';
-import { useLocation, useNavigate } from 'react-router-dom';
 import ExerciseList from '../components/exercise/ExerciseList';
+import ExerciseModal from 'components/exercise/Modal/ExerciseModal';
 
 function Exercises(props) {
   const [exCat, setExCat] = useState('Body parts');
   const [arr, setArr] = useState({totalPages:1, currentPage:1, result:[]});
   const [loading, setLoading] = useState(false);
+  const [selectedEx, setSelectedEx] = useState(undefined);
 
-  const navigate = useNavigate();
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const name = queryParams.get('name');
-  const filter = queryParams.get('filter');
-
-  axios.defaults.baseURL =
-    'https://power-pulse-backend.onrender.com/exercises';
-  axios.defaults.headers.common.Authorization =
-    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTUwMDhkNGY1NjdlODEyZWY0MzIxMCIsImlhdCI6MTcwNTMxMjM5NywiZXhwIjoxNzA1Mzk1MTk3fQ.-Nc_O5E8xqiFpVhDm3o_2S5ruSYTZ2WgF3O07JDfemc';
+  const [specific, setSpecific] = useState({name:undefined, filter:undefined})
+  
   useEffect(() => {
-    if (!name || !filter) {
+    if (!specific.filter || !specific.name) {
       setArr([]);
       setLoading(true);
-      axios
-        .get('?filter=' + exCat)
+      instance
+        .get('exercise?filter=' + exCat)
         .then(v => {
           setArr(v.data);
         })
         .finally(() => setLoading(false));
     }else{
         setArr([]);
-        navigate("/exercises")
     }
-  }, [setArr, exCat, filter, name, navigate]);
+  }, [setArr, exCat, specific]);
 
 
-  if (!name || !filter) {
+  if (!specific.name || !specific.filter) {
     return (
       <div>
         <ExerciseHead exCat={exCat} setExCat={setExCat} />
-        {loading ? <div>Loading...</div> : <ExerciseCategoriesList arr={arr.result} />}
+        {loading ? <div>Loading...</div> : <ExerciseCategoriesList arr={arr.result} setSpec={setSpecific}/>}
       </div>
     );
   } else {
@@ -50,7 +42,8 @@ function Exercises(props) {
     return (
       <div>
         <ExerciseHead exCat={exCat} setExCat={setExCat} />
-        <ExerciseList name={name} filter={filter}/>
+        <ExerciseList name={specific.name} filter={specific.filter} setSelected={setSelectedEx}/>
+        <ExerciseModal ex={selectedEx}/>
       </div>
     );
   }
