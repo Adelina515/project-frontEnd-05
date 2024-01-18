@@ -2,41 +2,24 @@ import TitlePage from 'components/TitlePage/TitlePage';
 import { Daily } from 'components/daily/Daily';
 import { UserProfile } from 'components/userCard/UserCard';
 import { UserForm } from 'components/userForm/UserForm';
-import { useEffect } from 'react';
-import { getCurrentUserDataTh } from '../redux/UserPageCntrls/UserPageOperations';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { LogOutBtn } from 'btn/logOutBtn/LogOutBtn';
-// import { selectIsUserLogin } from '../redux/auth/auth-selectors';
+import { setToken } from 'instance/instance';
 import { logout } from '../servises/api/auth';
-import {selectUserToken} from '../redux/UserPageCntrls/selectors';
-import { setToken } from '../redux/UserPageCntrls/UserPageApi';
+ import {selectUserToken} from '../redux/UserPageCntrls/selectors';
 
 export default function Profile() {
   const dispatch = useDispatch();
-  const state = useSelector(state => state.profile);
-  const userToken=useSelector(selectUserToken)
-  console.log(userToken, "userToken")
-  setToken(userToken);
+  const state = useSelector(state => state.auth.user);
+   const userToken=useSelector(selectUserToken)
+   console.log(userToken, "userToken")
+  console.log(state, "state in PP")
 
   const onLogout =() =>{
     dispatch(logout())
   }
 
-  useEffect(() => {
-  
-    const fetchData = async () => {
-      try {
-        await dispatch(getCurrentUserDataTh(userToken));
-    //    console.log(currentUserData, 'currentUserData');
-
-      } catch (error) {
-        console.error('Ошибка при получении данных пользователя:', error);
-      }
-    };
-
-    fetchData(userToken);
-   
-},[dispatch, userToken]);
 
   
   if (!state) {
