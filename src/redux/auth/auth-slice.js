@@ -74,10 +74,7 @@ const authSlice = createSlice({
       .addCase(current.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
-
         state.isRefreshing = false;
-      });
-
       })
       .addCase(updateProfileParamsTh.pending, state => {
         state.loading = false;
@@ -109,4 +106,5 @@ const authSlice = createSlice({
 
   },
 });
+
 export const authReducer = authSlice.reducer;
