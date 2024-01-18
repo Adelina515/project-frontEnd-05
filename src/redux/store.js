@@ -1,4 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
+
+import { diaryReducer } from './diary/diarySlice';
+
 import { authReducer } from './auth/auth-slice';
 
 import storage from 'redux-persist/lib/storage';
@@ -6,6 +9,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 
 // import { profileReducer } from './UserPageCntrls/UserPageCntrls';
 import { productReducer } from './products/productsReducer';
+
 
 const placeholderReducer = (state = {}, action) => {
   // Placeholder reducer that simply returns the current state
@@ -22,8 +26,12 @@ export const store = configureStore({
     // You can name the placeholder slice as you wish
     // profile: profileReducer,
     placeholder: placeholderReducer,
+
+    diary: diaryReducer,
+
     auth: persistedReducer,
     products: productReducer,
+
   },
 });
 
