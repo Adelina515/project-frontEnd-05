@@ -1,5 +1,6 @@
 import css from './sign-up-page.module.css';
 import { NavLink } from 'react-router-dom';
+
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import TitlePage from '../../components/TitlePage/TitlePage';
 import RemainderComponent from 'components/RemainderComponent/RemainderComponent';
