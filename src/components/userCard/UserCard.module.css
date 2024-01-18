@@ -1,0 +1,110 @@
+@import "../../index.css";
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  fill: var(--decorate-color);
+  stroke: var(--decorate-color);
+}
+
+.text {
+  color: rgba(239, 237, 232, 0.8);
+  font-family: 'Roboto';
+  font-weight: 400;
+  }
+/* styles.module.css */
+
+.wrapperPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px;}
+
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    .wrapperPage {  margin-top: 64px;
+  }
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 100px;
+  border: 1px solid var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;}
+
+  @media screen and (min-width: 768px) {
+    .avatar {  width: 150px;
+    height: 150px;
+  }
+}
+
+.photo {
+  border-radius: 100px;
+}
+
+.button {
+  cursor: pointer;
+}
+
+
+  @media screen and (min-width: 768px) {
+  .svgLogoUser {  width: 102px;
+    height: 102px;
+  }
+}
+
+.iconBtn {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: -13px;
+  left: 0px;}
+
+  @media screen and (min-width: 768px) {
+    .iconBtn {  width: 32px;
+    height: 32px;
+    top: -17.5px;
+  }
+}
+
+.titleName {
+  color: #efede8;}
+
+  @media screen and (min-width: 768px) {
+    .titleName {   font-family: 'Roboto';
+      font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.subtitle {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--input-border-color);
+  margin-top: 4px;}
+
+  @media screen and (min-width: 768px) {
+    .subtitle {  margin-top: 8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+

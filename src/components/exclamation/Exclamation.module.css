@@ -1,0 +1,35 @@
+@import "../../index.css"; 
+
+.bigWrapper { display: flex;
+    justify-content: center;}
+
+
+.wrapper{
+  display: flex;
+  gap: 8px;
+  margin-top: 40px;
+}
+  @media screen and (min-width: 768px) {
+    .wrapper{
+    width: 440px;
+  }
+  }
+
+.wrapperExcl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--input-border-color);}
+
+
+.text{
+  color: var(--input-border-color);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;}

@@ -1,0 +1,13 @@
+.errorWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 508px;
+  padding-top: 24px;
+}
+.errorText {
+  color: rgba(239, 237, 232, 0.3);
+}
+.textAccent {
+  color: #e6533c;
+}

@@ -1,10 +1,11 @@
 import sprite from '../../img/sprite/symbol-defs.svg';
+import css from './BtnMobileMenu.module.css';
 
 export const BtnMobileMenu = () => {
   return (
     <div>
-      <svg>
-        <use href={`${sprite}#icon-policy-2`} />
+      <svg className={css.burger}>
+        <use href={`${sprite}#icon-burger-menu`} />
       </svg>
     </div>
   );
