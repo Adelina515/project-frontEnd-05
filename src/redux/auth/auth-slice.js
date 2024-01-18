@@ -75,6 +75,7 @@ const authSlice = createSlice({
         state.error = payload;
         state.isRefreshing = false;
       });
-  },
-});
+    }
+  })
+
 export const authReducer = authSlice.reducer;
