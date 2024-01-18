@@ -4,7 +4,7 @@ import axios from 'axios';
 const baseURL = 'https://power-pulse-backend.onrender.com';
 
 const instance = axios.create({
-  baseURL: `${baseURL}/api/`,
+  baseURL: `${baseURL}`,
   headers: {
     'Content-Type': 'application/json',
   },

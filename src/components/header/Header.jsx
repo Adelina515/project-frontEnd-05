@@ -20,9 +20,11 @@ export const Header = () => {
           <HeaderButton Children={'Exercises'} />
         </li>
       </ul>
+      <div>
       <LogOutBtn />
       <BtnSettings />
       <BtnMobileMenu />
+      </div>
     </div>
   );
 };

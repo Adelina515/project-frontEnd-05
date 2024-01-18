@@ -8,6 +8,7 @@ import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
   persistReducer,
+
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -15,6 +16,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+
 
 import { productReducer } from './products/productsReducer';
 
@@ -37,6 +39,7 @@ export const store = configureStore({
     diary: diaryReducer,
 
     auth: persistedReducer,
+
     products: productReducer,
   },
   middleware: getDefaultMiddleware =>
@@ -47,5 +50,6 @@ export const store = configureStore({
     }),
   devTools: process.env.NODE_ENV === 'development',
 });
+
 
 export const persistor = persistStore(store);
