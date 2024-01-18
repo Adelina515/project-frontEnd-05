@@ -15,10 +15,11 @@ import { ExclamationMark } from 'components/exclamation/Exclamation';
 
 export default function Profile() {
   const dispatch = useDispatch();
-  const state = useSelector(state => state.profile);
+  const state = useSelector(state => state.auth.user);
   const userToken=useSelector(selectUserToken)
-  console.log(userToken, "userToken")
-  setToken(userToken);
+  // console.log(userToken, "userToken")
+  // console.log(state, "state in UP")
+  
 // import { useDispatch, useSelector } from 'react-redux';
  // import {selectIsUserLogin} from /*redux/auth/auth-selectors*/
 
@@ -27,23 +28,23 @@ export default function Profile() {
     dispatch(logout())
   }
 
-  useEffect(() => {
+//   useEffect(() => {
   
-    const fetchData = async () => {
-      try {
-        await dispatch(getCurrentUserDataTh(userToken));
-    //    console.log(currentUserData, 'currentUserData');
-        // Обновляем состояние после получения данных
-        // handleProfileUpdate(currentUserData);
-      } catch (error) {
-        console.error('Ошибка при получении данных пользователя:', error);
-        // Добавьте обработку ошибки, например, отображение сообщения об ошибке или перенаправление на страницу входа
-      }
-    };
+//     const fetchData = async () => {
+//       try {
+//         await dispatch(getCurrentUserDataTh(userToken));
+//     //    console.log(currentUserData, 'currentUserData');
+//         // Обновляем состояние после получения данных
+//         // handleProfileUpdate(currentUserData);
+//       } catch (error) {
+//         console.error('Ошибка при получении данных пользователя:', error);
+//         // Добавьте обработку ошибки, например, отображение сообщения об ошибке или перенаправление на страницу входа
+//       }
+//     };
 
-    fetchData(userToken);
+//     fetchData(userToken);
    
-},[dispatch, userToken]);
+// },[dispatch, userToken]);
 
   // Показывать заглушку или другой контент, если данных нет
   if (!state) {
