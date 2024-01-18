@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 
 
 const ProductsTable = ( { products }) => {
-  /* const { products } = props; */
+  /*const { products } = props;*/
   
   const dispatch = useDispatch();
 

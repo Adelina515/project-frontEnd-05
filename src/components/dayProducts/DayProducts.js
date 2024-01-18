@@ -2,13 +2,14 @@ import css from './DayProducts.module.css';
 import ProductsTable from './productsTable/ProductsTable';
 import sprite from '../../img/sprite/symbol-defs.svg';
 import { Link } from 'react-router-dom';
-//import { selectDiaryProducts } from '../../redux/diary/diarySelectors';
+import { selectDiaryProducts } from '../../redux/diary/diarySelectors';
+import { useSelector } from "react-redux";
 
 import EmList from '../emList/EmList.jsx';
 
 const DayProducts = () => {
-  //  const diaryProducts = useSelector(selectDiaryProducts);
-      const diaryProducts = [
+   const diaryProducts = useSelector(selectDiaryProducts);
+      /*const diaryProducts = [
     {
       _id: '1',
       title: 'Product 1',
@@ -16,7 +17,7 @@ const DayProducts = () => {
       calories: 100,
       amount: 200,
       recommended: true,
-    },]
+    },]*/
     return (
         <div className = {css.dayProducts}>
             <div className = {css.dayScroll}>
