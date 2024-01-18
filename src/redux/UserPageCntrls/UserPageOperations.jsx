@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
-  getCurrentUserData,
+
   updateProfileParams,
   updateProfileAvatar,
-} from './UserPageApi';
+} from '../../servises/api/user';
 
 // export const updateUserData = createAsyncThunk(
 //   'profile/params',
@@ -17,16 +17,16 @@ import {
 //   },
 // );
 
-export const getCurrentUserDataTh = createAsyncThunk(
-  'auth/current',
-  async (_, { rejectWithValue }) => {
-    try {
-      return await getCurrentUserData();
-    } catch ({ response }) {
-      rejectWithValue(response);
-    }
-  }
-);
+// export const getCurrentUserDataTh = createAsyncThunk(
+//   'auth/current',
+//   async (_, { rejectWithValue }) => {
+//     try {
+//       return await getCurrentUserData();
+//     } catch ({ response }) {
+//       rejectWithValue(response);
+//     }
+//   }
+// );
 export const updateProfileParamsTh = createAsyncThunk(
   'auth/params',
   async (credentials, { rejectWithValue }) => {
@@ -42,7 +42,7 @@ export const updateProfileAvatarTh = createAsyncThunk(
   'auth/avatars',
   async (credentials, { rejectWithValue }) => {
     try {
-      console.log(credentials, 'credentials in params');
+     // console.log(credentials, 'credentials in params');
       return await updateProfileAvatar(credentials);
     } catch ({ response }) {
       rejectWithValue(response);

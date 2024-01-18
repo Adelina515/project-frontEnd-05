@@ -1,45 +1,59 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-const baseURL = 'https://power-pulse-backend.onrender.com';
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTRkYTcxYWQ0Yjg5N2Y3ZWY5MTY4OSIsImlhdCI6MTcwNTM4OTQyNiwiZXhwIjoxNzA1NDcyMjI2fQ.an1dqHlkw_ABwvhptFskr2RYBylQNGu0FY4InOaHfrc'
+// const baseURL = 'https://power-pulse-backend.onrender.com';
+// // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTRkYTcxYWQ0Yjg5N2Y3ZWY5MTY4OSIsImlhdCI6MTcwNTM4OTQyNiwiZXhwIjoxNzA1NDcyMjI2fQ.an1dqHlkw_ABwvhptFskr2RYBylQNGu0FY4InOaHfrc'
   
-export const instance = axios.create({
-  baseURL: `${baseURL}/api/`,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+// // const selectUserToken= (state)=>state.auth.token
 
-export const setToken = token => {
-  instance.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
 
-export const clearToken = () => {
-  instance.defaults.headers.common.Authorization = '';
-};
+// export const instance = axios.create({
+//   baseURL: `${baseURL}/api/`,
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+// });
 
-export const getCurrentUserData = async () => {
-  setToken(token);
 
-  const response = await instance.get('auth/current'); // Замените 'yourEndpoint'
- // console.log(response, '-response', response.data, '-response.data');
-  return response.data; // Предполагается, что бэкенд возвращает JSON с данными пользователя
-};
+// export const setToken = token => {
+    
+//   instance.defaults.headers.common.Authorization = `Bearer ${token}`;
+// };
 
-export const updateProfileAvatar = async file => {
-  console.log(file, 'newParams');
+// export const clearToken = () => {
 
+//   instance.defaults.headers.common.Authorization = '';
+// };
+import instance from "../../instance/instance";
+import {setToken} from "../../instance/instance";
+import { getCurrentUser } from "../../servises/api/auth";
+
+// export const getCurrentUserData = async ({userToken}) => {
+
+    
+//      setToken(userToken);
+
+//   const response = await instance.get('auth/current'); 
+//   return response.data; 
+// };
+
+export const updateProfileAvatar = async ({avatar, userToken}) => {
+ //  console.log(avatar, 'newParams');
+ //  console.log(userToken, "userToken in Avatar")
+
+ 
   try {
-    setToken(token);
+  
+    setToken(userToken);
+   
 
     const formData = new FormData();
-    formData.append('avatar', file);
+    formData.append('avatar', avatar);
 
     const res = await instance.patch('auth/avatars', formData, {
       headers: { 'content-type': 'multipart/form-data' },
     });
 
-    console.log(res.data, 'res.data in update Avatar');
+  //   console.log(res.data, 'res.data in update Avatar');
     return res.data;
   } catch (error) {
     console.error('Ошибка при обновлении параметров профиля:', error);
@@ -47,17 +61,15 @@ export const updateProfileAvatar = async file => {
   }
 };
 
-export const updateProfileParams = async newParams => {
+export const updateProfileParams = async ({newParams, userToken}) => {
  // console.log(newParams, 'newParams');
   try {
-    // Устанавливаем токен для запроса
-    setToken(token);
+ 
+    setToken(userToken);
+   // console.log(userToken, "userToken in UpdateProfile")
+  //  console.log(newParams, "newParams in UpdateProfile")
+    const currentUserParams = await getCurrentUser({userToken});
 
-    // Получаем текущие данные пользователя
-    const currentUserParams = await getCurrentUserData();
-    // const currentUserParams = currentUserData.data;
-  //  console.log(currentUserParams, 'currentUserData.data');
-    // Сравниваем значения и готовим объект с изменениями
     const changes = {};
 
     if (newParams.height !== currentUserParams.height) {

@@ -17,7 +17,7 @@ const SignInPage = lazy(() => import('../pages/SignInPage/SignInPage'));
 const Diary = lazy(() => import('../pages/Diary'));
 const Products = lazy(() => import('../pages/ProductsPage/ProductsPage'));
 const Exercises = lazy(() => import('../pages/Exercises'));
-const Profile = lazy(() => import('../pages/Profile'));
+const Profile = lazy(() => import('../pages/ProfilePage/Profile'));
 
 export const App = () => {
   const dispatch = useDispatch();
