@@ -4,7 +4,7 @@ import { authReducer } from './auth/auth-slice';
 import storage from 'redux-persist/lib/storage';
 import { persistStore, persistReducer } from 'redux-persist';
 
-import { profileReducer } from './UserPageCntrls/UserPageCntrls';
+// import { profileReducer } from './UserPageCntrls/UserPageCntrls';
 import { productReducer } from './products/productsReducer';
 
 const placeholderReducer = (state = {}, action) => {
@@ -20,7 +20,7 @@ const persistedReducer = persistReducer(persistConfig, authReducer);
 export const store = configureStore({
   reducer: {
     // You can name the placeholder slice as you wish
-   // profile: profileReducer,
+    // profile: profileReducer,
     placeholder: placeholderReducer,
     auth: persistedReducer,
     products: productReducer,
