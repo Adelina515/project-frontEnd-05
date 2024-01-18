@@ -26,4 +26,5 @@ export const getCurrentUser = async token => {
     clearToken();
     throw new Error(error.message);
   }
+};
 
