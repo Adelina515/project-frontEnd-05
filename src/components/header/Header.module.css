@@ -6,12 +6,16 @@
 
 .headerWrapper {
   display: flex;
-  align-items: center;
+  position: absolute;
 }
 
 @media screen and (min-width: 1440px) {
   .btnList {
     display: flex;
     margin-left: auto;
+  }
+  .headerWrapper {
+    width: 1440px;
+    padding-left: 96px;
   }
 }

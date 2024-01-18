@@ -5,7 +5,7 @@ import AuthButton from '../../btn/AuthButton/AuthButton';
 import { signUpSchema } from '../../schemas/auth/auth-schemas';
 import { register } from '../../redux/auth/auth-operations';
 import sprite from '../../img/sprite/symbol-defs.svg';
-
+import toast from 'react-hot-toast';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
@@ -15,10 +15,20 @@ const SignUpForm = () => {
     password: '',
   };
 
-  const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
-    dispatch(register(values));
-    resetForm();
+  const handleSubmit = (values, { setSubmitting, resetForm, setError }) => {
+    try {
+      dispatch(register(values));
+      setTimeout(() => {
+        toast.success('Registration successful!', { position: 'top-right' });
+        setSubmitting(false);
+        resetForm();
+      }, 1000);
+    } catch (error) {
+      toast.error('Registration failed. Please, try again.', {
+        position: 'top-right',
+      });
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -79,7 +89,7 @@ const SignUpForm = () => {
               </div>
               <div className={css.label}>
                 <Field
-                  type="text"
+                  type="password"
                   name="password"
                   placeholder="Password"
                   className={`${css.input} ${

@@ -1,10 +1,11 @@
 import css from './sign-in-form.module.css';
 import { useDispatch } from 'react-redux';
-import { Formik, Form, Field,ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import AuthButton from '../../btn/AuthButton/AuthButton';
 import { signInSchema } from '../../schemas/auth/auth-schemas';
 import { login } from '../../redux/auth/auth-operations';
 import sprite from '../../img/sprite/symbol-defs.svg';
+import toast from 'react-hot-toast';
 
 const SignInForm = () => {
   const dispatch = useDispatch();
@@ -12,11 +13,22 @@ const SignInForm = () => {
     email: '',
     password: '',
   };
-  const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
-    dispatch(login(values));
-    resetForm();
+  const handleSubmit = (values, { resetForm,setSubmitting }) => {
+    try {
+      dispatch(login(values));
+      setTimeout(() => {
+        toast.success('Login successful!', { position: 'top-right' });
+        setSubmitting(false);
+        resetForm();
+      }, 1000);
+    } catch (error) {
+      toast.error('Login failed. Please, try again.', {
+        position: 'top-right',
+      });
+      setSubmitting(false);
+    }
   };
+
   return (
     <>
       <Formik
@@ -61,7 +73,7 @@ const SignInForm = () => {
               </div>
               <div className={css.label}>
                 <Field
-                  type="text"
+                  type="password"
                   name="password"
                   placeholder="Password"
                   className={`${css.input} ${

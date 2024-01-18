@@ -5,8 +5,7 @@ import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
   persistReducer,
-  
-} from 'redux-persist'
+ } from 'redux-persist'
 
 import { profileReducer } from './UserPageCntrls/UserPageCntrls';
 import { productReducer } from './products/productsReducer';
@@ -31,6 +30,7 @@ export const store = configureStore({
    products: productReducer,
      },
     })
+  
 
 export const persistor = persistStore(store);
 
