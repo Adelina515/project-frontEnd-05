@@ -1,16 +1,18 @@
 import { lazy } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { useDispatch,useSelector } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
-// import { selectIsUserLogin } from '../redux/auth/auth-selectors';
-// import { useSelector } from 'react-redux';
+
 import { current } from '../redux/auth/auth-operations';
 
 import { Layout } from './Layout';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
-import { selectIsUserLogin,selectUserToken } from '../redux/auth/auth-selectors';
+import {
+  selectIsUserLogin,
+  selectUserToken,
+} from '../redux/auth/auth-selectors';
 
 const Welcome = lazy(() => import('../pages/WelcomePage/WelcomePage'));
 const SignUpPage = lazy(() => import('../pages/SignUpPage/SignUpPage'));
@@ -19,6 +21,7 @@ const Diary = lazy(() => import('../pages/Diary'));
 const Products = lazy(() => import('../pages/ProductsPage/ProductsPage'));
 const Exercises = lazy(() => import('../pages/Exercises'));
 const Profile = lazy(() => import('../pages/ProfilePage/Profile'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -26,20 +29,22 @@ export const App = () => {
   const isLogin = useSelector(selectIsUserLogin);
   const token = useSelector(selectUserToken);
 
-
   useEffect(() => {
-    if(token && !isLogin){
-    dispatch(current());
+    if (token && !isLogin) {
+      dispatch(current());
     }
-  }, [dispatch,isLogin,token]);
+  }, [dispatch, isLogin, token]);
   return (
     <>
-      <Toaster />
       <BrowserRouter basename="/project-frontEnd-05">
+        <Toaster />
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Welcome />} />
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route
+              index
+              element={<RestrictedRoute component={<Welcome />} />}
+            />
+            <Route path="*" element={<NotFoundPage />} />
             <Route
               path="/signup"
               element={
