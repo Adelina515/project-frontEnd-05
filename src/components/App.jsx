@@ -3,11 +3,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
-import css from './App.module.css';
+// import css from './App.module.css';
 
 import { current } from '../redux/auth/auth-operations';
 
 import { Layout } from './Layout';
+import { Loader } from './loader/Loader';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import {
@@ -38,7 +39,10 @@ export const App = () => {
     }
   }, [dispatch, isLogin, token]);
   return isRefreshing ? (
-    <div className={css.refresh}>Refreshing user...</div>
+    <>
+      <Loader />
+      {/* <div className={css.refresh}>Refreshing user...</div> */}
+    </>
   ) : (
     <>
       <BrowserRouter basename="/project-frontEnd-05">

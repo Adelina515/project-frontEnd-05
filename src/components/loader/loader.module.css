@@ -1,47 +1,56 @@
-.loader,
-.loader:before,
-.loader:after {
-    border-radius: 50%;
-    width: 2.5em;
-    height: 2.5em;
-    animation-fill-mode: both;
-    animation: bblFadInOut 1.8s infinite ease-in-out;
+.loaderWrap {
+    padding-top: 40px;
 }
 
 .loader {
-    color: #FFF;
-    font-size: 7px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+    margin: 15px auto;
     position: relative;
-    text-indent: -9999em;
-    transform: translateZ(0);
-    animation-delay: -0.16s;
+    color: #ef8964;
+    left: -100px;
+    box-sizing: border-box;
+    animation: shadowRolling 2s linear infinite;
 }
 
-.loader:before,
-.loader:after {
-    content: '';
-    position: absolute;
-    top: 0;
-}
+@keyframes shadowRolling {
+    0% {
+        box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    }
 
-.loader:before {
-    left: -3.5em;
-    animation-delay: -0.32s;
-}
+    12% {
+        box-shadow: 100px 0 #ef8964, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    }
 
-.loader:after {
-    left: 3.5em;
-}
+    25% {
+        box-shadow: 110px 0 #ef8964, 100px 0 #ef8964, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    }
 
-@keyframes bblFadInOut {
+    36% {
+        box-shadow: 120px 0 #ef8964, 110px 0 #ef8964, 100px 0 #ef8964, 0px 0 rgba(255, 255, 255, 0);
+    }
 
-    0%,
-    80%,
+    50% {
+        box-shadow: 130px 0 #ef8964, 120px 0 #ef8964, 110px 0 #ef8964, 100px 0 #ef8964;
+    }
+
+    62% {
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 #ef8964, 120px 0 #ef8964, 110px 0 #ef8964;
+    }
+
+    75% {
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 #ef8964, 120px 0 #ef8964;
+    }
+
+    87% {
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 #ef8964;
+    }
+
     100% {
-        box-shadow: 0 2.5em 0 -1.3em
-    }
-
-    40% {
-        box-shadow: 0 2.5em 0 0
+        box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
     }
 }
+
+        /* color: #ef8964; */
