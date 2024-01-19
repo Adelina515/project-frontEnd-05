@@ -5,13 +5,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addProductDiary } from '../../redux/diary/diaryOperations';
 import { selectDiaryError } from '../../redux/diary/diarySelectors';
 import { handleSuccess } from '../../redux/products/productsSlice';
-
-export const AddProductForm = ({ data }) => {
+import toast from 'react-hot-toast';
+export const AddProductForm = ({ data, count }) => {
   const [inputCals, setInputCals] = useState(0);
   const dispatch = useDispatch();
   const addError = useSelector(selectDiaryError);
+  const diary = useSelector(state => state.diary);
+
   // const all = useSelector(state => state);
-  // console.log(all);
+  // console.log(addError);
   const { calories, title, _id } = data;
   const countCalories = (inputCals * calories) / 100;
   const handleChange = e => {
@@ -27,9 +29,13 @@ export const AddProductForm = ({ data }) => {
       grams: Number(e.target.elements.amount.value),
       calories: Math.floor(countCalories),
     };
-    console.log(addError);
+    // console.log(addError);
     dispatch(addProductDiary(add));
-    !addError && dispatch(handleSuccess(true));
+    addError
+      ? toast('Oops... Something went wrong! Try again!')
+      : dispatch(handleSuccess(true));
+    count(Math.floor(countCalories));
+    console.log(diary);
   };
   return (
     <form className={css.form} onSubmit={addToDiary}>
