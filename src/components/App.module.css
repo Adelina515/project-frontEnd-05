@@ -1,0 +1,8 @@
+.refresh {
+  padding-top: 150px;
+  text-align: center;
+  color: var(--invent-color);
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: 400;
+}
