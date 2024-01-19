@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
+import css from './App.module.css';
 
 import { current } from '../redux/auth/auth-operations';
 
@@ -12,6 +13,7 @@ import { PrivateRoute } from './PrivateRoute';
 import {
   selectIsUserLogin,
   selectUserToken,
+  selectIsRefreshing,
 } from '../redux/auth/auth-selectors';
 
 const Welcome = lazy(() => import('../pages/WelcomePage/WelcomePage'));
@@ -28,13 +30,16 @@ export const App = () => {
 
   const isLogin = useSelector(selectIsUserLogin);
   const token = useSelector(selectUserToken);
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     if (token && !isLogin) {
       dispatch(current());
     }
   }, [dispatch, isLogin, token]);
-  return (
+  return isRefreshing ? (
+    <div className={css.refresh}>Refreshing user...</div>
+  ) : (
     <>
       <BrowserRouter basename="/project-frontEnd-05">
         <Toaster />
