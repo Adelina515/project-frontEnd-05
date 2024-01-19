@@ -2,13 +2,15 @@
 .heroContainer {
   margin-left: auto;
   margin-right: auto;
+  
 }
 /*Video-Tutorial */
 /*mobile*/
 .tutorialsWrapper {
   position: absolute;
-  top: 300px;
-  left: 100px;
+  /* top: 300px;
+  left: 100px; */
+  bottom:0;
   display: flex;
   flex-direction: column;
   gap: 70px;
@@ -110,14 +112,14 @@
     padding-top: 127px;
     position: relative;
     width: 375px;
-    height: 812px;
+    /* height: 812px; */
     padding-left: 20px;
   }
 }
 .leftSide {
   width: 375px;
   height: inherit;
-  padding-left: 20px;
+ 
 }
 .contentWwrapper {
   position: relative;
@@ -212,14 +214,14 @@
     position: relative;
     padding-top: 189px;
     width: 768px;
-    height: 1024px;
+    /* height: 1024px; */
     padding-left: 32px;
   }
 
   .leftSide {
     width: 768px;
     height: inherit;
-    padding-left: 32px;
+    
   }
 
   .rightSide {
@@ -288,8 +290,10 @@
 /*Tablet video tutorial*/
 .tutorialsWrapper {
   position: absolute;
-  top: 580px;
-  left:20px;
+  /* top: 580px;
+  left:20px; */
+  bottom:0;
+ 
   display: flex;
   flex-direction: column;
   gap: 56px;
@@ -361,13 +365,13 @@
     position: relative;
     padding-top: 200px;
     width: 1440px;
-    height: 800px;
-    padding-left: 96px;
+    height: 800px; 
+     padding-left: 96px;
   }
 
   .leftSide {
     width: 1440px;
-    padding-left: 96px;
+   
     height: inherit;
   }
 
@@ -399,8 +403,8 @@
 /*Desktop video tutorial*/
 .tutorialsWrapper {
   position: absolute;
-  top: 390px;
-  left:18px;
+  bottom:-50px;
+  
   display: flex;
   flex-direction: column;
   gap: 39px;

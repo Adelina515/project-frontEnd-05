@@ -5,7 +5,10 @@ import { BtnMobileMenu } from '../../btn/BtnMobileMenu/BtnMobileMenu';
 import { HeaderButton } from '../../btn/HeaderButton/HeaderButton';
 import css from './Header.module.css';
 
+
+
 export const Header = () => {
+  
   return (
     <div className={css.headerWrapper}>
       <Logo />
@@ -20,11 +23,12 @@ export const Header = () => {
           <HeaderButton Children={'Exercises'} />
         </li>
       </ul>
-      <div>
-      <LogOutBtn />
-      <BtnSettings />
-      <BtnMobileMenu />
+      <div className={css.list}>
+        <BtnSettings />
+        <BtnMobileMenu />
+        <LogOutBtn />
       </div>
     </div>
+    
   );
 };
