@@ -1,201 +1,423 @@
 /*Mobile*/
-
-
-@media screen and (min-width: 768px) {
 .heroContainer {
-    padding-top:127px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*Video-Tutorial */
+/*mobile*/
+.tutorialsWrapper {
+  position: absolute;
+  top: 300px;
+  left: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  width: 234px;
+}
+.videoTutorial {
+  width: 146px;
+  height: 66px;
+  border-radius: 12px;
+  background-color: #303030;
+}
+.videoPlayer {
+  width: 9px;
+  height: 9px;
+}
+.playButton {
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  color: rgba(239, 237, 232, 0.65);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33; /* 133.333% */
+}
+.number {
+  color: var(--invent-color);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.13; /* 112.5% */
+}
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.videoTutorial {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}
+/*Mobile Running tutorial*/
+.runningTutorial {
+  width: 119px;
+  height: 76px;
+  border-radius: 12px;
+  background-color: var(--accent-color);
+  align-self: flex-end;
+}
+.iconWrapper {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--rare-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14px;
+  margin-left: 18px;
+  margin-bottom: 4px;
+}
+.runningMan {
+  width: 12px;
+  height: 12px;
+  fill: var(--invent-color);
+}
+.numberCal {
+  color: var(--invent-color);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1; /* 100% */
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+.textCal {
+  color: rgba(239, 237, 232, 0.65);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.33; /* 133.333% */
+}
+.textCalWrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-left: 18px;
+}
+
+
+@media screen and (min-width: 375px) {
+  .heroContainer {
+    padding-top: 127px;
     position: relative;
     width: 375px;
     height: 812px;
-    padding-left:20px;
+    padding-left: 20px;
   }
-
 }
-  .leftSide {
-    width: 375px;
-    height: inherit;
-  }
-  .contentWwrapper{
-    position: relative;
-    z-index: 10;
-  }
-  
+.leftSide {
+  width: 375px;
+  height: inherit;
+  padding-left: 20px;
+}
+.contentWwrapper {
+  position: relative;
+  z-index: 30;
+}
+
+.rightSide {
+  position: absolute;
+  left: 77px;
+  top: 200px;
+  z-index: -1;
+  width: 400px;
+  height: 571px;
+  background-image: linear-gradient(
+      170deg,
+      #040404 3.66%,
+      rgba(4, 4, 4, 0) 19.15%
+    ),
+    url('../../img/mobile-bg-img-1x.jpg');
+  background-position: right;
+  /* background-color: lightgray; */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.mainTitle {
+  width: 335px;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.05; /* 105.263% */
+  letter-spacing: 0.38px;
+  color: var(--invent-color);
+  margin-bottom: 40px;
+  display: block;
+}
+.btnList {
+  display: flex;
+  gap: 14px;
+}
+.btnSignUp {
+  padding: 12px 40px;
+  border-radius: 12px;
+  background-color: var(--decorate-color);
+  color: var(--invent-color);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.13; /* 112.5% */
+}
+.btnSignUp:hover,
+.btnSignUp:focus {
+  background-color: var(--accent-color);
+}
+.btnSignIn {
+  padding: 12px 40px;
+  border-radius: 12px;
+  background-color: transparent;
+  border: 1px solid var(--input-border-color);
+  color: var(--invent-color);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.13; /* 112.5% */
+}
+.btnSignIn:hover,
+.btnSignIn:focus {
+  border: 1px solid var(--decorate-color);
+}
+.iconLoop {
+  width: 98px;
+  height: 35px;
+  position: absolute;
+  top: 170px;
+  left: 30px;
+  z-index: -1;
+}
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
+  screen and (min-resolution: 192dpi) and (max-width: 767px),
+  screen and (min-resolution: 2dppx) and (max-width: 767px) {
   .rightSide {
-    position: absolute;
-    left: 77px;
-    top: 241px;
-    z-index: -1;
-    width: 290px;
-    height: 570px;
-    /* height: calc(812px - 241px); */
     background-image: linear-gradient(
         170deg,
         #040404 3.66%,
         rgba(4, 4, 4, 0) 19.15%
       ),
-      /* linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%), */
-        url('../../img/mobile-bg-img-1x.jpg');
-    background-position: 50%;
-    background-color: lightgray;
+      url('../../img/mobile-bg-img-2x.jpg');
+  }
+}
+/*Tablet*/
+
+@media screen and (min-width: 768px) {
+  .heroContainer {
+    position: relative;
+    padding-top: 189px;
+    width: 768px;
+    height: 1024px;
+    padding-left: 32px;
+  }
+
+  .leftSide {
+    width: 768px;
+    height: inherit;
+    padding-left: 32px;
+  }
+
+  .rightSide {
+    position: absolute;
+    left: 331px;
+
+    top: 80px;
+    width: 437px;
+
+    height: 893px;
+    background-image: linear-gradient(
+        170deg,
+        #040404 3.66%,
+        rgba(4, 4, 4, 0) 19.15%
+      ),
+      url('../../img/tablet-bg-img-1x.jpg');
+
     background-size: cover;
     background-repeat: no-repeat;
   }
-   .mainTitle {
-    width: 335px;
-    font-family: Roboto;
-    font-size: 38px;
-    font-weight: 500;
-    line-height: 1.05; /* 105.263% */
-    letter-spacing: 0.38px;
-    color: var(--invent-color);
-    margin-bottom: 40px;
-    display: block;
-  }
-  .btnList {
-    display: flex;
-    gap: 14px;
+  .mainTitle {
+    margin-bottom: 64px;
+    width: 598px;
+    font-size: 70px;
+    line-height: 1.1; /* 111.429% */
+    letter-spacing: 0.7px;
   }
   .btnSignUp {
-    padding: 12px 40px;
-    border-radius: 12px;
-    background-color: var(--decorate-color);
-    color: var(--invent-color);
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.13; /* 112.5% */
-  }
-  .btnSignUp:hover,
-  .btnSignUp:focus {
-    background-color: var(--accent-color);
+    padding: 16px 60px;
+    font-size: 20px;
+    line-height: 1.2; /* 120% */
   }
   .btnSignIn {
-    padding: 12px 40px;
-    border-radius: 12px;
-    background-color: transparent;
-    border: 1px solid var(--input-border-color);
-    color: var(--invent-color);
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.13; /* 112.5% */
+    padding: 16px 60px;
+    font-size: 20px;
+    line-height: 1.2; /* 120% */
   }
-  .btnSignIn:hover,
-  .btnSignIn:focus {
-    border: 1px solid var(--decorate-color);
+
+  .btnList {
+    gap: 20px;
   }
   .iconLoop {
-    width: 98px;
-    height: 35px;
     position: absolute;
-    top: 43px;
-    left: -8px;
+    width: 185px;
+    height: 67px;
+    /* top: 223px;
+    left: 14px; */
+    top: 280px;
+    left: 60px;
+    z-index: -10;
   }
-  
-  /*Tablet*/
-  
-  @media screen and (min-width: 768px) {
-    .heroContainer {
-      position: relative;
-      padding-top: 189px;
-      width: 768px;
-      height: 1024px;
-    }
-  
-    .leftSide {
-      width: 768px;
-      height: inherit;
-    }
-  
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 767px),
+  screen and (min-resolution: 192dpi) and (min-width: 767px),
+  screen and (min-resolution: 2dppx) and (min-width: 767px) {
+  .rightSide {
+    background-image: linear-gradient(
+        170deg,
+        #040404 3.66%,
+        rgba(4, 4, 4, 0) 19.15%
+      ),
+      url('../../img/tablet-bg-img-2x.jpg');
+  }
+  /*tablet*/
+/*Tablet video tutorial*/
+.tutorialsWrapper {
+  position: absolute;
+  top: 580px;
+  left:20px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  width:405px;
+}
+.videoTutorial {
+  width: 206px;
+  height: 96px;
+ }
+ .videoPlayer {
+  width: 10px;
+  height: 10px;
+}
+.playButton {
+  width: 40px;
+  height: 40px;
+ }
+ .text {
+  font-size: 16px;
+  line-height: 1.5; 
+}
+.number {
+  color: var(--invent-color);
+  font-size: 24px;
+  line-height: 1; 
+}
+.textWrapper {
+ gap: 8px;
+}
+.videoTutorial {
+ gap: 4px;
+  }
+  /*Tablet running tutorial*/
+  .runningTutorial {
+    width: 180px;
+    height: 110px;
+   
+  }
+  .iconWrapper {
+    width: 24px;
+    height: 24px;
+    margin-top: 14px;
+    margin-left: 28px;
+    margin-bottom: 8px;
+  }
+  .runningMan {
+    width: 16px;
+    height: 16px;
+   }
+  .numberCal {
+    font-size: 48px;
+    line-height: 1.04;
+   }
+  .textCal {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5; 
+  }
+  .textCalWrapper {
+    gap: 11px;
+    margin-left: 28px;
+  }
+}
+
+/*Desktop*/
+
+@media screen and (min-width: 1440px) {
+  .heroContainer {
+    position: relative;
+    padding-top: 200px;
+    width: 1440px;
+    height: 800px;
+    padding-left: 96px;
+  }
+
+  .leftSide {
+    width: 1440px;
+    padding-left: 96px;
+    height: inherit;
+  }
+
+  .rightSide {
+    position: absolute;
+    left: 770px;
+    top: 0;
+    width: 670px;
+    height: inherit;
+    background-image: linear-gradient(
+        80deg,
+        #040404 -2.45%,
+        rgba(4, 4, 4, 0) 68.17%
+      ),
+      url('../../img/descktop-bg-img-1x.jpg');
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .iconLoop {
+    position: absolute;
+    width: 185px;
+    height: 67px;
+    top: 286px;
+    left: 176px;
+    z-index: -10;
+  }
+    /*desktop*/
+/*Desktop video tutorial*/
+.tutorialsWrapper {
+  position: absolute;
+  top: 390px;
+  left:18px;
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+  width:638px;
+}
+
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 1440px),
+    screen and (min-resolution: 192dpi) and (min-width: 1440px),
+    screen and (min-resolution: 2dppx) and (min-width: 1440px) {
     .rightSide {
-      position: absolute;
-      left: 331px;
-      top: 131px;
-      width: 435px;
-      /* height: calc(1024px - 131px); */
-      height: 893px;
       background-image: linear-gradient(
           170deg,
           #040404 3.66%,
           rgba(4, 4, 4, 0) 19.15%
         ),
-        /* linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%), */
-          url('../../img/tablet-bg-img-1x.jpg');
-      background-position: 50%;
-      background-color: lightgray;
-      background-size: cover;
-      background-repeat: no-repeat;
+        url('../../img/descktop-bg-img-2x.jpg');
     }
-    .mainTitle {
-        margin-bottom: 64px;
-        width: 598px;
-        font-size: 70px;
-        line-height: 1.1; /* 111.429% */
-        letter-spacing: 0.7px;
-      }
-      .btnSignUp {
-        padding: 16px 60px;
-        font-size: 20px;
-        line-height: 1.2; /* 120% */
-      }
-      .btnSignIn {
-        padding: 16px 60px;
-        font-size: 20px;
-        line-height: 1.2; /* 120% */
-      }
-      
-    .btnList {
-        gap: 20px;
-      }
-      .iconLoop {
-        position: absolute;
-        width: 185px;
-        height: 67px;
-        top: 80px;
-        z-index: -10;
-      }
   }
+}
 
-  /*Desktop*/
-  
-  @media screen and (min-width: 1440px) {
-    .heroContainer {
-      position: relative;
-      padding-top:200px;
-      width: 1440px;
-      height: 800px;
-    }
-  
-    .leftSide {
-      width: 1440px;
-      height: inherit;
-    }
-  
-    .rightSide {
-      position: absolute;
-      left: 770px;
-      top: 0;
-      width: 670px;
-      height: inherit;
-      background-image: linear-gradient(
-          80deg,
-          #040404 -2.45%,
-          rgba(4, 4, 4, 0) 68.17%
-        ),
-        url('../../img/descktop-bg-img-1x.jpg');
-      background-position: 50%;
-      background-color: lightgray;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-  }
- 
-  
-  
- 
-  
-  
- 
-   
-  
- 
