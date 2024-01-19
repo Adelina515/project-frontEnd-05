@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/project-frontEnd-05/static/css/main.ef1b74bd.css",
-    "main.js": "/project-frontEnd-05/static/js/main.0c58f72e.js",
-    "static/css/172.77e189e1.chunk.css": "/project-frontEnd-05/static/css/172.77e189e1.chunk.css",
-    "static/js/172.d5c11245.chunk.js": "/project-frontEnd-05/static/js/172.d5c11245.chunk.js",
+    "main.js": "/project-frontEnd-05/static/js/main.e0cf9edc.js",
+    "static/css/172.a2393f56.chunk.css": "/project-frontEnd-05/static/css/172.a2393f56.chunk.css",
+    "static/js/172.2c350424.chunk.js": "/project-frontEnd-05/static/js/172.2c350424.chunk.js",
     "static/css/220.f5ec8201.chunk.css": "/project-frontEnd-05/static/css/220.f5ec8201.chunk.css",
     "static/js/220.54a3a7e5.chunk.js": "/project-frontEnd-05/static/js/220.54a3a7e5.chunk.js",
     "static/css/147.bbf3ceef.chunk.css": "/project-frontEnd-05/static/css/147.bbf3ceef.chunk.css",
@@ -18,16 +18,19 @@
     "static/js/700.76cf98e0.chunk.js": "/project-frontEnd-05/static/js/700.76cf98e0.chunk.js",
     "static/js/306.705637b6.chunk.js": "/project-frontEnd-05/static/js/306.705637b6.chunk.js",
     "static/js/554.36bdfff8.chunk.js": "/project-frontEnd-05/static/js/554.36bdfff8.chunk.js",
+    "static/media/descktop-bg-img-2x.jpg": "/project-frontEnd-05/static/media/descktop-bg-img-2x.c79f33fa2690da0dea11.jpg",
     "static/media/symbol-defs.svg": "/project-frontEnd-05/static/media/symbol-defs.5e183cd69699cf31dde99bb4c500a5b8.svg",
     "static/media/products-Back2x.jpg": "/project-frontEnd-05/static/media/products-Back2x.b847d70e610173f967af.jpg",
+    "static/media/tablet-bg-img-2x.jpg": "/project-frontEnd-05/static/media/tablet-bg-img-2x.dc68b41d1e88b48286f9.jpg",
     "static/media/descktop-bg-img-1x.jpg": "/project-frontEnd-05/static/media/descktop-bg-img-1x.5c8ce9a5e913d5dd4643.jpg",
+    "static/media/mobile-bg-img-2x.jpg": "/project-frontEnd-05/static/media/mobile-bg-img-2x.2349953d550cc308650d.jpg",
     "static/media/products-Back.jpg": "/project-frontEnd-05/static/media/products-Back.4451d2eb4483843c9b84.jpg",
     "static/media/tablet-bg-img-1x.jpg": "/project-frontEnd-05/static/media/tablet-bg-img-1x.0032ea16718469143043.jpg",
     "index.html": "/project-frontEnd-05/index.html",
     "main.ef1b74bd.css.map": "/project-frontEnd-05/static/css/main.ef1b74bd.css.map",
-    "main.0c58f72e.js.map": "/project-frontEnd-05/static/js/main.0c58f72e.js.map",
-    "172.77e189e1.chunk.css.map": "/project-frontEnd-05/static/css/172.77e189e1.chunk.css.map",
-    "172.d5c11245.chunk.js.map": "/project-frontEnd-05/static/js/172.d5c11245.chunk.js.map",
+    "main.e0cf9edc.js.map": "/project-frontEnd-05/static/js/main.e0cf9edc.js.map",
+    "172.a2393f56.chunk.css.map": "/project-frontEnd-05/static/css/172.a2393f56.chunk.css.map",
+    "172.2c350424.chunk.js.map": "/project-frontEnd-05/static/js/172.2c350424.chunk.js.map",
     "220.f5ec8201.chunk.css.map": "/project-frontEnd-05/static/css/220.f5ec8201.chunk.css.map",
     "220.54a3a7e5.chunk.js.map": "/project-frontEnd-05/static/js/220.54a3a7e5.chunk.js.map",
     "147.bbf3ceef.chunk.css.map": "/project-frontEnd-05/static/css/147.bbf3ceef.chunk.css.map",
@@ -45,6 +48,6 @@
   },
   "entrypoints": [
     "static/css/main.ef1b74bd.css",
-    "static/js/main.0c58f72e.js"
+    "static/js/main.e0cf9edc.js"
   ]
 }
