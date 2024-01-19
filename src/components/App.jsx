@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 // import { selectIsUserLogin } from '../redux/auth/auth-selectors';
@@ -10,6 +10,7 @@ import { current } from '../redux/auth/auth-operations';
 import { Layout } from './Layout';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { selectIsUserLogin,selectUserToken } from '../redux/auth/auth-selectors';
 
 const Welcome = lazy(() => import('../pages/WelcomePage/WelcomePage'));
 const SignUpPage = lazy(() => import('../pages/SignUpPage/SignUpPage'));
@@ -21,11 +22,16 @@ const Profile = lazy(() => import('../pages/ProfilePage/Profile'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  // const { isLogin } = useSelector(selectIsUserLogin);
+
+  const isLogin = useSelector(selectIsUserLogin);
+  const token = useSelector(selectUserToken);
+
 
   useEffect(() => {
+    if(token && !isLogin){
     dispatch(current());
-  }, [dispatch]);
+    }
+  }, [dispatch,isLogin,token]);
   return (
     <>
       <Toaster />
