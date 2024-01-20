@@ -1,22 +1,42 @@
 .headerWrapper {
   display: flex;
   align-items: center;
-  /* position: absolute; */
-  margin-left:auto;
-  margin-right:auto;
-  padding-left: 20px;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
  }
+
+.btn {
+  display: flex;
+}
+
 .btnList {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 16px;
-  
 }
+
+.btnList a {
+  text-decoration: none;
+  color: #EFEDE8;
+  font-size: 16px;
+  height: 44px;
+  border: 1px solid rgba(239, 237, 232, 0.3);
+  border-radius: 12px;
+  padding: 10px 27px 10px 27px;
+}
+
+.btnList a:focus {
+  background-color: #E6533C;
+}
+
+
 .list{
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
 }
 
 
@@ -29,5 +49,5 @@
     width: 1440px;
     padding-left: 96px;
   }
-  
+
 }
