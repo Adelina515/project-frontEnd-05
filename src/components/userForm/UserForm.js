@@ -6,6 +6,7 @@ import { updateProfileParamsTh } from '../../redux/UserPageCntrls/UserPageOperat
 import toast from 'react-hot-toast';
 import { RadioButton } from 'components/radioButton/RadioButton';
 import css from './UserForm.module.css';
+import { Calendar } from 'components/calendar/Calendar';
 
 export const UserForm = ({
   name,
@@ -126,13 +127,12 @@ export const UserForm = ({
           <div className={css.formContainer}>
             <div className={css.wrInput}>
           
-              <input
+              <Field
                 name="name"
                 type="text"
                 className={css.input}
                 defaultValue={name}
-                readOnly
-                disabled
+               
               />  
               <label className={css.label} htmlFor="name">Name</label>
             </div>
@@ -186,7 +186,7 @@ export const UserForm = ({
               />
               <label htmlFor="desiredWeight" className={css.label} >Desired Weight</label>
             </div>
-            <div className={css.wrappInput}>
+            {/* <div className={css.wrappInput}>
               <input
                 type="date"
                 name="birthday"
@@ -196,7 +196,11 @@ export const UserForm = ({
                 className={css.inputField}
               />
               <label htmlFor="birthday" className={css.label} >Date of birthday</label>
-            </div>
+            </div> */}
+            <Calendar  selectedDate={formik.values.birthday}
+              setSelectedDate={date => {
+                const formattedDate = parseISO(date.toISOString());
+                formik.setFieldValue('birthday', formattedDate)}}/>
           </div>
           </div>
 

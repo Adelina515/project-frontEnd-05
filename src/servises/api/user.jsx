@@ -45,6 +45,9 @@ export const updateProfileParams = async ({ newParams, userToken }) => {
     if (newParams.sex !== currentUserParams.sex) {
       changes.sex = newParams.sex;
     }
+    if (newParams.name !== currentUserParams.name) {
+      changes.name = newParams.name;
+    }
 
     if (newParams.levelActivity !== currentUserParams.levelActivity) {
       changes.levelActivity = newParams.levelActivity;
