@@ -1,6 +1,7 @@
 import css from './welcome-page.module.css';
 import { NavLink } from 'react-router-dom';
 import sprite from '../../img/sprite/symbol-defs.svg';
+import InfoBlock from "../../components/InfoBlock/InfoBlock";
 
 const WelcomePage = () => {
   return (
@@ -27,7 +28,8 @@ const WelcomePage = () => {
       
       
       <div className={css.rightSide}>
-         <div className={css.tutorialsWrapper}>
+        <InfoBlock />
+         {/* <div className={css.tutorialsWrapper}>
           <div className={css.videoTutorial}>
           <button type="button" className={css.playButton}>
             <svg className= {css.videoPlayer}>
@@ -54,7 +56,7 @@ const WelcomePage = () => {
             <span className={css.textCal}>cal</span>
             </div>
           </div>  
-          </div>
+          </div> */}
         </div>
       </div>  
     </div>
