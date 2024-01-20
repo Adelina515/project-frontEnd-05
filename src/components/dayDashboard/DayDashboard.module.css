@@ -91,7 +91,7 @@
     }
 
     .statisticList {
-
+flex-direction: row;
         margin-bottom: 48px;
 
         max-height: 500px;

@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    box-sizing: border-box;
 }
 .statisticItem:nth-child(2n) {
     min-width: 165px;
@@ -62,8 +63,8 @@
 @media (min-width: 768px) {
     .statisticItem {
         padding: 18px;
-        min-width: 187px;
-        min-height: 116px;
+        max-width: 187px;
+        max-height: 116px;
     }
 
     .statisticTitle {
