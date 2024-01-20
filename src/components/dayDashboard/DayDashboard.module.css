@@ -1,5 +1,8 @@
+
+
 .dayDashboard {
     margin-top: 40px;
+
 }
 
 .statisticList {
@@ -7,22 +10,21 @@
     flex-wrap: wrap;
     column-gap: 13px;
     row-gap: 20px;
+    padding-left: 0;
     margin-bottom: 20px;
+    margin-top: 0;
+        
 }
-
-
 
 .adviceWrap {
     display: flex;
     gap: 8px;
     align-items: flex-start;
-    
 }
 
 .adviceIconWrap {
     width: 24px;
     height: 24px;
-
     background-color: #efa082;
     border-radius: 50%;
 }
@@ -36,6 +38,8 @@
     color: rgba(239, 237, 232, 0.3);
     font-size: 14px;
     line-height: 1.28;
+    margin-top: 0;
+    margin-bottom: 0;
 
     max-width: 303px;
 }
@@ -48,3 +52,49 @@
         justify-content: center;
     }
 }
+
+@media (min-width: 768px) {
+    .dayDashboard {
+        max-width: 532px;
+
+        margin-top: 64px;
+
+        order: 2;
+    }
+
+    .statisticList {
+        flex-direction: column;
+        column-gap: 16px;
+        row-gap: 16px;
+
+        margin-bottom: 32px;
+
+        max-width: 532px;
+        max-height: 248px;
+    }
+
+    .adviceText {
+        max-width: 561px;
+
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 1440px) {
+    .dayDashboard {
+        order: 3;
+
+        max-width: 390px;
+
+        margin-top: 0px;
+    }
+
+    .statisticList {
+flex-direction: row;
+        margin-bottom: 48px;
+
+        max-height: 500px;
+    }
+}
+

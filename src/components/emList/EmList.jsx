@@ -1,9 +1,9 @@
-//import css from "./EmptyList.module.css";
+import css from "./EmList.module.css";
 import PropTypes from 'prop-types';
 
 const EmList = ({ itemName }) => {
   return (
-    <div>
+    <div className={css.notFoundPlugTextWrap}>
       <p>Not found {itemName}</p>
     </div>
   );

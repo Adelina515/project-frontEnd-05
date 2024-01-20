@@ -1,4 +1,4 @@
-.diaryPage {
+.diary {
     display: flex;
     flex-direction: column;
     background-color: black;
@@ -6,45 +6,46 @@
 }
 
 .calendarCont {
-    display: flex;
-    justify-content: space-between;
+display: flex;
     align-items: center;
+    justify-content: space-between;
+    /*margin-bottom: 24px;*/
     /*border: 1px solid black;*/
 }
 
 
-
-
-@media (min-width: 768px) {
-    .diaryPage {
-        position: relative;
+@media(min-width: 768px) {
+    .diary {
+    position: relative;
     }
-
     .calendar {
-        position: absolute;
-        top: -10px;
+    position: absolute;
+    top: -10px;
         right: 0px;
     }
-
-    .sectionCont {
-        margin-top: 32px;
-
+ .sectionCont {
+    /*margin-top: 32px;*/
+    
         display: flex;
         justify-content: space-between;
         flex-direction: column;
         position: relative;
+ }
 
-    }
 }
 
-@media (min-width: 1440px) {
-    .sectionCont {
-        /*margin-top: 32px;
-
-        display: flex;*/
+@media (min-width: 1440px){
+.sectionCont {
+        /*margin-top: 32px;*/
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
         gap: 32px;
     }
 }
+
+
+
+
+

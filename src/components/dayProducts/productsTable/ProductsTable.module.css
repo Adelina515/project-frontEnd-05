@@ -95,8 +95,8 @@
 
 .iconTresh {
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 13px;
+    height: 12.5px;
     fill: #a82b2b;
 
 }
@@ -113,5 +113,72 @@
 @media (max-width: 375px) {
     .elementCont .nameValue {
         width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .diaryMainItem:not(:first-child) .nameCategory {
+        display: none;
+    }
+
+    .diaryMainItem:not(:last-child) {
+        margin-bottom: 8px;
+    }
+
+    .table {
+        display: flex;
+        gap: 8px;
+    }
+
+    .element {
+        margin-bottom: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nameValue {
+        padding: 8px 14px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .elementWrap .nameValue {
+        width: 90px;
+    }
+
+    .elementWrap tr:nth-last-child(n + 3) {
+        margin-right: 8px;
+    }
+
+    .elementWrap tr:last-child {
+        margin-left: 12px;
+    }
+
+    .bodyTable {
+        display: flex;
+        gap: 8px;
+    }
+
+    .bodyTable .nameValue {
+        width: 120px;
+    }
+
+    .table .bodyTable .element:first-child .nameValue {
+        width: 205px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .diaryMainList {
+        padding-left: 16px;
+    }
+
+    .bodyTable .nameValue {
+        width: 170px;
+    }
+
+    .elementWrap .nameValue {
+        width: 105px;
     }
 }
