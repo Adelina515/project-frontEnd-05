@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
-// import css from './App.module.css';
 
 import { current } from '../redux/auth/auth-operations';
 
@@ -38,10 +37,10 @@ export const App = () => {
       dispatch(current());
     }
   }, [dispatch, isLogin, token]);
+
   return isRefreshing ? (
     <>
       <Loader />
-      {/* <div className={css.refresh}>Refreshing user...</div> */}
     </>
   ) : (
     <>
@@ -76,11 +75,9 @@ export const App = () => {
 
             <Route
               path="/profile"
-
               element={
                 <PrivateRoute redirectTo="/signin" component={<Profile />} />
               }
-
             />
             <Route
               path="/diary"

@@ -3,13 +3,16 @@ import { register } from './auth-operations';
 import { login } from './auth-operations';
 import { logout } from './auth-operations';
 import { current } from './auth-operations';
-import { updateProfileAvatarTh, updateProfileParamsTh } from '../../redux/UserPageCntrls/UserPageOperations.jsx';
+import {
+  updateProfileAvatarTh,
+  updateProfileParamsTh,
+} from '../../redux/UserPageCntrls/UserPageOperations.jsx';
 const initialState = {
   user: {},
   token: '',
   loading: false,
   isLogin: false,
-  isRefreshing:false,
+  isRefreshing: true,
   error: null,
 };
 const authSlice = createSlice({
@@ -26,11 +29,12 @@ const authSlice = createSlice({
         state.user = payload.user;
         state.token = payload.token;
         state.isLogin = true;
+        state.isRefreshing = false;
       })
       .addCase(register.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
-        })
+      })
       .addCase(login.pending, state => {
         state.loading = true;
         state.error = null;
@@ -40,6 +44,7 @@ const authSlice = createSlice({
         state.user = payload.user;
         state.token = payload.token;
         state.isLogin = true;
+        state.isRefreshing = false;
       })
       .addCase(login.rejected, (state, { payload }) => {
         state.loading = false;
@@ -53,23 +58,22 @@ const authSlice = createSlice({
         state.user = {};
         state.token = '';
         state.isLogin = false;
-       
+        state.isRefreshing = true;
       })
-      .addCase(logout.rejected, (state) => {
+      .addCase(logout.rejected, state => {
         state.loading = false;
         state.error = null;
       })
       .addCase(current.pending, state => {
         state.loading = false;
         state.error = null;
-        state.isRefreshing=true;
+        state.isRefreshing = true;
       })
       .addCase(current.fulfilled, (state, { payload }) => {
-        state.user = {...payload};
+        state.user = { ...payload };
         state.token = payload.token;
         state.isLogin = true;
         state.isRefreshing = false;
-        
       })
       .addCase(current.rejected, (state, { payload }) => {
         state.loading = false;
@@ -84,7 +88,6 @@ const authSlice = createSlice({
         state.user = payload.user;
         state.token = payload.token;
         state.isLogin = true;
-        
       })
       .addCase(updateProfileParamsTh.rejected, (state, { payload }) => {
         state.loading = false;
@@ -97,13 +100,12 @@ const authSlice = createSlice({
       .addCase(updateProfileAvatarTh.fulfilled, (state, { payload }) => {
         state.user.avatarURL = payload.user.avatarURL;
         state.token = payload.token;
-        state.isLogin = true;   
+        state.isLogin = true;
       })
       .addCase(updateProfileAvatarTh.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
-      })
-
+      });
   },
 });
 

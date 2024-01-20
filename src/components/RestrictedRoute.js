@@ -4,6 +4,5 @@ import { selectIsUserLogin } from '../redux/auth/auth-selectors';
 
 export const RestrictedRoute = ({ component: Component, redirectTo = '/' }) => {
   const isLogin = useSelector(selectIsUserLogin);
-  console.log('isLogin:', isLogin);
   return isLogin ? <Navigate to={redirectTo} /> : Component;
 };

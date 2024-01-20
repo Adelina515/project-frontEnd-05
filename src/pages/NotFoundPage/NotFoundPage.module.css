@@ -1,8 +1,42 @@
-.notfound {
-  padding-top: 150px;
-  text-align: center;
-  color: var(--invent-color);
-  font-family: Roboto;
-  font-size: 32px;
-  font-weight: 400;
+@media screen and (min-width: 1440px) {
+  .notfound {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 1440px;
+    height: 800px;
+  }
+  .wrapperText {
+    width: 669px;
+    background-color: #e6533c;
+  }
+  .wrapperPhoto {
+    position: absolute;
+    left: 770px;
+    top: 0;
+    width: 670px;
+    height: inherit;
+    background-image: linear-gradient(
+        80deg,
+        #040404 -2.45%,
+        rgba(12, 4, 4, 0) 68.17%
+      ),
+      url('../../img/descktop-bg-img-1x.jpg');
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 1440px),
+    screen and (min-resolution: 192dpi) and (min-width: 1440px),
+    screen and (min-resolution: 2dppx) and (min-width: 1440px) {
+    .wrapperPhoto {
+      background-image: linear-gradient(
+          170deg,
+          #040404 3.66%,
+          rgba(4, 4, 4, 0) 19.15%
+        ),
+        url('../../img/descktop-bg-img-2x.jpg');
+    }
+  }
 }
