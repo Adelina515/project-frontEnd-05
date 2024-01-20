@@ -34,9 +34,9 @@ export const App = () => {
   const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
-    if (token && !isLogin) {
+    // if (token && !isLogin) {
       dispatch(current());
-    }
+    // }
   }, [dispatch, isLogin, token]);
   return isRefreshing ? (
     <>
