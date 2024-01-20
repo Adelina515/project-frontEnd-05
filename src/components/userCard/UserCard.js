@@ -44,7 +44,7 @@ export const UserProfile = ({ name, avatar, userToken }) => {
   };
 
   return (
-    <div className={css.wrapperPage} style={{ backgroundColor: '#040404' }}>
+    <div className={css.wrapperPage} style={{ backgroundColor: '#040404' }} >
       <div className={css.avatar}>{avatarURL ? avatarUser : avatarStandart}</div>
       <form id="upload-form">
         <input

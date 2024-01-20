@@ -55,6 +55,8 @@ export default function Profile() {
   return (
     <div className={css.container}>
       <TitlePage children={'Profile Settings'} />
+      <div className={css.containerMini}> 
+      <div className={css.forUp} > 
       <UserProfile
         name={state?.name}
         avatar={state?.avatarURL}
@@ -75,7 +77,7 @@ export default function Profile() {
         />
       </div>
       <ExclamationMark />
-      <LogOutBtn onLogout={onLogout} />
+      <LogOutBtn onLogout={onLogout} /></div>
       <UserForm
         userToken={userToken}
         name={state.name}
@@ -88,6 +90,7 @@ export default function Profile() {
         levelActivity={state.levelActivity}
         email={state.email}
       />
+    </div>
     </div>
   );
 }
