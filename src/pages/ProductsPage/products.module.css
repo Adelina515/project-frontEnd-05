@@ -1,9 +1,3 @@
-.container {
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 100%;
-  max-width: 375px;
-}
 .wrapper {
   padding: 40px 0px 80px;
   display: flex;
@@ -15,20 +9,12 @@
     padding: 72px 0px 48px;
     gap: 32px;
   }
-  .container {
-    padding: 0 32px;
-    max-width: 100%;
-  }
 }
 @media screen and (min-width: 1440px) {
   .wrapper {
     padding: 72px 0px 81px;
     gap: 28px;
     position: relative;
-  }
-  .container {
-    padding: 0 96px;
-    max-width: 1440px;
   }
   .productsPage {
     height: 85vh;
