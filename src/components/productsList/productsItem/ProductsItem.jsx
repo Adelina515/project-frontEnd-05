@@ -7,7 +7,7 @@ import { handleSuccess } from '../../../redux/products/productsSlice';
 export const ProductsListItem = ({ data, openModal }) => {
   const dispatch = useDispatch();
 
-  const userBlood = useSelector(state => state.profile.blood);
+  const userBlood = useSelector(state => state.auth.user.blood);
   const { calories, category, title, weight, groupBloodNotAllowed } = data;
   const fixedTitle = title[0].toUpperCase() + title.slice(1).toLowerCase();
   const { ref, inView } = useInView({
@@ -28,6 +28,7 @@ export const ProductsListItem = ({ data, openModal }) => {
             </div>
             <div className={css.cardStatus}>
               <svg className={css.statusCircle}>
+                {/* <use href={`${svg}#icon-circle-green`}></use> */}
                 {groupBloodNotAllowed[userBlood] ? (
                   <use href={`${svg}#icon-circle-green`}></use>
                 ) : (
@@ -35,6 +36,7 @@ export const ProductsListItem = ({ data, openModal }) => {
                 )}
               </svg>
               <p className={css.statusText}>
+                {/* Recommended */}
                 {groupBloodNotAllowed[userBlood]
                   ? 'Recommended'
                   : 'Not recommended'}

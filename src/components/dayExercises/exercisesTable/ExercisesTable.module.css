@@ -37,7 +37,7 @@
     line-height: 1.5;
 
     overflow: hidden;
-    white-space: nowrap;
+    white-space: nowrap; 
     text-overflow: ellipsis;
 }
 
@@ -67,22 +67,26 @@
     width: auto;
 }
 
-.iconTresh {
+/*.trashImg {
     cursor: pointer;
     width: 20px;
     height: 20px;
-    fill: #a82b2b;
+    stroke: #e6533c;
 
-}
-
-.iconTresh:hover,
-.iconTresh:focus {
-    fill: #a82b2b;
-}
+    transition: all 0.3s ease;
+}*/
 
 .nameTrash {
     visibility: hidden;
+    width: 15px;
+    height: 12.5px;
 }
+
+.nameTrash:hover,
+.nameTrash:focus {
+    stroke: #a82b2b;
+}
+
 
 @media screen and (min-width: 768px) {
     .diaryMainItem:not(:first-child) .nameCategory {

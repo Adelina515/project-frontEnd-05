@@ -1,37 +1,29 @@
 
 import React from 'react';
-/*import { useSelector } from 'react-redux';*/
+import { useSelector } from 'react-redux';
 import css from './DayDashboard.module.css';
 import StatisticsItem from './StatisticsItem/StatisticsItem';
-/*import { useDispatch } from "react-redux";
+
+import { selectBurnedCaloriesByDate, selectConsumedCaloriesByDate, /*selectSportsRemaining */} from '../../redux/diary/diarySelectors';
 
 
-import { useEffect } from 'react';
+/*import {selectUserBmr } from '../';*/
 
-import { fetchAllDiary } from "../../redux/diary/diaryOperations";*/
+
 
 
 
 
 
 const DayDashboard = () => {
-/*const dispatch = useDispatch();
-const dispatch = useDispatch();
-  const { consumedCaloriesByDate, burnedCaloriesByDate, sportsRemaining } = useSelector((state) => state.diary);
-  const {
-    dailyCalorieIntake,
-    consumedCaloriesByDate,
-    dailyPhysicalActivity,
-    burnedCaloriesByDate,
-    sportsRemaining,
-  } = useSelector(state => state.stats.dailyStatistics);
-
-  
-   useEffect(() => {
-    dispatch((fetchAllDiary()));
-  }, [dispatch]);
-*/
+  const consumedCaloriesByDate = useSelector(selectConsumedCaloriesByDate);
+  const burnedCaloriesByDate = useSelector(selectBurnedCaloriesByDate);
+  /*const sportsRemaining = useSelector(selectSportsRemaining);
+  const {dailyCalorieIntake} = useSelector(selectUserBmr);*/
+ 
+ 
   /*const caloriesRemaining = dailyCalorieIntake - consumedCaloriesByDate;*/
+  const dailyPhysicalActivity = 110;
 
     /*const isCaloriesRemaining =
     consumedCaloriesByDate < dailyCalorieIntake ? `positive` : `negative`;
@@ -53,20 +45,20 @@ const dispatch = useDispatch();
         />
         <StatisticsItem
           statisticsName={'Daily physical activity'}
-          /*statisticsValue={`${dailyPhysicalActivity} min`}*/
+          statisticsValue={`${dailyPhysicalActivity} min`}
             statisticsIcon={'icon-dumbbell-filled'}
 
           statisticPrimary
         />
         <StatisticsItem
           statisticsName={'Сalories consumed'}
-          /*statisticsValue={`${consumedCaloriesByDate}`}*/
+          statisticsValue={`${consumedCaloriesByDate}`}
                 statisticsIcon={'icon-apple-filled'}
 
         />
         <StatisticsItem
           statisticsName={'Сalories burned'}
-          /*statisticsValue={`${burnedCaloriesByDate}`}*/
+          statisticsValue={`${burnedCaloriesByDate}`}
                               statisticsIcon={'icon-burn-filled'}
 
         />

@@ -9,23 +9,16 @@ import { BasicModalWindow } from '../../modal/basicModalWindow/BasicModalWindow'
 import { useSelector } from 'react-redux';
 import { AddProductSuccess } from 'components/addProductSuccess/AddProductSuccess';
 import { selectSuccess } from '../../redux/products/productsSelectors';
-import { useLocation } from 'react-router-dom';
-import formatDate from 'function/formatData';
 const ProductsPage = () => {
   const [open, setOpen] = useState(false);
   const [modal, setModal] = useState(null);
   const [calories, setCalories] = useState(0);
-  const location = useLocation();
-  const dateDiary = location.state;
-  console.log('dateDiary', dateDiary);
+  // const diary = useSelector(state=> state.diary)
+  // console.log(diary)
   const isSuccess = useSelector(selectSuccess);
-
-  const newDate = () => {
-    const rawDate = new Date();
-    const newDate = formatDate(rawDate);
-    return newDate;
-  };
-
+  // const products = useSelector(state => state.products);
+  // console.log(products);
+  // console.log('isSuccess', isSuccess);
   const handleClose = e => {
     setOpen(false);
   };
@@ -37,8 +30,6 @@ const ProductsPage = () => {
     console.log(count);
     setCalories(count);
   };
-  const date = dateDiary || newDate();
-  console.log('finalDate', date);
   return (
     <div className={css.productsPage}>
       <Container>
@@ -50,7 +41,7 @@ const ProductsPage = () => {
       </Container>
       <BasicModalWindow isOpen={open} onClose={handleClose}>
         {!isSuccess ? (
-          <AddProductForm data={modal} count={handleCalories} date={date} />
+          <AddProductForm data={modal} count={handleCalories} />
         ) : (
           <AddProductSuccess calories={calories} />
         )}

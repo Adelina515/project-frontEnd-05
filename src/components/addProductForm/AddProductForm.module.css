@@ -20,6 +20,16 @@
   background-color: transparent;
   outline: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
 .inputWrapper {
   position: relative;
   width: 100%;
@@ -36,7 +46,7 @@
   align-self: flex-start;
 }
 .btnWrapper {
-  margin-top: auto;
+  margin-top: 8px;
   display: flex;
   justify-content: space-between;
   width: 100%;

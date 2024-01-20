@@ -1,17 +1,15 @@
 import { useState } from 'react';
 import css from './AddProductForm.module.css';
-import formatDate from 'function/formatData';
+// import formatDate from 'function/formatData';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProductDiary } from '../../redux/diary/diaryOperations';
 import { selectDiaryError } from '../../redux/diary/diarySelectors';
 import { handleSuccess } from '../../redux/products/productsSlice';
-
-export const AddProductForm = ({ data }) => {
+import toast from 'react-hot-toast';
+export const AddProductForm = ({ data, count, date }) => {
   const [inputCals, setInputCals] = useState(0);
   const dispatch = useDispatch();
   const addError = useSelector(selectDiaryError);
-  // const all = useSelector(state => state);
-  // console.log(all);
   const { calories, title, _id } = data;
   const countCalories = (inputCals * calories) / 100;
   const handleChange = e => {
@@ -19,17 +17,21 @@ export const AddProductForm = ({ data }) => {
   };
   const addToDiary = e => {
     e.preventDefault();
-    const rawDate = new Date();
-    const date = formatDate(rawDate);
+    // const rawDate = new Date();
+    // const date = formatDate(rawDate);
     const add = {
       productId: _id,
       date,
       grams: Number(e.target.elements.amount.value),
       calories: Math.floor(countCalories),
     };
-    console.log(addError);
     dispatch(addProductDiary(add));
-    !addError && dispatch(handleSuccess(true));
+    addError
+      ? toast.error('Oops... Something went wrong! Try again!', {
+          position: 'top-right',
+        })
+      : dispatch(handleSuccess(true));
+    count(Math.floor(countCalories));
   };
   return (
     <form className={css.form} onSubmit={addToDiary}>

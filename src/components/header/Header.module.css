@@ -1,21 +1,33 @@
-.btnList {
-  list-style: none;
-  gap: 16px;
-  display: none;
-}
-
 .headerWrapper {
   display: flex;
-  position: absolute;
+  align-items: center;
+  /* position: absolute; */
+  margin-left:auto;
+  margin-right:auto;
+  padding-left: 20px;
+ }
+.btnList {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  
 }
+.list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
 
 @media screen and (min-width: 1440px) {
   .btnList {
     display: flex;
     margin-left: auto;
   }
-  .headerWrapper {
+  .container{
     width: 1440px;
     padding-left: 96px;
   }
+  
 }

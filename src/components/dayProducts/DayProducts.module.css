@@ -1,14 +1,14 @@
 .dayProducts {
     margin-top: 40px;
-    padding: 16px;
-
-    max-width: 335px;
-    max-height: 1064px;
-    overflow-y: hidden;
-
-    border-radius: 12px;
-    background-color: hsla(43, 18%, 92%, 0.05);
-    border: 1px solid rgba(239, 237, 232, 0.2);
+        padding: 16px 8px 16px 16px;
+    
+        max-width: 335px;
+        max-height: 1064px;
+        overflow-y: hidden;
+    
+        border-radius: 12px;
+        border: 1px solid rgba(239, 237, 232, 0.2);
+        background: rgba(239, 237, 232, 0.05);
 }
 
 .dayScroll {
@@ -48,7 +48,8 @@
 }
 
 .Butt {
-    background-color: transparent;
+    display: flex;
+        background-color: transparent;
         border: none;
         color: #e6533c;
         font-size: 14px;
@@ -57,11 +58,35 @@
         padding: 0;
         position: relative;
         text-align: start;
-        width: 101px;
+        align-items: center;
 }
 
 .iconStrilka {
-    width: 16px;
-        height: 16px;
+    width: 13px;
+        height: 13px;
         stroke: #a82b2b;
 }
+
+@media (min-width: 768px) {
+    .dayProducts {
+        max-width: 704px;
+        height: 240px;
+
+        margin-top: 0px;
+    }
+
+    .dayScroll {
+        max-height: 210px;
+    }
+
+    .diaryNav {
+        margin-bottom: 16px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .dayProducts {
+        min-width: 826px;
+    }
+}
+
