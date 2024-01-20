@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project-frontEnd-05/static/css/main.619629ee.css",
-    "main.js": "/project-frontEnd-05/static/js/main.64893935.js",
+    "main.css": "/project-frontEnd-05/static/css/main.ed839ef6.css",
+    "main.js": "/project-frontEnd-05/static/js/main.b2962863.js",
     "static/css/172.a19acee0.chunk.css": "/project-frontEnd-05/static/css/172.a19acee0.chunk.css",
     "static/js/172.2c350424.chunk.js": "/project-frontEnd-05/static/js/172.2c350424.chunk.js",
     "static/css/220.f5ec8201.chunk.css": "/project-frontEnd-05/static/css/220.f5ec8201.chunk.css",
@@ -30,8 +30,8 @@
     "static/media/tablet-bg-img-1x.jpg": "/project-frontEnd-05/static/media/tablet-bg-img-1x.0032ea16718469143043.jpg",
     "static/media/productSuccessFruit.png": "/project-frontEnd-05/static/media/productSuccessFruit.cef0af9cd428fb7948bc.png",
     "index.html": "/project-frontEnd-05/index.html",
-    "main.619629ee.css.map": "/project-frontEnd-05/static/css/main.619629ee.css.map",
-    "main.64893935.js.map": "/project-frontEnd-05/static/js/main.64893935.js.map",
+    "main.ed839ef6.css.map": "/project-frontEnd-05/static/css/main.ed839ef6.css.map",
+    "main.b2962863.js.map": "/project-frontEnd-05/static/js/main.b2962863.js.map",
     "172.a19acee0.chunk.css.map": "/project-frontEnd-05/static/css/172.a19acee0.chunk.css.map",
     "172.2c350424.chunk.js.map": "/project-frontEnd-05/static/js/172.2c350424.chunk.js.map",
     "220.f5ec8201.chunk.css.map": "/project-frontEnd-05/static/css/220.f5ec8201.chunk.css.map",
@@ -52,7 +52,7 @@
     "554.36bdfff8.chunk.js.map": "/project-frontEnd-05/static/js/554.36bdfff8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.619629ee.css",
-    "static/js/main.64893935.js"
+    "static/css/main.ed839ef6.css",
+    "static/js/main.b2962863.js"
   ]
 }
