@@ -4,122 +4,18 @@
   margin-right: auto;
   
 }
-/*Video-Tutorial */
-/*mobile*/
-.tutorialsWrapper {
-  position: absolute;
-  /* top: 300px;
-  left: 100px; */
-  bottom:0;
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
-  width: 234px;
-}
-.videoTutorial {
-  width: 146px;
-  height: 66px;
-  border-radius: 12px;
-  background-color: #303030;
-}
-.videoPlayer {
-  width: 9px;
-  height: 9px;
-}
-.playButton {
-  width: 30px;
-  height: 30px;
-  background-color: var(--accent-color);
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.text {
-  color: rgba(239, 237, 232, 0.65);
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.33; /* 133.333% */
-}
-.number {
-  color: var(--invent-color);
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.13; /* 112.5% */
-}
-.textWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.videoTutorial {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  justify-content: center;
-}
-/*Mobile Running tutorial*/
-.runningTutorial {
-  width: 119px;
-  height: 76px;
-  border-radius: 12px;
-  background-color: var(--accent-color);
-  align-self: flex-end;
-}
-.iconWrapper {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: var(--rare-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 14px;
-  margin-left: 18px;
-  margin-bottom: 4px;
-}
-.runningMan {
-  width: 12px;
-  height: 12px;
-  fill: var(--invent-color);
-}
-.numberCal {
-  color: var(--invent-color);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1; /* 100% */
-  letter-spacing: -1px;
-  text-transform: uppercase;
-}
-.textCal {
-  color: rgba(239, 237, 232, 0.65);
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.33; /* 133.333% */
-}
-.textCalWrapper {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin-left: 18px;
-}
-
-
 @media screen and (min-width: 375px) {
   .heroContainer {
-    padding-top: 127px;
-    position: relative;
+    padding-top:90.5px;
     width: 375px;
-    /* height: 812px; */
+    height: 812px;
     padding-left: 20px;
   }
 }
 .leftSide {
-  width: 375px;
+  width: 100%;
   height: inherit;
- 
+  position: relative;
 }
 .contentWwrapper {
   position: relative;
@@ -128,10 +24,11 @@
 
 .rightSide {
   position: absolute;
+  width:298px;
   left: 77px;
-  top: 200px;
+  top:120px; 
   z-index: -1;
-  width: 400px;
+ 
   height: 571px;
   background-image: linear-gradient(
       170deg,
@@ -140,8 +37,8 @@
     ),
     url('../../img/mobile-bg-img-1x.jpg');
   background-position: right;
-  /* background-color: lightgray; */
-  background-size: cover;
+ 
+  background-size: contain;
   background-repeat: no-repeat;
 }
 .mainTitle {
@@ -191,8 +88,8 @@
   width: 98px;
   height: 35px;
   position: absolute;
-  top: 170px;
-  left: 30px;
+  top: 43px;
+  left: -8px;
   z-index: -1;
 }
 @media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
@@ -207,30 +104,25 @@
       url('../../img/mobile-bg-img-2x.jpg');
   }
 }
-/*Tablet*/
 
+/*Tablet*/
 @media screen and (min-width: 768px) {
   .heroContainer {
-    position: relative;
-    padding-top: 189px;
+   padding-top: 141px;
     width: 768px;
-    /* height: 1024px; */
+    height: 1024px;
     padding-left: 32px;
   }
-
   .leftSide {
-    width: 768px;
+    position: relative;
+    width:100%;
     height: inherit;
-    
-  }
-
+    }
   .rightSide {
     position: absolute;
-    left: 331px;
-
-    top: 80px;
-    width: 437px;
-
+    left: 299px;
+    top: 0px;
+    width:437px;
     height: 893px;
     background-image: linear-gradient(
         170deg,
@@ -267,18 +159,14 @@
     position: absolute;
     width: 185px;
     height: 67px;
-    /* top: 223px;
-    left: 14px; */
-    top: 280px;
-    left: 60px;
+     top: 87px;
+    left: -8px; 
     z-index: -10;
   }
-}
-
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 767px),
-  screen and (min-resolution: 192dpi) and (min-width: 767px),
-  screen and (min-resolution: 2dppx) and (min-width: 767px) {
-  .rightSide {
+    @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+    screen and (min-resolution: 192dpi) and (min-width: 768px),
+    screen and (min-resolution: 2dppx) and (min-width: 768px) {
+    .rightSide {
     background-image: linear-gradient(
         170deg,
         #040404 3.66%,
@@ -286,98 +174,25 @@
       ),
       url('../../img/tablet-bg-img-2x.jpg');
   }
-  /*tablet*/
-/*Tablet video tutorial*/
-.tutorialsWrapper {
-  position: absolute;
-  /* top: 580px;
-  left:20px; */
-  bottom:0;
- 
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
-  width:405px;
-}
-.videoTutorial {
-  width: 206px;
-  height: 96px;
- }
- .videoPlayer {
-  width: 10px;
-  height: 10px;
-}
-.playButton {
-  width: 40px;
-  height: 40px;
- }
- .text {
-  font-size: 16px;
-  line-height: 1.5; 
-}
-.number {
-  color: var(--invent-color);
-  font-size: 24px;
-  line-height: 1; 
-}
-.textWrapper {
- gap: 8px;
-}
-.videoTutorial {
- gap: 4px;
-  }
-  /*Tablet running tutorial*/
-  .runningTutorial {
-    width: 180px;
-    height: 110px;
-   
-  }
-  .iconWrapper {
-    width: 24px;
-    height: 24px;
-    margin-top: 14px;
-    margin-left: 28px;
-    margin-bottom: 8px;
-  }
-  .runningMan {
-    width: 16px;
-    height: 16px;
-   }
-  .numberCal {
-    font-size: 48px;
-    line-height: 1.04;
-   }
-  .textCal {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.5; 
-  }
-  .textCalWrapper {
-    gap: 11px;
-    margin-left: 28px;
   }
 }
-
 /*Desktop*/
-
 @media screen and (min-width: 1440px) {
   .heroContainer {
-    position: relative;
-    padding-top: 200px;
+    padding-top: 152px;
     width: 1440px;
     height: 800px; 
-     padding-left: 96px;
+    padding-left: 96px;
   }
 
   .leftSide {
-    width: 1440px;
-   
+    position: relative;
+    width:100%;
     height: inherit;
   }
-
   .rightSide {
     position: absolute;
-    left: 770px;
+    left: 674px;
     top: 0;
     width: 670px;
     height: inherit;
@@ -395,23 +210,11 @@
     position: absolute;
     width: 185px;
     height: 67px;
-    top: 286px;
-    left: 176px;
+    top: 87px;
+    left: -8px;
     z-index: -10;
   }
-    /*desktop*/
-/*Desktop video tutorial*/
-.tutorialsWrapper {
-  position: absolute;
-  bottom:-50px;
-  
-  display: flex;
-  flex-direction: column;
-  gap: 39px;
-  width:638px;
-}
-
-  @media screen and (min-device-pixel-ratio: 2) and (min-width: 1440px),
+    @media screen and (min-device-pixel-ratio: 2) and (min-width: 1440px),
     screen and (min-resolution: 192dpi) and (min-width: 1440px),
     screen and (min-resolution: 2dppx) and (min-width: 1440px) {
     .rightSide {
