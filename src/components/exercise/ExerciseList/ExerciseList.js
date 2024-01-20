@@ -8,10 +8,9 @@ import css from './ExerciseList.module.css';
 
 function ExerciseList({ name, filter, setSelected }) {
   const [arr, setArr] = useState([]);
-  const [page, setPage]=useState(1);
   useEffect(() => {
     if (filter && name) {
-      instance.get(`exercises/filter?category=${filter}&specific=${name}&page=${page}$perPage=8`).then(v => {
+      instance.get(`exercises/filter?category=${filter}&specific=${name}&page=1$perPage=8`).then(v => {
         setArr(v.data.result);
       });
     }
