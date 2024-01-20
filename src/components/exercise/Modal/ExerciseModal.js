@@ -6,7 +6,6 @@ function ExerciseModal({ ex }) {
   const [seconds, setSeconds] = useState(0);
   const [paused, setPaused] = useState(false);
   const [open, setOpen] = useState(false);
-  let timer;
   useEffect(() => {
     if (ex) {
       setOpen(true);
@@ -17,7 +16,7 @@ function ExerciseModal({ ex }) {
 
   useEffect(() => {
     if (seconds > 0 && !paused) {
-      timer = setTimeout(() => {
+      setTimeout(() => {
         setSeconds(seconds - 1);
       }, 1000);
     }
@@ -27,7 +26,6 @@ function ExerciseModal({ ex }) {
     if (e.target.id === 'close') {
       ex = undefined;
       setOpen(false);
-      clearTimeout(timer);
     }
   };
   const convertTime = sec => {
@@ -64,7 +62,7 @@ function ExerciseModal({ ex }) {
                 className={css.dotContainer}
                 style={{ animationPlayState: paused ? 'paused' : 'running' }}
               >
-              <div className={css.dot}/>
+                <div className={css.dot} />
               </div>
             </div>
 
@@ -79,10 +77,13 @@ function ExerciseModal({ ex }) {
               </svg>
             </button>
             <p>
-              Burned calories: <span>{Math.round(ex.burnedCalories*percentTimeLeft/100, 2)}</span>
+              Burned calories:{' '}
+              <span>
+                {Math.round((ex.burnedCalories * percentTimeLeft) / 100, 2)}
+              </span>
             </p>
             <div>
-              Name: 
+              Name:
               <span>{ex.name}</span>
             </div>
           </div>
