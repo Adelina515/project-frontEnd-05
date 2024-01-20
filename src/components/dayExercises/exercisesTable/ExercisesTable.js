@@ -1,6 +1,5 @@
 import css from './ExercisesTable.module.css';
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
 import sprite from '../../../img/sprite/symbol-defs.svg';
 import { useDispatch } from 'react-redux';
 
@@ -27,7 +26,7 @@ const ExercisesTable = ({exercises}) => {
       <ul className={css.diaryMainList}>
         {exercises.map(
           ({ _id, bodyPart, equipment, name, target, burnedCalories, time }) => (
-            <li key={nanoid()} className={css.diaryMainItem}>
+            <li key={_id} className={css.diaryMainItem}>
               <table className={css.table}>
                 <tbody className={css.bodyTable}>
                   <tr className={css.element}>
@@ -65,7 +64,7 @@ const ExercisesTable = ({exercises}) => {
                       Trash
                     </th>
                     <td onClick={() => deleteExercise(_id)}> 
-                      <svg className={css.iconTresh} width="98px" height="35px">
+                      <svg className={css.iconTresh} width="20px" height="20px">
                         <use href={`${sprite}#icon-trash`}></use>
                       </svg>
                   </td>

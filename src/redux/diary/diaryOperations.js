@@ -3,23 +3,28 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTU3YWJjZWI1ZjgyMWQ3MGM4YzQwYiIsImlhdCI6MTcwNTY4NzAyMSwiZXhwIjoxNzA1NzY5ODIxfQ.H8a3b1ofd6QxQS4ur3RMu-Ws6rNLdp0iu-3om3SZNdU'
 axios.defaults.baseURL = 'https://power-pulse-backend.onrender.com/';
-
+axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 
 export const fetchAllDiary = createAsyncThunk(
   'fetchAllDiary',
-  async (params, { rejectWithValue }) => {
+  async (date, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get(`/diary${params}`);
-            console.log(data);
-      return data;
+      const  response  = await axios.get(`/diary${date}`);
+      console.log(response.data);
+      return response.data;
     } catch (error) {
       toast.error('Oops... Something went wrong! Try again!');
-      return rejectWithValue('Oops... Something went wrong!');
+      return rejectWithValue(error.message);
     }
   },
 );
+
+// едд продукт має відправляти запит на бекенд по додаванню даних
+// і за ним гет запит по щоденнику
+// і дані по щоденнику записувати в стор
+// в щоденнику слідкуєм за стором і оновлюєм дані
 
 export const addProductDiary = createAsyncThunk(
   'addProductDiary',
@@ -31,33 +36,30 @@ export const addProductDiary = createAsyncThunk(
       return data;
     } catch (error) {
       toast.error('Oops... Something went wrong! Try again!');
-      return rejectWithValue('Oops... Something went wrong!');
+      return rejectWithValue(error.message);
     }
   },
 );
 
 export const deleteProductDiary = createAsyncThunk(
   'deleteProductDiary',
-  async (credentials, { rejectWithValue }) => {
+  async ( productId, { rejectWithValue }) => {
     try {
-      const {data} = await axios.delete('/diary/products/:productId', {
-         productId: credentials,
-      }
-      );
+      const { data } = await axios.delete(`/diary/products/${productId}`);
       return data;
     } catch (error) {
       toast.error('Oops... Something went wrong! Try again!');
-      return rejectWithValue('Oops... Something went wrong!');
+      return rejectWithValue(error.message);
     }
   },
 );
 
 export const addExercisesDiary = createAsyncThunk(
   'addExercisesDiary',
-  async (exercise,  { rejectWithValue }) => {
+  async (exerciseDetails,  { rejectWithValue }) => {
    
     try {
-      const { data } = await axios.post('/diary/exercises', exercise);
+      const { data } = await axios.post('/diary/exercises', exerciseDetails);
       return data;
     } catch (error) {
      toast.error('Oops... Something went wrong! Try again!');
@@ -67,11 +69,10 @@ export const addExercisesDiary = createAsyncThunk(
 
 export const deleteExercisesDiary = createAsyncThunk(
   'deleteExercisesDiary',
-  async (credential, { rejectWithValue }) => {
+  async (exerciseId, { rejectWithValue }) => {
+
     try {
-      const { data } = await axios.delete('/diary/exercises/:exerciseId', {
-       exerciseId: credential,
-      });
+      const { data } = await axios.delete(`/diary/exercises/${exerciseId}`);
       return data;
     } catch (error) {
       toast.error('Oops... Something went wrong! Try again!');

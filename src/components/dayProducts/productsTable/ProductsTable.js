@@ -1,7 +1,9 @@
 import css from './ProductsTable.module.css';
-import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import sprite from '../../../img/sprite/symbol-defs.svg';
+import { useSelector } from "react-redux";
+import { selectDiaryProducts } from '../../../redux/diary/diarySelectors';
+
 
 import { deleteProductDiary } from '../../../redux/diary/diaryOperations';
 
@@ -13,6 +15,11 @@ import { useDispatch } from 'react-redux';
 
 const ProductsTable = ( { products }) => {
   /*const { products } = props;*/
+     const productsInDiary = useSelector(selectDiaryProducts);
+console.log(productsInDiary)
+    const testArr = useSelector(state => state.diary)
+  console.log(testArr)
+
   
   const dispatch = useDispatch();
 
@@ -26,9 +33,9 @@ const ProductsTable = ( { products }) => {
     return (
        <ul className={css.diaryList}>
       {products.map(
-        ({ _id, title, category, calories, weight, recommended }) => {
+        ({ _id, calories, grams, productId: { category, title } }) => {
           return (
-            <li key={nanoid()} className={css.diaryItem}>
+            <li key={_id} className={css.diaryItem}>
               <table className={css.table}>
                 <tbody className={css.bodyTable}>
                   <tr className={css.elem}>
@@ -49,20 +56,20 @@ const ProductsTable = ( { products }) => {
                   </tr>
                   <tr className={css.elem}>
                     <th className={css.nameCateg}>Weight</th>
-                    <td className={css.nameValue}>{weight}</td>
+                    <td className={css.nameValue}>{grams}</td>
                   </tr>
                   <tr className={css.elem}>
                     <th className={css.nameCateg}>Recommend</th>
                     <td className={css.nameValue}>
                       <div className={`${css.recommendCont}`}>
-                        <span
+                        {/*<span
                           className={
                             recommended
                               ? `${css.productRecommend}`
                               : `${css.productNotRecommend}`
                           }
                         ></span>
-                        {recommended ? 'Yes' : 'No'}
+                        {recommended ? 'Yes' : 'No'}*/}
                       </div>
                     </td>
                   </tr>

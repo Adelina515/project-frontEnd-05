@@ -1,12 +1,14 @@
-.DayExercises {
+.dayExecrcises {
     margin-top: 40px;
+    padding: 16px 8px 16px 16px;
+
     max-width: 335px;
     max-height: 1064px;
-    padding: 16px;
     overflow-y: hidden;
-    background-color: rgba(239, 237, 232, 0.05);
-    border: 1px solid rgba(239, 237, 232, 0.2);
+
     border-radius: 12px;
+    border: 1px solid rgba(239, 237, 232, 0.2);
+    background: rgba(239, 237, 232, 0.05);
 }
 
 .dayScroll {
@@ -18,34 +20,19 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+
     margin-bottom: 22px;
 }
 
 .dayZag {
+    color: rgba(239, 237, 232, 0.5);
+
     font-size: 14px;
     font-weight: 400;
     line-height: 1.28;
-    color: rgba(239, 237, 232, 0.5);
-
 }
-
-.dayScroll::-webkit-scrollbar {
-    width: 6px;
-    border-radius: 12px;
-}
-
-.dayScroll::-webkit-scrollbar-thumb {
-    border-radius: 12px;
-    background: rgba(239, 237, 232, 0.1);
-
-}
-
-.dayScroll::-webkit-scrollbar-track {
-    border-radius: 12px;
-}
-
-
 .Butt {
+    display: flex;
     background-color: transparent;
     border: none;
     color: #e6533c;
@@ -55,11 +42,51 @@
     padding: 0;
     position: relative;
     text-align: start;
-    width: 101px;
+    align-items: center;
+    /*width: 101px;*/
+}
+.iconStrilka {
+    cursor: pointer;
+        width: 13px;
+        height: 13px;
+        stroke: #e6533c;
 }
 
-.iconStrilka {
-    width: 16px;
-    height: 16px;
-    stroke: #a82b2b;
+@media (min-width: 768px) {
+    .dayExecrcises {
+        max-width: 704px;
+        height: 234px;
+
+        margin-top: 32px;
+    }
+
+    .dayScroll {
+        max-height: 207px;
+    }
+
+    .dayNav {
+        margin-bottom: 16px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .dayExecrcises {
+        min-width: 826px;
+    }
+}
+
+/* SCROLL */
+
+.dayScroll::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 12px;
+}
+
+.dayScroll::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background: rgba(239, 237, 232, 0.1);
+}
+
+.dayScroll::-webkit-scrollbar-track {
+    border-radius: 12px;
 }

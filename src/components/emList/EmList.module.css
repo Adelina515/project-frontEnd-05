@@ -1,0 +1,27 @@
+
+    .notTextCont {
+min-height: 335px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .notText{
+        color: rgba(239, 237, 232, 0.3);
+        
+            font-size: 14px;
+            line-height: 1.28;
+    }
+
+
+        @media (min-width: 768px) {
+            .notTextCont {
+                min-height: 155px;
+            }
+    
+            .notText {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+        }

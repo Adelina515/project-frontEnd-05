@@ -9,15 +9,7 @@ import EmList from '../emList/EmList.jsx';
 
 const DayProducts = () => {
    const productsInDiary = useSelector(selectDiaryProducts);
-      /*const diaryProducts = [
-    {
-      _id: '1',
-      title: 'Product 1',
-      category: 'Category 1',
-      calories: 100,
-      amount: 200,
-      recommended: true,
-    },]*/
+
     return (
         <div className = {css.dayProducts}>
             <div className = {css.dayScroll}>
@@ -25,7 +17,7 @@ const DayProducts = () => {
                     <h3 className = {css.DiaryZag}>Products</h3>
                     <Link to="/products" className={css.Butt}>
             Add product
-            <svg className={css.iconStrilka} width="98px" height="35px">
+            <svg className={css.iconStrilka} width="16px" height="16px">
               <use href={`${sprite}#icon-next-arrow-gray`}></use>
             </svg>
           </Link>

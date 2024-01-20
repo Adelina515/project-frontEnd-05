@@ -16,30 +16,25 @@ import formatDate from '../function/formatData';
 
 export default function Diary() {
 
-     const dispatch = useDispatch();
-    const [selectedDate, setSelectedDate] = useState(null);/*початкова дата не обрана*/
-    /*Данні щоденника мають змінюватись при змінні  selectedDate*/
-     useEffect(() => {
-    const fetchDate = () => {
-      if (selectedDate) {
-        const date = {
-          date: selectedDate,
-        };
-        dispatch(fetchAllDiary(date));
-      }
-    };
-    fetchDate();
-  }, [dispatch, selectedDate]);
+  const dispatch = useDispatch();
+  
+    const [selectedDate, setSelectedDate] = useState(new Date());
 
 /*Обробка вибраної дати */
    const handleDate = async (date) => {
     const formatedDate = formatDate(date);
     await setSelectedDate(formatedDate);
   };
+
+    useEffect(() => {
+        dispatch(fetchAllDiary("2024-01-15"));
+  }, [selectedDate, dispatch]);
+
+
   
 
     return (
-        <div className ={css.diaryPage}>
+        <div className ={css.diary}>
             <div className={css.calendarCont}>
                     <TitlePage children = "Diary" />
 
