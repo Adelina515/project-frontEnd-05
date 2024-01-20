@@ -9,10 +9,9 @@ export const LogOutBtn = () => {
     dispatch(logout());
   };
   return (
-    <button className={css.logout}  onClick={handleLogout}>
+    <button className={css.logoutBtn}  onClick={handleLogout}>
       Logout
-
-      <svg>
+    <svg className={css.logoutIcon}>
         <use href={`${sprite}#icon-logout`} />
       </svg>
     </button>
