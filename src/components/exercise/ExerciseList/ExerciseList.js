@@ -1,29 +1,25 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import axios from 'axios';
+import instance from 'instance/instance';
 import ExerciseItem from './ExerciseItem';
 import { nanoid } from '@reduxjs/toolkit';
 
+import css from './ExerciseList.module.css';
 
-function ExerciseList({ name, filter }) {
+function ExerciseList({ name, filter, setSelected }) {
   const [arr, setArr] = useState([]);
-  // const [page, setPage] = useState(1);
-  // const [totalPages, setTotalPages] = useState(0);
-  axios.defaults.baseURL =
-    'https://power-pulse-backend.onrender.com/exercises/filter';
   useEffect(() => {
     if (filter && name) {
-      axios.get(`?category=${filter}&specific=${name}`).then(v => {
-        console.log(v.data);
+      instance.get(`exercises/filter?category=${filter}&specific=${name}&page=1$perPage=8`).then(v => {
         setArr(v.data.result);
       });
     }
   }, [setArr, name, filter]);
 
   return (
-    <div>
+    <div className={css.exerciseListContainer}>
       {arr.map(v => (
-        <ExerciseItem key={nanoid()} exercise={v}/>
+        <ExerciseItem key={nanoid()} exercise={v} setSelected={setSelected}/>
       ))}
     </div>
   );

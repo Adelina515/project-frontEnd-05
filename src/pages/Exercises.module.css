@@ -16,6 +16,10 @@
   left: 0;
   border-radius: 2px;
 }
+.cat,
+.activeCat {
+  color: var(--invent-color);
+}
 
 .arrCont {
   display: flex;
@@ -59,32 +63,4 @@
 
   font-size: 12px;
   line-height: 18px;
-}
-
-.exerciseItemContainer {
-  width: 335px;
-  height: 141px;
-  background-color: black;
-}
-.exerciseItemContainer::before {
-  content: 'WORKOUT';
-  color: white;
-  display: inline-flex;
-  padding: 5px 7.5px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 4px;
-  background: rgba(239, 237, 232, 0.05);
-}
-.exerciseItemContainer h3{
-  color: white;
-}
-
-.exerciseItemContainer div{
-  display: flex;
-  color: grey;
-}
-.exerciseItemContainer div span{
-  color: white;
 }
