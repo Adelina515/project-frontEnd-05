@@ -1,23 +1,23 @@
 @import "../../index.css"; 
 
-.logout {
+.logoutBtn{
  color: var(--invent-color);
  font-family: Roboto, sans-serif;
  font-size: 14px;
  line-height: 18px;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 40px;
-
-
+background-color: transparent;
+border:none;  
+display: flex;
+justify-content: flex-end;
+align-items: center;
+cursor:pointer;
+gap:8px;
 }
 @media screen and (min-width: 768px) and (max-width: 1440px) {
   .logout {
   margin-right: 150px;
 }}
-.logout svg
+.logoutIcon
 {
 width:20px;
 height: 20px;
