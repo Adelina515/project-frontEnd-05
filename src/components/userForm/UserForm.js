@@ -117,13 +117,14 @@ export const UserForm = ({
   });
 
   return (
+  
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
       {formik => (
-        <Form>
+        <Form className={css.forForm }>
           <div className={css.formContainer}>
             <div className={css.wrInput}>
           
@@ -152,7 +153,8 @@ export const UserForm = ({
 <div className={css.wrapperFields}>
           <div className={css.wrapperInputField}>
             <div className={css.wrapper}>
-              <div className={css.wrappInput}>
+              <div className={css.wrappInput}  id="height">
+                
                 <Field
                   type="number"
                   name="height"
@@ -163,7 +165,7 @@ export const UserForm = ({
                 <label htmlFor="height" className={css.label} >Height</label>
               </div>
             </div>
-            <div className={css.wrappInput}>
+            <div className={css.wrappInput} id="currentWeight">
               <Field
                 type="number"
                 name="currentWeight"
@@ -175,7 +177,7 @@ export const UserForm = ({
             </div>
           </div>
 
-          <div className={css.wrapperInputField}>
+          <div className={css.wrapperInputField } id="desiredWeight">
             <div className={css.wrappInput}>
               <Field
                 type="number"
@@ -197,16 +199,20 @@ export const UserForm = ({
               />
               <label htmlFor="birthday" className={css.label} >Date of birthday</label>
             </div> */}
+            <div  className="calendar" id="calendar">
             <Calendar  selectedDate={formik.values.birthday}
+           
               setSelectedDate={date => {
                 const formattedDate = parseISO(date.toISOString());
                 formik.setFieldValue('birthday', formattedDate)}}/>
-          </div>
+          </div></div>
           </div>
 
           <div className={css.wrapperRadio}>
             <div  className={css.forRadio}>
-              <div className={css.forRadio}>
+              <div className={css.forRadioBtn}>
+              <label htmlFor="blood"className={css.labelForRadio} >Blood</label>
+
                 {bloodOptions.map(option => (
                   <RadioButton
                     key={option.id}
@@ -218,9 +224,10 @@ export const UserForm = ({
                     onChange={() => formik.setFieldValue('blood', option.value)}
                   />
                 ))}
+
               </div>
 
-              <div style={{ display: 'flex' }}>
+              <div className={css.forRadioBtn}>
                 {sexOptions.map(option => (
                   <RadioButton
                     key={option.id}
@@ -232,10 +239,12 @@ export const UserForm = ({
                     onChange={() => formik.setFieldValue('sex', option.value)}
                   />
                 ))}
+              <label htmlFor="sex"className={css.labelForRadio} >Sex</label>
+
               </div>
             </div>
 
-            <div>
+            <div className={css.forLevelAct}>
               {levelOptions.map(option => (
                 <RadioButton
                   className={css.wrapperLevel}

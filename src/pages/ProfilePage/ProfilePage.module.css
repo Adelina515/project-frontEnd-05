@@ -1,11 +1,33 @@
 .container {
   margin-left: 20px;
-  margin-right: 20px;}
+  margin-right: 20px;
+ 
+}
 
+.containerMini{
+  /* display: flex;
+  flex-direction: row-reverse; */
+  flex-wrap: wrap;
+  
+}
+@media screen and (min-width: 1440px) {
+  .containerMini{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+    
+    
+    
+  }
+}
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     .container {
     margin-left: 32px;
     margin-right: 32px;
+  
   }}
 
   @media screen and (min-width: 1440px) {
@@ -22,3 +44,11 @@
     gap: 14px;
     margin-top: 40px;
 }
+
+.forUp{
+ max-width:700px, 
+}
+@media screen and (min-width: 1440px) {
+  .forUp{
+ border-left: 2px solid #fff;
+  padding-left: 50px;}}
