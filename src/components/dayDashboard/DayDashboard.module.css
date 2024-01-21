@@ -62,7 +62,10 @@
     .dayDashboard {
         max-width: 532px;
         order: 2;
+        margin-bottom: 32px;
+        margin-top: 0px;
     }
+  
 
     .statisticList {
         flex-direction: column;
@@ -92,7 +95,7 @@
 
         max-width: 390px;
 
-        margin-top: 0px;
+        margin-top: 32px;
     }
 
     .statisticList {
