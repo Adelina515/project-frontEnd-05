@@ -11,7 +11,8 @@ import { useSelector } from "react-redux";
 
 
 const DayExercises = () => {
-   const exercisesInDiary = useSelector(selectDiaryExercises);
+  const exercisesInDiary = useSelector(selectDiaryExercises);
+  
 
 
   return (
@@ -20,10 +21,10 @@ const DayExercises = () => {
         <div className ={css.dayScroll}>
           <div className={css.dayNav}>
             <h3 className={css.dayZag}>Execrcises</h3>
-         <Link to="/exercises" className={css.Butt}>
+         <Link to="/exercises" className={css.Butt} /*state={date} */>
             Add exercises
             <svg className={css.iconStrilka} width="16px" height="16px">
-              <use href={`${sprite}#icon-next-arrow-gray`}></use>
+              <use href={`${sprite}#icon-next-arrow`}></use>
             </svg>
           </Link>
           </div>

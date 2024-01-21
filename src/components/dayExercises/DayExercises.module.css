@@ -1,9 +1,10 @@
 .dayExecrcises {
     margin-top: 40px;
     padding: 16px 8px 16px 16px;
+    margin-bottom: 80px;
 
-    max-width: 335px;
-    max-height: 1064px;
+    width: 335px;
+    min-height: 335px;
     overflow-y: hidden;
 
     border-radius: 12px;
@@ -20,13 +21,11 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-
     margin-bottom: 22px;
 }
 
 .dayZag {
     color: rgba(239, 237, 232, 0.5);
-
     font-size: 14px;
     font-weight: 400;
     line-height: 1.28;
@@ -47,34 +46,10 @@
 }
 .iconStrilka {
     cursor: pointer;
-        width: 13px;
-        height: 13px;
+        width: 16px;
+        height: 16px;
         stroke: #e6533c;
 }
-
-@media (min-width: 768px) {
-    .dayExecrcises {
-        max-width: 704px;
-        height: 234px;
-
-        margin-top: 32px;
-    }
-
-    .dayScroll {
-        max-height: 207px;
-    }
-
-    .dayNav {
-        margin-bottom: 16px;
-    }
-}
-
-@media (min-width: 1440px) {
-    .dayExecrcises {
-        min-width: 826px;
-    }
-}
-
 /* SCROLL */
 
 .dayScroll::-webkit-scrollbar {
@@ -90,3 +65,27 @@
 .dayScroll::-webkit-scrollbar-track {
     border-radius: 12px;
 }
+
+@media (min-width: 768px) {
+    .dayExecrcises {
+        width: 704px;
+        height: 234px;
+
+        margin-top: 32px;
+    }
+
+    .dayScroll {
+        max-height: 210px;
+    }
+
+    .dayNav {
+        margin-bottom: 16px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .dayExecrcises {
+        min-width: 826px;
+    }
+}
+

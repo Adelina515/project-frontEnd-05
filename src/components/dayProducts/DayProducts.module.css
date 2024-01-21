@@ -1,9 +1,10 @@
 .dayProducts {
+
     margin-top: 40px;
         padding: 16px 8px 16px 16px;
     
-        max-width: 335px;
-        max-height: 1064px;
+        width: 335px;
+        min-height: 335px;
         overflow-y: hidden;
     
         border-radius: 12px;
@@ -62,17 +63,16 @@
 }
 
 .iconStrilka {
-    width: 13px;
-        height: 13px;
+    width: 16px;
+        height: 16px;
         stroke: #a82b2b;
 }
 
 @media (min-width: 768px) {
     .dayProducts {
-        max-width: 704px;
-        height: 240px;
+        width: 704px;
+        height: 234px;
 
-        margin-top: 0px;
     }
 
     .dayScroll {

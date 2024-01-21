@@ -1,6 +1,6 @@
 
     .notTextCont {
-min-height: 335px;
+height: 335px;
 
     display: flex;
     justify-content: center;
@@ -17,7 +17,7 @@ min-height: 335px;
 
         @media (min-width: 768px) {
             .notTextCont {
-                min-height: 155px;
+                height: 170px;
             }
     
             .notText {
