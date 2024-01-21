@@ -3,10 +3,9 @@ import { Daily } from 'components/daily/Daily';
 import { UserProfile } from 'components/userCard/UserCard';
 import { UserForm } from 'components/userForm/UserForm';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { LogOutBtn } from 'btn/logOutBtn/LogOutBtn';
-// import { selectIsUserLogin } from '../redux/auth/auth-selectors';
-import { logout } from '../../servises/api/auth';
+
 
 import {selectUserToken} from '../../redux/UserPageCntrls/selectors';
 
@@ -15,6 +14,7 @@ import css from './ProfilePage.module.css'
 import { ExclamationMark } from 'components/exclamation/Exclamation';
 
 export default function Profile() {
+
   const dispatch = useDispatch();
   const state = useSelector(state => state.auth.user);
   console.log(state, "state in profile")
@@ -24,23 +24,9 @@ export default function Profile() {
     dispatch(logout());
   };
 
-  //   useEffect(() => {
 
-  //     const fetchData = async () => {
-  //       try {
-  //         await dispatch(getCurrentUserDataTh(userToken));
-  //     //    console.log(currentUserData, 'currentUserData');
-  //         // Обновляем состояние после получения данных
-  //         // handleProfileUpdate(currentUserData);
-  //       } catch (error) {
-  //         console.error('Ошибка при получении данных пользователя:', error);
-  //         // Добавьте обработку ошибки, например, отображение сообщения об ошибке или перенаправление на страницу входа
-  //       }
-  //     };
-
-  //     fetchData(userToken);
-
-  // },[dispatch, userToken]);
+  const state = useSelector(state => state.auth.user);
+  const userToken = useSelector(selectUserToken);  
 
   // Показывать заглушку или другой контент, если данных нет
   if (!state) {
@@ -72,7 +58,7 @@ export default function Profile() {
         />
       </div>
       <ExclamationMark />
-      <LogOutBtn onLogout={onLogout} /></div>
+      <LogOutBtn/></div>
       <UserForm
         userToken={userToken}
         name={state.name}

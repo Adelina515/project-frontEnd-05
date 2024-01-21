@@ -5,6 +5,8 @@ import DaySwitch from '../components/daySwitch/DaySwitch';
 import DayDashboard from '../components/dayDashboard/DayDashboard';
 import DayProducts from '../components/dayProducts/DayProducts';
 import DayExercises from '../components/dayExercises/DayExercises';
+import { Container } from '../components/Container/Container';
+
 
 import { fetchAllDiary } from "../redux/diary/diaryOperations";
 
@@ -34,8 +36,9 @@ export default function Diary() {
   
 
     return (
-        <div className ={css.diary}>
-            <div className={css.calendarCont}>
+        <div className={css.diary}>
+            <Container>
+                <div className={css.calendarCont}>
                     <TitlePage children = "Diary" />
 
                 <div className ={css.calendar}>
@@ -49,7 +52,9 @@ export default function Diary() {
                     <DayExercises />
                 </div>
             </div>
-
+ 
+             </Container>
+           
         </div>
     )
 }

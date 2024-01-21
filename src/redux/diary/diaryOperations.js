@@ -2,8 +2,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+/*import instance from '../../instance/instance';*/
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTU3YWJjZWI1ZjgyMWQ3MGM4YzQwYiIsImlhdCI6MTcwNTY4NzAyMSwiZXhwIjoxNzA1NzY5ODIxfQ.H8a3b1ofd6QxQS4ur3RMu-Ws6rNLdp0iu-3om3SZNdU'
+
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTU2MTlhMzI5M2U1NzJkZDU0Nzg2YyIsImlhdCI6MTcwNTgzMDUxNywiZXhwIjoxNzA1OTEzMzE3fQ.T7bj4BmvPTd2a-y3EW3W9BKNqBRQnVp_4c7I_0_B6io'
 axios.defaults.baseURL = 'https://power-pulse-backend.onrender.com/';
 axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 
@@ -11,7 +13,7 @@ export const fetchAllDiary = createAsyncThunk(
   'fetchAllDiary',
   async (date, { rejectWithValue }) => {
     try {
-      const  response  = await axios.get(`/diary${date}`);
+      const  response  = await axios.get(`/diary/${date}`);
       console.log(response.data);
       return response.data;
     } catch (error) {

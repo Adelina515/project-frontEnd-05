@@ -24,8 +24,10 @@ export const Calendar = ({ selectedDate, setSelectedDate }) => {
         </svg>
 
         <DatePicker  className= {style.myDatePicker}
-          selected={selectedDate}
-          onChange={handleDateChange}
+       selected={selectedDate}
+        onChange={handleDateChange}
+     
+         
           customInput={<input className={css.inputField} style={{ cursor: 'pointer' }} />}
           dateFormat={'dd.MM.yyyy'}
           calendarStartDay={1}

@@ -1,6 +1,6 @@
 .statisticItem {
     padding: 14px;
-    max-width: 157px;
+    width: 157px;
     height: 96px;
     border-radius: 12px;
     border: 1px solid rgba(239, 237, 232, 0.2);
@@ -12,7 +12,8 @@
     box-sizing: border-box;
 }
 .statisticItem:nth-child(2n) {
-    min-width: 165px;
+    width: 165px;
+    height: 96px;
     /* Ширина другого стовпчика (парні елементи) */
 }
 .statisticItemPositive {
@@ -37,8 +38,9 @@
 
 .statisticTitle {
     color: rgba(239, 237, 232, 0.4);
-    min-width: 100px;
+    width: 110px;
     font-size: 12px;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     line-height: 1.33;
 }
@@ -55,6 +57,7 @@
 
 .statisticValue {
     color: #efede8;
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 1.11;
@@ -63,15 +66,21 @@
 @media (min-width: 768px) {
     .statisticItem {
         padding: 18px;
-        max-width: 187px;
-        max-height: 116px;
+        width: 187px;
+        height: 116px;
     }
+        .statisticItem:nth-child(2n) {
+        padding: 18px;
+            width: 187px;
+            height: 116px;
+        }
 
     .statisticTitle {
         line-height: 1.5;
     }
 
     .statisticValue {
+        font-family: 'Roboto', sans-serif;
         font-size: 24px;
         font-weight: 700;
         line-height: 1.33;

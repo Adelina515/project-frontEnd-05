@@ -2,6 +2,7 @@
 
 .dayDashboard {
     margin-top: 40px;
+            margin-bottom: 40px;
 
 }
 
@@ -20,11 +21,15 @@
     display: flex;
     gap: 8px;
     align-items: flex-start;
+    height: 54px;
 }
 
 .adviceIconWrap {
-    width: 24px;
-    height: 24px;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+    /*width: 24px;
+    height: 24px;*/
     background-color: #efa082;
     border-radius: 50%;
 }
@@ -56,11 +61,11 @@
 @media (min-width: 768px) {
     .dayDashboard {
         max-width: 532px;
-
-        margin-top: 64px;
-
         order: 2;
+        margin-bottom: 32px;
+        margin-top: 0px;
     }
+  
 
     .statisticList {
         flex-direction: column;
@@ -80,6 +85,9 @@
         line-height: 1.5;
     }
 }
+.adviceIconWrap{
+    margin-bottom: 64px;
+}
 
 @media (min-width: 1440px) {
     .dayDashboard {
@@ -87,7 +95,7 @@
 
         max-width: 390px;
 
-        margin-top: 0px;
+        margin-top: 32px;
     }
 
     .statisticList {

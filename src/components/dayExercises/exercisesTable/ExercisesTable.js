@@ -1,7 +1,8 @@
 import css from './ExercisesTable.module.css';
-import PropTypes from 'prop-types';
+/*import PropTypes from 'prop-types';*/
 import sprite from '../../../img/sprite/symbol-defs.svg';
 import { useDispatch } from 'react-redux';
+import { useSelector } from "react-redux";
 
 import { deleteExercisesDiary } from '../../../redux/diary/diaryOperations';
 
@@ -14,18 +15,21 @@ const ExercisesTable = ({exercises}) => {
   };
   
   const dispatch = useDispatch();
+ 
 
 
   const deleteExercise = (_id) => {
     dispatch(deleteExercisesDiary(_id));
   }
+  const data = useSelector(state => state.diary);
+  console.log(data);
 
 
     return (
          <>
       <ul className={css.diaryMainList}>
         {exercises.map(
-          ({ _id, bodyPart, equipment, name, target, burnedCalories, time }) => (
+          ({ _id, burnedCalories, duration, exerciseId: { equipment, name, target, bodyPart} }) => (
             <li key={_id} className={css.diaryMainItem}>
               <table className={css.table}>
                 <tbody className={css.bodyTable}>
@@ -57,13 +61,13 @@ const ExercisesTable = ({exercises}) => {
                   </tr>
                   <tr className={css.element}>
                     <th className={css.nameCategory}>Time</th>
-                    <td className={css.nameValue}>{time}</td>
+                    <td className={css.nameValue}>{duration}</td>
                   </tr>
                   <tr className={css.element}>
                     <th className={`${css.nameCategory} ${css.nameTrash}`}>
                       Trash
                     </th>
-                    <td onClick={() => deleteExercise(_id)}> 
+                    <td onClick={() => deleteExercise(_id)} > 
                       <svg className={css.iconTresh} width="20px" height="20px">
                         <use href={`${sprite}#icon-trash`}></use>
                       </svg>
@@ -80,11 +84,11 @@ const ExercisesTable = ({exercises}) => {
     
 }
 
-ExercisesTable.propTypes = {
+/*ExercisesTable.propTypes = {
   exercises: PropTypes.array.isRequired,
 };
 
-
+*/
 
 export default ExercisesTable;
 
