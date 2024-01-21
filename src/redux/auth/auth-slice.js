@@ -8,7 +8,18 @@ import {
   updateProfileParamsTh,
 } from '../../redux/UserPageCntrls/UserPageOperations.jsx';
 const initialState = {
-  user: {},
+  user: {
+    name: "",
+    email: "",
+    height: 160,
+    currentWeight: 60,
+    desiredWeight: 55,
+    birthday: '08.01.1987',
+    blood: 1,
+    sex: 'male',
+    levelActivity: 2,
+
+  },
   token: '',
   loading: false,
   isLogin: false,
@@ -85,7 +96,7 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(updateProfileParamsTh.fulfilled, (state, { payload }) => {
-        state.user = payload.user;
+        state.user = { ...payload }; ///new
         state.token = payload.token;
         state.isLogin = true;
       })
