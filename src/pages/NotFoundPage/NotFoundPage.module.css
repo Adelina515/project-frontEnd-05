@@ -1,17 +1,215 @@
+.notfound {
+  margin-left: auto;
+  margin-right: auto;
+}
+/*Mobile*/
+@media screen and (min-width: 375px) {
+  .notfound {
+    width: 375px;
+    height: 812px;
+  }
+}
+.wrapperText {
+  position: absolute;
+  width: 240px;
+  height: inherit;
+  background-color: #e6533c;
+  padding-left: 20px;
+  padding-top: 250px;
+  padding-right: 20px;
+  padding-bottom: 250px;
+  z-index: 2;
+}
+.title {
+  color: #efede8;
+  font-weight: 500;
+  font-size: 66px;
+  line-height: 66px;
+  margin-bottom: 14px;
+}
+.text {
+  color: #efede8;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 40px;
+}
+.btnHome {
+  padding: 12px 40px;
+  color: #efede8;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  border: solid 1px;
+  border-radius: 12px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btnHome:hover,
+.btnHome:focus {
+  color: #e6533c;
+  background-color: #efede8;
+}
+.wrapperPhoto {
+  position: absolute;
+  width: 298px;
+  left: 100px;
+  top: 393px;
+  z-index: 1;
+  height: 571px;
+  background-image: linear-gradient(
+      170deg,
+      #040404 3.66%,
+      rgba(4, 4, 4, 0) 19.15%
+    ),
+    url('../../img/mobile-bg-img-1x.jpg');
+  background-position: right;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
+  screen and (min-resolution: 192dpi) and (max-width: 767px),
+  screen and (min-resolution: 2dppx) and (max-width: 767px) {
+  .wrapperPhoto {
+    background-image: linear-gradient(
+        170deg,
+        #040404 3.66%,
+        rgba(4, 4, 4, 0) 19.15%
+      ),
+      url('../../img/mobile-bg-img-2x.jpg');
+  }
+}
+
+/*Tablet*/
+@media screen and (min-width: 768px) {
+  .notfound {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* width: 1423px; */
+    width: 768px;
+    height: 1024px;
+    overflow-x: hidden;
+  }
+  .wrapperText {
+    position: absolute;
+    width: 420px;
+    height: inherit;
+    background-color: #e6533c;
+    padding-left: 32px;
+    padding-top: 309px;
+    padding-right: 32px;
+    padding-bottom: 309px;
+    z-index: 2;
+  }
+  .title {
+    color: #efede8;
+    font-weight: 500;
+    font-size: 160px;
+    line-height: 150px;
+    margin-bottom: 28px;
+  }
+  .text {
+    color: #efede8;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 44px;
+  }
+  .btnHome {
+    padding: 16px 60px;
+    color: #efede8;
+    font-weight: 500;
+    font-size: 20px;
+    border: solid 1px;
+    border-radius: 12px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .btnHome:hover,
+  .btnHome:focus {
+    color: #e6533c;
+    background-color: #efede8;
+  }
+  .wrapperPhoto {
+    position: absolute;
+    left: 320px;
+    top: 0px;
+    width: 437px;
+    height: inherit;
+    background-image: linear-gradient(
+        170deg,
+        #040404 3.66%,
+        rgba(4, 4, 4, 0) 19.15%
+      ),
+      url('../../img/tablet-bg-img-1x.jpg');
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+    screen and (min-resolution: 192dpi) and (min-width: 768px),
+    screen and (min-resolution: 2dppx) and (min-width: 768px) {
+    .wrapperPhoto {
+      background-image: linear-gradient(
+          170deg,
+          #040404 3.66%,
+          rgba(4, 4, 4, 0) 19.15%
+        ),
+        url('../../img/tablet-bg-img-2x.jpg');
+    }
+  }
+}
+
+/* ---------- */
 @media screen and (min-width: 1440px) {
   .notfound {
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 1440px;
+    /* width: 1423px; */
     height: 800px;
   }
   .wrapperText {
     width: 669px;
     background-color: #e6533c;
+    padding-left: 96px;
+    padding-top: 221px;
+    padding-right: 96px;
+    padding-bottom: 221px;
+  }
+  .title {
+    color: #efede8;
+    font-weight: 500;
+    font-size: 160px;
+    line-height: 150px;
+    margin-bottom: 28px;
+  }
+  .text {
+    color: #efede8;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 44px;
+  }
+  .btnHome {
+    padding: 16px 60px;
+    color: #efede8;
+    font-weight: 500;
+    font-size: 20px;
+    border: solid 1px;
+    border-radius: 12px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .btnHome:hover,
+  .btnHome:focus {
+    color: #e6533c;
+    background-color: #efede8;
   }
   .wrapperPhoto {
-    position: absolute;
+    /* position: absolute; */
     left: 770px;
     top: 0;
     width: 670px;
