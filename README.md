@@ -1,113 +1,123 @@
-# React homework template
+# Power Pulse
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+Power Pulse is a fitness app for transforming your body shape and lifestyle.
+With the help of this app, people can keep track of their weight, engage in sports, and lead a healthy lifestyle.
 
-## Создание репозитория по шаблону
+## Table of content
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
+- [Routing](#routing)
+- [Features](#features)
+- [Contributors](#contributors)
+- [Getting Started](#getting-started)
+- [Technologies Used](#technologies-used)
+- [API](#api)
+- [Redux State](#redux-state)
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
+## Routing
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+The app uses React Router for navigation. The available routes are:
+- `/welcome` - Welcome Page
 
-После того как репозиторий будет создан, необходимо перейти в настройки
-созданного репозитория на вкладку `Settings` > `Actions` > `General` как
-показано на изображении.
+The initial page users encounter upon accessing [Power Pulse]()
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+You may choose to register a new account or sign in to an existing one.  
+You'll find current statistics displayed on the right side of the page.
 
-Проскролив страницу до самого конца, в секции `«Workflow permissions»` выбери
-опцию `«Read and write permissions»` и поставь галочку в чекбоксе. Это
-необходимо для автоматизации процесса деплоя проекта.
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+- `/signup` - SignUp Page
 
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
+To register, provide your name (to be displayed on your profile page), email address, and a password.  
+Please ensure that your password contains a minimum of 6 characters.
 
-## Подготовка к работе
+We've implemented Google authorization for your convenience.
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Установи базовые зависимости проекта командой `npm install`.
-3. Запусти режим разработки, выполнив команду `npm start`.
-4. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+If you already have an account, you can navigate to the SignIn page to log in.
 
-## Деплой
+- `/signin` - SignIn Page
 
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+To log in to your account, simply enter your email and password.  
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+If you haven't registered yet, you can switch to the SignUp page for registration.
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+- `/data` - Data Page
 
-![GitHub Pages settings](./assets/repo-settings.png)
+After successful registration, you'll be redirected to the Data page, where you'll need to complete all fields across three steps.
 
-### Статус деплоя
+Please note, using this web app requires filling in all required information. This data is utilized for calculating your daily calorie rate, assisting you in achieving your fitness goals, and marking products as recommended or not recommended for you.
 
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
+Furthermore, a 'Help' button becomes available, allowing you to reach out if you encounter any issues while using the app. We'll respond promptly to assist in resolving any problems.
 
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
+It's crucial to provide a valid email address for us to efficiently communicate solutions or address any questions you may have.
 
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
+- `/diary` - Diary Page
 
-![Deployment status](./assets/deploy-status.png)
+On the Diary page, you can review the products you've consumed or exercises you've performed by selecting a specific date (by default, it's set to the current date).
 
-### Живая страница
+Additionally, there's a dashboard displaying calculated consumed and burned calories, along with the duration of your training sessions.
 
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
 
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
+- `/products` - Products Page
 
-### Маршрутизация
+On the Products page, you have the option to select products to add to your diary as consumed items.  
+Utilize filters to find the exact match for your selection.
 
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
 
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
+- `/exercises` - Exercises Page
 
-## Как это работает
+On the Exercises page, you can explore exercises for your training regimen.
 
-![How it works](./assets/how-it-works.png)
+You'll find three categories to choose from:
+1. Body parts
+2. Muscles
+3. Equipment
 
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+Based on your selected category, the list of subcategories will be updated accordingly.
+
+- `/profile` - Exercises Page
+
+Clicking on the gear icon within the header section will navigate you to the Profile page. Here, you can review your data and make updates if necessary.
+
+## Features
+
+Implemented responsiveness and mobile menu for better UI.
+
+## Contributors
+
+- Adelina Hodlevska [GitHub](https://github.com/Adelina515) - TeamLead
+- Nadiia Sukhorukova [GitHub](https://github.com/Nadija30) - TeamLead
+- Solomiia Lutska [GitHub](https://github.com/Mia468) - Scrum Master Developer 
+- Vitalii Kurpach [GitHub](https://github.com/VitaliiKyrpach) - Developer 
+- Daryna Dermanchuk [GitHub](https://github.com/DarynaSD)  -  Developer 
+- Olha Matsiiovska [GitHub](https://github.com/Matsiiovska) - Developer 
+- Natalia Melnyk [GitHub](https://github.com/avreliakotta) - Developer 
+- Yelyzaveta Romanova [GitHub](https://github.com/Liza0806) - Developer 
+- Stanislav Kish [GitHub](https://github.com/app1e1over) - Developer
+- Anastasiia Bakalyna[GitHub]() - Developer
+
+## Getting Started
+
+To run the application locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/DmytroZhdanov/power-pulse.git`
+2. Install dependencies: `npm install`
+3. Run the app: `npm run dev`
+4. Open [http://localhost:5173](http://localhost:3000) in your browser (Note: the port may be changed if 3000 port is occupied by another website).
+
+## Technologies Used
+
+- React
+- Redux
+- RTK Query
+- React Router
+- Axios (for API requests)
+
+## API
+
+The application utilizes a backend developed by our team. Feel free to familiarize yourself with it [here](https://github.com/Nadija30/power-pulse-backend)
+
+## Redux State
+
+The Redux store manages the application's state, encompassing tokens, user information such as name, email, avatar image, and the account creation date.
+
+
