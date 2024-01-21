@@ -15,10 +15,10 @@ const DayProducts = () => {
             <div className = {css.dayScroll}>
                 <div className={ css.diaryMen}> 
                     <h3 className = {css.DiaryZag}>Products</h3>
-                    <Link to="/products" className={css.Butt}>
+                    <Link to="/products" className={css.Butt} /*state={date} */>
             Add product
             <svg className={css.iconStrilka} width="16px" height="16px">
-              <use href={`${sprite}#icon-next-arrow-gray`}></use>
+              <use href={`${sprite}#icon-next-arrow`}></use>
             </svg>
           </Link>
           </div>

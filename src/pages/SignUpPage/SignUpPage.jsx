@@ -4,11 +4,14 @@ import { NavLink } from 'react-router-dom';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import TitlePage from '../../components/TitlePage/TitlePage';
 import RemainderComponent from 'components/RemainderComponent/RemainderComponent';
+import InfoBlock from "../../components/InfoBlock/InfoBlock";
 
 
 const SignUpPage = ({ onSubmit }) => {
   return (
-    <div className={css.container}>
+    <div className={css.heroContainer}>
+    <div className={css.leftSide}>
+      {/* <div className={css.contentWrapper}> */}
       <TitlePage children="Sign Up" />
       <p className={css.text}>
         Thank you for your interest in our platform. To complete the
@@ -19,7 +22,12 @@ const SignUpPage = ({ onSubmit }) => {
       <NavLink to="/signin" className={css.link}>
         Sign In
       </NavLink>
+      </div>
+      <div className={css.rightSide}>
+      <InfoBlock />
+      </div>
     </div>
+    // </div>
   );
 };
 export default SignUpPage;
