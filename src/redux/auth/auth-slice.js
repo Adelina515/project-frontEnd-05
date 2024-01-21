@@ -70,7 +70,7 @@ const authSlice = createSlice({
         state.isRefreshing = true;
       })
       .addCase(current.fulfilled, (state, { payload }) => {
-        state.user = { ...payload };
+        state.user = { ...payload.user};
         state.token = payload.token;
         state.isLogin = true;
         state.isRefreshing = false;

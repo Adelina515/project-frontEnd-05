@@ -17,14 +17,9 @@ import { ExclamationMark } from 'components/exclamation/Exclamation';
 export default function Profile() {
   const dispatch = useDispatch();
   const state = useSelector(state => state.auth.user);
+  console.log(state, "state in profile")
   const userToken = useSelector(selectUserToken);
-  // console.log(userToken, "userToken")
-  // console.log(state, "state in UP")
 
-  // import { useDispatch, useSelector } from 'react-redux';
-  // import {selectIsUserLogin} from /*redux/auth/auth-selectors*/
-
-  // const isLogin = useSelector(selectIsUserLogin);
   const onLogout = () => {
     dispatch(logout());
   };
