@@ -21,6 +21,7 @@ export const getCurrentUser = async token => {
   try {
     setToken(token);
     const { data } = await instance.get('/api/auth/current');
+    console.log(data, "data in current")
     return data;
   } catch (error) {
     clearToken();

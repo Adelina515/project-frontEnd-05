@@ -15,6 +15,16 @@ import { ExclamationMark } from 'components/exclamation/Exclamation';
 
 export default function Profile() {
 
+  const dispatch = useDispatch();
+  const state = useSelector(state => state.auth.user);
+  console.log(state, "state in profile")
+  const userToken = useSelector(selectUserToken);
+
+  const onLogout = () => {
+    dispatch(logout());
+  };
+
+
   const state = useSelector(state => state.auth.user);
   const userToken = useSelector(selectUserToken);  
 
