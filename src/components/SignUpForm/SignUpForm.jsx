@@ -1,5 +1,6 @@
 import css from './sign-up-form.module.css';
 import { useDispatch } from 'react-redux';
+import {useState} from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import AuthButton from '../../btn/AuthButton/AuthButton';
 import { signUpSchema } from '../../schemas/auth/auth-schemas';
@@ -9,6 +10,7 @@ import toast from 'react-hot-toast';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
+  const [showPassword, setShowPassword] = useState(false);
   const initialValues = {
     name: '',
     email: '',
@@ -57,6 +59,7 @@ const SignUpForm = () => {
               />
 
               <div className={css.label}>
+               
                 <Field
                   type="email"
                   name="email"
@@ -88,15 +91,35 @@ const SignUpForm = () => {
                 )}
               </div>
               <div className={css.label}>
-                <Field
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  className={`${css.input} ${
-                    errors.password && touched.password ? css.error : ''
-                  }
-                ${touched.password && !errors.password ? css.success : ''}`}
-                />
+                <div className={css.eyeContainer}>
+                  <Field
+                    type={showPassword ? 'text' : 'password'}
+                    name="password"
+                    placeholder="Password"
+                    className={`${css.input} ${
+                      errors.password && touched.password ? css.error : ''
+                    }
+              ${touched.name && !errors.nam ? css.success : ''}`}
+                    required
+                  />
+
+                  {showPassword ? (
+                    <svg
+                      className={css.iconEye}
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      <use href={`${sprite}#icon-eye-open`}></use>
+                    </svg>
+                  ) : (
+                    <svg
+                      className={css.iconEye}
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      <use href={`${sprite}#icon-eye-off`}></use>
+                    </svg>
+                  )}
+                </div>
+
                 {errors.password && touched.password && (
                   <div className={css.messageWrapper}>
                     <svg className={css.iconError}>
@@ -119,7 +142,8 @@ const SignUpForm = () => {
                 )}
               </div>
               <AuthButton children="Sign Up" />
-            </div>
+              </div>
+           
           </Form>
         )}
       </Formik>

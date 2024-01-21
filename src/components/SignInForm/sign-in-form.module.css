@@ -1,125 +1,123 @@
-.form{
-    display:flex;
-    flex-direction:column;
-    gap:28px;
-    margin-bottom: 12px;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 12px;
 }
 
-   .inputWrapper{
-    display:flex;
-    flex-direction:column;  
-    gap:18px;
-    }
-.input{
-    width:335px;
-    height:46px;
-    background-color:transparent;
-    border:1px solid var(--input-border-color);
-    border-radius:12px;
-    padding:0;
-    padding-left:14px;
-    color: var(--invent-color);
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5; /* 150% */
-    outline:none;
-    
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
-input:focus{
-    border-color:var(--decorate-color);
+.input {
+  width: 335px;
+  height: 46px;
+  background-color: transparent;
+  border: 1px solid var(--input-border-color);
+  border-radius: 12px;
+  padding: 0;
+  padding-left: 14px;
+  color: var(--invent-color);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5; /* 150% */
+  outline: none;
 }
-.success{
-    border: 1px solid var(--success-color);
+input:focus {
+  border-color: var(--decorate-color);
 }
-.error{
-    border: 1px solid var(--error-color);
+.success {
+  border: 1px solid var(--success-color);
 }
-::placeholder{
-    color: var(--placeholder-color);
-    font-family: Roboto;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.29; /* 128.571% */
+.error {
+  border: 1px solid var(--error-color);
 }
-.iconSuccess{
-    width:16px;
-    height:16px;
+::placeholder {
+  color: var(--placeholder-color);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.29; /* 128.571% */
 }
-.iconError{
-    width:16px;
-    height:16px;
+.iconSuccess {
+  width: 16px;
+  height: 16px;
 }
-.eyeContainer{
-    position: relative;
-    width:335px;
+.iconError {
+  width: 16px;
+  height: 16px;
 }
-.iconEye{
-width:20px;
-height:20px;
-position: absolute;
-top:0;
-right:16px;
-
-
+.eyeContainer {
+  position: relative;
+  width: 335px;
+}
+.iconEye {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 16px;
 }
 
-.textError{
-font-family: Roboto;
-font-size: 12px;
-font-weight: 400;
-line-height: 1.5;
-letter-spacing: 0.01em;
-color:var(--error-color);
+.textError {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--error-color);
 }
-.textSuccess{
-font-family: Roboto;
-font-size: 12px;
-font-weight: 400;
-line-height: 18px;
-letter-spacing: 0.01em;
-color:var(--success-color);
+.textSuccess {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+  color: var(--success-color);
 }
-.messageWrapper{
-   display: flex;
-   gap:1px;
+.messageWrapper {
+  display: flex;
+  gap: 1px;
 }
-.label{
-    display: flex;
-    flex-direction: column;
-    gap:4px;
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 .inputContainer {
-    position: relative;
-  }
-  
-  .iconEye {
-    position: absolute;
-    top: 50%;
-    right: 16px;
-    transform: translateY(-50%);
-    cursor: pointer;
-   
-  }
-@media screen and (min-width: 768px) {
-    .form{
-        gap:64px;
-       }
-       .inputWrapper{
-        display:flex;
-        flex-direction:column;  
-        gap:20px;
-    }
-    .input{
-        width:364px;
-        height:52px;
-    }
-    .eyeContainer{
-        width:364px;
-    }
-    ::placeholder{
-        font-size: 16px;
-        line-height: 1.5; /* 150% */
+  position: relative;
 }
+
+.iconEye {
+width:20px;
+height:20px;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .form {
+    gap: 64px;
+  }
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .input {
+    width: 364px;
+    height: 52px;
+  }
+  .eyeContainer {
+    width: 364px;
+  }
+  ::placeholder {
+    font-size: 16px;
+    line-height: 1.5; /* 150% */
+  }
 }
