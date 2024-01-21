@@ -3,7 +3,7 @@ import { setToken } from '../../instance/instance';
 import { getCurrentUser } from '../api/auth';
 
 export const updateProfileAvatar = async ({ avatar, userToken }) => {
-  console.log(avatar, 'newParams');
+  console.log(avatar, 'newAvatar');
   // console.log(userToken, 'userToken in Avatar');
 
   try {
@@ -28,8 +28,8 @@ export const updateProfileParams = async ({ newParams, userToken }) => {
   // console.log(newParams, 'newParams');
   try {
     setToken(userToken);
-    // console.log(userToken, 'userToken in UpdateProfile');
-    // console.log(newParams, 'newParams in UpdateProfile');
+     console.log(userToken, 'userToken in UpdateProfile');
+     console.log(newParams, 'newParams in UpdateProfile');
     const currentUserParams = await getCurrentUser(userToken);
 
     const changes = {};
