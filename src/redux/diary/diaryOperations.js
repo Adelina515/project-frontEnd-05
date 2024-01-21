@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 /*import instance from '../../instance/instance';*/
 
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTU2MTlhMzI5M2U1NzJkZDU0Nzg2YyIsImlhdCI6MTcwNTgzMDUxNywiZXhwIjoxNzA1OTEzMzE3fQ.T7bj4BmvPTd2a-y3EW3W9BKNqBRQnVp_4c7I_0_B6io'
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWQ2NGY4ZTc4YTQxYmIyMGY0MDhkNSIsImlhdCI6MTcwNTg2MjQ1MSwiZXhwIjoxNzA1OTQ1MjUxfQ.dHZUf4ehuRC6POSdeGAoYOJFGtvHT4nrMaA9IjUA6Rg'
 axios.defaults.baseURL = 'https://power-pulse-backend.onrender.com/';
 axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 
