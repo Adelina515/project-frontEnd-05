@@ -85,8 +85,10 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(updateProfileParamsTh.fulfilled, (state, { payload }) => {
-        state.user = payload.user;
-        state.token = payload.token;
+        console.log(state.user, "state.user in authSlice")
+        console.log(payload, "payload.user user in authSlice")
+        state.user = {...payload};
+        /// state.token = payload.token;
         state.isLogin = true;
       })
       .addCase(updateProfileParamsTh.rejected, (state, { payload }) => {

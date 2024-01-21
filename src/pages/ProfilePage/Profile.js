@@ -13,6 +13,8 @@ import {selectUserToken} from '../../redux/UserPageCntrls/selectors';
 import css from './ProfilePage.module.css'
 
 import { ExclamationMark } from 'components/exclamation/Exclamation';
+import { current } from '../../redux/auth/auth-operations';
+import { useEffect } from 'react';
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -24,23 +26,23 @@ export default function Profile() {
     dispatch(logout());
   };
 
-  //   useEffect(() => {
+    useEffect(() => {
 
-  //     const fetchData = async () => {
-  //       try {
-  //         await dispatch(getCurrentUserDataTh(userToken));
-  //     //    console.log(currentUserData, 'currentUserData');
-  //         // Обновляем состояние после получения данных
-  //         // handleProfileUpdate(currentUserData);
-  //       } catch (error) {
-  //         console.error('Ошибка при получении данных пользователя:', error);
-  //         // Добавьте обработку ошибки, например, отображение сообщения об ошибке или перенаправление на страницу входа
-  //       }
-  //     };
+      const fetchData = async () => {
+        try {
+          await dispatch(current());
+      //    console.log(currentUserData, 'currentUserData');
+          // Обновляем состояние после получения данных
+          // handleProfileUpdate(currentUserData);
+        } catch (error) {
+          console.error('Ошибка при получении данных пользователя:', error);
+          // Добавьте обработку ошибки, например, отображение сообщения об ошибке или перенаправление на страницу входа
+        }
+      };
 
-  //     fetchData(userToken);
+      fetchData(userToken);
 
-  // },[dispatch, userToken]);
+  },[dispatch, userToken]);
 
   // Показывать заглушку или другой контент, если данных нет
   if (!state) {
