@@ -22,7 +22,7 @@ const DayDashboard = () => {
   const consumedCaloriesByDate = useSelector(selectConsumedCaloriesByDate);
   const burnedCaloriesByDate = useSelector(selectBurnedCaloriesByDate);
   const sportsRemaining = useSelector(selectSportsRemaining);
-  const {dailyCalorieIntake} = useSelector(selectUserBmr);
+  const dailyCalorieIntake = useSelector(selectUserBmr);
  
  
   const caloriesRemaining = dailyCalorieIntake - consumedCaloriesByDate;

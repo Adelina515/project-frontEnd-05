@@ -2,6 +2,7 @@
 
 .dayDashboard {
     margin-top: 40px;
+            margin-bottom: 40px;
 
 }
 
@@ -20,6 +21,7 @@
     display: flex;
     gap: 8px;
     align-items: flex-start;
+    height: 54px;
 }
 
 .adviceIconWrap {
@@ -60,7 +62,10 @@
     .dayDashboard {
         max-width: 532px;
         order: 2;
+        margin-bottom: 32px;
+        margin-top: 0px;
     }
+  
 
     .statisticList {
         flex-direction: column;
@@ -90,7 +95,7 @@
 
         max-width: 390px;
 
-        margin-top: 0px;
+        margin-top: 32px;
     }
 
     .statisticList {
