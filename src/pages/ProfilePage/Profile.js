@@ -6,8 +6,7 @@ import { UserForm } from 'components/userForm/UserForm';
 
 import {  useSelector } from 'react-redux';
 import { LogOutBtn } from 'btn/logOutBtn/LogOutBtn';
-// import { selectIsUserLogin } from '../redux/auth/auth-selectors';
-// import { logout } from '../../servises/api/auth';
+
 
 
 import {selectUserToken} from '../../redux/UserPageCntrls/selectors';
@@ -15,41 +14,16 @@ import {selectUserToken} from '../../redux/UserPageCntrls/selectors';
 import css from './ProfilePage.module.css'
 
 import { ExclamationMark } from 'components/exclamation/Exclamation';
-// import { current } from '../../redux/auth/auth-operations';
-// import { useEffect } from 'react';
+
 
 export default function Profile() {
 
-// const dispatch = useDispatch();
 
   const state = useSelector(state => state.auth.user);
   console.log(state, "state in profile")
   const userToken = useSelector(selectUserToken);
 
-  // const onLogout = () => {
-  //   dispatch(logout());
-  // };
 
-
-  //   useEffect(() => {
-
-  //     const fetchData = async () => {
-  //       try {
-  //         await dispatch(current());
-  //     //    console.log(currentUserData, 'currentUserData');
-  //         // Обновляем состояние после получения данных
-  //         // handleProfileUpdate(currentUserData);
-  //       } catch (error) {
-  //         console.error('Ошибка при получении данных пользователя:', error);
-  //         // Добавьте обработку ошибки, например, отображение сообщения об ошибке или перенаправление на страницу входа
-  //       }
-  //     };
-
-
-  const state = useSelector(state => state.auth.user);
-  const userToken = useSelector(selectUserToken);  
-
-  // Показывать заглушку или другой контент, если данных нет
   if (!state) {
     return <div>Loading...</div>;
   }
