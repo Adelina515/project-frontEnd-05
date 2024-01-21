@@ -36,6 +36,7 @@
     border: none;
     color: #e6533c;
     font-size: 14px;
+    font-weight: 500;
     gap: 8px;
     line-height: 1.28;
     padding: 0;
@@ -72,6 +73,7 @@
         height: 234px;
 
         margin-top: 32px;
+        margin-bottom: 64px;
     }
 
     .dayScroll {
