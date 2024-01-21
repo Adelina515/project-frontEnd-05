@@ -6,41 +6,46 @@
   /*Mobile*/
 @media screen and (min-width: 375px) {
   .heroContainer {
+    position: relative;
     padding-top:90.5px;
     width: 375px;
-    height: 812px;
+    /* height: 812px; */
+    min-height: 100vh;
     padding-left: 20px;
   }
 
 .leftSide {
   width: 100%;
   height: inherit;
-  position: relative;
+ 
 }
 .text {
   width: 335px;
   color: var(--input-border-color);
+  font-family: Roboto;
   font-size: 14px;
+  font-style: normal;
   font-weight: 400;
-  line-height: 1.29; 
+  line-height: 1.29; /* 128.571% */
   margin-bottom: 28px;
   margin-top: 14px;
 }
+
 .link {
   display: inline;
   color: var(--invent-color);
+  /* font-feature-settings: 'clig' off, 'liga' off; */
   font-family: Roboto;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
   text-decoration: underline;
 }
-
 .rightSide {
   position: absolute;
   width:298px;
   left: 77px;
-  top:120px; 
+  top:230px; 
   z-index: -1;
  
   height: 571px;
@@ -73,18 +78,19 @@
   .heroContainer {
     padding-top: 141px;
      width: 768px;
-     height: 1024px;
+     /* height: 1024px; */
+     min-height: 100vh;
      padding-left: 32px;
    }
    .leftSide {
-     position: relative;
+   
      width:100%;
      height: inherit;
      }
    .rightSide {
      position: absolute;
      left: 299px;
-     top: 0px;
+     top: 80px;
      width:437px;
      height: 893px;
      background-image: linear-gradient(
@@ -124,7 +130,8 @@
   .heroContainer {
     padding-top: 152px;
     width: 1440px;
-    height: 800px; 
+    /* height: 800px;  */
+    min-height: 100vh;
     padding-left: 96px;
   }
 
@@ -136,7 +143,7 @@
   .rightSide {
     position: absolute;
     left: 674px;
-    top: 0;
+    bottom:0px;
     width: 670px;
     height: inherit;
     background-image: linear-gradient(
@@ -148,6 +155,7 @@
     background-position: 50%;
     background-size: cover;
     background-repeat: no-repeat;
+   
   }
   @media screen and (min-device-pixel-ratio: 2) and (min-width: 1440px),
   screen and (min-resolution: 192dpi) and (min-width: 1440px),
@@ -162,48 +170,3 @@
   }
 }
 }
-/* 
-.text {
-  width: 335px;
-  color: var(--input-border-color);
-  font-family: Roboto;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.29; 
-  margin-bottom: 28px;
-  margin-top: 14px;
-}
-
-.link {
-  display: inline;
-  color: var(--invent-color);
- 
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
-  text-decoration: underline;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-    padding-top: 140.9px;
-  }
-  .text {
-    width: 496px;
-    font-size: 16px;
-    line-height: 1.5; 
-    margin-top: 16px;
-    margin-bottom: 32px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .container {
-    width: 1440px;
-    padding-top: 151.9px;
-    padding-left: 96px;
-  }
-} */
