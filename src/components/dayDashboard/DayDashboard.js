@@ -4,10 +4,12 @@ import { useSelector } from 'react-redux';
 import css from './DayDashboard.module.css';
 import StatisticsItem from './StatisticsItem/StatisticsItem';
 
-import { selectBurnedCaloriesByDate, selectConsumedCaloriesByDate, /*selectSportsRemaining */} from '../../redux/diary/diarySelectors';
+import { selectBurnedCaloriesByDate, selectConsumedCaloriesByDate, selectSportsRemaining } from '../../redux/diary/diarySelectors';
 
 
-/*import {selectUserBmr } from '../';*/
+/*import {selectUser } from '../../redux/UserPageCntrls/selectors';*/
+
+import sprite from '../../img/sprite/symbol-defs.svg';
 
 
 
@@ -15,20 +17,21 @@ import { selectBurnedCaloriesByDate, selectConsumedCaloriesByDate, /*selectSport
 
 
 
+export const selectUserBmr = state => state.auth.user.bmr
 const DayDashboard = () => {
   const consumedCaloriesByDate = useSelector(selectConsumedCaloriesByDate);
   const burnedCaloriesByDate = useSelector(selectBurnedCaloriesByDate);
-  /*const sportsRemaining = useSelector(selectSportsRemaining);
-  const {dailyCalorieIntake} = useSelector(selectUserBmr);*/
+  const sportsRemaining = useSelector(selectSportsRemaining);
+  const dailyCalorieIntake = useSelector(selectUserBmr);
  
  
-  /*const caloriesRemaining = dailyCalorieIntake - consumedCaloriesByDate;*/
+  const caloriesRemaining = dailyCalorieIntake - consumedCaloriesByDate;
   const dailyPhysicalActivity = 110;
 
-    /*const isCaloriesRemaining =
+    const isCaloriesRemaining =
     consumedCaloriesByDate < dailyCalorieIntake ? `positive` : `negative`;
   const isSportsRemaining =
-    sportsRemaining > 0 ? `positive` : `negative`;*/
+    sportsRemaining > 0 ? `positive` : `negative`;
 
   
  
@@ -39,7 +42,7 @@ const DayDashboard = () => {
       <ul className={css.statisticList}>
         <StatisticsItem
           statisticsName={'Daily calorie intake'}
-          /*statisticsValue={`${dailyCalorieIntake}`}*/
+          statisticsValue={`${dailyCalorieIntake}`}
             statisticsIcon={'icon-fork-filled'}
           statisticPrimary
         />
@@ -64,26 +67,27 @@ const DayDashboard = () => {
         />
         <StatisticsItem
           statisticsName={'Calories remaining'}
-         /* statisticsValue={`${caloriesRemaining}`}*/
+         statisticsValue={`${caloriesRemaining}`}
           statisticsIcon={'icon-bubble-filled'}
-                    /*fulfilledNorm={isCaloriesRemaining}*/
+                    fulfilledNorm={isCaloriesRemaining}
 
 
         />
         <StatisticsItem
           statisticsName={'Sports remaining'}
- /*statisticsValue={
+ statisticsValue={
             isSportsRemaining === 'positive'
               ? `+${sportsRemaining} min`
               : `${sportsRemaining} min`
-          }   */     statisticsIcon={'icon-running-filled'}
+          }        statisticsIcon={'icon-running-filled'}
 
         />
       </ul>
       <div className={css.adviceWrap}>
         <div className={css.adviceIconWrap}>
-          {/* Іконка */}
-        </div>
+ <svg  width="24px" height="24px">
+              <use href={`${sprite}#icon-warning`}></use>
+            </svg>        </div>
         <p className={css.adviceText}>
           Record all your meals in the calorie diary every day. This will help you be aware of your nutrition and make informed choices.
         </p>

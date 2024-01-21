@@ -31,7 +31,7 @@ export const updateProfileParamsTh = createAsyncThunk(
   'auth/params',
   async (credentials, { rejectWithValue }) => {
     try {
- //     console.log(credentials, 'credentials in params');
+     console.log(credentials, 'credentials in params');
       return await updateProfileParams(credentials);
     } catch ({ response }) {
       rejectWithValue(response);

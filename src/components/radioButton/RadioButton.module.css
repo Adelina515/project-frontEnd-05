@@ -1,19 +1,22 @@
 @import '../../index.css';
 
-@media screen and (min-width: 370px) {
-  .radioLabel {
-    padding-left: 25px;
-    cursor: pointer;
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.71em;
-    letter-spacing: -0.28px;
-    color: var(--input-border-color);
-    margin-right: 9px;
-    position: relative;
-  }
+
+.radioLabel {
+  padding-left: 14px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71rem;
+  letter-spacing: -0.28px;
+  color: var(--invent-color);
+  margin-right: 12px;
+  position: relative;
+ 
 }
+
+
+
 
 .radioLabel::before {
   top: 50%;

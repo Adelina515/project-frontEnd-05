@@ -76,22 +76,26 @@
 }
 
 .titleName {
-  color: #efede8;}
+ color: var(--invent-color);
+font-family: "Roboto", sans-serif;
+font-weight: 400;
+font-size: 18px;
+line-height: 20px;
+}
 
   @media screen and (min-width: 768px) {
-    .titleName {   font-family: 'Roboto';
-      font-weight: 400;
+    .titleName {   
     font-size: 24px;
     line-height: 28px;
   }
 }
 
 .subtitle {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  color: var(--input-border-color);
+  color: var(--placeholder-color);
   margin-top: 4px;}
 
   @media screen and (min-width: 768px) {

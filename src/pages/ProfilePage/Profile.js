@@ -3,10 +3,12 @@ import { Daily } from 'components/daily/Daily';
 import { UserProfile } from 'components/userCard/UserCard';
 import { UserForm } from 'components/userForm/UserForm';
 
+
 import {  useSelector } from 'react-redux';
 import { LogOutBtn } from 'btn/logOutBtn/LogOutBtn';
 // import { selectIsUserLogin } from '../redux/auth/auth-selectors';
 // import { logout } from '../../servises/api/auth';
+
 
 import {selectUserToken} from '../../redux/UserPageCntrls/selectors';
 
@@ -17,7 +19,9 @@ import { ExclamationMark } from 'components/exclamation/Exclamation';
 // import { useEffect } from 'react';
 
 export default function Profile() {
+
 // const dispatch = useDispatch();
+
   const state = useSelector(state => state.auth.user);
   console.log(state, "state in profile")
   const userToken = useSelector(selectUserToken);
@@ -25,6 +29,7 @@ export default function Profile() {
   // const onLogout = () => {
   //   dispatch(logout());
   // };
+
 
   //   useEffect(() => {
 
@@ -40,9 +45,9 @@ export default function Profile() {
   //       }
   //     };
 
-  //     fetchData(userToken);
 
-  // },[dispatch, userToken]);
+  const state = useSelector(state => state.auth.user);
+  const userToken = useSelector(selectUserToken);  
 
   // Показывать заглушку или другой контент, если данных нет
   if (!state) {

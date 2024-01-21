@@ -62,12 +62,11 @@ export const updateProfileAvatar = async ({avatar, userToken}) => {
 };
 
 export const updateProfileParams = async ({newParams, userToken}) => {
- // console.log(newParams, 'newParams');
+  console.log(newParams, 'newParams');
   try {
  
     setToken(userToken);
-   // console.log(userToken, "userToken in UpdateProfile")
-  //  console.log(newParams, "newParams in UpdateProfile")
+ 
     const currentUserParams = await getCurrentUser({userToken});
 
     const changes = {};
@@ -82,6 +81,12 @@ export const updateProfileParams = async ({newParams, userToken}) => {
 
     if (newParams.sex !== currentUserParams.sex) {
       changes.sex = newParams.sex;
+    }
+    if (newParams.name !== currentUserParams.name) {
+      changes.name = newParams.name;
+    }
+    if (newParams.birthday !== currentUserParams.birthday) {
+      changes.birthday = newParams.birthday;
     }
 
     if (newParams.levelActivity !== currentUserParams.levelActivity) {
