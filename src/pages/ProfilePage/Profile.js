@@ -3,8 +3,10 @@ import { Daily } from 'components/daily/Daily';
 import { UserProfile } from 'components/userCard/UserCard';
 import { UserForm } from 'components/userForm/UserForm';
 
+
 import {  useSelector } from 'react-redux';
 import { LogOutBtn } from 'btn/logOutBtn/LogOutBtn';
+
 
 
 import {selectUserToken} from '../../redux/UserPageCntrls/selectors';
@@ -16,9 +18,11 @@ import { ExclamationMark } from 'components/exclamation/Exclamation';
 
 export default function Profile() {
 
+
   const state = useSelector(state => state.auth.user);
   console.log(state, "state in profile")
   const userToken = useSelector(selectUserToken);
+
 
   if (!state) {
     return <div>Loading...</div>;

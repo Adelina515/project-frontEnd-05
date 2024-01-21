@@ -64,15 +64,15 @@ export const UserForm = ({
   ];
 
   const handleSubmit = async (values) => {
+    console.log(values, "values newParams")
+
     try {
       const newParams = {
         ...values,
       };
 
-      // Dispatch the updateProfileParamsTh action
+     
       await dispatch(updateProfileParamsTh({ newParams, userToken }));
-
-      // Show success notification
       toast.success('Profile updated successfully!', {
         duration: 3000,
       });
@@ -132,7 +132,7 @@ export const UserForm = ({
                 name="name"
                 type="text"
                 className={css.input}
-                defaultValue={name}
+                value={name}
                
               />  
               <label className={css.label} htmlFor="name">Name</label>
@@ -142,6 +142,7 @@ export const UserForm = ({
               <input
                 type="text"
                 name="email"
+                id="email"
                 defaultValue={email}
                 className={css.input}
                 readOnly
@@ -188,24 +189,23 @@ export const UserForm = ({
               />
               <label htmlFor="desiredWeight" className={css.label} >Desired Weight</label>
             </div>
-            {/* <div className={css.wrappInput}>
-              <input
-                type="date"
-                name="birthday"
-                id="birthday"
-                value={formik.values.birthday}
-                onChange={formik.handleChange}
-                className={css.inputField}
-              />
-              <label htmlFor="birthday" className={css.label} >Date of birthday</label>
-            </div> */}
-            <div  className="calendar" id="calendar">
-            <Calendar  selectedDate={formik.values.birthday}
-           
-              setSelectedDate={date => {
-                const formattedDate = parseISO(date.toISOString());
-                formik.setFieldValue('birthday', formattedDate)}}/>
-          </div></div>
+            <div className={css.calendar} id="calendar">
+  <Calendar
+   minDate={new Date('1900-01-01')}
+    selectedDate={formik.values.birthday}
+    setSelectedDate={(date) => {
+      const formattedDate = parseISO(date.toISOString());
+    
+      formik.setFieldValue('birthday', formattedDate);
+    }}
+   
+  
+  />
+  <label htmlFor="calendar" className={css.label}>
+    Date of birth
+  </label>
+</div>
+</div>
           </div>
 
           <div className={css.wrapperRadio}>
@@ -214,6 +214,7 @@ export const UserForm = ({
               <label htmlFor="blood"className={css.labelForRadio} >Blood</label>
 
                 {bloodOptions.map(option => (
+                  
                   <RadioButton
                     key={option.id}
                     id={option.id}
@@ -229,6 +230,7 @@ export const UserForm = ({
 
               <div className={css.forRadioBtn}>
                 {sexOptions.map(option => (
+                  
                   <RadioButton
                     key={option.id}
                     id={option.id}
@@ -246,6 +248,7 @@ export const UserForm = ({
 
             <div className={css.forLevelAct}>
               {levelOptions.map(option => (
+                
                 <RadioButton
                   className={css.wrapperLevel}
                   key={option.id}
