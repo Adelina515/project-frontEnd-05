@@ -1,0 +1,20 @@
+.userBar{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-left: 16px;
+}
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    border: 1px solid #E6533C;
+    background-color: rgba(48, 48, 48, 0.30);
+  }
+  .avatarSvg{
+   width: 22px;
+   height: 22px;
+  }

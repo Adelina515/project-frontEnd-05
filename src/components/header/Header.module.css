@@ -4,31 +4,14 @@
   justify-content: space-between;
   max-width: 1440px;
   margin: 0 auto;
+  padding: 24px;
  }
 
-.btn {
+.user {
   display: flex;
-}
-
-.btnList {
-  list-style: none;
-  display: flex;
-  align-items: center;
   gap: 16px;
-}
-
-.btnList a {
-  text-decoration: none;
-  color: #EFEDE8;
-  font-size: 16px;
-  height: 44px;
-  border: 1px solid rgba(239, 237, 232, 0.3);
-  border-radius: 12px;
-  padding: 10px 27px 10px 27px;
-}
-
-.btnList a:focus {
-  background-color: #E6533C;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -36,6 +19,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .headerWrapper {
+    padding: 32px;
+   }
 
 }
 
