@@ -24,6 +24,7 @@ const initialState = {
   loading: false,
   isLogin: false,
   isRefreshing: true,
+  isParamsExist:false,
   error: null,
 };
 const authSlice = createSlice({
@@ -41,6 +42,7 @@ const authSlice = createSlice({
         state.token = payload.token;
         state.isLogin = true;
         state.isRefreshing = false;
+        state.isParamsExist=true;
       })
       .addCase(register.rejected, (state, { payload }) => {
         state.loading = false;
@@ -103,10 +105,12 @@ const authSlice = createSlice({
         /// state.token = payload.token;
 
         state.isLogin = true;
+        state.isParamsExist=false;//додала test
       })
       .addCase(updateProfileParamsTh.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
+        state.isParamsExist= false;//додала test
       })
       .addCase(updateProfileAvatarTh.pending, state => {
         state.loading = false;
