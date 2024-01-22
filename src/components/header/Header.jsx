@@ -26,7 +26,7 @@ export const Header = () => {
     
     <div className={css.headerWrapper}>
       <Logo />
-      {!token && <div className={css.user}>
+      {token && <div className={css.user}>
         {!isMobile && <UserNav/>}
         <UserBar/>
         {!isMobile && <LogOutBtn />}
