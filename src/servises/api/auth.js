@@ -18,6 +18,8 @@ export const logout = async () => {
   return data;
 };
 export const getCurrentUser = async token => {
+  console.log("getCurrentUser start in API auth");
+  console.log(token,"token in API auth" )
   try {
     setToken(token);
     const { data } = await instance.get('/api/auth/current');

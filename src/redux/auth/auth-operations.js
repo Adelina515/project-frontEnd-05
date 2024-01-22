@@ -37,8 +37,11 @@ export const logout = createAsyncThunk(
 
 export const current = createAsyncThunk(
   'auth/current',
+  
   async (_, { rejectWithValue, getState }) => {
     try {
+      console.log("auth start in thunk");
+
       const { auth } = getState();
       console.log("auth",auth);
      
