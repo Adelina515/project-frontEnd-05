@@ -9,7 +9,8 @@ h2,
 h3 {
   margin: 0;
 }
-ul, li {
+ul,
+li {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -52,8 +53,8 @@ ul, li {
   --decorate-color: #e6533c; /*orange*/
   --accent-color: #ef8964; /*orange_1*/
   --rare-color: #efa082; /*beige*/
-  --info-block-color:#303030;
-  --addition-color: rgba(239,237,232,0.65);
+  --info-block-color: #303030;
+  --addition-color: rgba(239, 237, 232, 0.65);
   --transition-duration: 250ms;
   --transition-time-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
