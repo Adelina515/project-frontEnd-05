@@ -82,8 +82,8 @@ const ProductsTable = ( { products, data }) => {
               <p className={css.statusText}>
                 {/* Recommended */}
                 {groupBloodNotAllowed[userBlood]
-                  ? 'Recommended'
-                  : 'Not recommended'}
+                  ? 'Yes'
+                  : 'No'}
               </p>
                       </div>
                     </td>

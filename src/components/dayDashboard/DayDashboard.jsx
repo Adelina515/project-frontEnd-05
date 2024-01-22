@@ -9,7 +9,7 @@ import {
   selectSportsRemaining,
 } from '../../redux/diary/diarySelectors';
 
-/*import {selectUser } from '../../redux/UserPageCntrls/selectors';*/
+/*import {selectUserBmr } from '../../redux/UserPageCntrls/selectors';*/
 
 import sprite from '../../img/sprite/symbol-defs.svg';
 

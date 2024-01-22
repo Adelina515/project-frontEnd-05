@@ -31,7 +31,7 @@
 .nameCategory {
     max-width: 70px;
 
-    color: #ef8964;
+    color: var(--accent-color);
     font-size: 12px;
     font-weight: 400;
     line-height: 1.5;
