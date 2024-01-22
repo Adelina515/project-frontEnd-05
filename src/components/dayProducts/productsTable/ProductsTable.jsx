@@ -1,46 +1,29 @@
+import { useSelector, useDispatch } from 'react-redux';
+
 import css from './ProductsTable.module.css';
-/*import PropTypes from 'prop-types';*/
 import svg from '../../../img/sprite/symbol-defs.svg';
-import { useSelector } from "react-redux";
-/*import { selectDiaryProducts } from '../../../redux/diary/diarySelectors';*/
 
+import { selectDiaryProducts } from '../../../redux/diary/diarySelectors';
+import { deleteProductDiary } from '../../../redux/diary/diaryOperations';
 
-import { deleteProductDiary, /*fetchAllDiary*/ } from '../../../redux/diary/diaryOperations';
-
-
-
-import { useDispatch } from 'react-redux';
-/*import { useEffect } from 'react';*/
-
-
-
-const ProductsTable = ( { products, data }) => {
-    /* const productsInDiary = useSelector(selectDiaryProducts);*/
-/*console.log(productsInDiary)
-    const testArr = useSelector(state => state.diary)
-  console.log(testArr)*/
-
-  
+const ProductsTable = ({ products, data }) => {
   const dispatch = useDispatch();
+  const productsInDiary = useSelector(selectDiaryProducts);
+  console.log(productsInDiary);
 
+  const deleteProduct = _id => {
+    console.log('_id >>', _id);
+    dispatch(deleteProductDiary(_id));
+  };
 
-  const deleteProduct = (_id) => {
-    console.log("_id >>", _id)
-    dispatch(deleteProductDiary(_id))
-  }
-
-  
- /* useEffect(() => {
-        dispatch(fetchAllDiary("2024-01-15"));
-  }, [selectedDate, dispatch]);*/
   const userBlood = useSelector(state => state.auth.user.blood);
-  const { groupBloodNotAllowed } = data;
+  const groupBloodNotAllowed = 1;
 
-    const capitalizedWord = (word) => {
-  return word.substring(0, 1).toUpperCase() + word.substring(1);
-};
-    return (
-       <ul className={css.diaryList}>
+  const capitalizedWord = word => {
+    return word.substring(0, 1).toUpperCase() + word.substring(1);
+  };
+  return (
+    <ul className={css.diaryList}>
       {products.map(
         ({ _id, calories, grams, productId: { category, title } }) => {
           return (
@@ -72,19 +55,17 @@ const ProductsTable = ( { products, data }) => {
                     <td className={css.nameValue}>
                       <div className={`${css.recommendCont}`}>
                         <svg className={css.statusCircle}>
-                {/* <use href={`${svg}#icon-circle-green`}></use> */}
-                {groupBloodNotAllowed[userBlood] ? (
-                  <use href={`${svg}#icon-circle-green`}></use>
-                ) : (
-                  <use href={`${svg}#icon-circle-red`}></use>
-                )}
-              </svg>
-              <p className={css.statusText}>
-                {/* Recommended */}
-                {groupBloodNotAllowed[userBlood]
-                  ? 'Yes'
-                  : 'No'}
-              </p>
+                          {/* <use href={`${svg}#icon-circle-green`}></use> */}
+                          {groupBloodNotAllowed[userBlood] ? (
+                            <use href={`${svg}#icon-circle-green`}></use>
+                          ) : (
+                            <use href={`${svg}#icon-circle-red`}></use>
+                          )}
+                        </svg>
+                        <p className={css.statusText}>
+                          {/* Recommended */}
+                          {groupBloodNotAllowed[userBlood] ? 'Yes' : 'No'}
+                        </p>
                       </div>
                     </td>
                   </tr>
@@ -92,7 +73,7 @@ const ProductsTable = ( { products, data }) => {
                     <th className={`${css.nameCateg} ${css.nameTrash}`}>
                       Trash
                     </th>
-                    <td onClick={() => deleteProduct(_id)}> 
+                    <td onClick={() => deleteProduct(_id)}>
                       <svg className={css.iconTresh} width="20px" height="20px">
                         <use href={`${svg}#icon-trash`}></use>
                       </svg>
@@ -106,8 +87,7 @@ const ProductsTable = ( { products, data }) => {
       )}
     </ul>
   );
-
-}
+};
 
 /*ProductsTable.propTypes = {
   products: PropTypes.array.isRequired,
