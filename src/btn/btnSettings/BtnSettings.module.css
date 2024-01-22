@@ -1,9 +1,9 @@
 .iconSettings {
   width: 24px;
-  margin-left: auto;
+  height: 24px;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .iconSettings {
     margin-left: auto;
   }
@@ -13,4 +13,4 @@
   .iconSettings {
     margin-left: 32px;
   }
-}
+} */
