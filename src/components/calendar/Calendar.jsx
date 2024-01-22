@@ -18,7 +18,7 @@ export const Calendar = ({ selectedDate, setSelectedDate }) => {
   return (<>
     <style>{DatePickerStyles}</style>
    
-      <div style={{ position: 'relative' }}>
+    <div style={{ position: 'relative' }}>
         <svg className={style.iconSvg} width="18" height="18">
           <use href={`${sprite}#icon-calendar-normal`}></use>
         </svg>

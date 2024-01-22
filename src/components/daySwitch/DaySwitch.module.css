@@ -1,7 +1,10 @@
 .body {
   display: flex;
   align-items: center;
+  
 }
+
+
 
 .dateButton {
   width: 129px;
