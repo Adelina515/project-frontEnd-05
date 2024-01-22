@@ -19,9 +19,14 @@ const ProductsPage = () => {
   const dateDiary = location.state;
   console.log('dateDiary', dateDiary);
   const isSuccess = useSelector(selectSuccess);
-
-  const newDate = () => {
-    const rawDate = new Date();
+  // const newDate = () => {
+  //   const rawDate = new Date();
+  //   const newDate = formatDate(rawDate);
+  //   return newDate;
+  // };
+  const convertDate = (date) => {
+    let rawDate
+    date ? rawDate = date : rawDate = new Date()
     const newDate = formatDate(rawDate);
     return newDate;
   };
@@ -37,7 +42,7 @@ const ProductsPage = () => {
     console.log(count);
     setCalories(count);
   };
-  const date = dateDiary || newDate();
+  const date = convertDate(dateDiary);
   console.log('finalDate', date);
   return (
     <div className={css.productsPage}>
