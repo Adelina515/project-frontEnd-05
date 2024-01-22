@@ -16,7 +16,7 @@
     overflow-y: auto;
     /*автоматично повляється смуга прогрутки*/
     max-height: 1032px;
-    padding-bottom: 8px;
+    /*padding-bottom: 8px;*/
 
 }
 

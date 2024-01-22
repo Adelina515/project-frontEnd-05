@@ -18,7 +18,7 @@ export const Calendar = ({ selectedDate, setSelectedDate }) => {
   return (<>
     <style>{DatePickerStyles}</style>
    
-    <div style={{ position: 'relative' }}>
+    <div className={ css.InputHi} style={{ position: 'relative', display: 'none'}}>
         <svg className={style.iconSvg} width="18" height="18">
           <use href={`${sprite}#icon-calendar-normal`}></use>
         </svg>
@@ -28,7 +28,7 @@ export const Calendar = ({ selectedDate, setSelectedDate }) => {
         onChange={handleDateChange}
      
          
-          customInput={<input className={css.inputField} style={{ cursor: 'pointer' }} />}
+        customInput={<input className={css.inputField} style={{ cursor: 'pointer' }} />}
           dateFormat={'dd.MM.yyyy'}
           calendarStartDay={1}
           formatWeekDay={day => day.substring(0, 1)}
