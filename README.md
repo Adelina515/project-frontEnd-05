@@ -86,7 +86,7 @@ Implemented responsiveness and mobile menu for better UI.
 
 - Adelina Hodlevska [GitHub](https://github.com/Adelina515) - TeamLead
 - Nadiia Sukhorukova [GitHub](https://github.com/Nadija30) - TeamLead
-- Solomiia Lutska [GitHub](https://github.com/Mia468) - Scrum Master Developer 
+- Solomiia Lutska [GitHub](https://github.com/Mia4678) - Scrum Master Developer 
 - Vitalii Kurpach [GitHub](https://github.com/VitaliiKyrpach) - Developer 
 - Daryna Dermanchuk [GitHub](https://github.com/DarynaSD)  -  Developer 
 - Olha Matsiiovska [GitHub](https://github.com/Matsiiovska) - Developer 
@@ -102,7 +102,7 @@ To run the application locally, follow these steps:
 1. Clone the repository: `git clone https://github.com/DmytroZhdanov/power-pulse.git`
 2. Install dependencies: `npm install`
 3. Run the app: `npm run dev`
-4. Open [http://localhost:5173](http://localhost:3000) in your browser (Note: the port may be changed if 3000 port is occupied by another website).
+4. Open [http://localhost:3000](http://localhost:3000) in your browser (Note: the port may be changed if 3000 port is occupied by another website).
 
 ## Technologies Used
 
