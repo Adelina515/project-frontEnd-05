@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project-frontEnd-05/static/css/main.5cea397c.css",
-    "main.js": "/project-frontEnd-05/static/js/main.a5f85e02.js",
+    "main.css": "/project-frontEnd-05/static/css/main.5943308c.css",
+    "main.js": "/project-frontEnd-05/static/js/main.e24c8b06.js",
     "static/css/172.309cb594.chunk.css": "/project-frontEnd-05/static/css/172.309cb594.chunk.css",
     "static/js/172.4c83ec93.chunk.js": "/project-frontEnd-05/static/js/172.4c83ec93.chunk.js",
     "static/css/220.48f0084e.chunk.css": "/project-frontEnd-05/static/css/220.48f0084e.chunk.css",
@@ -24,7 +24,7 @@
     "static/css/304.95d643d3.chunk.css": "/project-frontEnd-05/static/css/304.95d643d3.chunk.css",
     "static/js/304.a62021cf.chunk.js": "/project-frontEnd-05/static/js/304.a62021cf.chunk.js",
     "static/media/descktop-bg-img-2x.jpg": "/project-frontEnd-05/static/media/descktop-bg-img-2x.c79f33fa2690da0dea11.jpg",
-    "static/media/symbol-defs.svg": "/project-frontEnd-05/static/media/symbol-defs.5e183cd69699cf31dde99bb4c500a5b8.svg",
+    "static/media/symbol-defs.svg": "/project-frontEnd-05/static/media/symbol-defs.7a6d664cb8603dc6fb0bec17325670b1.svg",
     "static/media/products-Back2x.jpg": "/project-frontEnd-05/static/media/products-Back2x.b847d70e610173f967af.jpg",
     "static/media/tablet-bg-img-2x.jpg": "/project-frontEnd-05/static/media/tablet-bg-img-2x.dc68b41d1e88b48286f9.jpg",
     "static/media/descktop-bg-img-1x.jpg": "/project-frontEnd-05/static/media/descktop-bg-img-1x.5c8ce9a5e913d5dd4643.jpg",
@@ -33,8 +33,8 @@
     "static/media/tablet-bg-img-1x.jpg": "/project-frontEnd-05/static/media/tablet-bg-img-1x.0032ea16718469143043.jpg",
     "static/media/productSuccessFruit.png": "/project-frontEnd-05/static/media/productSuccessFruit.cef0af9cd428fb7948bc.png",
     "index.html": "/project-frontEnd-05/index.html",
-    "main.5cea397c.css.map": "/project-frontEnd-05/static/css/main.5cea397c.css.map",
-    "main.a5f85e02.js.map": "/project-frontEnd-05/static/js/main.a5f85e02.js.map",
+    "main.5943308c.css.map": "/project-frontEnd-05/static/css/main.5943308c.css.map",
+    "main.e24c8b06.js.map": "/project-frontEnd-05/static/js/main.e24c8b06.js.map",
     "172.309cb594.chunk.css.map": "/project-frontEnd-05/static/css/172.309cb594.chunk.css.map",
     "172.4c83ec93.chunk.js.map": "/project-frontEnd-05/static/js/172.4c83ec93.chunk.js.map",
     "220.48f0084e.chunk.css.map": "/project-frontEnd-05/static/css/220.48f0084e.chunk.css.map",
@@ -58,7 +58,7 @@
     "304.a62021cf.chunk.js.map": "/project-frontEnd-05/static/js/304.a62021cf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5cea397c.css",
-    "static/js/main.a5f85e02.js"
+    "static/css/main.5943308c.css",
+    "static/js/main.e24c8b06.js"
   ]
 }
