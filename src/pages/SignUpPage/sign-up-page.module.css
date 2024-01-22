@@ -6,17 +6,18 @@
   /*Mobile*/
 @media screen and (min-width: 375px) {
   .heroContainer {
-    position: relative;
-    padding-top:90.5px;
+   padding-top:90.5px;
     width: 375px;
     /* height: 812px; */
     min-height: 100vh;
     padding-left: 20px;
+   
   }
 
 .leftSide {
   width: 100%;
   height: inherit;
+  position: relative;
  
 }
 .text {
@@ -45,7 +46,7 @@
   position: absolute;
   width:298px;
   left: 77px;
-  top:230px; 
+  top:0px; 
   z-index: -1;
  
   height: 571px;
@@ -81,16 +82,17 @@
      /* height: 1024px; */
      min-height: 100vh;
      padding-left: 32px;
+     
    }
    .leftSide {
-   
-     width:100%;
+    position: relative;
+    width:100%;
      height: inherit;
      }
    .rightSide {
      position: absolute;
      left: 299px;
-     top: 80px;
+     top: 0px;
      width:437px;
      height: 893px;
      background-image: linear-gradient(
@@ -136,14 +138,13 @@
   }
 
   .leftSide {
-    position: relative;
-    width:100%;
+   width:100%;
     height: inherit;
   }
   .rightSide {
     position: absolute;
     left: 674px;
-    bottom:0px;
+    top:0px;
     width: 670px;
     height: inherit;
     background-image: linear-gradient(

@@ -63,6 +63,8 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 1.13; /* 112.5% */
+  transition:background-color var(--transition-duration) var(--transition-time-function), border var(--transition-duration)
+  var(--transition-time-function);
 }
 .btnSignUp:hover,
 .btnSignUp:focus {

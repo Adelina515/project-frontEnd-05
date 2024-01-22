@@ -13,6 +13,7 @@ import { PrivateRoute } from './PrivateRoute';
 import {
   selectIsUserLogin,
   selectUserToken,
+  selectisParamsExist
 } from '../redux/auth/auth-selectors';
 
 const Welcome = lazy(() => import('../pages/WelcomePage/WelcomePage'));
@@ -29,6 +30,7 @@ export const App = () => {
 
   const isLogin = useSelector(selectIsUserLogin);
   const token = useSelector(selectUserToken);
+  const isParamsExist =useSelector(selectisParamsExist);
 
   useEffect(() => {
     // if (token && !isLogin) {
@@ -51,7 +53,7 @@ export const App = () => {
               path="/signup"
               element={
                 <RestrictedRoute
-                  redirectTo="/profile"
+                 redirectTo="/profile"
                   component={<SignUpPage />}
                 />
               }
@@ -61,7 +63,7 @@ export const App = () => {
               path="/signin"
               element={
                 <RestrictedRoute
-                  redirectTo="/diary"
+                  redirectTo={isParamsExist ? "/diary":"/profile"}
                   component={<SignInPage />}
                 />
               }
