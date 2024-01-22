@@ -136,14 +136,14 @@
   }
 
   .leftSide {
-    position: relative;
+   
     width:100%;
     height: inherit;
   }
   .rightSide {
     position: absolute;
     left: 674px;
-    bottom:0px;
+   bottom:0;
     width: 670px;
     height: inherit;
     background-image: linear-gradient(
