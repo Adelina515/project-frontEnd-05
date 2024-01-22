@@ -1,45 +1,38 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
 .headerWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 24px;
- 
- }
+  height: 61px;
+}
 
 .user {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   justify-content: space-between;
   align-items: center;
 }
 
-
-.list{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-
 @media screen and (min-width: 768px) {
   .headerWrapper {
-    padding: 32px;
-   }
-
-}
-
-
-@media screen and (min-width: 1440px) {
-  .btnList {
-    display: flex;
-    margin-left: auto;
+    /* width: 768px; */
+    height: 84px;
   }
-  .container{
-    width: 1440px;
-    padding-left: 96px;
+  .user {
+    gap: 16px;
   }
-
 }
+/* @media screen and (min-width: 1440px) {
+  .headerWrapper {
+    width: 100%;
+  }
+} */
