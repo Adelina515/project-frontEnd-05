@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 import EmList from '../emList/EmList.jsx';
 
-const DayProducts = ({selectedDate}) => {
+const DayProducts = ({ selectedDate }) => {
   const productsInDiary = useSelector(selectDiaryProducts);
 
   return (
