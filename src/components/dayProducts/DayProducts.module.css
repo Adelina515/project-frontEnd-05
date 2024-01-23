@@ -71,7 +71,7 @@
         stroke: #a82b2b;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .dayProducts {
         width: 704px;
         height: 234px;
@@ -88,9 +88,9 @@
     }
 }
 
-@media (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
     .dayProducts {
-        min-width: 826px;
+        width: 826px;
     }
 }
 
