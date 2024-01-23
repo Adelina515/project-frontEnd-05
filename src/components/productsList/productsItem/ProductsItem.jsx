@@ -27,7 +27,6 @@ export const ProductsListItem = ({ data, openModal }) => {
             </div>
             <div className={css.cardStatus}>
               <svg className={css.statusCircle}>
-                {/* <use href={`${svg}#icon-circle-green`}></use> */}
                 {groupBloodNotAllowed[userBlood] ? (
                   <use href={`${svg}#icon-circle-green`}></use>
                 ) : (

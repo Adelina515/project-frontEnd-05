@@ -8,7 +8,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter } from '../../redux/products/productsSelectors';
 import { interFilter } from '../../redux/products/prFiltersSlice';
-// import { useDebounce } from 'use-debounce';
+import { useDebouncedCallback } from 'use-debounce';
 
 const initOpen = { category: false, allowed: false };
 
@@ -18,7 +18,7 @@ export const ProductsFilters = () => {
   const [query, setQuery] = useState('');
   const [isOpen, setOpen] = useState(initOpen);
   const filters = useSelector(selectFilter);
-  // console.log(filters);
+
   const handleOpen = e => {
     const type = e.currentTarget.dataset.type;
     setOpen(prev => ({ ...initOpen, [type]: !prev[type] }));
@@ -41,15 +41,20 @@ export const ProductsFilters = () => {
     setOpen(initOpen);
   };
   const handleQuery = e => {
-    console.log(e.target.value);
     setQuery(e.target.value);
-    const addInput = { ...filters, searchQuery: e.target.value };
-    dispatch(interFilter(addInput));
-    dispatch(fetchProducts(addInput));
+    debounced(query);
   };
   const resetQuery = () => {
     setQuery('');
+    const addInput = { ...filters, searchQuery: '' };
+    dispatch(interFilter(addInput));
+    dispatch(fetchProducts(addInput));
   };
+  const debounced = useDebouncedCallback(query => {
+    const addInput = { ...filters, searchQuery: query };
+    dispatch(interFilter(addInput));
+    dispatch(fetchProducts(addInput));
+  }, 300);
 
   useEffect(() => {
     const getCategories = async () => {
@@ -58,6 +63,7 @@ export const ProductsFilters = () => {
     };
     getCategories();
   }, []);
+
   return (
     <div className={css.filters}>
       <p className={css.text}>Filters</p>
@@ -110,7 +116,6 @@ export const ProductsFilters = () => {
       </div>
       <div className={css.recommended}>
         <p className={css.filterLabel} onClick={handleOpen} data-type="allowed">
-          {/* {filters.allowed === '' ? 'All' : filters.allowed} */}
           {filters.allowed === 'All' && 'All'}
           {filters.allowed === 'yes' && 'Recommended'}
           {filters.allowed === 'no' && 'Not recommended'}

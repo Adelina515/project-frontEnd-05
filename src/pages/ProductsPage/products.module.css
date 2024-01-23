@@ -2,7 +2,6 @@
   position: absolute;
   top: 61px;
   width: 100%;
-  border-top: 1px solid rgba(239, 237, 232, 0.2);
 }
 
 .wrapper {
@@ -13,7 +12,11 @@
 }
 @media screen and (min-width: 768px) {
   .productsPage {
-    top: 84px;
+    position: relative;
+    top: 0;
+    height: calc(100% - 84px);
+    overflow-y: hidden;
+    padding-bottom: 48px;
   }
   .wrapper {
     padding: 72px 0px 48px;
@@ -27,7 +30,7 @@
     position: relative;
   }
   .productsPage {
-    height: 85vh;
+    position: absolute;
     background-image: linear-gradient(
         89deg,
         #040404 1.1%,
