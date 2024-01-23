@@ -1,9 +1,12 @@
-import { forwardRef, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import DatePicker from 'react-datepicker';
 import style from './DaySwitch.module.css';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import { Calendar } from 'components/calendar/Calendar';
+import formatDate from '../../function/formatData';
+import { fetchAllDiary } from '../../redux/diary/diaryOperations';
+import { useDispatch } from 'react-redux';
 
 const OwnIconCalendar = () => {
   return (
@@ -17,13 +20,21 @@ const OwnIconCalendar = () => {
 };
 
 const DaySwitch = ({ handleDate }) => {
-  const [selectedDate, setSelectedDate] = useState(Date.now());
+  const dispatch = useDispatch();
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [formSelectedDate, setFormSelectedDate] = useState(null);
   console.log('selectedDate >>', selectedDate);
-
+  console.log('formSelectedDate >>', formSelectedDate);
   //   const convertDate =  date => {
   //   const formatedDate = convertDate(date);
   //   setSelectedDate(formatedDate);
   // };
+
+  useEffect(() => {
+    const formatted = formatDate(selectedDate)
+    setFormSelectedDate(formatted)
+    dispatch(fetchAllDiary(formatted));
+  }, [selectedDate, dispatch]);
 
   // потрібна дата реєстрації користувача
   const [dateRegistration] = useState(
