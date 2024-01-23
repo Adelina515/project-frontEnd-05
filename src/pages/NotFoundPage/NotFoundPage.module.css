@@ -5,8 +5,10 @@
 /*Mobile*/
 @media screen and (min-width: 375px) {
   .notfound {
+    position: relative;
     width: 375px;
     height: 812px;
+    overflow-y: hidden;
   }
 }
 .wrapperText {
@@ -52,8 +54,8 @@
 .wrapperPhoto {
   position: absolute;
   width: 298px;
-  left: 100px;
-  top: 393px;
+  left: 120px;
+  top: 325px;
   z-index: 1;
   height: 571px;
   background-image: linear-gradient(
@@ -87,7 +89,6 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    /* width: 1423px; */
     width: 768px;
     height: 1024px;
     overflow-x: hidden;
@@ -169,7 +170,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    /* width: 1423px; */
+    width: 1423px;
     height: 800px;
   }
   .wrapperText {
@@ -209,7 +210,7 @@
     background-color: #efede8;
   }
   .wrapperPhoto {
-    /* position: absolute; */
+    position: absolute;
     left: 770px;
     top: 0;
     width: 670px;

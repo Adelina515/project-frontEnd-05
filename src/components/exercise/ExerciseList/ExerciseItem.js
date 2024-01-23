@@ -15,16 +15,17 @@ function ExerciseItem({ exercise, setSelected }) {
       </h3>
       <div className={css.exerciseStatsContainer}>
         <p>
-          Burned calories: <span>{exercise.burnedCalories}</span>
+          Burned calories <span>{exercise.burnedCalories}</span>
         </p>
         <p>
-          Body part: <span>{capitalize(exercise.bodyPart)}</span>
+          Body part <span>{capitalize(exercise.bodyPart)}</span>
         </p>
         <p>
-          Target: <span>{capitalize(exercise.target)}</span>
+          Target <span>{capitalize(exercise.target)}</span>
         </p>
+      
       </div>
-      <button className={css.startBtn} onClick={()=>setSelected(exercise)}>
+      <button className={css.startBtn} onClick={() => setSelected(exercise)}>
         Start
         <svg>
           <use href={`${svg}#icon-next-arrow`}></use>

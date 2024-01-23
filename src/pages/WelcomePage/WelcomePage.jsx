@@ -29,9 +29,7 @@ const WelcomePage = () => {
       
       <div className={css.rightSide}>
         <InfoBlock />
-         
-            
-        </div>
+      </div>
       </div>  
     </div>
     

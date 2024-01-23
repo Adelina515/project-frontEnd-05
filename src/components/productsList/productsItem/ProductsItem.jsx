@@ -6,7 +6,6 @@ import { handleSuccess } from '../../../redux/products/productsSlice';
 
 export const ProductsListItem = ({ data, openModal }) => {
   const dispatch = useDispatch();
-
   const userBlood = useSelector(state => state.auth.user.blood);
   const { calories, category, title, weight, groupBloodNotAllowed } = data;
   const fixedTitle = title[0].toUpperCase() + title.slice(1).toLowerCase();
