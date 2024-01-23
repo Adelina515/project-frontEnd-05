@@ -28,8 +28,11 @@ export default function Profile() {
 
   return (
     <div className={css.container}>
+      <div className={css.forTitle}>
       <TitlePage children={'Profile Settings'} />
-      <div className={css.containerMini}> 
+      </div>
+      
+      
       <div className={css.forUp} > 
       <UserProfile
         name={state?.name}
@@ -52,7 +55,8 @@ export default function Profile() {
       </div>
       <ExclamationMark />
       <LogOutBtn/></div>
-      <UserForm
+      <div className = {css.forPf}>
+      <UserForm 
         userToken={userToken}
         name={state.name}
         height={state.height}
@@ -64,7 +68,7 @@ export default function Profile() {
         levelActivity={state.levelActivity}
         email={state.email}
       />
-    </div>
+   </div>
     </div>
   );
 }
