@@ -3,13 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import css from './ProductsTable.module.css';
 import svg from '../../../img/sprite/symbol-defs.svg';
 
-import { selectDiaryProducts } from '../../../redux/diary/diarySelectors';
+// import { selectDiaryProducts } from '../../../redux/diary/diarySelectors';
 import { deleteProductDiary } from '../../../redux/diary/diaryOperations';
+import { selectProducts } from '../../../redux/products/productsSelectors';
 
-const ProductsTable = ({ products, data }) => {
+const ProductsTable = ({ productsInDiary }) => {
   const dispatch = useDispatch();
-  const productsInDiary = useSelector(selectDiaryProducts);
-  console.log(productsInDiary);
+
+  // console.log(productsInDiary);
+  const products = useSelector(selectProducts);
+  console.log('products >>', products);
 
   const deleteProduct = _id => {
     console.log('_id >>', _id);
@@ -17,6 +20,7 @@ const ProductsTable = ({ products, data }) => {
   };
 
   const userBlood = useSelector(state => state.auth.user.blood);
+  // const { groupBloodNotAllowed } = products;
   const groupBloodNotAllowed = 1;
 
   const capitalizedWord = word => {
@@ -24,7 +28,7 @@ const ProductsTable = ({ products, data }) => {
   };
   return (
     <ul className={css.diaryList}>
-      {products.map(
+      {productsInDiary.map(
         ({ _id, calories, grams, productId: { category, title } }) => {
           return (
             <li key={_id} className={css.diaryItem}>
