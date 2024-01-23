@@ -15,7 +15,7 @@ export default function NotFoundPage() {
           Perhaps this page went on vacation or decided to disappear into
           another dimension. We apologize for this inconvenience.
         </p>
-        <NavLink className={css.btnHome} to={isLogin ? '/profile' : '/welcome'}>
+        <NavLink className={css.btnHome} to={isLogin ? '/profile' : '/'}>
           Go Home
         </NavLink>
       </div>
