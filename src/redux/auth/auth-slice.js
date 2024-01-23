@@ -113,7 +113,7 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(updateProfileAvatarTh.fulfilled, (state, { payload }) => {
-        state.user.avatarURL = payload.user.avatarURL;
+        state.user.avatarURL = payload.avatarURL;
         state.token = payload.token;
         state.isLogin = true;
       })
