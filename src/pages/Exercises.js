@@ -18,19 +18,18 @@ function Exercises(props) {
   });
 
   useEffect(() => {
-    if (!specific.filter || !specific.name) {
-      setArr([]);
-      setLoading(true);
-      instance
-        .get('exercises?filter=' + exCat)
-        .then(v => {
-          setArr(v.data);
-        })
-        .finally(() => setLoading(false));
-    } else {
-      setArr([]);
-    }
-  }, [setArr, exCat, specific]);
+    console.log('skskks');
+    setArr([]);
+    setLoading(true);
+    instance
+      .get('exercises?filter=' + exCat)
+      .then(v => {
+        setArr(v.data);
+      })
+      .finally(() => setLoading(false));
+    setSpecific({});
+    setSelectedEx(undefined);
+  }, [setArr, exCat]);
 
   if (!specific.name || !specific.filter) {
     return (
@@ -52,7 +51,7 @@ function Exercises(props) {
           filter={specific.filter}
           setSelected={setSelectedEx}
         />
-        {selectedEx ? <ExerciseModal ex={selectedEx} />:<></>}
+        {selectedEx ? <ExerciseModal ex={selectedEx} setEx={setSelectedEx} /> : <></>}
       </div>
     );
   }
