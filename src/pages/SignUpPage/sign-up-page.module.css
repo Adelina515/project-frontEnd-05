@@ -6,14 +6,14 @@
 @media screen and (min-width: 375px) {
   .heroContainer {
     position: relative;
-    padding-top: 127px;
+    padding-top: 91px;
     width: 375px;
-    min-height: 100vh;
+    height: 100vh;
     padding-left: 20px;
   }
   .leftSide {
     width: 100%;
-    height: inherit;
+    height: 100%;
   }
   .text {
     width: 335px;
@@ -40,11 +40,9 @@
   .rightSide {
     position: absolute;
     width: 298px;
-
     right: 0;
-    top: 120px;
+    top: 100px;
     z-index: -1;
-
     height: 100%;
     background-image: linear-gradient(
         170deg,
@@ -72,15 +70,14 @@
 }
 @media screen and (min-width: 768px) {
   .heroContainer {
-    padding-top: 189px;
+    padding-top: 140px;
     width: 768px;
-
-    min-height: 100vh;
+    height: 100vh;
     padding-left: 32px;
     position: relative;
   }
   .leftSide {
-    height: inherit;
+    height: 100%;
   }
   .rightSide {
     position: absolute;
@@ -123,21 +120,21 @@
 
 @media screen and (min-width: 1440px) {
   .heroContainer {
-    padding-top: 200px;
+    padding-top: 151px;
     width: 1440px;
-    min-height: 100vh;
+    height: 100vh;
     padding-left: 96px;
     position: relative;
   }
 
   .leftSide {
     width: 100%;
-    height: inherit;
+    height: 100%;
   }
   .rightSide {
     position: absolute;
     right: 0;
-    top: 30px;
+    top: -50px;
     width: 670px;
     height: 100%;
     background-image: linear-gradient(
