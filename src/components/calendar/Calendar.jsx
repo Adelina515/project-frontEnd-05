@@ -10,7 +10,7 @@ import sprite from '../../img/sprite/symbol-defs.svg';
 import css from '../userForm/UserForm.module.css';
 import style from "./Calendar.module.css"
 
-export const Calendar = ({ selectedDate, setSelectedDate }) => {
+export const Calendar = ({ selectedDate, setSelectedDate, display }) => {
   const handleDateChange = date => {
     setSelectedDate(date);
   };
@@ -28,7 +28,7 @@ export const Calendar = ({ selectedDate, setSelectedDate }) => {
         onChange={handleDateChange}
      
          
-          customInput={<input className={css.inputField} style={{ cursor: 'pointer' }} />}
+          customInput={<input className={css.inputField} style={{ cursor: 'pointer', display: display }} />}
           dateFormat={'dd.MM.yyyy'}
           calendarStartDay={1}
           formatWeekDay={day => day.substring(0, 1)}
