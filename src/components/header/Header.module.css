@@ -1,10 +1,19 @@
-.header {
-  position: fixed;
+.stickyBottomLine {
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
+  background-color: var(--background-color);
+  z-index: 90;
+  border-bottom: 1px solid rgba(239, 237, 232, 0.2);
 }
+
+.stickyBottomLineNone {
+  border-bottom: none;
+  position: sticky;
+  top: 0;
+  background-color: transparent;
+  z-index: 90;
+}
+
 .headerWrapper {
   display: flex;
   align-items: center;

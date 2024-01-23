@@ -4,6 +4,7 @@ import { BtnMobileMenu } from '../../btn/BtnMobileMenu/BtnMobileMenu';
 import css from './Header.module.css';
 import { useSelector } from 'react-redux';
 import {
+  selectIsUserLogin,
   selectUserToken,
   selectisParamsExist,
 } from '../../redux/auth/auth-selectors';
@@ -14,6 +15,7 @@ import { MobileMenu } from 'components/MobileMenu/MobileMenu';
 import { Container } from 'components/Container/Container';
 
 export const Header = () => {
+  const isLogin = useSelector(selectIsUserLogin);
   const [isOpen, setIsOpen] = useState(false);
   const token = useSelector(selectUserToken);
   const isMobile = window.innerWidth < 1440;
@@ -25,7 +27,7 @@ export const Header = () => {
     setIsOpen(prev => !prev);
   };
   return (
-    <div className={css.header}>
+    <div className={isLogin ? css.stickyBottomLine : css.stickyBottomLineNone}>
       <Container>
         <div className={css.headerWrapper}>
           <Logo />
