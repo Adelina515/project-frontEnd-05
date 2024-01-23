@@ -1,4 +1,8 @@
 import css from './Diary.module.css';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import formatDate from '../function/formatData';
 
 import TitlePage from '../components/TitlePage/TitlePage';
 import DaySwitch from '../components/daySwitch/DaySwitch';
@@ -9,28 +13,25 @@ import { Container } from '../components/Container/Container';
 
 import { fetchAllDiary } from '../redux/diary/diaryOperations';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
 
-import formatDate from '../function/formatData';
 
 export default function Diary() {
   const dispatch = useDispatch();
-  const user = useSelector(state => state.auth);
-  console.log(user);
-  const [dateExport, setDateExport] = useState(new Date());
-  console.log('dateExport', dateExport);
-
-  /*Обробка вибраної дати */
-  const handleDate = date => {
-    const formatedDate = formatDate(date);
-    setDateExport(formatedDate);
-  };
+  
+  const [dateExport, setDateExport] = useState(null);
+  
 
   useEffect(() => {
-    dispatch(fetchAllDiary(dateExport));
+    const formatted = formatDate(new Date())
+    setDateExport(formatted)
+    dispatch(fetchAllDiary(formatted));
   }, [dateExport, dispatch]);
 
+  const handleDate = date => {
+  const formatedDate = formatDate(date);
+    return formatedDate;
+  };
+  
   return (
     <div className={css.diary}>
       <Container>

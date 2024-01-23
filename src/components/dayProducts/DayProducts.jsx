@@ -25,7 +25,7 @@ const DayProducts = ({ selectedDate }) => {
         {productsInDiary.length === 0 ? (
           <EmList itemName={'products'} />
         ) : (
-          <ProductsTable products={productsInDiary} />
+          <ProductsTable productsInDiary={productsInDiary} />
         )}
       </div>
     </div>
