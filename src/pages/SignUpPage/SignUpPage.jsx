@@ -11,8 +11,7 @@ const SignUpPage = ({ onSubmit }) => {
   return (
     <div className={css.heroContainer}>
     <div className={css.leftSide}>
-     
-      <TitlePage children="Sign Up" />
+     <TitlePage children="Sign Up" />
       <p className={css.text}>
         Thank you for your interest in our platform. To complete the
         registration process, please provide us with the following information.
