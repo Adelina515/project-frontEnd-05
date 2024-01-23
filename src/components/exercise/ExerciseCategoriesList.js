@@ -3,11 +3,12 @@ import { nanoid } from '@reduxjs/toolkit';
 
 import css from '../../pages/Exercises.module.css';
 import ExerciseCategoriesItem from './ExerciseCategoriesItem';
-function ExerciseCategoriesList({ arr, setSpec }) {
+function ExerciseCategoriesList({ data, setSpec }) {
+  console.log(data);
   try{
     return (
       <div className={css.arrCont}>
-        {arr.map(v => (
+        {data.result.map(v => (
           <ExerciseCategoriesItem item={v} key={nanoid()} setSpec={setSpec}/>
         ))}
       </div>
