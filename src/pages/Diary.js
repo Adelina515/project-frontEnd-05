@@ -29,6 +29,8 @@ export default function Diary() {
   const formatedDate = formatDate(date);
     return formatedDate;
   };
+
+  console.log("dateExport >>", dateExport)
   
   return (
     <div className={css.diary}>
@@ -44,7 +46,7 @@ export default function Diary() {
           <DayDashboard />
           <div>
             <DayProducts selectedDate={dateExport} />
-            <DayExercises />
+            <DayExercises selectedDate={dateExport}/>
           </div>
         </div>
       </Container>
