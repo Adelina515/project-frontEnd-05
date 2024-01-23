@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
@@ -46,7 +46,8 @@ export const App = () => {
               index
               element={<RestrictedRoute component={<Welcome />} />}
             />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="/404" element={<NotFoundPage />} />
+            <Route path="*" element={<Navigate to="404" replace />} />
             <Route
               path="/signup"
               element={
