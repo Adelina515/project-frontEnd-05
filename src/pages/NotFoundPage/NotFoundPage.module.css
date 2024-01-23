@@ -1,6 +1,7 @@
 .notfound {
   margin-left: auto;
   margin-right: auto;
+  height: 100vh;
 }
 /*Mobile*/
 @media screen and (min-width: 375px) {
