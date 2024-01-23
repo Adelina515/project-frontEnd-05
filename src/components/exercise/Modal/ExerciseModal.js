@@ -5,16 +5,20 @@ import ModalStat from './ModalStat';
 import { useDispatch } from 'react-redux';
 import { addExercisesDiary } from '../../../redux/diary/diaryOperations';
 import formatDate from 'function/formatData';
+import { BasicModalWindow } from 'modal/basicModalWindow/BasicModalWindow';
+import { NavLink } from 'react-router-dom';
 
-function ExerciseModal({ ex }) {
+function ExerciseModal({ ex, setEx }) {
   const [seconds, setSeconds] = useState(0);
   const [paused, setPaused] = useState(false);
   const [open, setOpen] = useState(false);
   const [finished, setFinished] = useState(false);
   const dispatch = useDispatch();
-  
+
   const percentTimeLeft = (1 - seconds / (ex.time * 60)) * 100;
-  const caloriesBurned = ((ex.burnedCalories * percentTimeLeft) / 100).toFixed(2);
+  const caloriesBurned = ((ex.burnedCalories * percentTimeLeft) / 100).toFixed(
+    2
+  );
   useEffect(() => {
     if (ex) {
       setOpen(true);
@@ -22,33 +26,34 @@ function ExerciseModal({ ex }) {
       setFinished(false);
     }
   }, [ex]);
-  useEffect(()=>{
-    if(finished){
-      const data={
-        id:ex._id,
-        duration:(seconds / 60).toFixed(2),
+  const onClose = () => {
+    if (finished) {
+      setOpen(false);
+      setEx(undefined);
+    } else {
+      const data = {
+        exerciseId: ex._id,
+        duration: (seconds / 60).toFixed(2),
         burnedCalories: caloriesBurned,
-        date: formatDate(new Date())
-      }
-      dispatch(addExercisesDiary(data))
-    }
-  }, [finished, ex, seconds, caloriesBurned, dispatch])
-  useEffect(() => {
-    if (seconds <= 0) {
+        date: formatDate(new Date()),
+      };
+      dispatch(addExercisesDiary(data));
       setFinished(true);
-    } else if (!paused && !finished) {
+    }
+  };
+  useEffect(() => {
+    if (!paused && !finished && seconds > 0) {
       setTimeout(() => {
-        setSeconds(seconds - 1);
+        if (seconds === 1) {
+          setFinished(true);
+          setSeconds(0);
+        } else {
+          setSeconds(seconds - 1);
+        }
       }, 1000);
     }
   }, [seconds, paused, finished]);
 
-  const closeModal = e => {
-    if (e.target.id === 'close') {
-      ex = undefined;
-      setOpen(false);
-    }
-  };
   const convertTime = sec => {
     const min = Math.floor(sec / 60);
     sec = sec % 60;
@@ -60,73 +65,76 @@ function ExerciseModal({ ex }) {
     }
     return min + ':' + sec;
   };
-
-  if (open) {
-    if (!finished) {
-      return (
-        <div className={css.backdrop} onClick={closeModal} id="close">
-          <div className={css.modalContainer}>
-            <img
-              className={css.modalAnimation}
-              alt="exercise tutorial"
-              src={ex.gifUrl}
-            />
-            <div className={css.modalTime}>
-              <p>Time</p>
-              <div
-                className={css.progressBar}
-                style={{
-                  background: `radial-gradient(closest-side, #10100f 90%, transparent 90% 100%), conic-gradient(var( --decorate-color) ${percentTimeLeft}%, transparent ${percentTimeLeft}%)`,
-                }}
-              >
-                <div
-                  className={css.dotContainer}
-                  style={{ animationPlayState: paused ? 'paused' : 'running' }}
-                >
-                  <div className={css.dot} />
-                </div>
-                <div className={css.time}>{convertTime(seconds)}</div>
-              </div>
-
-              <button
-                className={css.pauseBtn}
-                onClick={() => setPaused(!paused)}
-              >
-                <svg className={css.pauseSvg}>
-                  {paused ? (
-                    <use href={`${svg}#icon-play-square`} />
-                  ) : (
-                    <use href={`${svg}#icon-pause-square`} />
-                  )}
-                </svg>
-              </button>
-              <p>
-                Burned calories:{' '}
-                <span className={css.focus}>{caloriesBurned}</span>
-              </p>
-              <div className={css.exerciseChars}>
-                <ModalStat name={'Name'} val={ex.name} />
-                <ModalStat name={'Target'} val={ex.target} />
-                <ModalStat name={'Body Part'} val={ex.bodyPart} />
-                <ModalStat name={'Equipment'} val={ex.equipment} />
-              </div>
-            </div>
-            <button
-              className={css.addBtn}
-              onClick={() => {
-                setFinished(true);
+  if (!finished) {
+    return (
+      <BasicModalWindow isOpen={open} onClose={onClose}>
+        <div className={css.modalContainer}>
+          <img
+            className={css.modalAnimation}
+            alt="exercise tutorial"
+            src={ex.gifUrl}
+          />
+          <div className={css.modalTime}>
+            <p>Time</p>
+            <div
+              className={css.progressBar}
+              style={{
+                background: `radial-gradient(closest-side, #10100f 90%, transparent 90% 100%), conic-gradient(var( --decorate-color) ${percentTimeLeft}%, transparent ${percentTimeLeft}%)`,
               }}
             >
-              Add to diary
+              <div
+                className={css.dotContainer}
+                style={{ animationPlayState: paused ? 'paused' : 'running' }}
+              >
+                <div className={css.dot} />
+              </div>
+              <div className={css.time}>{convertTime(seconds)}</div>
+            </div>
+
+            <button className={css.pauseBtn} onClick={() => setPaused(!paused)}>
+              <svg className={css.pauseSvg}>
+                {paused ? (
+                  <use href={`${svg}#icon-play-square`} />
+                ) : (
+                  <use href={`${svg}#icon-pause-square`} />
+                )}
+              </svg>
             </button>
+            <p>
+              Burned calories:{' '}
+              <span className={css.focus}>{caloriesBurned}</span>
+            </p>
+            <div className={css.exerciseChars}>
+              <ModalStat name={'Name'} val={ex.name} />
+              <ModalStat name={'Target'} val={ex.target} />
+              <ModalStat name={'Body Part'} val={ex.bodyPart} />
+              <ModalStat name={'Equipment'} val={ex.equipment} />
+            </div>
           </div>
+          <button
+            className={css.addBtn}
+            onClick={() => {
+              setFinished(true);
+            }}
+          >
+            Add to diary
+          </button>
         </div>
-      );
-    } else {
-      return (
-        <div className={css.backdrop} onClick={closeModal} id="close">
-          <div className={css.modalContainer}>
-            <img className={css.thumb} alt="dls" />
+      </BasicModalWindow>
+    );
+  } else {
+    return (
+      <BasicModalWindow isOpen={open} onClose={onClose}>
+        <div className={css.modalContainer}>
+          <div className={css.thumbContainer}>
+            <img
+              className={css.thumb}
+              src="https://s3-alpha-sig.figma.com/img/59d5/2b65/a6a2c8aec4a3496c837c9b0a87d5c044?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=HWANRVCWxA5doH3IckHWRjdihxZuoDiPb8gjXjgqC1af~NIWaZ5B62XnAWJMy9EOtTNQQ1-U5K2RT2u5lrO6pX79GxkJdX3vR0PfwNb~tvIJlL4V2z4WJOojCtrZdyP8piYXvDrFAzZ~HOv9oze~1t9CQ9TkQGjxr4DmmkA4j5MI9p2Whqbch-tAaZMNc~RTRPrIMR9wGNtWu7p8tNLOjvbfPX-5hXqt-lr~AqNSd7Uo~o5I7mM0Pa7HFxI~e0yIwZuVUK5NxMWqe162kV8z31b0ZA~sraruDDCslFBhg6sdESXDNN6-9VoAI-H9UAxVCP1rxIGK75rSxwlOBG5etA__"
+              alt="arm"
+            />
+          </div>
+          <h1>Well done</h1>
+          <div className={css.finalStats}>
             <p>
               Your time:{' '}
               <span className={css.focus}>
@@ -138,11 +146,22 @@ function ExerciseModal({ ex }) {
               <span className={css.focus}>{caloriesBurned}</span>
             </p>
           </div>
+
+          <button
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            To next product
+          </button>
+          <br />
+          <NavLink to={'/diary'} onClick={onClose} className={css.toDiary}>
+            To the diary
+          </NavLink>
         </div>
-      );
-    }
+      </BasicModalWindow>
+    );
   }
-  return <></>;
 }
 
 export default ExerciseModal;
