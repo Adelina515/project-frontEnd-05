@@ -4,7 +4,7 @@
         padding: 16px 8px 16px 16px;
     
         width: 335px;
-        min-height: 335px;
+        max-height: 1064px;
         overflow-y: hidden;
     
         border-radius: 12px;
@@ -91,6 +91,7 @@
 @media screen and (min-width: 1440px) {
     .dayProducts {
         width: 826px;
+       /* height: 234px;*/
     }
 }
 
