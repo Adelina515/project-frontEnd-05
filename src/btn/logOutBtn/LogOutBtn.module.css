@@ -8,22 +8,28 @@
 background-color: transparent;
 border:none;  
 display: flex;
-justify-content: flex-end;
+justify-content: flex-start;
 align-items: center;
 cursor:pointer;
 gap:8px;
-margin-left: auto;
+padding: 0;
 }
-@media screen and (min-width: 768px) and (max-width: 1440px) {
-  .logout {
-  margin-right: 150px;
-}}
 .logoutIcon
 {
 width:20px;
 height: 20px;
+stroke: #EFEDE8
+}
+@media screen and (min-width: 1440px) {
+.logoutBtn{
+  justify-content: flex-end;
+}
+.logoutIcon
+{
+stroke: #E6533C;
+}
 }
 
 
-.text{
-  margin-right: 8px;}
+
+

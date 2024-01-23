@@ -16,7 +16,7 @@ export const updateProfileAvatar = async ({ avatar, userToken }) => {
       headers: { 'content-type': 'multipart/form-data' },
     });
 
-    // console.log(res.data, 'res.data in update Avatar');
+     console.log(res.data, 'res.data in update Avatar');
     return res.data;
   } catch (error) {
     console.error('Ошибка при обновлении параметров профиля:', error);

@@ -1,13 +1,11 @@
 .logotipe {
   width: 126px;
+  height: 13px;
 }
 
 @media screen and (min-width: 768px) {
   .logotipe {
     width: 151px;
-    
+    height: 17px;
   }
-}
-
-@media screen and (min-width: 1440px) {
 }

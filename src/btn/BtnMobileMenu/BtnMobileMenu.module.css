@@ -1,8 +1,13 @@
 .burger {
-  width: 18px;
-  margin-left: 14px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
-
+.burgerSvg {
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
 @media screen and (min-width: 1440px) {
   .burger {
     display: none;
