@@ -43,6 +43,7 @@ const SignUpForm = () => {
         {({ errors, touched }) => (
           <Form className={css.form}>
             <div className={css.inputWrapper}>
+            <div className={css.label}>
               <Field
                 type="text"
                 name="name"
@@ -50,13 +51,29 @@ const SignUpForm = () => {
                 className={`${css.input} ${
                   errors.name && touched.name ? css.error : ''
                 }
-                ${touched.name && !errors.nam ? css.success : ''}`}
+                ${touched.name && !errors.name? css.success : ''}`}
               />
-              <ErrorMessage
-                name="name"
-                className={css.textError}
-                component="p"
-              />
+              {errors.name && touched.name && (
+                  <div className={css.messageWrapper}>
+                    <svg className={css.iconError}>
+                      <use href={`${sprite}#icon-circle-red`}></use>
+                    </svg>
+                    <ErrorMessage
+                      component="p"
+                      className={css.textError}
+                      name="name"
+                    />
+                  </div>
+                )}
+                {!errors.email && touched.email && (
+                  <div className={css.messageWrapper}>
+                    <svg className={css.iconSuccess}>
+                      <use href={`${sprite}#icon-circle-green`}></use>
+                    </svg>
+                    <p className={css.textSuccess}>Success name</p>
+                  </div>
+                )}
+        </div>
 
               <div className={css.label}>
                
@@ -67,7 +84,7 @@ const SignUpForm = () => {
                   className={`${css.input} ${
                     errors.name && touched.name ? css.error : ''
                   }
-                  ${touched.name && !errors.nam ? css.success : ''}`}
+                  ${touched.name && !errors.name ? css.success : ''}`}
                 />
                 {errors.email && touched.email && (
                   <div className={css.messageWrapper}>
@@ -99,7 +116,7 @@ const SignUpForm = () => {
                     className={`${css.input} ${
                       errors.password && touched.password ? css.error : ''
                     }
-              ${touched.name && !errors.nam ? css.success : ''}`}
+              ${touched.name && !errors.name ? css.success : ''}`}
                     required
                   />
 

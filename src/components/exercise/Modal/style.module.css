@@ -33,8 +33,29 @@ div:has(.backdrop) {
     rgba(4, 4, 4, 0.2) 100%
   );
 }
+.modalTime {
+  margin-top: 14px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
 .time {
+  display: inline;
   color: var(--invent-color);
+  position: absolute;
+  transform: rotate(180deg);
+  top: 50px;
+  left: 0;
+  width: inherit;
+  text-align: center;
+  vertical-align: middle;
+  height: 24px;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
 }
 .pauseSvg {
   width: 32px;
@@ -43,8 +64,8 @@ div:has(.backdrop) {
 .pauseBtn {
   background-color: transparent;
   border: none;
+  margin-top: 14px;
 }
-
 
 .progressBar {
   width: 100px;
@@ -60,18 +81,77 @@ div:has(.backdrop) {
   top: 0;
   animation: spin 180s linear;
   position: absolute;
-
 }
-.dot{
+.dot {
   width: 7px;
   height: 7px;
   background-color: var(--decorate-color);
   border-radius: 50%;
   margin: auto;
-  margin-top:-1px;
+  margin-top: -1px;
 }
 @keyframes spin {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.exerciseChars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-left: 16px;
+  margin-right: 17px;
+  margin-top: 40px;
+}
+.modalStat {
+  color: var(--calendar-arrow-color);
+
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  padding: 12px 0px 12px 18px;
+  text-align: left;
+
+  border-radius: 12px;
+  border: 1px solid var(--calendar-invalid-date);
+  background: rgba(239, 237, 232, 0.05);
+}
+.modalStat p {
+  color: var(--invent-color);
+
+  font-size: 14px;
+
+  font-weight: 700;
+  line-height: 18px;
+  margin-top: 4px;
+}
+
+.focus {
+  color: var(--decorate-color);
+}
+
+.addBtn {
+  border: 0;
+  padding: 12px 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: var(--decorate-color);
+
+  color: var(--invent-color);
+
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 112.5% */
+
+  margin-top: 24px;
+  margin-right: 168px;
+  margin-left: 16px;
+  margin-bottom: 48px;
 }

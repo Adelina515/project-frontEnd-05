@@ -1,108 +1,106 @@
-
 .heroContainer {
   margin-left: auto;
   margin-right: auto;
-  }
-  /*Mobile*/
+}
+/*Mobile*/
 @media screen and (min-width: 375px) {
   .heroContainer {
     position: relative;
-    padding-top:90.5px;
+    padding-top: 127px;
     width: 375px;
-    /* height: 812px; */
     min-height: 100vh;
     padding-left: 20px;
   }
 
-.leftSide {
-  width: 100%;
-  height: inherit;
- 
-}
-.text {
-  width: 335px;
-  color: var(--input-border-color);
-  font-family: Roboto;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.29; /* 128.571% */
-  margin-bottom: 28px;
-  margin-top: 14px;
-}
+  .leftSide {
+    width: 100%;
+    height: 100%;
+  }
+  .text {
+    width: 335px;
+    color: var(--input-border-color);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.29; /* 128.571% */
+    margin-bottom: 28px;
+    margin-top: 14px;
+  }
 
-.link {
-  display: inline;
-  color: var(--invent-color);
-  /* font-feature-settings: 'clig' off, 'liga' off; */
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
-  text-decoration: underline;
-}
-.rightSide {
-  position: absolute;
-  width:298px;
-  left: 77px;
-  top:230px; 
-  z-index: -1;
- 
-  height: 571px;
-  background-image: linear-gradient(
-      170deg,
-      #040404 3.66%,
-      rgba(4, 4, 4, 0) 19.15%
-    ),
-    url('../../img/mobile-bg-img-1x.jpg');
-  background-position: right;
- 
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
-  screen and (min-resolution: 192dpi) and (max-width: 767px),
-  screen and (min-resolution: 2dppx) and (max-width: 767px) {
+  .link {
+    display: inline;
+    color: var(--invent-color);
+    /* font-feature-settings: 'clig' off, 'liga' off; */
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: underline;
+  }
   .rightSide {
+    position: absolute;
+    width: 298px;
+
+    right: 0;
+    top: 120px;
+    z-index: -1;
+
+    height: 100%;
     background-image: linear-gradient(
         170deg,
         #040404 3.66%,
         rgba(4, 4, 4, 0) 19.15%
       ),
-      url('../../img/mobile-bg-img-2x.jpg');
+      url('../../img/mobile-bg-img-1x.jpg');
+    background-position: right;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  @media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
+    screen and (min-resolution: 192dpi) and (max-width: 767px),
+    screen and (min-resolution: 2dppx) and (max-width: 767px) {
+    .rightSide {
+      background-image: linear-gradient(
+          170deg,
+          #040404 3.66%,
+          rgba(4, 4, 4, 0) 19.15%
+        ),
+        url('../../img/mobile-bg-img-2x.jpg');
+    }
   }
 }
-}
 @media screen and (min-width: 768px) {
-  
   .heroContainer {
-    padding-top: 141px;
-     width: 768px;
-     /* height: 1024px; */
-     min-height: 100vh;
-     padding-left: 32px;
-   }
-   .leftSide {
-   
-     width:100%;
-     height: inherit;
-     }
-   .rightSide {
-     position: absolute;
-     left: 299px;
-     top: 80px;
-     width:437px;
-     height: 893px;
-     background-image: linear-gradient(
-         170deg,
-         #040404 3.66%,
-         rgba(4, 4, 4, 0) 19.15%
-       ),
-       url('../../img/tablet-bg-img-1x.jpg');
- 
-     background-size: cover;
-     background-repeat: no-repeat;
-   }
+    position: relative;
+    padding-top: 189px;
+    width: 768px;
+
+    min-height: 100vh;
+    padding-left: 32px;
+  }
+  .leftSide {
+    width: 100%;
+    height: inherit;
+  }
+  .rightSide {
+    position: absolute;
+    /* left: 299px; */
+    right: 0;
+    top: 100px;
+    width: 437px;
+    height: 893px;
+    background-image: linear-gradient(
+        170deg,
+        #040404 3.66%,
+        rgba(4, 4, 4, 0) 19.15%
+      ),
+      url('../../img/tablet-bg-img-1x.jpg');
+
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   .text {
     width: 496px;
     font-size: 16px;
@@ -111,41 +109,38 @@
     margin-bottom: 32px;
   }
   @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
-  screen and (min-resolution: 192dpi) and (min-width: 768px),
-  screen and (min-resolution: 2dppx) and (min-width: 768px) {
-  .rightSide {
-  background-image: linear-gradient(
-      170deg,
-      #040404 3.66%,
-      rgba(4, 4, 4, 0) 19.15%
-    ),
-    url('../../img/tablet-bg-img-2x.jpg');
-}
-}
-
+    screen and (min-resolution: 192dpi) and (min-width: 768px),
+    screen and (min-resolution: 2dppx) and (min-width: 768px) {
+    .rightSide {
+      background-image: linear-gradient(
+          170deg,
+          #040404 3.66%,
+          rgba(4, 4, 4, 0) 19.15%
+        ),
+        url('../../img/tablet-bg-img-2x.jpg');
+    }
+  }
 }
 
 @media screen and (min-width: 1440px) {
-  
   .heroContainer {
-    padding-top: 152px;
+    padding-top: 200px;
     width: 1440px;
-    /* height: 800px;  */
     min-height: 100vh;
     padding-left: 96px;
   }
 
   .leftSide {
     position: relative;
-    width:100%;
+    width: 100%;
     height: inherit;
   }
   .rightSide {
     position: absolute;
-    left: 674px;
-    bottom:0px;
+    right:0;
+    top: 30px;
     width: 670px;
-    height: inherit;
+    height: 100%;
     background-image: linear-gradient(
         80deg,
         #040404 -2.45%,
@@ -155,18 +150,17 @@
     background-position: 50%;
     background-size: cover;
     background-repeat: no-repeat;
-   
   }
   @media screen and (min-device-pixel-ratio: 2) and (min-width: 1440px),
-  screen and (min-resolution: 192dpi) and (min-width: 1440px),
-  screen and (min-resolution: 2dppx) and (min-width: 1440px) {
-  .rightSide {
-    background-image: linear-gradient(
-        170deg,
-        #040404 3.66%,
-        rgba(4, 4, 4, 0) 19.15%
-      ),
-      url('../../img/descktop-bg-img-2x.jpg');
+    screen and (min-resolution: 192dpi) and (min-width: 1440px),
+    screen and (min-resolution: 2dppx) and (min-width: 1440px) {
+    .rightSide {
+      background-image: linear-gradient(
+          170deg,
+          #040404 3.66%,
+          rgba(4, 4, 4, 0) 19.15%
+        ),
+        url('../../img/descktop-bg-img-2x.jpg');
+    }
   }
-}
 }

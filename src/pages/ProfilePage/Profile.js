@@ -3,18 +3,17 @@ import { Daily } from 'components/daily/Daily';
 import { UserProfile } from 'components/userCard/UserCard';
 import { UserForm } from 'components/userForm/UserForm';
 
-
-import {  useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { LogOutBtn } from 'btn/logOutBtn/LogOutBtn';
 
-import css from './ProfilePage.module.css'
+import css from './ProfilePage.module.css';
 
 import { ExclamationMark } from 'components/exclamation/Exclamation';
 import { selectUserParams } from '../../redux/UserPageCntrls/selectors';
 import { selectUserToken } from '../../redux/auth/auth-selectors';
 
-
 export default function Profile() {
+
 
 
   const state = useSelector(selectUserParams);
@@ -30,6 +29,7 @@ export default function Profile() {
     <div className={css.container}>
       <div className={css.forTitle}>
       <TitlePage children={'Profile Settings'} />
+
       </div>
       
       
@@ -69,6 +69,7 @@ export default function Profile() {
         email={state.email}
       />
    </div>
+
     </div>
   );
 }
