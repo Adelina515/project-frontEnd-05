@@ -9,11 +9,17 @@ import { LogOutBtn } from 'btn/logOutBtn/LogOutBtn';
 import css from './ProfilePage.module.css';
 
 import { ExclamationMark } from 'components/exclamation/Exclamation';
+import { selectUserParams } from '../../redux/UserPageCntrls/selectors';
+import { selectUserToken } from '../../redux/auth/auth-selectors';
 
 export default function Profile() {
-  const state = useSelector(state => state.auth.user);
-  console.log(state, 'state in profile');
-  const userToken = useSelector(state => state.auth.token);
+
+
+
+  const state = useSelector(selectUserParams);
+  console.log(state, "state in profile")
+  const userToken = useSelector(selectUserToken);
+
 
   if (!state) {
     return <div>Loading...</div>;

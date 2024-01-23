@@ -132,7 +132,7 @@ export const UserForm = ({
                 name="name"
                 type="text"
                 className={css.input}
-                value={name}
+          
                
               />  
               <label className={css.label} htmlFor="name">Name</label>
@@ -191,6 +191,7 @@ export const UserForm = ({
             </div>
             <div className={css.calendar} id="calendar">
   <Calendar
+  display={"block"}
    minDate={new Date('1900-01-01')}
     selectedDate={formik.values.birthday}
     setSelectedDate={(date) => {

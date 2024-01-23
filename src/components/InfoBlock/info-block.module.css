@@ -1,6 +1,6 @@
 .tutorialsWrapper {
     position: absolute;
-    bottom:0;
+    bottom:150px;
     display: flex;
     flex-direction: column;
     gap: 70px;
@@ -102,7 +102,7 @@
   @media screen and (min-width: 768px) {
 .tutorialsWrapper {
     position: absolute;
-    bottom:80px;
+    bottom:100px;
     display: flex;
     flex-direction: column;
     gap: 56px;
@@ -170,7 +170,7 @@
   @media screen and (min-width: 1440px) {
 .tutorialsWrapper {
     position: absolute;
-    bottom: 80px;
+    bottom: 150px;
     display: flex;
     flex-direction: column;
     gap: 39px;
