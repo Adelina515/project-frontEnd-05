@@ -70,7 +70,7 @@ const authSlice = createSlice({
         state.user = {};
         state.token = '';
         state.isLogin = false;
-        state.isRefreshing = false;
+        state.isRefreshing = true;
       })
       .addCase(logout.rejected, state => {
         state.loading = false;
