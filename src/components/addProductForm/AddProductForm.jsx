@@ -15,6 +15,7 @@ export const AddProductForm = ({ data, count, date }) => {
   const handleChange = e => {
     setInputCals(e.target.value);
   };
+  console.log(date)
   const addToDiary = e => {
     e.preventDefault();
     // const rawDate = new Date();

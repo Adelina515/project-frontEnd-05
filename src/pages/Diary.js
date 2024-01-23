@@ -9,21 +9,22 @@ import { Container } from '../components/Container/Container';
 
 import { fetchAllDiary } from '../redux/diary/diaryOperations';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
 import formatDate from '../function/formatData';
 
 export default function Diary() {
   const dispatch = useDispatch();
-
-    const [dateExport, setDateExport] = useState(new Date());
-    console.log("dateExport", dateExport)
+  const user = useSelector(state => state.auth);
+  console.log(user);
+  const [dateExport, setDateExport] = useState(new Date());
+  console.log('dateExport', dateExport);
 
   /*Обробка вибраної дати */
-  const handleDate =  date => {
+  const handleDate = date => {
     const formatedDate = formatDate(date);
-     setDateExport(formatedDate);
+    setDateExport(formatedDate);
   };
 
   useEffect(() => {
@@ -43,7 +44,7 @@ export default function Diary() {
         <div className={css.sectionCont}>
           <DayDashboard />
           <div>
-                      <DayProducts selectedDate={ dateExport} />
+            <DayProducts selectedDate={dateExport} />
             <DayExercises />
           </div>
         </div>
