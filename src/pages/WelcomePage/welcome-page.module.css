@@ -1,15 +1,18 @@
 .heroContainer {
   margin-left: auto;
   margin-right: auto;
-  padding-top: 127px;
+  margin-top:-61px;
+  overflow-y: hidden;
   padding-left: 20px;
+  padding-top:127px;
+  
 }
 /*Mobile*/
 @media screen and (min-width: 375px) {
   .heroContainer {
     width: 375px;
     height: 100vh;
-    padding-top:91px;
+    
   }
 }
 .leftSide {
@@ -111,10 +114,11 @@
 /*Tablet*/
 @media screen and (min-width: 768px) {
   .heroContainer {
-    padding-top: 140px;
+   margin-top: -84px;
     width: 768px;
     height: 100vh;
     padding-left: 32px;
+    padding-top:189px;
   }
   .leftSide {
     position: relative;
@@ -181,7 +185,7 @@
 /*Desktop*/
 @media screen and (min-width: 1440px) {
   .heroContainer {
-    padding-top: 151px;
+   padding-top:200px;
     width: 1440px;
     height: 100vh;
     padding-left: 96px;
