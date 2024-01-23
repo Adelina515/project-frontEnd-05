@@ -1,7 +1,7 @@
-.diaryList {
+/*.diaryList {
     max-width: 335px;
 }
-
+*/
 .diaryItem:not(:last-child) {
     margin-bottom: 40px;
 }
@@ -10,34 +10,39 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 16px;
     gap: 8px;
+    margin-bottom: 16px;
 }
+
 .statusCircle {
     width: 17px;
     height: 17px;
     margin-right: 8px;
 }
+
 .cardStatus {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
 }
+
 .elementCont {
     display: flex;
+
 }
 
 .elementCont tr:nth-last-child(-n + 4) {
     margin-bottom: 0px;
 }
 
+.elementCont tr:nth-last-child(n + 3) {
+    margin-right: 16px;
+}
+
 .elementCont tr:last-child {
     margin-left: 8px;
 }
 
-.elementCont tr:nth-last-child(n + 3) {
-    margin-right: 16px;
-}
 
 .nameCateg {
     max-width: 70px;
@@ -48,23 +53,19 @@
     line-height: 1.5;
 
     overflow: hidden;
-    /*ховаємо текст який за межі*/
     white-space: nowrap;
-    /*запобігає переносу*/
     text-overflow: ellipsis;
-    /*три крапки для відсіченого тексту*/
 }
 
 .nameValue {
     padding: 10px 14px;
-
+    width: 297px;
     border-radius: 12px;
     border: 1px solid var(--input-border-color);
     color: #efede8;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.28;
-
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -74,8 +75,24 @@
     width: 75px;
 }
 
-.elementCont .element:last-child {
+.elementCont .elem:last-child {
     width: 24px;
+}
+
+.elementCont .nameValue:not(:last-child) {
+    width: auto;
+
+}
+
+.nameTrash {
+    visibility: hidden;
+    width: 15px;
+    height: 12.5px;
+}
+
+.nameTrash:hover,
+.nameTrash:focus {
+    stroke: #a82b2b;
 }
 
 .recommendCont {
@@ -110,28 +127,20 @@
 
 }
 
-.iconTresh:hover,
-.iconTresh:focus {
-    fill: #a82b2b;
-}
 
-.nameTrash {
-    visibility: hidden;
-}
 
-@media (max-width: 375px) {
+/*@media (max-width: 375px) {
     .elementCont .nameValue {
         width: 100%;
     }
-}
-
+}*/
 
 @media screen and (min-width: 768px) {
-    .diaryMainItem:not(:first-child) .nameCategory {
+    .diaryItem:not(:first-child) .nameCateg {
         display: none;
     }
 
-    .diaryMainItem:not(:last-child) {
+    .diaryItem:not(:last-child) {
         margin-bottom: 8px;
     }
 
@@ -140,7 +149,7 @@
         gap: 8px;
     }
 
-    .element {
+    .elem {
         margin-bottom: 0px;
         display: flex;
         flex-direction: column;
@@ -152,15 +161,15 @@
         line-height: 1.5;
     }
 
-    .elementWrap .nameValue {
+    .elementCont .nameValue {
         width: 90px;
     }
 
-    .elementWrap tr:nth-last-child(n + 3) {
+    .elementCont tr:nth-last-child(n + 3) {
         margin-right: 8px;
     }
 
-    .elementWrap tr:last-child {
+    .elementCont tr:last-child {
         margin-left: 12px;
     }
 
@@ -173,13 +182,17 @@
         width: 120px;
     }
 
-    .table .bodyTable .element:first-child .nameValue {
+    .table .bodyTable .elem:first-child .nameValue {
         width: 205px;
+    }
+
+    .diaryItem:not(:last-child) {
+        margin-bottom: 16px;
     }
 }
 
 @media screen and (min-width: 1440px) {
-    .diaryMainList {
+    .diaryList {
         padding-left: 16px;
     }
 
@@ -187,7 +200,7 @@
         width: 170px;
     }
 
-    .elementWrap .nameValue {
+    .elementCont .nameValue {
         width: 105px;
     }
 }
