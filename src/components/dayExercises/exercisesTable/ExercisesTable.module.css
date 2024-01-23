@@ -82,6 +82,12 @@
     height: 12.5px;
 }
 
+.iconCentr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .nameTrash:hover,
 .nameTrash:focus {
     stroke: #a82b2b;

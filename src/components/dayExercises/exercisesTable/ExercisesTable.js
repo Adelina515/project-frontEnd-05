@@ -67,7 +67,7 @@ const ExercisesTable = ({exercises}) => {
                     <th className={`${css.nameCategory} ${css.nameTrash}`}>
                       Trash
                     </th>
-                    <td onClick={() => deleteExercise(_id)} > 
+                    <td className={css.iconCentr} onClick={() => deleteExercise(_id)} > 
                       <svg className={css.iconTresh} width="20px" height="20px">
                         <use href={`${sprite}#icon-trash`}></use>
                       </svg>

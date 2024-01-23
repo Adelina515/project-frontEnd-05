@@ -77,7 +77,7 @@ const ProductsTable = ({ productsInDiary }) => {
                     <th className={`${css.nameCateg} ${css.nameTrash}`}>
                       Trash
                     </th>
-                    <td onClick={() => deleteProduct(_id)}>
+                    <td className={css.iconCentr} onClick={() => deleteProduct(_id)}>
                       <svg className={css.iconTresh} width="20px" height="20px">
                         <use href={`${svg}#icon-trash`}></use>
                       </svg>
