@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { signup } from '../../servises/api/auth';
 import { signin } from '../../servises/api/auth';
 import { getCurrentUser } from '../../servises/api/auth';
+import { logoutUser } from '../../servises/api/auth';
 
 export const register = createAsyncThunk(
   'auth/register',
@@ -27,7 +28,7 @@ export const logout = createAsyncThunk(
   'auth/logout',
   async (_, { rejectWithValue }) => {
     try {
-      return await logout();
+      return await logoutUser();
     } catch (error) {
       return rejectWithValue(error.response.data);
     }

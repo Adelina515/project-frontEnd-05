@@ -1,8 +1,8 @@
 .heroContainer {
   margin-left: auto;
   margin-right: auto;
-  margin-top:-61px;
-  overflow-y: hidden;
+  margin-top:-61px; 
+   overflow-y: hidden;
   padding-left: 20px;
   padding-top:127px;
   
@@ -197,7 +197,7 @@
     height: inherit;
   }
   .rightSide {
-    top: -200px;
+    top:-200px;
     width: 670px;
    
     background-image: linear-gradient(
