@@ -1,7 +1,9 @@
 .notfound {
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: -61px;
+  /* margin-left: auto;
+  margin-right: auto; */
   height: 100vh;
+  width: 100%;
 }
 /*Mobile*/
 @media screen and (min-width: 375px) {
@@ -87,6 +89,7 @@
 /*Tablet*/
 @media screen and (min-width: 768px) {
   .notfound {
+    margin-top: -84px;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -168,6 +171,7 @@
 /* ---------- */
 @media screen and (min-width: 1440px) {
   .notfound {
+    margin-top: -84px;
     position: relative;
     display: flex;
     justify-content: space-between;
