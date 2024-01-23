@@ -13,7 +13,6 @@ import { fetchAllDiary } from '../../redux/diary/diaryOperations';
 export const ProductsList = ({ openModal }) => {
   const dispatch = useDispatch();
   const data = useSelector(selectProducts);
-  console.log('products >>', data);
   const error = useSelector(selectError);
   const diary = useSelector(state => state.diary);
   // const productsdiary = useSelector(selectDiaryProducts);
