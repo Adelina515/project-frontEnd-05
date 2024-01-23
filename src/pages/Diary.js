@@ -1,6 +1,6 @@
 import css from './Diary.module.css';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import formatDate from '../function/formatData';
 
@@ -12,23 +12,24 @@ import DayExercises from '../components/dayExercises/DayExercises';
 import { Container } from '../components/Container/Container';
 
 import { fetchAllDiary } from '../redux/diary/diaryOperations';
-import { selectDiaryExercises, selectDiaryProducts } from '../redux/diary/diarySelectors';
+// import { selectDiaryExercises, selectDiaryProducts } from '../redux/diary/diarySelectors';
 
 
 export default function Diary() {
   const dispatch = useDispatch();
 
-  const productsInDiary = useSelector(selectDiaryProducts);
-  const excersisesInDiary = useSelector(selectDiaryExercises)
-  
+  // const productsInDiary = useSelector(selectDiaryProducts);
+  // const excersisesInDiary = useSelector(selectDiaryExercises);
+
   const [dateExport, setDateExport] = useState(null);
   
   useEffect(() => {
     const formatted = formatDate(new Date())
-    setDateExport(formatted)
+    setDateExport(formatted);
     dispatch(fetchAllDiary(formatted));
-  }, [dateExport, productsInDiary, excersisesInDiary, dispatch]);
+}, [dateExport, dispatch]);
 
+  
   const handleDate = date => {
   const formatedDate = formatDate(date);
     return formatedDate;
