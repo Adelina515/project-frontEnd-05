@@ -38,7 +38,7 @@ export default function Diary() {
         <div className={css.calendarCont}>
           <TitlePage children="Diary" />
 
-          <div className={css.calendar}>
+          <div >
             <DaySwitch handleDate={handleDate} selectedDate={dateExport} />
           </div>
         </div>

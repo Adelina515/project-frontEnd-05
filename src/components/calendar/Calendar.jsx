@@ -11,7 +11,9 @@ import css from '../userForm/UserForm.module.css';
 import style from "./Calendar.module.css"
 
 export const Calendar = ({ selectedDate, setSelectedDate, display }) => {
+
 //  тут в переданных появился дисплей выше
+
   const handleDateChange = date => {
     setSelectedDate(date);
   };
@@ -19,9 +21,11 @@ export const Calendar = ({ selectedDate, setSelectedDate, display }) => {
   return (<>
     <style>{DatePickerStyles}</style>
    
+
     <div className={ css.InputHi} style={{ position: 'relative', display:display}}>  
     {/* это display:display я добавила, куда хочешь, переставь, передается в компоненте, где импортируется календарь как свойство календаря
      */}
+
         <svg className={style.iconSvg} width="18" height="18">
           <use href={`${sprite}#icon-calendar-normal`}></use>
         </svg>
@@ -31,7 +35,9 @@ export const Calendar = ({ selectedDate, setSelectedDate, display }) => {
         onChange={handleDateChange}
      
          
+
         customInput={<input className={css.inputField} style={{ cursor: 'pointer' }} />}
+
           dateFormat={'dd.MM.yyyy'}
           calendarStartDay={1}
           formatWeekDay={day => day.substring(0, 1)}

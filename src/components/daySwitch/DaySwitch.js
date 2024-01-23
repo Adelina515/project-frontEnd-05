@@ -79,8 +79,10 @@ const DaySwitch = ({ handleDate }) => {
         formatWeekDay={day => day.substr(0, 1)}
         minDate={dateRegistration}
       />
+
       <Calendar display={"none"}></Calendar> 
       {/* тут передается дисплей нан */}
+
     </>
   );
 };
