@@ -127,13 +127,19 @@
 
 }
 
+.iconCentr {
+display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
-/*@media (max-width: 375px) {
+
+@media (max-width: 375px) {
     .elementCont .nameValue {
         width: 100%;
     }
-}*/
+}
 
 @media screen and (min-width: 768px) {
     .diaryItem:not(:first-child) .nameCateg {

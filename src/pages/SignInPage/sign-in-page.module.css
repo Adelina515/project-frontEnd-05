@@ -1,6 +1,8 @@
 .heroContainer {
   margin-left: auto;
   margin-right: auto;
+  margin-top:-61px;
+  overflow-y: hidden;
 }
 /*Mobile*/
 @media screen and (min-width: 375px) {
@@ -8,7 +10,7 @@
     position: relative;
     padding-top: 127px;
     width: 375px;
-    min-height: 100vh;
+    height: 100vh;
     padding-left: 20px;
   }
 
@@ -41,11 +43,9 @@
   .rightSide {
     position: absolute;
     width: 298px;
-
     right: 0;
-    top: 120px;
+    top: 100px;
     z-index: -1;
-
     height: 100%;
     background-image: linear-gradient(
         170deg,
@@ -75,22 +75,20 @@
   .heroContainer {
     position: relative;
     padding-top: 189px;
+    margin-top:-84px;
+  
     width: 768px;
-
-    min-height: 100vh;
+    height: 100vh;
     padding-left: 32px;
   }
-  .leftSide {
-    width: 100%;
-    height: inherit;
-  }
+ 
   .rightSide {
     position: absolute;
-    /* left: 299px; */
+   
     right: 0;
-    top: 100px;
+    top: -50px;
     width: 437px;
-    height: 893px;
+    height: 100%;
     background-image: linear-gradient(
         170deg,
         #040404 3.66%,
@@ -124,21 +122,18 @@
 
 @media screen and (min-width: 1440px) {
   .heroContainer {
+    position: relative;
     padding-top: 200px;
     width: 1440px;
-    min-height: 100vh;
+    height: 100vh;
     padding-left: 96px;
   }
 
-  .leftSide {
-    position: relative;
-    width: 100%;
-    height: inherit;
-  }
+ 
   .rightSide {
     position: absolute;
     right:0;
-    top: 30px;
+    top: -50px;
     width: 670px;
     height: 100%;
     background-image: linear-gradient(

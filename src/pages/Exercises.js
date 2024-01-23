@@ -5,32 +5,42 @@ import instance from 'instance/instance';
 import ExerciseCategoriesList from '../components/exercise/ExerciseCategoriesList';
 import ExerciseList from '../components/exercise/ExerciseList/ExerciseList';
 import ExerciseModal from 'components/exercise/Modal/ExerciseModal';
+import { useLocation } from 'react-router-dom';
+import Pagination from 'components/exercise/Pagination/Pagination';
 
 function Exercises(props) {
+
+  const isTablet = ()=>{
+    const userAgent = navigator.userAgent.toLowerCase();
+    return /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
+  }
+
   const [exCat, setExCat] = useState('Body parts');
   const [arr, setArr] = useState({ totalPages: 1, currentPage: 1, result: [] });
   const [loading, setLoading] = useState(false);
   const [selectedEx, setSelectedEx] = useState(undefined);
-
+  const location = useLocation();
+  const date = location.state;
   const [specific, setSpecific] = useState({
     name: undefined,
     filter: undefined,
   });
-
+  const [page, setPage]=useState(1);
+  useEffect(()=>{
+    setPage(1);
+  }, [exCat])
   useEffect(() => {
-    if (!specific.filter || !specific.name) {
-      setArr([]);
-      setLoading(true);
-      instance
-        .get('exercises?filter=' + exCat)
-        .then(v => {
-          setArr(v.data);
-        })
-        .finally(() => setLoading(false));
-    } else {
-      setArr([]);
-    }
-  }, [setArr, exCat, specific]);
+    setArr([]);
+    setLoading(true);
+    instance
+      .get(`exercises?page=${page}&limit=${isTablet()?9:10}&filter=${exCat}`)
+      .then(v => {
+        setArr(v.data);
+      })
+      .finally(() => setLoading(false));
+    setSpecific({});
+    setSelectedEx(undefined);
+  }, [exCat, page]);
 
   if (!specific.name || !specific.filter) {
     return (
@@ -39,8 +49,9 @@ function Exercises(props) {
         {loading ? (
           <div>Loading...</div>
         ) : (
-          <ExerciseCategoriesList arr={arr.result} setSpec={setSpecific} />
+          <ExerciseCategoriesList data={arr} setSpec={setSpecific} />
         )}
+        <Pagination page={page} setPage={setPage} pagesTotal={arr.totalPages}/>
       </div>
     );
   } else {
@@ -52,7 +63,7 @@ function Exercises(props) {
           filter={specific.filter}
           setSelected={setSelectedEx}
         />
-        {selectedEx ? <ExerciseModal ex={selectedEx} />:<></>}
+        {selectedEx ? <ExerciseModal ex={selectedEx} setEx={setSelectedEx}  selectedDate={date}/> : <></>}
       </div>
     );
   }

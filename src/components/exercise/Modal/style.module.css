@@ -1,24 +1,5 @@
-.backdrop {
-  background-color: rgba(4, 4, 4, 0.4);
-  width: 101vw;
-  height: 101vh;
-  position: absolute;
-  top: 0;
-  overflow-y: scroll;
-}
-div:has(.backdrop) {
-  overflow: hidden;
-}
 .modalContainer {
   text-align: center;
-  width: 335px;
-  height: 788px;
-  border-radius: 12px;
-  border: 1px solid var(--calendar-invalid-date);
-  color: var(--calendar-arrow-color);
-  background: #10100f;
-  margin: auto;
-  margin-top: 454px;
 }
 .modalAnimation {
   margin: auto;
@@ -100,7 +81,6 @@ div:has(.backdrop) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
-  margin-left: 16px;
   margin-right: 17px;
   margin-top: 40px;
 }
@@ -133,8 +113,7 @@ div:has(.backdrop) {
 .focus {
   color: var(--decorate-color);
 }
-
-.addBtn {
+button {
   border: 0;
   padding: 12px 32px;
   justify-content: center;
@@ -149,9 +128,39 @@ div:has(.backdrop) {
   font-style: normal;
   font-weight: 500;
   line-height: 18px; /* 112.5% */
-
+}
+.addBtn {
   margin-top: 24px;
   margin-right: 168px;
-  margin-left: 16px;
   margin-bottom: 48px;
+}
+.thumb {
+  width: 159px;
+  height: 158px;
+}
+h1 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 133.333% */
+  color: var(--invent-color);
+  margin-bottom: 16px;
+}
+.finalStats {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.toDiary {
+  color: var(--input-border-color);
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  margin: auto;
+  margin-top: 16px;
+  display: flex;
 }
