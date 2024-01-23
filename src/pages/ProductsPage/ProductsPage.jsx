@@ -17,16 +17,20 @@ const ProductsPage = () => {
   const [calories, setCalories] = useState(0);
   const location = useLocation();
   const dateDiary = location.state;
-  console.log('dateDiary', dateDiary);
   const isSuccess = useSelector(selectSuccess);
+  // const auth = useSelector(state => state.auth);
+  // console.log(auth);
   // const newDate = () => {
   //   const rawDate = new Date();
   //   const newDate = formatDate(rawDate);
   //   return newDate;
   // };
-  const convertDate = (date) => {
-    let rawDate
-    date ? rawDate = date : rawDate = new Date()
+
+  // const stateDiary = useSelector(state => state.diary);
+  // console.log(stateDiary, 'state');
+  const convertDate = date => {
+    let rawDate;
+    date ? (rawDate = date) : (rawDate = new Date());
     const newDate = formatDate(rawDate);
     return newDate;
   };
@@ -39,11 +43,11 @@ const ProductsPage = () => {
     setModal(data);
   };
   const handleCalories = count => {
-    console.log(count);
+    // console.log(count);
     setCalories(count);
   };
   const date = convertDate(dateDiary);
-  console.log('finalDate', date);
+  // console.log('finalDate', date);
   return (
     <div className={css.productsPage}>
       <Container>

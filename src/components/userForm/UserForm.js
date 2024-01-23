@@ -132,7 +132,7 @@ export const UserForm = ({
                 name="name"
                 type="text"
                 className={css.input}
-                value={name}
+          
                
               />  
               <label className={css.label} htmlFor="name">Name</label>

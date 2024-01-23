@@ -14,11 +14,13 @@ import { Container } from '../components/Container/Container';
 import { fetchAllDiary } from '../redux/diary/diaryOperations';
 
 
+
 export default function Diary() {
   const dispatch = useDispatch();
   
   const [dateExport, setDateExport] = useState(null);
   
+
   useEffect(() => {
     const formatted = formatDate(new Date())
     setDateExport(formatted)

@@ -9,8 +9,8 @@ import {
 } from '../../redux/UserPageCntrls/UserPageOperations.jsx';
 const initialState = {
   user: {
-    name: "",
-    email: "",
+    name: '',
+    email: '',
     height: 160,
     currentWeight: 60,
     desiredWeight: 55,
@@ -18,13 +18,12 @@ const initialState = {
     blood: 1,
     sex: 'male',
     levelActivity: 2,
-
   },
   token: '',
   loading: false,
   isLogin: false,
   isRefreshing: true,
-  isParamsExist:false,
+  isParamsExist: false,
   error: null,
 };
 const authSlice = createSlice({
@@ -42,7 +41,7 @@ const authSlice = createSlice({
         state.token = payload.token;
         state.isLogin = true;
         state.isRefreshing = false;
-        state.isParamsExist=true;
+        state.isParamsExist = false;
       })
       .addCase(register.rejected, (state, { payload }) => {
         state.loading = false;
@@ -83,7 +82,7 @@ const authSlice = createSlice({
         state.isRefreshing = true;
       })
       .addCase(current.fulfilled, (state, { payload }) => {
-        state.user = { ...payload.user};
+        state.user = { ...payload.user };
         state.token = payload.user.token;
         state.isLogin = true;
         state.isRefreshing = false;
@@ -98,26 +97,25 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(updateProfileParamsTh.fulfilled, (state, { payload }) => {
-
-        console.log(state.user, "state.user in authSlice")
-        console.log(payload, "payload.user user in authSlice")
-        state.user = {...payload};
+        console.log(state.user, 'state.user in authSlice');
+        console.log(payload, 'payload.user user in authSlice');
+        state.user = { ...payload };
         /// state.token = payload.token;
 
         state.isLogin = true;
-        state.isParamsExist=false;//додала test
+        state.isParamsExist = true; //додала test
       })
       .addCase(updateProfileParamsTh.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
-        state.isParamsExist= false;//додала test
+        state.isParamsExist = true; //додала test
       })
       .addCase(updateProfileAvatarTh.pending, state => {
         state.loading = false;
         state.error = null;
       })
       .addCase(updateProfileAvatarTh.fulfilled, (state, { payload }) => {
-        state.user.avatarURL = payload.user.avatarURL;
+        state.user.avatarURL = payload.avatarURL;
         state.token = payload.token;
         state.isLogin = true;
       })

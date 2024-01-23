@@ -1,6 +1,7 @@
 .body {
   display: flex;
   align-items: center;
+      justify-content: flex-end;
   
 }
 
@@ -11,20 +12,23 @@
   height: 32px;
   color: #EFEDE8;
   font-weight: 700;
-  line-height: 32px;
-  font-size: 24px;
+  line-height: 1.11;
+  font-size: 18px;
   cursor: pointer;
+  display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .calendarIconBody {
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border:2px solid #EF8964;
   border-radius: 4px;
   top: 2px;
   position: relative;
-  margin-left: 15px;
+  margin-left: 8px;
 }
 
 .calendarIconLine {
@@ -49,7 +53,7 @@
 .arrowsBody {
   display: flex;
   margin-left: 20px;
-  margin-right: 20px;
+  margin-right: 0px;
   align-items: center;
 }
 
@@ -70,4 +74,19 @@
 .arrowsRight {
   transform: rotate(135deg);
 }
+
+ @media (min-width: 768px) {
+  .dateButton {
+      line-height: 1.34;
+      font-size: 24px;
+    }
+.calendarIconBody {
+  width: 24px;
+  height: 24px;
+}
+.arrowsBody {
+  margin-left: 40px;
+}
+
+ }
 

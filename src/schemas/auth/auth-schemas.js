@@ -4,7 +4,7 @@ export  const signUpSchema = Yup.object().shape({
     name: Yup.string()
       .required('Required')
       .min(2, 'Name must be at least 2 characters')
-      .max(10, 'Name must be no more than 16 characters'),
+      .max(10, 'Name must be no more than 10 characters'),
   
       email: Yup.string().email('Error email').matches(/^\w+@[a-zA-Z]+?\.[a-zA-Z]{2,3}$/).required('Required'),
 
