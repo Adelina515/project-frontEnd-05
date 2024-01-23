@@ -3,7 +3,6 @@ import { signup } from '../../servises/api/auth';
 import { signin } from '../../servises/api/auth';
 import { getCurrentUser } from '../../servises/api/auth';
 
-
 export const register = createAsyncThunk(
   'auth/register',
   async (credentials, { rejectWithValue }) => {
@@ -37,16 +36,13 @@ export const logout = createAsyncThunk(
 
 export const current = createAsyncThunk(
   'auth/current',
-  
+
   async (_, { rejectWithValue, getState }) => {
     try {
-      console.log("auth start in thunk");
-
       const { auth } = getState();
-      console.log("auth",auth);
-     
+
       const persistedToken = auth.token;
-      console.log("persistedToken",persistedToken)
+
       return await getCurrentUser(persistedToken);
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -55,9 +51,9 @@ export const current = createAsyncThunk(
   {
     condition: (_, { getState }) => {
       const { auth } = getState();
-      console.log(auth);
+
       const persistedToken = auth.token;
-      return !!persistedToken; 
+      return !!persistedToken;
     },
   }
 );
