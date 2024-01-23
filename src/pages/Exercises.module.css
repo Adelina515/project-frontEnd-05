@@ -1,7 +1,13 @@
 .exerciseCategoryContainer {
   display: flex;
   gap: 28px;
+}
+.headHolder {
+  margin-left: 20px;
   margin-bottom: 40px;
+}
+.headHolder h2 {
+  margin-bottom: 20px;
 }
 .activeCat {
   position: relative;
@@ -63,4 +69,45 @@
 
   font-size: 12px;
   line-height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .arrCont {
+    gap: 16px;
+    flex-wrap: wrap;
+    max-width: 708px;
+  }
+  .arrElCont {
+    max-width: 224px;
+  }
+  .headHolder {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 72px;
+    margin-bottom: 64px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .arrCont {
+
+    gap: 16px;
+    flex-wrap: wrap;
+    max-width: 1249px;
+  }
+  .arrElCont {
+    max-width: 237px;
+  }
+  .headHolder {
+    display: flex;
+    margin-top: 72px;
+    margin-bottom: 64px;
+    justify-content: space-between;
+    margin-left: 96px;
+  }
+  .exerciseCategoryContainer {
+    display: flex;
+    gap: 28px;
+    justify-content: flex-end;
+  }
 }

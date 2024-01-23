@@ -4,11 +4,10 @@ import svg from '../../../img/sprite/symbol-defs.svg';
 import ModalStat from './ModalStat';
 import { useDispatch } from 'react-redux';
 import { addExercisesDiary } from '../../../redux/diary/diaryOperations';
-import formatDate from 'function/formatData';
 import { BasicModalWindow } from 'modal/basicModalWindow/BasicModalWindow';
 import { NavLink } from 'react-router-dom';
 
-function ExerciseModal({ ex, setEx }) {
+function ExerciseModal({ ex, setEx, selectedDate }) {
   const [seconds, setSeconds] = useState(0);
   const [paused, setPaused] = useState(false);
   const [open, setOpen] = useState(false);
@@ -35,7 +34,7 @@ function ExerciseModal({ ex, setEx }) {
         exerciseId: ex._id,
         duration: (seconds / 60).toFixed(2),
         burnedCalories: caloriesBurned,
-        date: formatDate(new Date()),
+        date: selectedDate,
       };
       dispatch(addExercisesDiary(data));
       setFinished(true);
