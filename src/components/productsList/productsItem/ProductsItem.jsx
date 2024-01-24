@@ -13,8 +13,9 @@ export const ProductsListItem = ({ data, openModal }) => {
     threshold: 0.5,
     triggerOnce: true,
   });
+  const newData = { ...data, allowed: groupBloodNotAllowed[userBlood] };
   const handleOpen = () => {
-    openModal(data);
+    openModal(newData);
     dispatch(handleSuccess(false));
   };
   return (
