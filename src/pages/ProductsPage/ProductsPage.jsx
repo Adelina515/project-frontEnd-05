@@ -16,15 +16,8 @@ const ProductsPage = () => {
   const [modal, setModal] = useState(null);
   const [calories, setCalories] = useState(0);
   const location = useLocation();
-  const dateDiary = location.state;
+  const dateDiary = location.state ? location.state : formatDate(new Date());
   const isSuccess = useSelector(selectSuccess);
-
-  const convertDate = date => {
-    let rawDate;
-    date ? (rawDate = date) : (rawDate = new Date());
-    const newDate = formatDate(rawDate);
-    return newDate;
-  };
 
   const handleClose = e => {
     setOpen(false);
@@ -37,7 +30,7 @@ const ProductsPage = () => {
     // console.log(count);
     setCalories(count);
   };
-  const date = convertDate(dateDiary);
+  const date = dateDiary;
   // console.log('finalDate', date);
   return (
     <div className={css.productsPage}>
