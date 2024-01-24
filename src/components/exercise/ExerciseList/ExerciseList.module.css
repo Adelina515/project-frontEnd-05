@@ -120,6 +120,7 @@
 }
 @media screen and (min-width: 768px) {
   .exerciseListContainer {
+   
     width: 694px;
     margin: auto;
     row-gap: 32px;
@@ -149,11 +150,12 @@
 }
 @media screen and (min-width: 1440px) {
   .exerciseListContainer {
-    height: 527px;
+    width: 840px;
+    height:500px;
     margin-left: 96px;
     margin-right: 0;
   }
-  .exerciseItemContaine {
+  .exerciseItemContainer {
     width: 405px;
   }
   .woman {
@@ -165,5 +167,10 @@
     background: linear-gradient(80deg, #040404 -2.45%, rgba(4, 4, 4, 0) 68.17%),
       url('../../../img/descktop-bg-img-2x.jpg'),
       lightgray 0px -48px / 94.516% 105.335% no-repeat;
+  }
+  .exerciseStatsContainer{
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 }
