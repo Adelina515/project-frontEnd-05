@@ -1,35 +1,39 @@
-@import "../../index.css"; 
+@import '../../index.css';
 
-.logoutBtn{
- color: var(--invent-color);
- font-family: Roboto, sans-serif;
- font-size: 14px;
- line-height: 18px;
-background-color: transparent;
-border:none;  
-display: flex;
-justify-content: flex-start;
-align-items: center;
-cursor:pointer;
-gap:8px;
-padding: 0;
+.logoutBtn {
+  color: var(--invent-color);
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+  padding: 0;
 }
-.logoutIcon
-{
-width:20px;
-height: 20px;
-stroke: #EFEDE8
+.logoutBtn.wide {
+  display: none;
+}
+.logoutIcon {
+  width: 20px;
+  height: 20px;
+  stroke: #e6533c;
+}
+.logoutIcon.menu {
+  stroke: #efede8;
 }
 @media screen and (min-width: 1440px) {
-.logoutBtn{
-  justify-content: flex-end;
-}
-.logoutIcon
+  .logoutBtn.wide {
+    display: flex;
+  }
+  .logoutBtn {
+    justify-content: flex-end;
+  }
+  /* .logoutIcon
 {
 stroke: #E6533C;
+} */
 }
-}
-
-
-
-
