@@ -14,12 +14,11 @@ const ProductsTable = ({ productsInDiary }) => {
   // console.log(productsInDiary);
   const products = useSelector(selectProducts);
   console.log('products >>', products);
-
+  console.log(productsInDiary);
   const deleteProduct = _id => {
     console.log('_id >>', _id);
     dispatch(deleteProductDiary(_id));
   };
-  
 
   // const userBlood = useSelector(state => state.auth.user.blood);
   // // const { groupBloodNotAllowed } = products;
@@ -31,11 +30,13 @@ const ProductsTable = ({ productsInDiary }) => {
   return (
     <ul className={css.diaryList}>
       {productsInDiary.map(
+
         ({ _id, calories, grams, allowed, productId: { category, title } }) => {
           const handleDelete = (e)=>{
             e.target.closest("li").style.display = "none";
+
             deleteProduct(_id);
-          }
+          };
           return (
             <li key={_id} className={css.diaryItem}>
               <table className={css.table}>
