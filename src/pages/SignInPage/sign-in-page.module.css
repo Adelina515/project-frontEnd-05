@@ -1,27 +1,27 @@
 .heroContainer {
   margin-left: auto;
   margin-right: auto;
-  margin-top:-61px;
+  margin-top: -61px;
   overflow-y: hidden;
 }
 @media screen and (max-width: 374px) {
   .heroContainer {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-left:10px;
+    padding-left: 10px;
     padding-right: 10px;
-    height:100vh;
+    height: 100vh;
     position: relative;
     padding-top: 80px;
   }
   .rightSide {
     height: 100%;
-    width:298px;
+    width: 298px;
     z-index: -1;
     position: absolute;
-    right:0;
-    top:250px;
+    right: 0;
+    top: 250px;
     background-image: linear-gradient(
         170deg,
         #040404 3.66%,
@@ -50,8 +50,8 @@
     line-height: 1.5;
     text-decoration: underline;
   }
-  .leftSide{
-    width:300px;
+  .leftSide {
+    width: 300px;
     height: inherit;
   }
 }
@@ -126,18 +126,18 @@
   .heroContainer {
     position: relative;
     padding-top: 189px;
-    margin-top:-84px;
-  
+    margin-top: -84px;
+
     width: 768px;
     height: 100vh;
     padding-left: 32px;
   }
- 
+
   .rightSide {
     position: absolute;
-   
+
     right: 0;
-    top: 0;
+    top: 65px;
     width: 437px;
     height: 100%;
     background-image: linear-gradient(
@@ -147,7 +147,6 @@
       ),
       url('../../img/tablet-bg-img-1x.jpg');
 
-    background-size: cover;
     background-repeat: no-repeat;
   }
   .text {
@@ -180,10 +179,9 @@
     padding-left: 96px;
   }
 
- 
   .rightSide {
     position: absolute;
-    right:0;
+    right: 0;
     top: 0px;
     width: 670px;
     height: 100%;
