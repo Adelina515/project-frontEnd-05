@@ -6,7 +6,8 @@ import ExerciseCategoriesList from '../components/exercise/ExerciseCategoriesLis
 import ExerciseList from '../components/exercise/ExerciseList/ExerciseList';
 import ExerciseModal from 'components/exercise/Modal/ExerciseModal';
 import { useLocation } from 'react-router-dom';
-import Pagination from 'components/exercise/Pagination/Pagination';
+import Pagination from 'components/exercise/ExerciseList/Pagination/Pagination';
+import formatDate from 'function/formatData';
 
 function Exercises(props) {
 
@@ -20,7 +21,8 @@ function Exercises(props) {
   const [loading, setLoading] = useState(false);
   const [selectedEx, setSelectedEx] = useState(undefined);
   const location = useLocation();
-  const date = location.state;
+  const date = location.state ? location.state : formatDate(new Date());
+
   const [specific, setSpecific] = useState({
     name: undefined,
     filter: undefined,

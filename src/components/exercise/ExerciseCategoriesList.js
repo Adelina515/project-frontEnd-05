@@ -4,7 +4,6 @@ import { nanoid } from '@reduxjs/toolkit';
 import css from '../../pages/Exercises.module.css';
 import ExerciseCategoriesItem from './ExerciseCategoriesItem';
 function ExerciseCategoriesList({ data, setSpec }) {
-  console.log(data);
   try{
     return (
       <div className={css.arrCont}>

@@ -7,9 +7,8 @@
 }
 .exerciseItemContainer {
   width: 335px;
-  height: 141px;
   background-color: rgba(239, 237, 232, 0.05);
-  border: apx solid var(--calendar-invalid-date);
+  border: 1px solid var(--calendar-invalid-date);
   position: relative;
   border-radius: 12px;
   padding: 16px;
@@ -37,7 +36,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
-  margin-top: 33px;
   max-width: 240px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -51,12 +49,14 @@
   padding: 1px;
   width: 24px;
   height: 24px;
+  margin-top: 33px;
 }
 
 .exerciseItemContainer p {
   display: flex;
   color: var(--calendar-arrow-color);
   gap: 4px;
+  white-space: nowrap;
 }
 .exerciseItemContainer p span {
   color: var(--invent-color);
@@ -66,7 +66,6 @@
   top: 18px;
   right: 18px;
   background-color: transparent;
-  color: var(--decorate-color);
   border: none;
   display: flex;
   gap: 8px;
@@ -75,16 +74,26 @@
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+  padding: 0;
+  transition: all 0.5s ease;
+}
+.startBtn:hover{
+  color: var(--decorate-color);
+ background-color: transparent;
 }
 .startBtn svg {
   width: 16px;
   height: 16px;
+  fill: var(--invent-color);
+
 }
 
 .exerciseStatsContainer {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   margin-top: 8px;
+  row-gap: 4px;
 }
 .exerciseStatsContainer p {
   font-feature-settings: 'clig' off, 'liga' off;
@@ -94,4 +103,56 @@
   font-weight: 400;
   line-height: 18px; /* 150% */
   color: var(--calendar-arrow-color);
+}
+.woman {
+  position: absolute;
+}
+@media screen and (min-width: 768px) {
+  .exerciseListContainer {
+    width: 694px;
+    margin: auto;
+    row-gap: 32px;
+    column-gap: 16px;
+    height: 738px;
+    overflow-y: scroll;
+    padding-bottom: 66px;
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(239, 237, 232, 0.1);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    width: 8px;
+    height: 153px;
+    flex-shrink: 0;
+    border-radius: 12px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .exerciseListContainer {
+    height: 527px;
+    margin-left: 96px;
+    margin-right: 0;
+  }
+  .exerciseItemContaine {
+    width: 405px;
+  }
+  .woman {
+    right: 0px;
+    top: 84px;
+    width: 670px;
+    height: 902px;
+    z-index: -2;
+    background: linear-gradient(80deg, #040404 -2.45%, rgba(4, 4, 4, 0) 68.17%),
+      url('../../../img/descktop-bg-img-2x.jpg'),
+      lightgray 0px -48px / 94.516% 105.335% no-repeat;
+  }
 }
