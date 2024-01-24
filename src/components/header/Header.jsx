@@ -32,7 +32,7 @@ export const Header = () => {
               {isLogin && <UserNav page="wide" />}
               {isLogin && <UserBar />}
               {isLogin && <LogOutBtn page="wide" />}
-              {<BtnMobileMenu setOpen={handleOpen} />}
+              {isLogin && <BtnMobileMenu setOpen={handleOpen} />}
             </div>
           )}
         </div>
