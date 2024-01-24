@@ -22,17 +22,8 @@ const OwnIconCalendar = () => {
 const DaySwitch = ({ handleDate }) => {
   const dispatch = useDispatch();
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [formSelectedDate, setFormSelectedDate] = useState(null);
-  // console.log('selectedDate >>', selectedDate);
-  // console.log('formSelectedDate >>', formSelectedDate);
-  //   const convertDate =  date => {
-  //   const formatedDate = convertDate(date);
-  //   setSelectedDate(formatedDate);
-  // };
-
   useEffect(() => {
     const formatted = formatDate(selectedDate);
-    setFormSelectedDate(formatted);
     dispatch(fetchAllDiary(formatted));
   }, [selectedDate, dispatch]);
 
