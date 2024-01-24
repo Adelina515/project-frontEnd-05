@@ -14,10 +14,8 @@ import { selectUserToken } from '../../redux/auth/auth-selectors';
 
 export default function Profile() {
 
-
-
   const state = useSelector(selectUserParams);
-  console.log(state, "state in profile")
+  // console.log(state, "state in profile")
   const userToken = useSelector(selectUserToken);
 
 

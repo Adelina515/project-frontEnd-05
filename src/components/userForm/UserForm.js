@@ -64,7 +64,7 @@ export const UserForm = ({
   ];
 
   const handleSubmit = async (values) => {
-    console.log(values, "values newParams")
+   
 
     try {
       const newParams = {
@@ -88,14 +88,15 @@ export const UserForm = ({
   if (!name) {
     return <div>Loading...</div>;
   }
-  const formattedDate = parseISO(birthday);
+
+const formattedDate = birthday ? parseISO(birthday) : parseISO('2000-01-01T00:00:00.000Z');
 
   const initialValues = {
     name: name,
     height: height,
     currentWeight: currentWeight,
     desiredWeight: desiredWeight,
-    birthday: formattedDate,
+    birthday: formattedDate || '08.01.1987' ,
     blood: blood || 1,
     sex: sex || 'male',
     levelActivity: levelActivity || '1',
@@ -162,6 +163,7 @@ export const UserForm = ({
                   id="height"
                   placeholder=""
                   className={css.inputField}
+                  oninput="this.value = Math.abs(this.value)"
                 />
                 <label htmlFor="height" className={css.label} >Height</label>
               </div>
