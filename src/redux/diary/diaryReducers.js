@@ -34,7 +34,7 @@ export const handleFulfilledDeleteProduct = (state, { payload }) => {
 export const handleFulfilledAddExercises = (state, { payload }) => {
     state.error = null;
     state.isLoading = false;
-    state.exercisesInDiary.unshift(payload);
+    state.exercisesInDiary.unshift(payload.result);
 };
 
 

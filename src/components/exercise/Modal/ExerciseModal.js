@@ -33,7 +33,7 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
       console.log("kj");
       const data = {
         exerciseId: ex._id,
-        duration: (seconds / 60).toFixed(2),
+        duration: (ex.time-(seconds / 60)).toFixed(2),
         burnedCalories: caloriesBurned,
         date: selectedDate,
       };
