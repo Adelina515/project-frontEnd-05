@@ -27,7 +27,6 @@ export default function Profile() {
     <div className={css.container}>
       <div className={css.forTitle}>
       <TitlePage children={'Profile Settings'} />
-
       </div>
       
       
@@ -52,7 +51,8 @@ export default function Profile() {
         />
       </div>
       <ExclamationMark />
-      <LogOutBtn/></div>
+      <div className={css.forLogout}>
+      <LogOutBtn/></div></div>
       <div className = {css.forPf}>
       <UserForm 
         userToken={userToken}

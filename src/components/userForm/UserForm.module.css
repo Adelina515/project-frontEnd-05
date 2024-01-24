@@ -45,7 +45,7 @@
   }
 }
 .input {
-  width: 335px;
+
   padding: 14px;
   margin-bottom: 14px;
   gap: 10px;
@@ -54,8 +54,12 @@
   background-color: transparent;
   font-size: 14px;
   font-weight: 400;
-  line-height: 18px;
-}
+  line-height: 18px;}
+@media screen and (min-width: 375px) {
+.input {
+  width: 335px;
+ 
+}}
 .input[name='name'] {
   color: var(--invent-color);
 }
@@ -67,14 +71,25 @@
     line-height: 24px;
   }
 }
-
 .wrapperInputField {
   display: inline-flex;
   align-items: flex-end;
-  margin-top: 20px;
-  gap: 14px;
-  width: 335px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+  gap: 34px;
+  display: inline-flex;
+  align-items: flex-end;
+ 
 }
+@media screen and (min-width: 375px) {
+  .wrapperInputField {
+
+width: 335px;
+gap: 14px;
+flex-wrap: nowrap;
+}
+}
+
 @media screen and (min-width: 768px) {
   .wrapperInputField {
     width: 341px;
@@ -152,26 +167,44 @@
 
 .forRadio {
   display: flex;
+  flex-wrap: nowrap;
+  row-gap: 0;
   margin-right: 20px;
+}
+@media screen and (max-width: 374px){
+  .forRadio{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 24px;
+   
+  }
 }
 .forRadioBtn {
   display: flex;
   margin-right: 20px;
   position: relative;
 }
+
 .wrapperRadio {
-  min-width: 268px;
   margin-top: 42px;
-  /* margin-left: 30px; */
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  max-width: 700px;
+  margin: 42px auto 40px;
+}
+@media screen and (min-width: 375px)  and (max-width: 767px){
+  .wrapperRadio {
+    width: 335px;
+  }
 }
 @media screen and (min-width: 768px) {
   .wrapperRadio {
+    min-width: 335px;
+    max-width: 700px;
     justify-content: start;
+    align-items: start;
   }
 }
 .forLevelAct {
@@ -179,26 +212,42 @@
 }
 
 .button {
-  margin: 40px 0px 80px 20px;
+  margin-right: auto;
+  margin-top: 40px;
   padding: 12px 40px;
   border-radius: 12px;
   background: var(--accent-color);
   color: var(--placeholder-color);
+  width: 115px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  .button{
+    font-size: 20px;
+    width: 144px;
+  }
 }
 .button:hover {
   background: var(--decorate-color);
 }
+
 @media screen and (min-width: 768px) {
   .button {
-    margin: 40px 0px 64px 0;
+    margin: 40px 0px 64px 0px;
     padding: 16px 50px;
   }
 }
 
 .wrapperLevel {
+  margin-top: 0;
+}
+@media screen and (min-width: 375px) {
+.wrapperLevel {
   margin-top: 40px;
 }
-
+}
 @media screen and (min-width: 768px) {
   .wrapperLevel {
     display: flex;
@@ -209,7 +258,7 @@
 
 .wrappInput {
   position: relative;
-  margin-top: 40px;
+ 
 
   label {
     color: var(--placeholder-color);
