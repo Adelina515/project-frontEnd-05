@@ -30,8 +30,7 @@ const DaySwitch = ({ handleDate }) => {
 
   // потрібна дата реєстрації користувача
   const [dateRegistration] = useState(
-    new Date(selectedDate).setDate(new Date(selectedDate).getDate() - 1)
-  );
+registratedAt  );
 
   const CustomInput = forwardRef(({ value, onClick }, ref) => {
     return (
