@@ -68,56 +68,66 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
     return (
       <BasicModalWindow isOpen={open} onClose={onClose}>
         <div className={css.modalContainer}>
-          <img
-            className={css.modalAnimation}
-            alt="exercise tutorial"
-            src={ex.gifUrl}
-          />
-          <div className={css.modalTime}>
-            <p>Time</p>
-            <div
-              className={css.progressBar}
-              style={{
-                background: `radial-gradient(closest-side, #10100f 90%, transparent 90% 100%), conic-gradient(var( --decorate-color) ${percentTimeLeft}%, transparent ${percentTimeLeft}%)`,
+          <div>
+            <img
+              className={css.modalAnimation}
+              alt="exercise tutorial"
+              src={ex.gifUrl}
+            />
+            <div className={css.modalTime}>
+              <p>Time</p>
+              <div
+                className={css.progressBar}
+                style={{
+                  background: `radial-gradient(closest-side, #10100f 90%, transparent 90% 100%), conic-gradient(var( --decorate-color) ${percentTimeLeft}%, transparent ${percentTimeLeft}%)`,
+                }}
+              >
+                <div
+                  className={css.dotContainer}
+                  style={{
+                    transform: `rotate(${(360 * percentTimeLeft) / 100}deg)`,
+                  }}
+                >
+                  <div className={css.dot} />
+                </div>
+                <div className={css.time}>{convertTime(seconds)}</div>
+              </div>
+
+              <button
+                className={css.pauseBtn}
+                onClick={() => setPaused(!paused)}
+              >
+                {' '}
+                <svg className={css.pauseSvg}>
+                  {paused ? (
+                    <use href={`${svg}#icon-play-square`} />
+                  ) : (
+                    <use href={`${svg}#icon-pause-square`} />
+                  )}
+                </svg>
+              </button>
+            </div>
+            <div>
+              <p>
+                Burned calories:{' '}
+                <span className={css.focus}>{caloriesBurned}</span>
+              </p>
+              <div className={css.exerciseChars}>
+                <ModalStat name={'Name'} val={ex.name} />
+                <ModalStat name={'Target'} val={ex.target} />
+                <ModalStat name={'Body Part'} val={ex.bodyPart} />
+                <ModalStat name={'Equipment'} val={ex.equipment} />
+              </div>
+            </div>
+            <button
+              className={css.addBtn}
+              onClick={() => {
+                setFinished(true);
               }}
             >
-              <div
-                className={css.dotContainer}
-                style={{ animationPlayState: paused ? 'paused' : 'running' }}
-              >
-                <div className={css.dot} />
-              </div>
-              <div className={css.time}>{convertTime(seconds)}</div>
-            </div>
-
-            <button className={css.pauseBtn} onClick={() => setPaused(!paused)}>
-              <svg className={css.pauseSvg}>
-                {paused ? (
-                  <use href={`${svg}#icon-play-square`} />
-                ) : (
-                  <use href={`${svg}#icon-pause-square`} />
-                )}
-              </svg>
+              Add to diary
             </button>
-            <p>
-              Burned calories:{' '}
-              <span className={css.focus}>{caloriesBurned}</span>
-            </p>
-            <div className={css.exerciseChars}>
-              <ModalStat name={'Name'} val={ex.name} />
-              <ModalStat name={'Target'} val={ex.target} />
-              <ModalStat name={'Body Part'} val={ex.bodyPart} />
-              <ModalStat name={'Equipment'} val={ex.equipment} />
-            </div>
           </div>
-          <button
-            className={css.addBtn}
-            onClick={() => {
-              setFinished(true);
-            }}
-          >
-            Add to diary
-          </button>
         </div>
       </BasicModalWindow>
     );
@@ -137,7 +147,7 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
             <p>
               Your time:{' '}
               <span className={css.focus}>
-                {(seconds / 60).toFixed(2)} minutes
+                {(ex.time - seconds / 60).toFixed(2)} minutes
               </span>
             </p>
             <p>

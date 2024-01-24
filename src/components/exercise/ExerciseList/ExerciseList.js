@@ -21,6 +21,7 @@ function ExerciseList({ name, filter, setSelected }) {
       {arr.map(v => (
         <ExerciseItem key={nanoid()} exercise={v} setSelected={setSelected}/>
       ))}
+      <div className={css.woman}/>
     </div>
   );
 }
