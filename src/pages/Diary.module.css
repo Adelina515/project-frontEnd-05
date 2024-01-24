@@ -8,7 +8,7 @@
 .diary {
     display: flex;
     flex-direction: column;
-    background-color: black;
+    /*background-color: black;*/
     /* border: 1px solid black;*/
 }
 
