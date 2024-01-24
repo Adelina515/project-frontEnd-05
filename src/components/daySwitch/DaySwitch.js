@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 import style from './DaySwitch.module.css';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import { Calendar } from 'components/calendar/Calendar';
+import { useSelector } from 'react-redux';
 
 const OwnIconCalendar = () => {
   return (
@@ -17,6 +18,9 @@ const OwnIconCalendar = () => {
 };
 
 const DaySwitch = ({ handleDate }) => {
+
+  const registratedAt = useSelector(state => state.auth.user.createdAt)
+  console.log("registratedAt >>", registratedAt)
 
   const [selectedDate, setSelectedDate] = useState(new Date());
   useEffect(() => {
