@@ -17,7 +17,7 @@ export const Header = () => {
   const isLogin = useSelector(selectIsUserLogin);
   const [isOpen, setIsOpen] = useState(false);
   const token = useSelector(selectUserToken);
-  const isMobile = window.innerWidth < 1440;
+  // const isMobile = window.innerWidth < 1440;
 
   const handleOpen = () => {
     setIsOpen(prev => !prev);
@@ -29,10 +29,10 @@ export const Header = () => {
           <Logo />
           {token && (
             <div className={css.user}>
-              {!isMobile && isLogin && <UserNav />}
+              {isLogin && <UserNav page="wide" />}
               {isLogin && <UserBar />}
-              {!isMobile && isLogin && <LogOutBtn />}
-              {isMobile && <BtnMobileMenu setOpen={handleOpen} />}
+              {isLogin && <LogOutBtn page="wide" />}
+              {<BtnMobileMenu setOpen={handleOpen} />}
             </div>
           )}
         </div>

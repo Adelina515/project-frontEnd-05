@@ -2,14 +2,6 @@
   width: 126px;
   height: 13px;
 }
-
-@media screen and (min-width: 768px) {
-  .logotipe {
-    width: 151px;
-    height: 17px;
-  }
-}
-
 .logoNotFound {
   position: absolute;
   top: 24px;
@@ -18,13 +10,18 @@
   height: 13px;
 }
 @media screen and (min-width: 768px) {
+  .logotipe {
+    width: 151px;
+    height: 17px;
+  }
   .logoNotFound {
-    top: 116px;
+    top: 32px;
     left: 32px;
     width: 151px;
     height: 17px;
   }
 }
+
 @media screen and (min-width: 1440px) {
   .logoNotFound {
     top: 32px;
