@@ -96,8 +96,13 @@
     margin-left: 18px;
   }
    
+  @media screen and (max-width: 374px) {
+    .tutorialsWrapper {
+      position: absolute;
+      top:300px;
 
-
+  }
+  }
   /*Tablet video tutorial*/
   @media screen and (min-width: 768px) {
 .tutorialsWrapper {
