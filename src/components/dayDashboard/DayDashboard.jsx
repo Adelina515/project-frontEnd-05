@@ -32,10 +32,10 @@ const DayDashboard = () => {
 
   useEffect(() => {
     setCalories(
-      consumedCaloriesByDate ? consumedCaloriesByDate.toFixed(2) : null
+      consumedCaloriesByDate ? consumedCaloriesByDate.toFixed(2) : 0
     );
     setDaily(dailyCalorieIntake ? dailyCalorieIntake.toFixed(2) : null);
-    setBurned(burnedCaloriesByDate ? burnedCaloriesByDate.toFixed(2) : null);
+    setBurned(burnedCaloriesByDate ? burnedCaloriesByDate.toFixed(2) : 0);
     setSports(sportsRemaining ? sportsRemaining.toFixed(2) : null);
   }, [
     consumedCaloriesByDate,
