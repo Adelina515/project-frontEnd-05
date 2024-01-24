@@ -21,7 +21,7 @@ const SignUpForm = () => {
     try {
       dispatch(register(values));
       setTimeout(() => {
-        toast.success('Registration successful!', { position: 'top-right' });
+        toast.success('Registration successful!', { position: 'top-center' });
         setSubmitting(false);
         resetForm();
       }, 1000);
