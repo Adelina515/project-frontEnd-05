@@ -3,7 +3,7 @@ import svg from '../../img/sprite/symbol-defs.svg';
 import css from './mobileMenu.module.css';
 import { LogOutBtn } from 'btn/logOutBtn/LogOutBtn';
 
-export const MobileMenu = ({ open, setOpen, isParams }) => {
+export const MobileMenu = ({ open, setOpen, isLogin }) => {
   return (
     <div className={`${css.mobMenuBackdrop} ${open ? css.isOpen : ''}`}>
       <div className={`${css.mobileMenu} ${open ? css.isOpen : ''}`}>
@@ -12,8 +12,8 @@ export const MobileMenu = ({ open, setOpen, isParams }) => {
             <use href={`${svg}#icon-close-modal`}></use>
           </svg>
         </button>
-        {isParams && <UserNav />}
-        <LogOutBtn />
+        {isLogin && <UserNav />}
+        {isLogin && <LogOutBtn />}
       </div>
     </div>
   );

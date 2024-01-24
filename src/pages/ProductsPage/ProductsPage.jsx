@@ -18,16 +18,7 @@ const ProductsPage = () => {
   const location = useLocation();
   const dateDiary = location.state;
   const isSuccess = useSelector(selectSuccess);
-  // const auth = useSelector(state => state.auth);
-  // console.log(auth);
-  // const newDate = () => {
-  //   const rawDate = new Date();
-  //   const newDate = formatDate(rawDate);
-  //   return newDate;
-  // };
 
-  // const stateDiary = useSelector(state => state.diary);
-  // console.log(stateDiary, 'state');
   const convertDate = date => {
     let rawDate;
     date ? (rawDate = date) : (rawDate = new Date());
