@@ -30,6 +30,7 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
       setOpen(false);
       setEx(undefined);
     } else {
+      console.log("kj");
       const data = {
         exerciseId: ex._id,
         duration: (seconds / 60).toFixed(2),
@@ -92,26 +93,25 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
                 </div>
                 <div className={css.time}>{convertTime(seconds)}</div>
               </div>
-
-              <button
-                className={css.pauseBtn}
-                onClick={() => setPaused(!paused)}
-              >
-                {' '}
-                <svg className={css.pauseSvg}>
-                  {paused ? (
-                    <use href={`${svg}#icon-play-square`} />
-                  ) : (
-                    <use href={`${svg}#icon-pause-square`} />
-                  )}
-                </svg>
-              </button>
             </div>
+
+            <button className={css.pauseBtn} onClick={() => setPaused(!paused)}>
+              {' '}
+              <svg className={css.pauseSvg}>
+                {paused ? (
+                  <use href={`${svg}#icon-play-square`} />
+                ) : (
+                  <use href={`${svg}#icon-pause-square`} />
+                )}
+              </svg>
+            </button>
+            <p>
+              Burned calories:{' '}
+              <span className={css.focus}>{Math.ceil(caloriesBurned)}</span>
+            </p>
+          </div>
+          <div>
             <div>
-              <p>
-                Burned calories:{' '}
-                <span className={css.focus}>{caloriesBurned}</span>
-              </p>
               <div className={css.exerciseChars}>
                 <ModalStat name={'Name'} val={ex.name} />
                 <ModalStat name={'Target'} val={ex.target} />
@@ -121,9 +121,8 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
             </div>
             <button
               className={css.addBtn}
-              onClick={() => {
-                setFinished(true);
-              }}
+              datatype='close-modal'
+              onClick={onClose}
             >
               Add to diary
             </button>
@@ -135,38 +134,41 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
     return (
       <BasicModalWindow isOpen={open} onClose={onClose}>
         <div className={css.modalContainer}>
-          <div className={css.thumbContainer}>
-            <img
-              className={css.thumb}
-              src="https://s3-alpha-sig.figma.com/img/59d5/2b65/a6a2c8aec4a3496c837c9b0a87d5c044?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=HWANRVCWxA5doH3IckHWRjdihxZuoDiPb8gjXjgqC1af~NIWaZ5B62XnAWJMy9EOtTNQQ1-U5K2RT2u5lrO6pX79GxkJdX3vR0PfwNb~tvIJlL4V2z4WJOojCtrZdyP8piYXvDrFAzZ~HOv9oze~1t9CQ9TkQGjxr4DmmkA4j5MI9p2Whqbch-tAaZMNc~RTRPrIMR9wGNtWu7p8tNLOjvbfPX-5hXqt-lr~AqNSd7Uo~o5I7mM0Pa7HFxI~e0yIwZuVUK5NxMWqe162kV8z31b0ZA~sraruDDCslFBhg6sdESXDNN6-9VoAI-H9UAxVCP1rxIGK75rSxwlOBG5etA__"
-              alt="arm"
-            />
-          </div>
-          <h1>Well done</h1>
-          <div className={css.finalStats}>
-            <p>
-              Your time:{' '}
-              <span className={css.focus}>
-                {(ex.time - seconds / 60).toFixed(2)} minutes
-              </span>
-            </p>
-            <p>
-              Burned calories:{' '}
-              <span className={css.focus}>{caloriesBurned}</span>
-            </p>
-          </div>
+          <div>
+            <div className={css.thumbContainer}>
+              <img
+                className={css.thumb}
+                src="https://s3-alpha-sig.figma.com/img/59d5/2b65/a6a2c8aec4a3496c837c9b0a87d5c044?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=HWANRVCWxA5doH3IckHWRjdihxZuoDiPb8gjXjgqC1af~NIWaZ5B62XnAWJMy9EOtTNQQ1-U5K2RT2u5lrO6pX79GxkJdX3vR0PfwNb~tvIJlL4V2z4WJOojCtrZdyP8piYXvDrFAzZ~HOv9oze~1t9CQ9TkQGjxr4DmmkA4j5MI9p2Whqbch-tAaZMNc~RTRPrIMR9wGNtWu7p8tNLOjvbfPX-5hXqt-lr~AqNSd7Uo~o5I7mM0Pa7HFxI~e0yIwZuVUK5NxMWqe162kV8z31b0ZA~sraruDDCslFBhg6sdESXDNN6-9VoAI-H9UAxVCP1rxIGK75rSxwlOBG5etA__"
+                alt="arm"
+              />
+            </div>
+            <h1>Well done</h1>
+            <div className={css.finalStats}>
+              <p>
+                Your time:{' '}
+                <span className={css.focus}>
+                  {(ex.time - seconds / 60).toFixed(2)} minutes
+                </span>
+              </p>
+              <p>
+                Burned calories:{' '}
+                <span className={css.focus}>{caloriesBurned}</span>
+              </p>
+            </div>
 
-          <button
-            onClick={() => {
-              setOpen(false);
-            }}
-          >
-            To next product
-          </button>
-          <br />
-          <NavLink to={'/diary'} onClick={onClose} className={css.toDiary}>
-            To the diary
-          </NavLink>
+            <button
+              onClick={onClose}
+            >
+              To next product
+            </button>
+            <br />
+            <NavLink to={'/diary'} onClick={onClose} className={css.toDiary} datatype='close-modal'>
+              To the diary
+              <svg className={css.arrow}>
+              <use href={`${svg}#icon-next-arrow`}/>
+              </svg>
+            </NavLink>
+          </div>
         </div>
       </BasicModalWindow>
     );

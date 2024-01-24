@@ -164,12 +164,42 @@ h1 {
   margin: auto;
   margin-top: 16px;
   display: flex;
+  align-items: center;
+}
+.arrow{
+  width: 16px;
+  height: 16px;
+  stroke: var(--input-border-color);
+
 }
 @media screen and (min-width: 768px) {
 
   .modalContainer {
     display: flex;
-    width: 100vw;
+    flex-wrap: wrap;
+    width: 694px;
     height: 550px;
+    gap:16px;
+  }
+  .modalContainer:has(.thumb){
+    justify-items: center;
+    width: 100%;
+    padding: 10px 103px;
+    height: auto;
+  }
+
+  .exerciseChars{
+    margin-top: 48px;
+    margin-right: 31px;
+    width: 340px;
+  }
+  .addBtn{
+    position: absolute;
+    right: -136px;
+    bottom: -16px;
+
+  }
+  .toDiary{
+    display: block;
   }
 }
