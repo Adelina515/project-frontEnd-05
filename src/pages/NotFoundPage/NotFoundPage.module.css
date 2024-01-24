@@ -4,13 +4,41 @@
   margin-right: auto; */
   height: 100vh;
   width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+}
+.wrapperText {
+  position: absolute;
+  width: 240px;
+  height: auto;
+  background-color: #e6533c;
+  box-sizing: border-box;
+  z-index: 2;
+}
+.wrapperPhoto {
+  position: absolute;
+  width: 298px;
+  left: 120px;
+  top: 0;
+  z-index: 1;
+  background-image: linear-gradient(
+      170deg,
+      #040404 3.66%,
+      rgba(4, 4, 4, 0) 19.15%
+    ),
+    url('../../img/mobile-bg-img-1x.jpg');
+  background-position: right;
+
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 /*Mobile*/
 @media screen and (min-width: 375px) {
   .notfound {
     position: relative;
     width: 375px;
-    height: 812px;
+    /* height: 812px; */
     overflow-y: hidden;
   }
 }
