@@ -23,9 +23,9 @@ const DaySwitch = ({ handleDate }) => {
   const dispatch = useDispatch();
   const [selectedDate, setSelectedDate] = useState(new Date());
   useEffect(() => {
-    const formatted = formatDate(selectedDate);
-    dispatch(fetchAllDiary(formatted));
-  }, [selectedDate, dispatch]);
+      handleDate(selectedDate);
+
+  }, [selectedDate, handleDate]);
 
   // потрібна дата реєстрації користувача
   const [dateRegistration] = useState(
