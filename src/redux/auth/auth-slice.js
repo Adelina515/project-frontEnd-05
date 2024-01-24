@@ -116,7 +116,6 @@ const authSlice = createSlice({
       })
       .addCase(updateProfileAvatarTh.fulfilled, (state, { payload }) => {
         state.user.avatarURL = payload.avatarURL;
-        state.token = payload.token;
         state.isLogin = true;
       })
       .addCase(updateProfileAvatarTh.rejected, (state, { payload }) => {

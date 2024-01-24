@@ -88,14 +88,15 @@ export const UserForm = ({
   if (!name) {
     return <div>Loading...</div>;
   }
-  const formattedDate = parseISO(birthday);
+
+const formattedDate = birthday ? parseISO(birthday) : parseISO('2000-01-01T00:00:00.000Z');
 
   const initialValues = {
     name: name,
     height: height,
     currentWeight: currentWeight,
     desiredWeight: desiredWeight,
-    birthday: formattedDate,
+    birthday: formattedDate || '08.01.1987' ,
     blood: blood || 1,
     sex: sex || 'male',
     levelActivity: levelActivity || '1',
