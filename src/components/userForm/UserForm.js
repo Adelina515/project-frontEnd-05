@@ -163,7 +163,7 @@ const formattedDate = birthday ? parseISO(birthday) : parseISO('2000-01-01T00:00
                   id="height"
                   placeholder=""
                   className={css.inputField}
-                  oninput="this.value = Math.abs(this.value)"
+            
                 />
                 <label htmlFor="height" className={css.label} >Height</label>
               </div>
