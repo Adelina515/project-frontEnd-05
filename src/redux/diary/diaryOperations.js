@@ -1,13 +1,6 @@
-
 import { createAsyncThunk } from '@reduxjs/toolkit';
-/*import axios from 'axios';*/
 import { toast } from 'react-toastify';
 import instance from '../../instance/instance';
-
-
-/*const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWQ2NGY4ZTc4YTQxYmIyMGY0MDhkNSIsImlhdCI6MTcwNTg2MjQ1MSwiZXhwIjoxNzA1OTQ1MjUxfQ.dHZUf4ehuRC6POSdeGAoYOJFGtvHT4nrMaA9IjUA6Rg'
-axios.defaults.baseURL = 'https://power-pulse-backend.onrender.com/';
-axios.defaults.headers.common.Authorization = `Bearer ${token}`;*/
 
 export const fetchAllDiary = createAsyncThunk(
   'fetchAllDiary',

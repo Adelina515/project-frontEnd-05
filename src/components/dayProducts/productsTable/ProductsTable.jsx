@@ -6,6 +6,7 @@ import svg from '../../../img/sprite/symbol-defs.svg';
 // import { selectDiaryProducts } from '../../../redux/diary/diarySelectors';
 import { deleteProductDiary } from '../../../redux/diary/diaryOperations';
 import { selectProducts } from '../../../redux/products/productsSelectors';
+// import { useEffect } from 'react';
 
 const ProductsTable = ({ productsInDiary }) => {
   const dispatch = useDispatch();

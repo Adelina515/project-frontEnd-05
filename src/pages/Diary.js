@@ -12,25 +12,30 @@ import DayExercises from '../components/dayExercises/DayExercises';
 import { Container } from '../components/Container/Container';
 
 import { fetchAllDiary } from '../redux/diary/diaryOperations';
-
+// import { selectDiaryExercises, selectDiaryProducts } from '../redux/diary/diarySelectors';
 
 
 export default function Diary() {
   const dispatch = useDispatch();
-  
+
+  // const productsInDiary = useSelector(selectDiaryProducts);
+  // const excersisesInDiary = useSelector(selectDiaryExercises);
+
   const [dateExport, setDateExport] = useState(null);
   
-
   useEffect(() => {
     const formatted = formatDate(new Date())
-    setDateExport(formatted)
+    setDateExport(formatted);
     dispatch(fetchAllDiary(formatted));
-  }, [dateExport, dispatch]);
+}, [dateExport, dispatch]);
 
+  
   const handleDate = date => {
   const formatedDate = formatDate(date);
     return formatedDate;
   };
+
+  console.log("dateExport >>", dateExport)
   
   return (
     <div className={css.diary}>
@@ -38,7 +43,7 @@ export default function Diary() {
         <div className={css.calendarCont}>
           <TitlePage children="Diary" />
 
-          <div >
+          <div className={css.calendar}>
             <DaySwitch handleDate={handleDate} selectedDate={dateExport} />
           </div>
         </div>
@@ -46,7 +51,7 @@ export default function Diary() {
           <DayDashboard />
           <div>
             <DayProducts selectedDate={dateExport} />
-            <DayExercises />
+            <DayExercises selectedDate={dateExport}/>
           </div>
         </div>
       </Container>

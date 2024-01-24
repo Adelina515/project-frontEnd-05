@@ -10,29 +10,28 @@ import { useSelector } from "react-redux";
 
 
 
-const DayExercises = () => {
+const DayExercises = ({ selectedDate }) => {
   const exercisesInDiary = useSelector(selectDiaryExercises);
-  
-
 
   return (
     <>
-      <div className= {css.dayExecrcises}>
-        <div className ={css.dayScroll}>
+      <div className={css.dayExecrcises}>
+        <div className={css.dayScroll}>
           <div className={css.dayNav}>
             <h3 className={css.dayZag}>Execrcises</h3>
-         <Link to="/exercises" className={css.Butt} /*state={date} */>
-            Add exercises
-            <svg className={css.iconStrilka} width="16px" height="16px">
-              <use href={`${sprite}#icon-next-arrow`}></use>
-            </svg>
-          </Link>
+            <Link to="/exercises" className={css.Butt} state={selectedDate}>
+              Add exercises
+              <svg className={css.iconStrilka} width="16px" height="16px">
+                <use href={`${sprite}#icon-next-arrow`}></use>
+              </svg>
+            </Link>
           </div>
- {exercisesInDiary.length === 0 ? (
-            <EmList itemName={"exercises"} />
+          {exercisesInDiary.length === 0 ? (
+            <EmList itemName={'exercises'} />
           ) : (
             <ExercisesTable exercises={exercisesInDiary} />
-          )}        </div>
+          )}{' '}
+        </div>
       </div>
     </>
   );
