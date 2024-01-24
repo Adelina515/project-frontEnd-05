@@ -77,15 +77,14 @@
   padding: 0;
   transition: all 0.5s ease;
 }
-.startBtn:hover{
+.startBtn:hover {
   color: var(--decorate-color);
- background-color: transparent;
+  background-color: transparent;
 }
 .startBtn svg {
   width: 16px;
   height: 16px;
   fill: var(--invent-color);
-
 }
 
 .exerciseStatsContainer {
@@ -106,6 +105,18 @@
 }
 .woman {
   position: absolute;
+}
+.backArrow {
+  color: var(--calendar-invalid-date);
+}
+.backArrow svg {
+  width: 16px;
+  height: 16px;
+  transform: rotate(180deg);
+}
+.backArrow svg path {
+  stroke: var(--calendar-invalid-date);
+  fill: var(--calendar-invalid-date);
 }
 @media screen and (min-width: 768px) {
   .exerciseListContainer {

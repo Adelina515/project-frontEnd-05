@@ -3,14 +3,14 @@ import TitlePage from 'components/TitlePage/TitlePage';
 
 import css from '../../pages/Exercises.module.css';
 
-function ExerciseHead({ exCat, setExCat }) {
+function ExerciseHead({ exCat, setExCat, name="exercises" }) {
   const handleChangeCat = e => {
     setExCat(e.target.innerText.trim());
   };
   return (
     <div>
       <div className={css.headHolder}>
-        <TitlePage children={'Exercises'} />
+        <TitlePage children={(name.toUpperCase()[0]+name.substring(1))} />
         <div className={css.exerciseCategoryContainer}>
           <div
             onClick={handleChangeCat}
