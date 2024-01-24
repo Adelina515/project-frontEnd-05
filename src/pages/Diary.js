@@ -24,14 +24,16 @@ export default function Diary() {
   const [dateExport, setDateExport] = useState(null);
   
   useEffect(() => {
-    const formatted = formatDate(new Date())
-    setDateExport(formatted);
-    dispatch(fetchAllDiary(formatted));
+    
+    //setDateExport(formatted);
+    console.log(dateExport);
+    dispatch(fetchAllDiary(dateExport));
 }, [dateExport, dispatch]);
 
   
   const handleDate = date => {
   const formatedDate = formatDate(date);
+  setDateExport(formatedDate);
     return formatedDate;
   };
 
