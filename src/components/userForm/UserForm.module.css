@@ -1,5 +1,5 @@
 /* UserForm.module.css */
-@import "../../index.css"; 
+@import '../../index.css';
 
 .formContainer {
   display: flex;
@@ -13,11 +13,10 @@
   .formContainer {
     margin: auto;
     margin-top: 40px;
-flex-direction: row;
+    flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
     width: 700px;
-   
   }
 }
 
@@ -26,29 +25,26 @@ flex-direction: row;
   margin-bottom: 4px;
   font-size: 12px;
 }
-@media screen and (min-width: 768px) 
-{
+@media screen and (min-width: 768px) {
   .sectionTitle {
     font-size: 14px;
   }
 }
 
-.wrInput{
+.wrInput {
   position: relative;
   label {
     color: var(--placeholder-color);
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
-  position: absolute;
-  top: -14px;
- left: 4px;
-
+    position: absolute;
+    top: -14px;
+    left: 4px;
   }
 }
 .input {
- 
   width: 335px;
   padding: 14px;
   margin-bottom: 14px;
@@ -60,14 +56,15 @@ flex-direction: row;
   font-weight: 400;
   line-height: 18px;
 }
-.input[name="name"] {   
-  color: var(--invent-color)}
+.input[name='name'] {
+  color: var(--invent-color);
+}
 
-  @media screen and (min-width: 768px) {
-    .input {  
-       width: 341px;
-       font-size: 16px;
-  line-height: 24px;
+@media screen and (min-width: 768px) {
+  .input {
+    width: 341px;
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
@@ -77,65 +74,57 @@ flex-direction: row;
   margin-top: 20px;
   gap: 14px;
   width: 335px;
-
-}
-@media screen and (min-width: 768px){
-  .wrapperInputField {   width: 341px;
-    width: 341px;
-   
-}
-
-}
-.wrapperFields{
-  display: flex;
-justify-content: center;
- align-items: center;
-  flex-direction: column;
-
-column-gap: 14px;
 }
 @media screen and (min-width: 768px) {
-  .wrapperFields{ flex-direction:row
+  .wrapperInputField {
+    width: 341px;
+    width: 341px;
+  }
+}
+.wrapperFields {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  column-gap: 14px;
+}
+@media screen and (min-width: 768px) {
+  .wrapperFields {
+    flex-direction: row;
   }
 }
 
-/* 
-.wrapper {
-  margin-right: 14px;} */
-
-  /* @media screen and (min-width: 768px) {
-    .wrapper {  margin-right: 14px;
-  }
-} */
+.inputField::-webkit-inner-spin-button,
+.inputField::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
 
 .inputField {
- 
-  /* padding: 14px 0; */
   padding: 14px;
   width: 100%;
-  /* display: inline-flex; добавлено */
   align-items: center; /* добавлено */
   gap: 10px;
   border-radius: 12px;
   border: 1px solid var(--input-border-color);
   background-color: transparent;
- 
+
   color: var(--invent-color);
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
-
 }
 @media screen and (min-width: 768px) {
   .inputField {
     font-size: 16px;
-    line-height: 24px;}
+    line-height: 24px;
   }
+}
 
-  @media screen and (min-width: 768px) {
-    .wrapperInputField {
-      width: 341px
-    }
+@media screen and (min-width: 768px) {
+  .wrapperInputField {
+    width: 341px;
+  }
 }
 
 .label {
@@ -153,33 +142,23 @@ column-gap: 14px;
   color: var(--calendar-weekdays-color);
   position: absolute;
   top: -16px;
-  
+
   transform: translateY(-50%);
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
 }
-/* .fzOzTD label { */
-  /* position: absolute;
-  font-size: 14px;
-  top: 50%;
-  left: 14px;
-  transform: translateY(-50%);
-  pointer-events: none;
-  transition: top 0.2s ease 0s, left 0.2s ease 0s, transform 0.2s ease 0s;
-  color: var(--normal-color); */
 
-  .forRadio{
-    display: flex;
+.forRadio {
+  display: flex;
   margin-right: 20px;
- 
-  }
-  .forRadioBtn{
-    display: flex;
+}
+.forRadioBtn {
+  display: flex;
   margin-right: 20px;
   position: relative;
-  }
+}
 .wrapperRadio {
   min-width: 268px;
   margin-top: 42px;
@@ -189,93 +168,15 @@ column-gap: 14px;
   align-items: center;
   justify-content: center;
   max-width: 700px;
- 
 }
 @media screen and (min-width: 768px) {
   .wrapperRadio {
     justify-content: start;
   }
 }
-.forLevelAct{
+.forLevelAct {
   margin-top: 32px;
 }
-
-  /* @media screen and (min-width: 1440px) {
-   
-
-  .radio {
-    position: relative;
-  }
-
-  .radioInput {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-  }
-
- .radioLabel {
-    padding-left: 25px;
-    cursor: pointer;
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.71em;
-    letter-spacing: -0.28px;
-    color: #fff;
-    margin-right: 9px;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1439px) {
-    .radioLabel {
-      font-size: 16px;
-      line-height: 24px;
-     
-    }
-  }
-
-  .radioLabel::before {
-    content: '';
-    display: block;
-    width: 18px;
-    height: 18px;
-    border: 2px solid var(--input-border-color);
-    background-color: transparent;
-    border-radius: 50%;
-    position: absolute;
-    top: 3px;
-    left: 0;
-   
-  }
-
-  .radioLabel::after {
-    content: '';
-    display: block;
-    width: 10px;
-    height: 10px;
-    border: 2px solid var(--accent-color);
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    opacity: 0;
-    position: absolute;
-    top: 7px;
-    left: 4px;
-    z-index: 2;
-  }
-
-  .radioInput:checked + .radioLabel::before {
-    border-color: var(--accent-color);
-  }
-
-  .radioInput:checked + .radioLabel::after {
-    opacity: 1;
-  }
-} */
 
 .button {
   margin: 40px 0px 80px 20px;
@@ -284,7 +185,7 @@ column-gap: 14px;
   background: var(--accent-color);
   color: var(--placeholder-color);
 }
-.button:hover{
+.button:hover {
   background: var(--decorate-color);
 }
 @media screen and (min-width: 768px) {
@@ -312,27 +213,27 @@ column-gap: 14px;
 
   label {
     color: var(--placeholder-color);
-  top: -14px;
- left: 4px;
+    top: -14px;
+    left: 4px;
   }
-  
 }
-.forForm{
- max-width: 700px;
-margin: auto;}
+.forForm {
+  max-width: 700px;
+  margin: auto;
+}
 
- @media screen and (min-width: 1440px) {
-  .forForm{
-  margin-top: 58px;
-  }}
+@media screen and (min-width: 1440px) {
+  .forForm {
+    margin-top: 58px;
+  }
+}
 
 .calendar {
   position: relative;
   label {
     color: var(--placeholder-color);
-  position: absolute;
-  top: -17px;
-  left: 4px;
+    position: absolute;
+    top: -17px;
+    left: 4px;
   }
-
 }

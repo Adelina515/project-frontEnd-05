@@ -4,7 +4,6 @@ import { getCurrentUser } from '../api/auth';
 
 export const updateProfileAvatar = async ({ avatar, userToken }) => {
   console.log(avatar, 'newAvatar');
-  // console.log(userToken, 'userToken in Avatar');
 
   try {
     setToken(userToken);
@@ -16,7 +15,6 @@ export const updateProfileAvatar = async ({ avatar, userToken }) => {
       headers: { 'content-type': 'multipart/form-data' },
     });
 
-    // console.log(res.data, 'res.data in update Avatar');
     return res.data;
   } catch (error) {
     console.error('Ошибка при обновлении параметров профиля:', error);
@@ -25,13 +23,10 @@ export const updateProfileAvatar = async ({ avatar, userToken }) => {
 };
 
 export const updateProfileParams = async ({ newParams, userToken }) => {
-  // console.log(newParams, 'newParams');
+
   try {
     setToken(userToken);
-     console.log(userToken, 'userToken in UpdateProfile');
-     console.log(newParams, 'newParams in UpdateProfile');
     const currentUserParams = await getCurrentUser(userToken);
-
     const changes = {};
 
     if (newParams.height !== currentUserParams.height) {
@@ -61,9 +56,7 @@ export const updateProfileParams = async ({ newParams, userToken }) => {
       changes.desiredWeight = newParams.desiredWeight;
     }
 
-    // Если есть изменения, отправляем PATCH-запрос
     if (Object.keys(changes).length > 0) {
-      //  console.log('changes>0');
       const response = await instance.patch('/api/auth/params', newParams);
       return response.data;
     } else {

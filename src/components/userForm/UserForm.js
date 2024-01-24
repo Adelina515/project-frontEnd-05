@@ -64,7 +64,7 @@ export const UserForm = ({
   ];
 
   const handleSubmit = async (values) => {
-    console.log(values, "values newParams")
+   
 
     try {
       const newParams = {
@@ -163,6 +163,7 @@ const formattedDate = birthday ? parseISO(birthday) : parseISO('2000-01-01T00:00
                   id="height"
                   placeholder=""
                   className={css.inputField}
+                  oninput="this.value = Math.abs(this.value)"
                 />
                 <label htmlFor="height" className={css.label} >Height</label>
               </div>

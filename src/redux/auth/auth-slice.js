@@ -97,10 +97,7 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(updateProfileParamsTh.fulfilled, (state, { payload }) => {
-        console.log(state.user, 'state.user in authSlice');
-        console.log(payload, 'payload.user user in authSlice');
         state.user = { ...payload };
-        /// state.token = payload.token;
 
         state.isLogin = true;
         state.isParamsExist = true; //додала test
