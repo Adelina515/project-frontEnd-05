@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import {
   selectIsUserLogin,
   selectUserToken,
-  selectisParamsExist,
 } from '../../redux/auth/auth-selectors';
 import { UserNav } from 'components/userNav/UserNav';
 import { UserBar } from 'components/userBar/UserBar';
@@ -19,8 +18,7 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const token = useSelector(selectUserToken);
   const isMobile = window.innerWidth < 1440;
-  const isParams = useSelector(selectisParamsExist);
-  // console.log(isParams);
+
   const handleOpen = () => {
     setIsOpen(prev => !prev);
   };
@@ -31,7 +29,7 @@ export const Header = () => {
           <Logo />
           {token && (
             <div className={css.user}>
-              {!isMobile && isParams && <UserNav />}
+              {!isMobile && isLogin && <UserNav />}
               {isLogin && <UserBar />}
               {!isMobile && isLogin && <LogOutBtn />}
               {isMobile && <BtnMobileMenu setOpen={handleOpen} />}
@@ -39,7 +37,7 @@ export const Header = () => {
           )}
         </div>
       </Container>
-      <MobileMenu open={isOpen} setOpen={handleOpen} isParams={isParams} />
+      <MobileMenu open={isOpen} setOpen={handleOpen} isLogin={isLogin} />
     </div>
   );
 };

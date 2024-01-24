@@ -25,7 +25,7 @@ const placeholderReducer = (state = {}, action) => {
 const persistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token', 'isParamsExist'],
+  whitelist: ['token'],
 };
 const persistedReducer = persistReducer(persistConfig, authReducer);
 export const store = configureStore({
