@@ -26,7 +26,7 @@ export const AddProductForm = ({ data, count, date }) => {
       grams: Number(e.target.elements.amount.value),
       calories: Math.floor(countCalories),
     };
-    dispatch(addProductDiary(add));
+    dispatch(addProductDiary({data:add, product:data}));
     addError
       ? toast.error('Oops... Something went wrong! Try again!', {
           position: 'top-right',

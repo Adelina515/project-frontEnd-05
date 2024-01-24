@@ -30,14 +30,13 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
       setOpen(false);
       setEx(undefined);
     } else {
-      console.log("kj");
       const data = {
         exerciseId: ex._id,
         duration: (ex.time-(seconds / 60)).toFixed(2),
         burnedCalories: caloriesBurned,
         date: selectedDate,
       };
-      dispatch(addExercisesDiary(data));
+      dispatch(addExercisesDiary({data, ex}));
       setFinished(true);
     }
   };
