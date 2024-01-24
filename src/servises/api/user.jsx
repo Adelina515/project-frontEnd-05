@@ -3,7 +3,7 @@ import { setToken } from '../../instance/instance';
 import { getCurrentUser } from '../api/auth';
 
 export const updateProfileAvatar = async ({ avatar, userToken }) => {
-  console.log(avatar, 'newAvatar');
+  // console.log(avatar, 'newAvatar');
 
   try {
     setToken(userToken);
