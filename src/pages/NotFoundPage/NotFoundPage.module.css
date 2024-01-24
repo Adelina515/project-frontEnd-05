@@ -1,5 +1,5 @@
 .notfound {
-  margin-top: -61px;
+  margin-top: 0px;
   /* margin-left: auto;
   margin-right: auto; */
   height: 100vh;
@@ -58,7 +58,7 @@
   position: absolute;
   width: 298px;
   left: 120px;
-  top: 325px;
+  top: 250px;
   z-index: 1;
   height: 571px;
   background-image: linear-gradient(
@@ -89,7 +89,7 @@
 /*Tablet*/
 @media screen and (min-width: 768px) {
   .notfound {
-    margin-top: -84px;
+    margin-top: 0px;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -171,7 +171,7 @@
 /* ---------- */
 @media screen and (min-width: 1440px) {
   .notfound {
-    margin-top: -84px;
+    margin-top: 0px;
     position: relative;
     display: flex;
     justify-content: space-between;
