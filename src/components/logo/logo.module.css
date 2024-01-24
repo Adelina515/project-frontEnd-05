@@ -10,9 +10,9 @@
   }
 }
 
-.logoNotFound{
+.logoNotFound {
   position: absolute;
-  top: 85px;
+  top: 24px;
   left: 20px;
   width: 126px;
   height: 13px;
@@ -20,13 +20,14 @@
 @media screen and (min-width: 768px) {
   .logoNotFound {
     top: 116px;
-  left: 32px;
-  width: 151px;
+    left: 32px;
+    width: 151px;
     height: 17px;
   }
 }
 @media screen and (min-width: 1440px) {
   .logoNotFound {
-  left: 96px;
+    top: 32px;
+    left: 96px;
   }
 }
