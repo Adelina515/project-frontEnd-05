@@ -62,7 +62,7 @@
     .dayDashboard {
         max-width: 532px;
         order: 2;
-        margin-bottom: 32px;
+margin-bottom: 64px;
         margin-top: 0px;
     }
   
@@ -85,9 +85,10 @@
         line-height: 1.5;
     }
 }
-.adviceIconWrap{
-    margin-bottom: 64px;
-}
+/*.adviceWrap {
+margin-bottom: 64px;
+}*/
+
 
 @media screen and (min-width: 1440px) {
     .dayDashboard {
