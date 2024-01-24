@@ -48,7 +48,7 @@
   margin-top: 14px;
   padding: 0;
 }
-.pauseBtn:hover{
+.pauseBtn:hover {
   background-color: transparent;
 }
 .progressBar {
@@ -126,7 +126,7 @@ button {
   font-weight: 500;
   line-height: 18px; /* 112.5% */
 }
-button:hover{
+button:hover {
   background-color: var(--accent-color);
 }
 .addBtn {
@@ -154,52 +154,63 @@ h1 {
 }
 
 .toDiary {
+  position: relative;
   color: var(--input-border-color);
-
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; /* 128.571% */
-  margin: auto;
-  margin-top: 16px;
-  display: flex;
-  align-items: center;
-}
-.arrow{
-  width: 16px;
-  height: 16px;
-  stroke: var(--input-border-color);
+  line-height: 1.28;
 
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  margin-left: -28px;
+  
+  margin-top: 16px;
+  /* display: flex; */
+  /* align-items: center; */
+
+}
+.arrow {
+  /* width: 16px;
+  height: 16px;
+  stroke: var(--input-border-color); */
+  position: absolute;
+  top: 0;
+  right: 33px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  stroke-opacity: 0.3;
 }
 @media screen and (min-width: 768px) {
-
   .modalContainer {
     display: flex;
     flex-wrap: wrap;
     width: 694px;
     height: 550px;
-    gap:16px;
+    gap: 16px;
   }
-  .modalContainer:has(.thumb){
+  .modalContainer:has(.thumb) {
     justify-items: center;
     width: 100%;
     padding: 10px 103px;
     height: auto;
   }
 
-  .exerciseChars{
+  .exerciseChars {
     margin-top: 48px;
     margin-right: 31px;
     width: 340px;
   }
-  .addBtn{
+  .addBtn {
     position: absolute;
     right: -136px;
     bottom: -16px;
-
   }
-  .toDiary{
+  .toDiary {
     display: block;
   }
 }

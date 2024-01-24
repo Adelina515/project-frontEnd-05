@@ -6,10 +6,12 @@
 }
 
 .diary {
+
   display: flex;
   flex-direction: column;
   /*background-color: black;*/
   /* border: 1px solid black;*/
+
 }
 
 .calendarCont {
@@ -25,8 +27,10 @@
 @media screen and (min-width: 768px) {
   .diary {
     position: relative;
+
   }
   .calendar {
+
     position: absolute;
     top: 48px;
     right: 0px;
@@ -46,6 +50,7 @@
   .calendarCont {
     padding-top: 74px;
   }
+
 }
 
 @media screen and (min-width: 1440px) {

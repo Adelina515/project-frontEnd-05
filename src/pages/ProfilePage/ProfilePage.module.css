@@ -2,12 +2,30 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+@media screen and (max-width: 374px) {
+  .forTitle {
+    width: 220px;
+     }  
+.wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.forUp{
+  width: 220px;
+}
+.forPf{
+  width: 220px;
+}
+}
+
 @media screen and (min-width: 1440px) {
   .container {
+    margin: auto;
     display: grid;
     grid-template-columns: 59% 41%;
     align-items: center;
-    justify-items: auto;
+    justify-items: center;
     align-content: center;
     justify-content: center;
 
@@ -25,12 +43,32 @@
       grid-row-end: 2;
     }
   }
+
+
+  
+}
+@media screen and (max-width: 374px){
+.forTitle {
+  margin-top: 40px;
+  width: 100%;
+  
+   }}
+@media screen and (min-width: 375px) and (max-width: 767px){
+
   .forTitle {
-    width: 700px;
-    margin: auto;
+   width: 335px;
+   margin: auto;
+   margin-top: 40px;
+    }
+}
+  
+@media screen and (min-width: 768px) {
+.forTitle {
+  width: 700px;
+  margin: auto;
+    margin-top: 72px;
   }
 }
-
 .containerMini {
   flex-wrap: wrap;
 }
@@ -65,11 +103,12 @@
   gap: 14px;
   margin-top: 40px;
 }
+@media screen and (min-width: 375px) {
 .forUp {
   width: 335px;
   margin: auto;
 }
-
+}
 @media screen and (min-width: 768px) {
   .forUp {
     width: 490px;
@@ -82,3 +121,9 @@
     padding-left: 50px;
   }
 }
+.forLogout 
+ {width:100%;
+  display: flex;
+ justify-content:flex-end;
+  margin-bottom: 40px;
+    }

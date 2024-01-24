@@ -22,10 +22,12 @@ const DayDashboard = () => {
   const [burned, setBurned] = useState(null);
   // const [dateExport, setDateExport] = useState(null);
   
-    const consumedCaloriesByDate = useSelector(selectConsumedCaloriesByDate);
-    const burnedCaloriesByDate = useSelector(selectBurnedCaloriesByDate);
-    const sportsRemaining = useSelector(selectSportsRemaining);
-    const dailyCalorieIntake = useSelector(selectUserBmr);
+    const consumedCaloriesByDate = useSelector(selectConsumedCaloriesByDate).toFixed(2);
+    const burnedCaloriesByDate = useSelector(
+      selectBurnedCaloriesByDate
+    ).toFixed(2);
+    const sportsRemaining = useSelector(selectSportsRemaining).toFixed(2);
+    const dailyCalorieIntake = useSelector(selectUserBmr).toFixed(2);
 
   useEffect(() => {
     setCalories(consumedCaloriesByDate);
