@@ -19,6 +19,7 @@ const ProductsTable = ({ productsInDiary }) => {
     console.log('_id >>', _id);
     dispatch(deleteProductDiary(_id));
   };
+  
 
   const userBlood = useSelector(state => state.auth.user.blood);
   // const { groupBloodNotAllowed } = products;
@@ -31,6 +32,10 @@ const ProductsTable = ({ productsInDiary }) => {
     <ul className={css.diaryList}>
       {productsInDiary.map(
         ({ _id, calories, grams, productId: { category, title } }) => {
+          const handleDelete = (e)=>{
+            e.target.closest("li").style.display = "none";
+            deleteProduct(_id);
+          }
           return (
             <li key={_id} className={css.diaryItem}>
               <table className={css.table}>
@@ -78,7 +83,7 @@ const ProductsTable = ({ productsInDiary }) => {
                     <th className={`${css.nameCateg} ${css.nameTrash}`}>
                       Trash
                     </th>
-                    <td className={css.iconCentr} onClick={() => deleteProduct(_id)}>
+                    <td className={css.iconCentr} onClick={handleDelete}>
                       <svg className={css.iconTresh} width="20px" height="20px">
                         <use href={`${svg}#icon-trash`}></use>
                       </svg>
