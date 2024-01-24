@@ -159,13 +159,13 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
             <button
               onClick={onClose}
             >
-              To next product
+              Next exercise
             </button>
             <br />
             <NavLink to={'/diary'} onClick={onClose} className={css.toDiary} datatype='close-modal'>
               To the diary
               <svg className={css.arrow}>
-              <use href={`${svg}#icon-next-arrow`}/>
+              <use href={`${svg}#icon-next-arrow-gray`}/>
               </svg>
             </NavLink>
           </div>
