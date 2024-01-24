@@ -64,14 +64,13 @@ function Exercises(props) {
     
     return (
       <div>
-        <ExerciseHead exCat={exCat} setExCat={setExCat} name={specific.name}/>
+        <ExerciseHead exCat={exCat} setExCat={setExCat} name={specific.name} back={reload}/>
       
 
         <ExerciseList
           name={specific.name}
           filter={specific.filter}
           setSelected={setSelectedEx}
-          back = {reload}
         />
         {selectedEx ? <ExerciseModal ex={selectedEx} setEx={setSelectedEx}  selectedDate={date}/> : <></>}
       </div>

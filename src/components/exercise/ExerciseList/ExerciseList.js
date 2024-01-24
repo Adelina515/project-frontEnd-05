@@ -3,10 +3,9 @@ import { useEffect } from 'react';
 import instance from 'instance/instance';
 import ExerciseItem from './ExerciseItem';
 import { nanoid } from '@reduxjs/toolkit';
-import svg from '../../../img/sprite/symbol-defs.svg';
 import css from './ExerciseList.module.css';
 
-function ExerciseList({ name, filter, setSelected, back }) {
+function ExerciseList({ name, filter, setSelected }) {
   const [arr, setArr] = useState([]);
   useEffect(() => {
     if (filter && name) {
@@ -22,12 +21,7 @@ function ExerciseList({ name, filter, setSelected, back }) {
 
   return (
     <div>
-      <div className={css.backArrow} onClick={back}>
-        <svg>
-          <use href={`${svg}#icon-next-arrow-gray`} />
-        </svg>
-        Back
-      </div>
+      
       <div className={css.exerciseListContainer}>
         {arr.map(v => (
           <ExerciseItem key={nanoid()} exercise={v} setSelected={setSelected} />

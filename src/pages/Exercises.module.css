@@ -5,6 +5,7 @@
 .headHolder {
   margin-left: 20px;
   margin-bottom: 40px;
+  position: relative;
 }
 .headHolder h2 {
   margin-bottom: 20px;
@@ -70,7 +71,20 @@
   font-size: 12px;
   line-height: 18px;
 }
-
+.backArrow {
+  color: var(--calendar-invalid-date);
+  position: absolute;
+  top: -26px;
+}
+.backArrow svg {
+  width: 16px;
+  height: 16px;
+  transform: rotate(180deg);
+}
+.backArrow svg path {
+  stroke: var(--calendar-invalid-date);
+  fill: var(--calendar-invalid-date);
+}
 @media screen and (min-width: 768px) {
   .arrCont {
     gap: 16px;
@@ -90,7 +104,6 @@
 }
 @media screen and (min-width: 1440px) {
   .arrCont {
-
     gap: 16px;
     flex-wrap: wrap;
     max-width: 1249px;
@@ -100,15 +113,20 @@
   }
   .headHolder {
     display: flex;
+    margin: auto;
+    width: 1249px;
     margin-top: 72px;
     margin-bottom: 64px;
     justify-content: space-between;
+  }
+  .headHolder:has(.backArrow){
+    width: auto;
     margin-left: 96px;
+    margin-right: 96px;
   }
   .exerciseCategoryContainer {
     display: flex;
     gap: 28px;
     justify-content: flex-end;
   }
-
 }

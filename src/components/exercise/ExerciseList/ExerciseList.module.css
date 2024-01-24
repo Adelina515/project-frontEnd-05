@@ -106,18 +106,7 @@
 .woman {
   position: absolute;
 }
-.backArrow {
-  color: var(--calendar-invalid-date);
-}
-.backArrow svg {
-  width: 16px;
-  height: 16px;
-  transform: rotate(180deg);
-}
-.backArrow svg path {
-  stroke: var(--calendar-invalid-date);
-  fill: var(--calendar-invalid-date);
-}
+
 @media screen and (min-width: 768px) {
   .exerciseListContainer {
    
@@ -162,7 +151,7 @@
     right: 0px;
     top: 84px;
     width: 670px;
-    height: 902px;
+    height: min(902px, calc(99vh - 84px));
     z-index: -2;
     background: linear-gradient(80deg, #040404 -2.45%, rgba(4, 4, 4, 0) 68.17%),
       url('../../../img/descktop-bg-img-2x.jpg'),
