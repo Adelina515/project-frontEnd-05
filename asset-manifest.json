@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/project-frontEnd-05/static/css/main.eb586e92.css",
+    "main.css": "/project-frontEnd-05/static/css/main.97931a40.css",
     "main.js": "/project-frontEnd-05/static/js/main.33fbe54e.js",
     "static/css/172.a95c2bbc.chunk.css": "/project-frontEnd-05/static/css/172.a95c2bbc.chunk.css",
     "static/js/172.1a7b8d2e.chunk.js": "/project-frontEnd-05/static/js/172.1a7b8d2e.chunk.js",
@@ -31,7 +31,7 @@
     "static/media/tablet-bg-img-1x.jpg": "/project-frontEnd-05/static/media/tablet-bg-img-1x.0032ea16718469143043.jpg",
     "static/media/productSuccessFruit.png": "/project-frontEnd-05/static/media/productSuccessFruit.cef0af9cd428fb7948bc.png",
     "index.html": "/project-frontEnd-05/index.html",
-    "main.eb586e92.css.map": "/project-frontEnd-05/static/css/main.eb586e92.css.map",
+    "main.97931a40.css.map": "/project-frontEnd-05/static/css/main.97931a40.css.map",
     "main.33fbe54e.js.map": "/project-frontEnd-05/static/js/main.33fbe54e.js.map",
     "172.a95c2bbc.chunk.css.map": "/project-frontEnd-05/static/css/172.a95c2bbc.chunk.css.map",
     "172.1a7b8d2e.chunk.js.map": "/project-frontEnd-05/static/js/172.1a7b8d2e.chunk.js.map",
@@ -54,7 +54,7 @@
     "304.a62021cf.chunk.js.map": "/project-frontEnd-05/static/js/304.a62021cf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb586e92.css",
+    "static/css/main.97931a40.css",
     "static/js/main.33fbe54e.js"
   ]
 }
