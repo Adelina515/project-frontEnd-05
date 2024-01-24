@@ -20,23 +20,28 @@ const DayDashboard = () => {
   const [calories, setCalories] = useState(null);
   const [daily, setDaily] = useState(null);
   const [burned, setBurned] = useState(null);
+  const [sports, setSports] = useState(null);
   // const [dateExport, setDateExport] = useState(null);
   
-    const consumedCaloriesByDate = useSelector(selectConsumedCaloriesByDate).toFixed(2);
+    const consumedCaloriesByDate = useSelector(selectConsumedCaloriesByDate);
     const burnedCaloriesByDate = useSelector(
       selectBurnedCaloriesByDate
-    ).toFixed(2);
-    const sportsRemaining = useSelector(selectSportsRemaining).toFixed(2);
-    const dailyCalorieIntake = useSelector(selectUserBmr).toFixed(2);
+    );
+    const sportsRemaining = useSelector(selectSportsRemaining);
+    const dailyCalorieIntake = useSelector(selectUserBmr);
 
   useEffect(() => {
-    setCalories(consumedCaloriesByDate);
-    setDaily(dailyCalorieIntake);
-    setBurned(burnedCaloriesByDate);
+    setCalories(
+      consumedCaloriesByDate ? consumedCaloriesByDate.toFixed(2) : 0
+    );
+    setDaily(dailyCalorieIntake ? dailyCalorieIntake.toFixed(2) : null);
+    setBurned(burnedCaloriesByDate ? burnedCaloriesByDate.toFixed(2) : 0);
+    setSports(sportsRemaining ? sportsRemaining.toFixed(2) : null);
   }, [
     consumedCaloriesByDate,
     dailyCalorieIntake,
-    burnedCaloriesByDate, dispatch,
+    burnedCaloriesByDate,
+    sportsRemaining, dispatch,
   ]);
 
   const caloriesRemaining = daily - calories;
@@ -80,8 +85,8 @@ const DayDashboard = () => {
           statisticsName={'Sports remaining'}
           statisticsValue={
             isSportsRemaining === 'positive'
-              ? `+${sportsRemaining} min`
-              : `${sportsRemaining} min`
+              ? `+${sports} min`
+              : `${sports} min`
           }
           statisticsIcon={'icon-running-filled'}
         />
