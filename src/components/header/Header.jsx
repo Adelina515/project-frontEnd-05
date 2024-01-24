@@ -21,8 +21,6 @@ export const Header = () => {
   const isMobile = window.innerWidth < 1440;
   const isParams = useSelector(selectisParamsExist);
   // console.log(isParams);
-  // const auth = useSelector(state => state.auth);
-  // console.log(auth);
   const handleOpen = () => {
     setIsOpen(prev => !prev);
   };
@@ -34,15 +32,14 @@ export const Header = () => {
           {token && (
             <div className={css.user}>
               {!isMobile && isParams && <UserNav />}
-              <UserBar />
-              {!isMobile && <LogOutBtn />}
+              {isLogin && <UserBar />}
+              {!isMobile && isLogin && <LogOutBtn />}
               {isMobile && <BtnMobileMenu setOpen={handleOpen} />}
             </div>
           )}
         </div>
       </Container>
       <MobileMenu open={isOpen} setOpen={handleOpen} isParams={isParams} />
-      {/* {isOpen && <MobileMenu open={isOpen} setOpen={handleOpen} />} */}
     </div>
   );
 };
