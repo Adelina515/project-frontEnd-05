@@ -30,9 +30,9 @@ export const UserProfile = ({ name, avatar, userToken }) => {
 
     if (avatar) {
       const blob = new Blob([avatar]);
-      console.log(blob, "blob")
+    
       const objectURL = URL.createObjectURL(blob);
-console.log(objectURL, "objectURL")
+
       setAvatarURL(objectURL);
 
       try {

@@ -12,7 +12,7 @@ export const signin = async credentials => {
 
   return data;
 };
-export const logout = async () => {
+export const logoutUser = async () => {
   const { data } = await instance.post('/api/auth/logout');
   clearToken();
   return data;

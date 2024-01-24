@@ -8,7 +8,7 @@
 .diary {
     display: flex;
     flex-direction: column;
-    background-color: black;
+    /*background-color: black;*/
     /* border: 1px solid black;*/
 }
 
@@ -17,12 +17,14 @@ display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
+        padding-top: 45px;
     /*margin-bottom: 24px;*/
     /*border: 1px solid black;*/
 }
 
 
-@media(min-width: 768px) {
+
+@media screen and (min-width: 768px) {
     .diary {
     position: relative;
     }
@@ -43,10 +45,13 @@ display: flex;
       padding: 0 32px;
       max-width: 100%;
   }
+                  .calendarCont {
+                      padding-top: 52px;
+                  }
 
 }
 
-@media (min-width: 1440px){
+@media screen and (min-width: 1440px){
 .sectionCont {
         /*margin-top: 32px;*/
         display: flex;
@@ -55,6 +60,7 @@ display: flex;
         align-items: flex-start;
         gap: 32px;
     }
+
 }
 
 

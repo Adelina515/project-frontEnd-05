@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import css from './DayDashboard.module.css';
 import StatisticsItem from './StatisticsItem/StatisticsItem';
 
@@ -16,16 +16,31 @@ import sprite from '../../img/sprite/symbol-defs.svg';
 export const selectUserBmr = state => state.auth.user.bmr;
 
 const DayDashboard = () => {
-  const consumedCaloriesByDate = useSelector(selectConsumedCaloriesByDate);
-  const burnedCaloriesByDate = useSelector(selectBurnedCaloriesByDate);
-  const sportsRemaining = useSelector(selectSportsRemaining);
-  const dailyCalorieIntake = useSelector(selectUserBmr);
+  const dispatch = useDispatch();
+  const [calories, setCalories] = useState(null);
+  const [daily, setDaily] = useState(null);
+  const [burned, setBurned] = useState(null);
+  // const [dateExport, setDateExport] = useState(null);
+  
+    const consumedCaloriesByDate = useSelector(selectConsumedCaloriesByDate);
+    const burnedCaloriesByDate = useSelector(selectBurnedCaloriesByDate);
+    const sportsRemaining = useSelector(selectSportsRemaining);
+    const dailyCalorieIntake = useSelector(selectUserBmr);
 
-  const caloriesRemaining = dailyCalorieIntake - consumedCaloriesByDate;
+  useEffect(() => {
+    setCalories(consumedCaloriesByDate);
+    setDaily(dailyCalorieIntake);
+    setBurned(burnedCaloriesByDate);
+  }, [
+    consumedCaloriesByDate,
+    dailyCalorieIntake,
+    burnedCaloriesByDate, dispatch,
+  ]);
+
+  const caloriesRemaining = daily - calories;
   const dailyPhysicalActivity = 110;
 
-  const isCaloriesRemaining =
-    consumedCaloriesByDate < dailyCalorieIntake ? `positive` : `negative`;
+  const isCaloriesRemaining = calories < daily ? `positive` : `negative`;
   const isSportsRemaining = sportsRemaining > 0 ? `positive` : `negative`;
 
   return (
@@ -45,12 +60,12 @@ const DayDashboard = () => {
         />
         <StatisticsItem
           statisticsName={'Calories consumed'}
-          statisticsValue={`${consumedCaloriesByDate}`}
+          statisticsValue={`${calories}`}
           statisticsIcon={'icon-apple-filled'}
         />
         <StatisticsItem
           statisticsName={'Calories burned'}
-          statisticsValue={`${burnedCaloriesByDate}`}
+          statisticsValue={`${burned}`}
           statisticsIcon={'icon-burn-filled'}
         />
         <StatisticsItem

@@ -1,15 +1,13 @@
 .container {
   margin-left: 20px;
   margin-right: 20px;
- 
 }
 @media screen and (min-width: 1440px) {
   .container {
-   
     display: grid;
     grid-template-columns: 59% 41%;
     align-items: center;
-   justify-items:auto;
+    justify-items: auto;
     align-content: center;
     justify-content: center;
 
@@ -26,70 +24,61 @@
       grid-row-start: 2;
       grid-row-end: 2;
     }
-    
-  } .forTitle{
-    width: 700px;
-       margin: auto}
   }
-
-
-
-
-
-.containerMini{
-  /* display: flex;
-  flex-direction: row-reverse; */
-  flex-wrap: wrap;
-  
+  .forTitle {
+    width: 700px;
+    margin: auto;
+  }
 }
+
+.containerMini {
+  flex-wrap: wrap;
+}
+
 @media screen and (min-width: 1440px) {
-  .containerMini{
+  .containerMini {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-   
-    
-    
-    
   }
 }
-  @media screen and (min-width: 768px) and (max-width: 1439px) {
-    .container {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .container {
     margin-left: 32px;
     margin-right: 32px;
-  
-  }}
+  }
+}
 
-  @media screen and (min-width: 1440px) {
-    .container {
+@media screen and (min-width: 1440px) {
+  .container {
     margin-left: 96px;
     margin-right: 96px;
-  
   }
+}
 
-  }
-
-.wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-    margin-top: 40px;
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 40px;
 }
 .forUp {
- width: 335px;
- margin: auto;
- }
+  width: 335px;
+  margin: auto;
+}
 
-@media screen and (min-width: 768px){
-.forUp {
-width: 490px;
-
-}}
+@media screen and (min-width: 768px) {
+  .forUp {
+    width: 490px;
+  }
+}
 
 @media screen and (min-width: 1440px) {
   .forUp {
- border-left: 2px solid var(--calendar-invalid-date);
-  padding-left: 50px;}}
+    border-left: 2px solid var(--calendar-invalid-date);
+    padding-left: 50px;
+  }
+}

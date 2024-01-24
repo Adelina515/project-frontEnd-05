@@ -1,7 +1,8 @@
 .paginationContainer{
     display: flex;
     gap:8px;
-    justify-items: center;
+    justify-content: center;
+    width: 100%;
 }
 .paginationContainer svg{
     width: 14px;

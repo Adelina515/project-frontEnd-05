@@ -14,6 +14,7 @@ import {
   selectIsUserLogin,
   selectUserToken,
 } from '../redux/auth/auth-selectors';
+import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 
 const Welcome = lazy(() => import('../pages/WelcomePage/WelcomePage'));
 const SignUpPage = lazy(() => import('../pages/SignUpPage/SignUpPage'));
@@ -22,7 +23,7 @@ const Diary = lazy(() => import('../pages/Diary'));
 const Products = lazy(() => import('../pages/ProductsPage/ProductsPage'));
 const Exercises = lazy(() => import('../pages/Exercises'));
 const Profile = lazy(() => import('../pages/ProfilePage/Profile'));
-const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
+// const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -46,8 +47,8 @@ export const App = () => {
               index
               element={<RestrictedRoute component={<Welcome />} />}
             />
-            <Route path="/404" element={<NotFoundPage />} />
-            <Route path="*" element={<Navigate to="404" replace />} />
+            {/* <Route path="/404" element={<NotFoundPage />} />
+            <Route path="*" element={<Navigate to="404" replace />} /> */}
             <Route
               path="/signup"
               element={
@@ -93,6 +94,8 @@ export const App = () => {
               }
             />
           </Route>
+          <Route path="/404" element={<NotFoundPage />} />
+          <Route path="*" element={<Navigate to="404" replace />} />
         </Routes>
       </BrowserRouter>
     </>

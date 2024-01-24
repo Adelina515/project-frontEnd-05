@@ -46,8 +46,11 @@
   background-color: transparent;
   border: none;
   margin-top: 14px;
+  padding: 0;
 }
-
+.pauseBtn:hover{
+  background-color: transparent;
+}
 .progressBar {
   width: 100px;
   height: 100px;
@@ -60,7 +63,6 @@
   width: 100px;
   height: 100px;
   top: 0;
-  animation: spin 180s linear;
   position: absolute;
 }
 .dot {
@@ -70,11 +72,6 @@
   border-radius: 50%;
   margin: auto;
   margin-top: -1px;
-}
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .exerciseChars {
@@ -119,7 +116,7 @@ button {
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  background: var(--decorate-color);
+  background-color: var(--decorate-color);
 
   color: var(--invent-color);
 
@@ -129,10 +126,14 @@ button {
   font-weight: 500;
   line-height: 18px; /* 112.5% */
 }
+button:hover{
+  background-color: var(--accent-color);
+}
 .addBtn {
   margin-top: 24px;
   margin-right: 168px;
   margin-bottom: 48px;
+  padding: 12px;
 }
 .thumb {
   width: 159px;
@@ -163,4 +164,42 @@ h1 {
   margin: auto;
   margin-top: 16px;
   display: flex;
+  align-items: center;
+}
+.arrow{
+  width: 16px;
+  height: 16px;
+  stroke: var(--input-border-color);
+
+}
+@media screen and (min-width: 768px) {
+
+  .modalContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 694px;
+    height: 550px;
+    gap:16px;
+  }
+  .modalContainer:has(.thumb){
+    justify-items: center;
+    width: 100%;
+    padding: 10px 103px;
+    height: auto;
+  }
+
+  .exerciseChars{
+    margin-top: 48px;
+    margin-right: 31px;
+    width: 340px;
+  }
+  .addBtn{
+    position: absolute;
+    right: -136px;
+    bottom: -16px;
+
+  }
+  .toDiary{
+    display: block;
+  }
 }

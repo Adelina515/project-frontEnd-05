@@ -4,6 +4,57 @@
   margin-top:-61px;
   overflow-y: hidden;
 }
+@media screen and (max-width: 374px) {
+  .heroContainer {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    padding-left:10px;
+    padding-right: 10px;
+    height:100vh;
+    position: relative;
+    padding-top: 80px;
+  }
+  .rightSide {
+    height: 100%;
+    width:298px;
+    z-index: -1;
+    position: absolute;
+    right:0;
+    top:250px;
+    background-image: linear-gradient(
+        170deg,
+        #040404 3.66%,
+        rgba(4, 4, 4, 0) 19.15%
+      ),
+      url('../../img/mobile-bg-img-1x.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .text {
+    width: 300px;
+    color: var(--input-border-color);
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.29; /* 128.571% */
+    margin-bottom: 28px;
+    margin-top: 14px;
+  }
+  .link {
+    display: inline;
+    color: var(--invent-color);
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: underline;
+  }
+  .leftSide{
+    width:300px;
+    height: inherit;
+  }
+}
 /*Mobile*/
 @media screen and (min-width: 375px) {
   .heroContainer {
@@ -43,7 +94,7 @@
     position: absolute;
     width: 298px;
     right: 0;
-    top: 100px;
+    top: 130px;
     z-index: -1;
     height: 100%;
     background-image: linear-gradient(
@@ -86,7 +137,7 @@
     position: absolute;
 
     right: 0;
-    top: -50px;
+    top: 0;
     width: 437px;
 
     height: 100%;
@@ -137,7 +188,7 @@
   .rightSide {
     position: absolute;
     right: 0;
-    top: -50px;
+    top: 0px;
     width: 670px;
     height: 100%;
     background-image: linear-gradient(

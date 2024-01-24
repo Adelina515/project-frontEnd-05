@@ -9,7 +9,7 @@ export const handleRejected = (state, { payload }) => {
 export const handleFulfilledAllDiary = (state, { payload }) => {
     state.error = null;
     state.isLoading = false;
-   state.productsInDiary = payload.productsInDiary || ["Hello", "world"];
+    state.productsInDiary = payload.productsInDiary || [];
     state.exercisesInDiary = payload.exercisesInDiary || [];
     state.burnedCaloriesByDate = payload.burnedCaloriesByDate || 0;
     state.consumedCaloriesByDate = payload.consumedCaloriesByDate || 0;
@@ -18,7 +18,8 @@ export const handleFulfilledAllDiary = (state, { payload }) => {
 export const handleFulfilledAddProduct = (state, { payload }) => {
     state.error = null;
     state.isLoading = false;
-    state.productsInDiary.push(payload);
+    state.productsInDiary.unshift(payload);
+    // console.log("from reducer", state => state.diary.productsInDiary)
 };
 export const handleFulfilledDeleteProduct = (state, { payload }) => {
     state.error = null;
@@ -33,7 +34,7 @@ export const handleFulfilledDeleteProduct = (state, { payload }) => {
 export const handleFulfilledAddExercises = (state, { payload }) => {
     state.error = null;
     state.isLoading = false;
-    state.exercisesInDiary.push(payload);
+    state.exercisesInDiary.unshift(payload);
 };
 
 

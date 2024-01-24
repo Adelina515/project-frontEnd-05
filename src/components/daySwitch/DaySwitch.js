@@ -1,9 +1,12 @@
-import { forwardRef, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import DatePicker from 'react-datepicker';
 import style from './DaySwitch.module.css';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import { Calendar } from 'components/calendar/Calendar';
+import formatDate from '../../function/formatData';
+import { fetchAllDiary } from '../../redux/diary/diaryOperations';
+import { useDispatch } from 'react-redux';
 
 const OwnIconCalendar = () => {
   return (
@@ -17,13 +20,12 @@ const OwnIconCalendar = () => {
 };
 
 const DaySwitch = ({ handleDate }) => {
-  const [selectedDate, setSelectedDate] = useState(Date.now());
-  console.log('selectedDate >>', selectedDate);
-
-  //   const convertDate =  date => {
-  //   const formatedDate = convertDate(date);
-  //   setSelectedDate(formatedDate);
-  // };
+  const dispatch = useDispatch();
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  useEffect(() => {
+    const formatted = formatDate(selectedDate);
+    dispatch(fetchAllDiary(formatted));
+  }, [selectedDate, dispatch]);
 
   // потрібна дата реєстрації користувача
   const [dateRegistration] = useState(
@@ -43,8 +45,10 @@ const DaySwitch = ({ handleDate }) => {
             onClick={() => {
               if (selectedDate !== dateRegistration) {
                 setSelectedDate(
-                  new Date(selectedDate).setDate(
-                    new Date(selectedDate).getDate() - 1
+                  new Date(
+                    new Date(selectedDate).setDate(
+                      new Date(selectedDate).getDate() - 1
+                    )
                   )
                 );
               }
@@ -52,13 +56,14 @@ const DaySwitch = ({ handleDate }) => {
           ></span>
           <span
             className={style.arrowsRight}
-            onClick={() =>
-              setSelectedDate(
+            onClick={() => {
+              const nd = new Date(
                 new Date(selectedDate).setDate(
                   new Date(selectedDate).getDate() + 1
                 )
-              )
-            }
+              );
+              setSelectedDate(nd);
+            }}
           ></span>
         </div>
       </div>
@@ -80,9 +85,8 @@ const DaySwitch = ({ handleDate }) => {
         minDate={dateRegistration}
       />
 
-      <Calendar display={"none"}></Calendar> 
+      <Calendar display={'none'}></Calendar>
       {/* тут передается дисплей нан */}
-
     </>
   );
 };
