@@ -25,9 +25,10 @@ export const addProductDiary = createAsyncThunk(
   'addProductDiary',
   async (productDetails, { rejectWithValue }) => {
     try {
-      const {data} = await instance.post('/diary/products', productDetails);
-      console.log('productDetailsAdd', productDetails);
+      const {data} = await instance.post('/diary/products', productDetails.data);
+      
       toast.success(`Product successfully added to diary!`);
+      data.result.productId = productDetails.product;
       return data;
     } catch (error) {
       toast.error('Oops... Something went wrong! Try again!');
@@ -54,8 +55,11 @@ export const addExercisesDiary = createAsyncThunk(
   async (exerciseDetails,  { rejectWithValue }) => {
    
     try {
-      const { data } = await instance.post('/diary/exercises', exerciseDetails);
-      return data;
+      console.log(exerciseDetails);
+      const { data } = await instance.post('/diary/exercises', exerciseDetails.data);
+      data.result.exerciseId = exerciseDetails.ex;
+      console.log(data);
+      return data
     } catch (error) {
      toast.error('Oops... Something went wrong! Try again!');
       return rejectWithValue('Oops... Something went wrong!');    }
