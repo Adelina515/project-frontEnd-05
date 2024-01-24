@@ -4,7 +4,7 @@
     margin-bottom: 80px;
 
     width: 335px;
-    min-height: 335px;
+max-height: 1064px;
     overflow-y: hidden;
 
     border-radius: 12px;
@@ -67,7 +67,7 @@
     border-radius: 12px;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .dayExecrcises {
         width: 704px;
         height: 234px;
@@ -85,9 +85,9 @@
     }
 }
 
-@media (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
     .dayExecrcises {
-        min-width: 826px;
+        width: 826px;
     }
 }
 

@@ -63,7 +63,7 @@
     line-height: 1.11;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .statisticItem {
         padding: 18px;
         width: 187px;

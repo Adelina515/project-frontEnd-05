@@ -58,7 +58,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .dayDashboard {
         max-width: 532px;
         order: 2;
@@ -89,7 +89,7 @@
     margin-bottom: 64px;
 }
 
-@media (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
     .dayDashboard {
         order: 3;
 
