@@ -23,16 +23,16 @@ const DaySwitch = ({ handleDate }) => {
   const dispatch = useDispatch();
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [formSelectedDate, setFormSelectedDate] = useState(null);
-  console.log('selectedDate >>', selectedDate);
-  console.log('formSelectedDate >>', formSelectedDate);
+  // console.log('selectedDate >>', selectedDate);
+  // console.log('formSelectedDate >>', formSelectedDate);
   //   const convertDate =  date => {
   //   const formatedDate = convertDate(date);
   //   setSelectedDate(formatedDate);
   // };
 
   useEffect(() => {
-    const formatted = formatDate(selectedDate)
-    setFormSelectedDate(formatted)
+    const formatted = formatDate(selectedDate);
+    setFormSelectedDate(formatted);
     dispatch(fetchAllDiary(formatted));
   }, [selectedDate, dispatch]);
 
@@ -54,8 +54,10 @@ const DaySwitch = ({ handleDate }) => {
             onClick={() => {
               if (selectedDate !== dateRegistration) {
                 setSelectedDate(
-                  new Date(selectedDate).setDate(
-                    new Date(selectedDate).getDate() - 1
+                  new Date(
+                    new Date(selectedDate).setDate(
+                      new Date(selectedDate).getDate() - 1
+                    )
                   )
                 );
               }
@@ -63,13 +65,14 @@ const DaySwitch = ({ handleDate }) => {
           ></span>
           <span
             className={style.arrowsRight}
-            onClick={() =>
-              setSelectedDate(
+            onClick={() => {
+              const nd = new Date(
                 new Date(selectedDate).setDate(
                   new Date(selectedDate).getDate() + 1
                 )
-              )
-            }
+              );
+              setSelectedDate(nd);
+            }}
           ></span>
         </div>
       </div>
@@ -91,9 +94,8 @@ const DaySwitch = ({ handleDate }) => {
         minDate={dateRegistration}
       />
 
-      <Calendar display={"none"}></Calendar> 
+      <Calendar display={'none'}></Calendar>
       {/* тут передается дисплей нан */}
-
     </>
   );
 };
