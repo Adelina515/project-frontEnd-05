@@ -1,21 +1,18 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import css from './ProductsTable.module.css';
 import svg from '../../../img/sprite/symbol-defs.svg';
 
 import { deleteProductDiary } from '../../../redux/diary/diaryOperations';
-import { selectProducts } from '../../../redux/products/productsSelectors';
+
 
 
 const ProductsTable = ({ productsInDiary }) => {
   const dispatch = useDispatch();
 
   
-  const products = useSelector(selectProducts);
-  console.log('products >>', products);
-  console.log(productsInDiary);
+
   const deleteProduct = _id => {
-    console.log('_id >>', _id);
     dispatch(deleteProductDiary(_id));
   };
 

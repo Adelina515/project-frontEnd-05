@@ -20,7 +20,6 @@ const OwnIconCalendar = () => {
 const DaySwitch = ({ handleDate }) => {
 
   const registratedAt = useSelector(state => state.auth.user.createdAt)
-  console.log("registratedAt >>", registratedAt)
 
   const [selectedDate, setSelectedDate] = useState(new Date());
   useEffect(() => {

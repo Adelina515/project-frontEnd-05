@@ -1,7 +1,7 @@
 import css from './ExercisesTable.module.css';
 import sprite from '../../../img/sprite/symbol-defs.svg';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+
 
 import { deleteExercisesDiary } from '../../../redux/diary/diaryOperations';
 
@@ -16,8 +16,7 @@ const ExercisesTable = ({ exercises }) => {
   const deleteExercise = _id => {
     dispatch(deleteExercisesDiary(_id));
   };
-  const data = useSelector(state => state.diary);
-  console.log(data);
+ 
 
   return (
     <>
