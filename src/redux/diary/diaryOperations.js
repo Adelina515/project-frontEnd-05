@@ -7,7 +7,6 @@ export const fetchAllDiary = createAsyncThunk(
   async (date, { rejectWithValue }) => {
     try {
       const  response  = await instance.get(`/diary/${date}`);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       toast.error('Oops... Something went wrong! Try again!');
@@ -16,18 +15,16 @@ export const fetchAllDiary = createAsyncThunk(
   },
 );
 
-// едд продукт має відправляти запит на бекенд по додаванню даних
-// і за ним гет запит по щоденнику
-// і дані по щоденнику записувати в стор
-// в щоденнику слідкуєм за стором і оновлюєм дані
+
 
 export const addProductDiary = createAsyncThunk(
   'addProductDiary',
   async (productDetails, { rejectWithValue }) => {
     try {
-      const {data} = await instance.post('/diary/products', productDetails);
-      console.log('productDetailsAdd', productDetails);
+      const {data} = await instance.post('/diary/products', productDetails.data);
+      
       toast.success(`Product successfully added to diary!`);
+      data.result.productId = productDetails.product;
       return data;
     } catch (error) {
       toast.error('Oops... Something went wrong! Try again!');
@@ -54,8 +51,9 @@ export const addExercisesDiary = createAsyncThunk(
   async (exerciseDetails,  { rejectWithValue }) => {
    
     try {
-      const { data } = await instance.post('/diary/exercises', exerciseDetails);
-      return data;
+      const { data } = await instance.post('/diary/exercises', exerciseDetails.data);
+      data.result.exerciseId = exerciseDetails.ex;
+      return data
     } catch (error) {
      toast.error('Oops... Something went wrong! Try again!');
       return rejectWithValue('Oops... Something went wrong!');    }

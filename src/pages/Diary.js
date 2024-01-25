@@ -12,30 +12,28 @@ import DayExercises from '../components/dayExercises/DayExercises';
 import { Container } from '../components/Container/Container';
 
 import { fetchAllDiary } from '../redux/diary/diaryOperations';
-// import { selectDiaryExercises, selectDiaryProducts } from '../redux/diary/diarySelectors';
+
 
 
 export default function Diary() {
   const dispatch = useDispatch();
 
-  // const productsInDiary = useSelector(selectDiaryProducts);
-  // const excersisesInDiary = useSelector(selectDiaryExercises);
+  
 
   const [dateExport, setDateExport] = useState(null);
   
   useEffect(() => {
-    const formatted = formatDate(new Date())
-    setDateExport(formatted);
-    dispatch(fetchAllDiary(formatted));
+    dispatch(fetchAllDiary(dateExport));
 }, [dateExport, dispatch]);
 
   
   const handleDate = date => {
   const formatedDate = formatDate(date);
+  setDateExport(formatedDate);
     return formatedDate;
   };
 
-  console.log("dateExport >>", dateExport)
+
   
   return (
     <div className={css.diary}>

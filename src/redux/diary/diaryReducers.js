@@ -19,7 +19,6 @@ export const handleFulfilledAddProduct = (state, { payload }) => {
     state.error = null;
     state.isLoading = false;
     state.productsInDiary.unshift(payload);
-    // console.log("from reducer", state => state.diary.productsInDiary)
 };
 export const handleFulfilledDeleteProduct = (state, { payload }) => {
     state.error = null;
@@ -34,7 +33,7 @@ export const handleFulfilledDeleteProduct = (state, { payload }) => {
 export const handleFulfilledAddExercises = (state, { payload }) => {
     state.error = null;
     state.isLoading = false;
-    state.exercisesInDiary.unshift(payload);
+    state.exercisesInDiary.unshift(payload.result);
 };
 
 

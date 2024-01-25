@@ -7,7 +7,7 @@ import {
   selectisParamsExist,
 } from '../../redux/auth/auth-selectors';
 
-export const Logo = ({page}) => {
+export const Logo = ({ page }) => {
   const isParams = useSelector(selectisParamsExist);
   const isLogin = useSelector(selectIsUserLogin);
   let path = '/';
@@ -16,7 +16,11 @@ export const Logo = ({page}) => {
   return (
     <Link to={path} className={page && css.logoNotFound}>
       <svg className={css.logotipe}>
-        {page? <use href={`${sprite}#icon-logo-white`} />: <use href={`${sprite}#icon-logo-bigger`} /> }
+        {page ? (
+          <use href={`${sprite}#icon-logo-white`} />
+        ) : (
+          <use href={`${sprite}#icon-logo-bigger`} />
+        )}
         {/* <use href={`${sprite}#icon-logo-bigger`} /> */}
       </svg>
     </Link>

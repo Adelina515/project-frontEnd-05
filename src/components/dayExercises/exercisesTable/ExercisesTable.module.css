@@ -43,12 +43,9 @@
 
 .nameValue {
     padding: 10px 14px;
-
     width: 297px;
-
     border-radius: 12px;
     border: 1px solid rgba(239, 237, 232, 0.3);
-
     color: #efede8;
     font-size: 14px;
     font-weight: 400;
@@ -67,14 +64,6 @@
     width: auto;
 }
 
-/*.trashImg {
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    stroke: #e6533c;
-
-    transition: all 0.3s ease;
-}*/
 
 .nameTrash {
     visibility: hidden;
@@ -92,6 +81,8 @@
 .nameTrash:focus {
     stroke: #a82b2b;
 }
+
+
 
 
 @media screen and (min-width: 768px) {

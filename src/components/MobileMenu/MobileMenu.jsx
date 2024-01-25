@@ -12,8 +12,8 @@ export const MobileMenu = ({ open, setOpen, isLogin }) => {
             <use href={`${svg}#icon-close-modal`}></use>
           </svg>
         </button>
-        {isLogin && <UserNav />}
-        {isLogin && <LogOutBtn />}
+        {isLogin && <UserNav page="menu" setOpen={setOpen} />}
+        {isLogin && <LogOutBtn page="menu" />}
       </div>
     </div>
   );

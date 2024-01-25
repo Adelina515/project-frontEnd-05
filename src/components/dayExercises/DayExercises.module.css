@@ -43,7 +43,7 @@ max-height: 1064px;
     position: relative;
     text-align: start;
     align-items: center;
-    /*width: 101px;*/
+    
 }
 .iconStrilka {
     cursor: pointer;
@@ -51,7 +51,6 @@ max-height: 1064px;
         height: 16px;
         stroke: var(--decorate-color);
 }
-/* SCROLL */
 
 .dayScroll::-webkit-scrollbar {
     width: 6px;
@@ -88,6 +87,7 @@ max-height: 1064px;
 @media screen and (min-width: 1440px) {
     .dayExecrcises {
         width: 826px;
+        margin-bottom: 68px;
     }
 }
 

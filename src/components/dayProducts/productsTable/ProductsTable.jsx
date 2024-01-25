@@ -1,29 +1,21 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import css from './ProductsTable.module.css';
 import svg from '../../../img/sprite/symbol-defs.svg';
 
-// import { selectDiaryProducts } from '../../../redux/diary/diarySelectors';
 import { deleteProductDiary } from '../../../redux/diary/diaryOperations';
-import { selectProducts } from '../../../redux/products/productsSelectors';
-// import { useEffect } from 'react';
+
+
 
 const ProductsTable = ({ productsInDiary }) => {
   const dispatch = useDispatch();
 
-  // console.log(productsInDiary);
-  const products = useSelector(selectProducts);
-  console.log('products >>', products);
-
-  const deleteProduct = _id => {
-    console.log('_id >>', _id);
-    dispatch(deleteProductDiary(_id));
-  };
   
 
-  const userBlood = useSelector(state => state.auth.user.blood);
-  // const { groupBloodNotAllowed } = products;
-  const groupBloodNotAllowed = 1;
+  const deleteProduct = _id => {
+    dispatch(deleteProductDiary(_id));
+  };
+
 
   const capitalizedWord = word => {
     return word.substring(0, 1).toUpperCase() + word.substring(1);
@@ -31,11 +23,13 @@ const ProductsTable = ({ productsInDiary }) => {
   return (
     <ul className={css.diaryList}>
       {productsInDiary.map(
-        ({ _id, calories, grams, productId: { category, title } }) => {
+
+        ({ _id, calories, grams, allowed, productId: { category, title } }) => {
           const handleDelete = (e)=>{
             e.target.closest("li").style.display = "none";
+
             deleteProduct(_id);
-          }
+          };
           return (
             <li key={_id} className={css.diaryItem}>
               <table className={css.table}>
@@ -66,7 +60,7 @@ const ProductsTable = ({ productsInDiary }) => {
                       <div className={`${css.recommendCont}`}>
                         <svg className={css.statusCircle}>
                           {/* <use href={`${svg}#icon-circle-green`}></use> */}
-                          {groupBloodNotAllowed[userBlood] ? (
+                          {allowed ? (
                             <use href={`${svg}#icon-circle-green`}></use>
                           ) : (
                             <use href={`${svg}#icon-circle-red`}></use>
@@ -74,7 +68,7 @@ const ProductsTable = ({ productsInDiary }) => {
                         </svg>
                         <p className={css.statusText}>
                           {/* Recommended */}
-                          {groupBloodNotAllowed[userBlood] ? 'Yes' : 'No'}
+                          {allowed ? 'Yes' : 'No'}
                         </p>
                       </div>
                     </td>
@@ -99,8 +93,6 @@ const ProductsTable = ({ productsInDiary }) => {
   );
 };
 
-/*ProductsTable.propTypes = {
-  products: PropTypes.array.isRequired,
-};*/
+
 
 export default ProductsTable;

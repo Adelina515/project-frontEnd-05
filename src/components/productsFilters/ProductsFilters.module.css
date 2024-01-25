@@ -18,6 +18,7 @@
   line-height: 1.28;
   background-color: transparent;
   padding: 14px;
+  padding-right: 60px;
   border-radius: 12px;
   border: 1px solid rgba(239, 237, 232, 0.3);
   width: 100%;
@@ -37,7 +38,7 @@
 }
 .svgSearch {
   position: absolute;
-  top: 14px;
+  top: 16px;
   right: 14px;
   width: 20px;
   height: 20px;
@@ -50,7 +51,7 @@
   align-items: center;
   width: 26px;
   height: 26px;
-  top: 14px;
+  top: 16px;
   right: 34px;
 }
 
@@ -126,6 +127,7 @@
   text-overflow: ellipsis; /* enables ellipsis */
   white-space: nowrap; /* keeps the text in a single line */
   overflow: hidden;
+  cursor: pointer;
 }
 .filterItem {
   color: #efede8;
@@ -135,6 +137,7 @@
   line-height: 1.28;
   background-color: transparent;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

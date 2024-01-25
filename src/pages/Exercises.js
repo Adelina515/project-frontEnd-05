@@ -10,6 +10,7 @@ import Pagination from 'components/exercise/ExerciseList/Pagination/Pagination';
 import formatDate from 'function/formatData';
 import { Loader } from 'components/loader/Loader';
 
+
 function Exercises(props) {
 
   const isTablet = ()=>{
@@ -33,7 +34,7 @@ function Exercises(props) {
   useEffect(()=>{
     setPage(1);
   }, [exCat])
-  useEffect(() => {
+  const reload = () => {
     setArr([]);
     setLoading(true);
     instance
@@ -44,7 +45,8 @@ function Exercises(props) {
       .finally(() => setLoading(false));
     setSpecific({});
     setSelectedEx(undefined);
-  }, [exCat, page]);
+  }
+  useEffect(reload, [exCat, page]);
 
   if (!specific.name || !specific.filter) {
     return (
@@ -59,9 +61,12 @@ function Exercises(props) {
       </div>
     );
   } else {
+    
     return (
       <div>
-        <ExerciseHead exCat={exCat} setExCat={setExCat} />
+        <ExerciseHead exCat={exCat} setExCat={setExCat} name={specific.name} back={reload}/>
+      
+
         <ExerciseList
           name={specific.name}
           filter={specific.filter}

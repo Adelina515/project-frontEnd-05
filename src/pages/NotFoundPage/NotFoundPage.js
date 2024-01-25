@@ -9,7 +9,7 @@ export default function NotFoundPage() {
   return (
     <div className={css.notfound}>
       <div className={css.wrapperText}>
-      <Logo page="404"/>
+        <Logo page="404" />
         <h2 className={css.title}>404</h2>
         <p className={css.text}>
           Sorry, you have reached a page that we could not find. It seems that

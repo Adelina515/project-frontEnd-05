@@ -1,36 +1,39 @@
 .btnList {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  
-  .btnList a:focus {
-    background-color: #E6533C;
-  }
-  .link{
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    color: #EFEDE8;
-    font-size: 16px;
-    height: 44px;
-    border: 1px solid rgba(239, 237, 232, 0.3);
-    border-radius: 12px;
-    padding: 10px 27px;
-  }
-  .link.active{
-    border-color: #EFEDE8;
-  }
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.btnList.wide {
+  display: none;
+}
+.btnList a:focus {
+  background-color: #e6533c;
+}
+.link {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: #efede8;
+  font-size: 16px;
+  height: 44px;
+  border: 1px solid rgba(239, 237, 232, 0.3);
+  border-radius: 12px;
+  padding: 10px 27px;
+}
+.link.active {
+  border-color: #efede8;
+}
 
-  @media screen and (min-width: 1440px) {
-    .btnList {
-        flex-direction: row;
-      margin-left: auto;
-    }
-    .link.active{
-        background-color: #E6533C;
-      }
+@media screen and (min-width: 1440px) {
+  .btnList.wide {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
   }
+  .link.active {
+    background-color: #e6533c;
+  }
+}

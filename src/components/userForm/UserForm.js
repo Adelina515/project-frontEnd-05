@@ -266,12 +266,13 @@ const formattedDate = birthday ? parseISO(birthday) : parseISO('2000-01-01T00:00
                 />
               ))}
             </div>
-          </div>
-
-          <button type="submit" className={css.button}>
+             <button type="submit" className={css.button}>
             Save
           </button>
-        </Form>
+       
+          </div>
+
+          </Form>
       )}
     </Formik>
   );

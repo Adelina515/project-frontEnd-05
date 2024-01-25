@@ -1,69 +1,62 @@
 .container {
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
-    max-width: 375px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 375px;
 }
 
 .diary {
-    display: flex;
-    flex-direction: column;
-    /*background-color: black;*/
-    /* border: 1px solid black;*/
+
+  display: flex;
+  flex-direction: column;
+  
+
 }
 
 .calendarCont {
-display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-        padding-top: 45px;
-    /*margin-bottom: 24px;*/
-    /*border: 1px solid black;*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding-top: 40px;
+ 
 }
-
-
 
 @media screen and (min-width: 768px) {
-    .diary {
+  .diary {
     position: relative;
-    }
-    .calendar {
-    position: absolute;
-    top: -10px;
-        right: 0px;
-    }
- .sectionCont {
-    /*margin-top: 32px;*/
-    
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        position: relative;
- }
-  .container {
-      padding: 0 32px;
-      max-width: 100%;
+
   }
-                  .calendarCont {
-                      padding-top: 52px;
-                  }
+  .calendar {
+
+    position: absolute;
+    top: 48px;
+    right: 0px;
+  }
+  .sectionCont {
+  
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+  }
+  .container {
+    padding: 0 32px;
+    max-width: 100%;
+  }
+  .calendarCont {
+    padding-top: 72px;
+  }
 
 }
 
-@media screen and (min-width: 1440px){
-.sectionCont {
-        /*margin-top: 32px;*/
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 32px;
-    }
-
+@media screen and (min-width: 1440px) {
+  .sectionCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+  }
 }
-
-
-
-
-

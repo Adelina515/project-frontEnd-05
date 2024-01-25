@@ -4,9 +4,7 @@ import DatePicker from 'react-datepicker';
 import style from './DaySwitch.module.css';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import { Calendar } from 'components/calendar/Calendar';
-import formatDate from '../../function/formatData';
-import { fetchAllDiary } from '../../redux/diary/diaryOperations';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const OwnIconCalendar = () => {
   return (
@@ -20,17 +18,18 @@ const OwnIconCalendar = () => {
 };
 
 const DaySwitch = ({ handleDate }) => {
-  const dispatch = useDispatch();
+
+  const registratedAt = useSelector(state => state.auth.user.createdAt)
+
   const [selectedDate, setSelectedDate] = useState(new Date());
   useEffect(() => {
-    const formatted = formatDate(selectedDate);
-    dispatch(fetchAllDiary(formatted));
-  }, [selectedDate, dispatch]);
+      handleDate(selectedDate);
+
+  }, [selectedDate, handleDate]);
 
   // потрібна дата реєстрації користувача
   const [dateRegistration] = useState(
-    new Date(selectedDate).setDate(new Date(selectedDate).getDate() - 1)
-  );
+registratedAt  );
 
   const CustomInput = forwardRef(({ value, onClick }, ref) => {
     return (
