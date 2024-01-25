@@ -13,28 +13,21 @@ import { Container } from '../components/Container/Container';
 
 import { fetchAllDiary } from '../redux/diary/diaryOperations';
 
-
-
 export default function Diary() {
   const dispatch = useDispatch();
 
-  
-
   const [dateExport, setDateExport] = useState(null);
-  
-  useEffect(() => {
-    dispatch(fetchAllDiary(dateExport));
-}, [dateExport, dispatch]);
 
-  
+  useEffect(() => {
+    dateExport && dispatch(fetchAllDiary(dateExport)) 
+  }, [dateExport, dispatch]);
+
   const handleDate = date => {
-  const formatedDate = formatDate(date);
-  setDateExport(formatedDate);
+    const formatedDate = formatDate(date);
+    setDateExport(formatedDate);
     return formatedDate;
   };
 
-
-  
   return (
     <div className={css.diary}>
       <Container>
@@ -49,7 +42,7 @@ export default function Diary() {
           <DayDashboard />
           <div>
             <DayProducts selectedDate={dateExport} />
-            <DayExercises selectedDate={dateExport}/>
+            <DayExercises selectedDate={dateExport} />
           </div>
         </div>
       </Container>

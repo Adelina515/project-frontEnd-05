@@ -9,7 +9,7 @@ import {
   selectSportsRemaining,
 } from '../../redux/diary/diarySelectors';
 
-
+/*import {selectUserBmr } from '../../redux/UserPageCntrls/selectors';*/
 
 import sprite from '../../img/sprite/symbol-defs.svg';
 
@@ -21,7 +21,7 @@ const DayDashboard = () => {
   const [daily, setDaily] = useState(null);
   const [burned, setBurned] = useState(null);
   const [sports, setSports] = useState(null);
-  
+  // const [dateExport, setDateExport] = useState(null);
   
     const consumedCaloriesByDate = useSelector(selectConsumedCaloriesByDate);
     const burnedCaloriesByDate = useSelector(
@@ -85,8 +85,8 @@ const DayDashboard = () => {
           statisticsName={'Sports remaining'}
           statisticsValue={
             isSportsRemaining === 'positive'
-              ? `+${sports} min`
-              : `${sports} min`
+              ? `${sports} min`
+              : `-${sports} min`
           }
           statisticsIcon={'icon-running-filled'}
         />
