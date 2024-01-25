@@ -13,7 +13,7 @@ export const MobileMenu = ({ open, setOpen, isLogin }) => {
           </svg>
         </button>
         {isLogin && <UserNav page="menu" setOpen={setOpen} />}
-        {isLogin && <LogOutBtn page="menu" />}
+        {isLogin && <LogOutBtn page="menu" setOpen={setOpen}/>}
       </div>
     </div>
   );

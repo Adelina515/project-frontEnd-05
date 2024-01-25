@@ -23,17 +23,27 @@
   border-radius: 12px;
   padding: 10px 27px;
 }
-.link.active {
-  border-color: #efede8;
-}
 
+.linkActive{
+  background-color: #e6533c;
+  border-color: #e6533c;
+}
+.link .active {
+  background-color: #e6533c;
+  border-color: #e6533c;
+}
+.btnList .active {
+  background-color: #e6533c;
+  border-color: #e6533c;
+}
 @media screen and (min-width: 1440px) {
   .btnList.wide {
     display: flex;
     flex-direction: row;
     margin-left: auto;
   }
-  .link.active {
+  .linkActive{
     background-color: #e6533c;
+    border-color: #e6533c;
   }
 }

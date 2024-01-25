@@ -18,7 +18,7 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const token = useSelector(selectUserToken);
   // const isMobile = window.innerWidth < 1440;
-
+  // console.log('hello')
   const handleOpen = () => {
     setIsOpen(prev => !prev);
   };
