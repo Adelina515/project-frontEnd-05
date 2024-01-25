@@ -1,13 +1,11 @@
 import css from './ExercisesTable.module.css';
-/*import PropTypes from 'prop-types';*/
 import sprite from '../../../img/sprite/symbol-defs.svg';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+
 
 import { deleteExercisesDiary } from '../../../redux/diary/diaryOperations';
 
 const ExercisesTable = ({ exercises }) => {
-  /*const { exercises } = props;*/
 
   const capitalizedWord = word => {
     return word.substring(0, 1).toUpperCase() + word.substring(1);
@@ -18,8 +16,7 @@ const ExercisesTable = ({ exercises }) => {
   const deleteExercise = _id => {
     dispatch(deleteExercisesDiary(_id));
   };
-  const data = useSelector(state => state.diary);
-  console.log(data);
+ 
 
   return (
     <>
@@ -99,10 +96,6 @@ const ExercisesTable = ({ exercises }) => {
   );
 };
 
-/*ExercisesTable.propTypes = {
-  exercises: PropTypes.array.isRequired,
-};
 
-*/
 
 export default ExercisesTable;

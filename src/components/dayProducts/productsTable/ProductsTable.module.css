@@ -1,7 +1,3 @@
-/*.diaryList {
-    max-width: 335px;
-}
-*/
 .diaryItem:not(:last-child) {
     margin-bottom: 40px;
 }
@@ -28,7 +24,6 @@
 
 .elementCont {
     display: flex;
-
 }
 
 .elementCont tr:nth-last-child(-n + 4) {
@@ -134,13 +129,6 @@ display: flex;
 }
 
 
-
-@media screen and (max-width: 375px) {
-    .elementCont .nameValue {
-        width: 100%;
-    }
-}
-
 @media screen and (min-width: 768px) {
     .diaryItem:not(:first-child) .nameCateg {
         display: none;
@@ -193,7 +181,7 @@ display: flex;
     }
 
     .diaryItem:not(:last-child) {
-        margin-bottom: 16px;
+        margin-bottom: 8px;
     }
 }
 
@@ -207,6 +195,6 @@ display: flex;
     }
 
     .elementCont .nameValue {
-        width: 105px;
+        width: 108px;
     }
 }

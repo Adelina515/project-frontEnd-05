@@ -1,5 +1,5 @@
 import css from "./EmList.module.css";
-/*import PropTypes from 'prop-types';*/
+
 
 const EmList = ({ itemName }) => {
   return (
@@ -10,8 +10,6 @@ const EmList = ({ itemName }) => {
 };
 
 
-/*EmList.propTypes = {
-  listName: PropTypes.string.isRequired,
-};*/
+
 
 export default EmList;

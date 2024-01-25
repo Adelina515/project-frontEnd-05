@@ -2,7 +2,7 @@
 
 .dayDashboard {
     margin-top: 40px;
-            margin-bottom: 40px;
+    margin-bottom: 40px;
 
 }
 
@@ -28,8 +28,6 @@
     display: flex;
         align-items: center;
         justify-content: center;
-    /*width: 24px;
-    height: 24px;*/
     background-color: var(--rare-color);
     border-radius: 50%;
 }
@@ -49,7 +47,7 @@
     max-width: 303px;
 }
 
-@media screen and (max-width: 365px) {
+@media screen and (max-width: 374px) {
     .statisticList {
         display: flex;
 
@@ -85,9 +83,7 @@ margin-bottom: 64px;
         line-height: 1.5;
     }
 }
-/*.adviceWrap {
-margin-bottom: 64px;
-}*/
+
 
 
 @media screen and (min-width: 1440px) {
