@@ -32,11 +32,11 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
     } else {
       const data = {
         exerciseId: ex._id,
-        duration: (ex.time-(seconds / 60)).toFixed(2),
+        duration: (ex.time - seconds / 60).toFixed(2),
         burnedCalories: caloriesBurned,
         date: selectedDate,
       };
-      dispatch(addExercisesDiary({data, ex}));
+      dispatch(addExercisesDiary({ data, ex }));
       setFinished(true);
     }
   };
@@ -120,7 +120,7 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
             </div>
             <button
               className={css.addBtn}
-              datatype='close-modal'
+              datatype="close-modal"
               onClick={onClose}
             >
               Add to diary
@@ -155,16 +155,17 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
               </p>
             </div>
 
-            <button
-              onClick={onClose}
-            >
-              Next exercise
-            </button>
+            <button onClick={onClose}>Next exercise</button>
             <br />
-            <NavLink to={'/diary'} onClick={onClose} className={css.toDiary} datatype='close-modal'>
+            <NavLink
+              to={'/diary'}
+              onClick={onClose}
+              className={css.toDiary}
+              datatype="close-modal"
+            >
               To the diary
               <svg className={css.arrow}>
-              <use href={`${svg}#icon-next-arrow-gray`}/>
+                <use href={`${svg}#icon-next-arrow-gray`} />
               </svg>
             </NavLink>
           </div>
