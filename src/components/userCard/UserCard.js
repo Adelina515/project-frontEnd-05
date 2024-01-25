@@ -53,6 +53,7 @@ export const UserProfile = ({ name, avatar, userToken }) => {
           type="file"
           id="file-input"
           name="file"
+          accept="image/*"
           style={{ display: 'none' }}
           onChange={handleAvatarChange}
         />
