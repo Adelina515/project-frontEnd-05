@@ -72,7 +72,7 @@ max-height: 1064px;
         height: 234px;
 
         margin-top: 32px;
-        margin-bottom: 68px;
+        margin-bottom: 64px;
     }
 
     .dayScroll {
@@ -87,6 +87,7 @@ max-height: 1064px;
 @media screen and (min-width: 1440px) {
     .dayExecrcises {
         width: 826px;
+        margin-bottom: 68px;
     }
 }
 
