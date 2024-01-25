@@ -181,7 +181,7 @@ display: flex;
     }
 
     .diaryItem:not(:last-child) {
-        margin-bottom: 16px;
+        margin-bottom: 8px;
     }
 }
 
@@ -195,6 +195,6 @@ display: flex;
     }
 
     .elementCont .nameValue {
-        width: 105px;
+        width: 108px;
     }
 }
