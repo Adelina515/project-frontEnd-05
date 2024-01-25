@@ -19,9 +19,7 @@ export default function Diary() {
   const [dateExport, setDateExport] = useState(null);
 
   useEffect(() => {
-    dateExport ?
-      dispatch(fetchAllDiary(dateExport)) :
-      dispatch(fetchAllDiary(formatDate(new Date())))
+    dateExport && dispatch(fetchAllDiary(dateExport)) 
   }, [dateExport, dispatch]);
 
   const handleDate = date => {
