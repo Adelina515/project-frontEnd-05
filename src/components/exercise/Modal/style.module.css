@@ -135,6 +135,13 @@ button:hover {
   margin-bottom: 48px;
   padding: 12px;
 }
+.addBtnDead{
+  margin-top: 24px;
+  margin-right: 168px;
+  margin-bottom: 48px;
+  padding: 12px;
+  background-color: var(--accent-color);
+}
 .thumb {
   width: 159px;
   height: 158px;
@@ -209,6 +216,12 @@ h1 {
     position: absolute;
     right: -136px;
     bottom: -16px;
+  }
+  .addBtnDead {
+    position: absolute;
+    right: -136px;
+    bottom: -16px;
+    background-color: var(--accent-color);
   }
   .toDiary {
     display: block;

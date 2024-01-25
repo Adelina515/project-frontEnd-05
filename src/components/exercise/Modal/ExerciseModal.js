@@ -25,18 +25,19 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
       setFinished(false);
     }
   }, [ex]);
+  const timeCompleted = ex.time - (seconds / 60);
   const onClose = () => {
-    if (finished) {
+    if (finished || timeCompleted < 1) {
       setOpen(false);
       setEx(undefined);
     } else {
       const data = {
         exerciseId: ex._id,
-        duration: (ex.time-(seconds / 60)).toFixed(2),
+        duration: timeCompleted.toFixed(2),
         burnedCalories: caloriesBurned,
         date: selectedDate,
       };
-      dispatch(addExercisesDiary({data, ex}));
+      dispatch(addExercisesDiary({ data, ex }));
       setFinished(true);
     }
   };
@@ -119,9 +120,10 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
               </div>
             </div>
             <button
-              className={css.addBtn}
-              datatype='close-modal'
+              className={timeCompleted>1 ? css.addBtn : css.addBtnDead}
+              datatype="close-modal"
               onClick={onClose}
+              disabled={timeCompleted<1}
             >
               Add to diary
             </button>
@@ -155,16 +157,17 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
               </p>
             </div>
 
-            <button
-              onClick={onClose}
-            >
-              Next exercise
-            </button>
+            <button onClick={onClose}>Next exercise</button>
             <br />
-            <NavLink to={'/diary'} onClick={onClose} className={css.toDiary} datatype='close-modal'>
+            <NavLink
+              to={'/diary'}
+              onClick={onClose}
+              className={css.toDiary}
+              datatype="close-modal"
+            >
               To the diary
               <svg className={css.arrow}>
-              <use href={`${svg}#icon-next-arrow-gray`}/>
+                <use href={`${svg}#icon-next-arrow-gray`} />
               </svg>
             </NavLink>
           </div>
