@@ -1,7 +1,4 @@
-/*.diaryList {
-    max-width: 335px;
-}
-*/
+
 .diaryItem:not(:last-child) {
     margin-bottom: 40px;
 }
@@ -135,7 +132,7 @@ display: flex;
 
 
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 374px) {
     .elementCont .nameValue {
         width: 100%;
     }

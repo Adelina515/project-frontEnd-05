@@ -29,7 +29,7 @@
 }
 
 .calendarIconLine {
-  background: #ef8964;
+  background: var(--accent-color);
   width: 16px;
   height: 2px;
   position: absolute;
@@ -41,7 +41,7 @@
   display: inline-block;
   width: 2px;
   height: 5px;
-  background: #ef8964;
+  background: var(--accent-color);
   transform: translate(-3px, -19px);
   box-sizing: border-box;
   margin-left: 4px;
