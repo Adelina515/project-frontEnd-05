@@ -1,98 +1,93 @@
 .dayProducts {
+  padding: 16px 8px 16px 16px;
 
-        padding: 16px 8px 16px 16px;
-    
-        width: 335px;
-        
-        max-height: 1064px;
-        overflow-y: hidden;
-    
-        border-radius: 12px;
-        border: 1px solid rgba(239, 237, 232, 0.2);
-        background: rgba(239, 237, 232, 0.05);
+  width: 335px;
+
+  max-height: 1064px;
+  overflow-y: hidden;
+
+  border-radius: 12px;
+  border: 1px solid rgba(239, 237, 232, 0.2);
+  background: rgba(239, 237, 232, 0.05);
 }
 
 .dayScroll {
-    overflow-y: auto;
-    max-height: 1032px;
-
+  overflow-y: auto;
+  max-height: 1032px;
 }
 
 .diaryMen {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 22px;
 }
 
 .DiaryZag {
-    color: rgba(239, 237, 232, 0.5);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.28;
-    font-family: 'Roboto', sans-serif;
+  color: rgba(239, 237, 232, 0.5);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  font-family: 'Roboto', sans-serif;
 }
 
 .dayScroll::-webkit-scrollbar {
-    width: 6px;
-    border-radius: 12px;
+  width: 6px;
+  border-radius: 12px;
 }
 
 .dayScroll::-webkit-scrollbar-thumb {
-    border-radius: 12px;
-    background: rgba(239, 237, 232, 0.1);
+  border-radius: 12px;
+  background: rgba(239, 237, 232, 0.1);
 }
 
 .dayScroll::-webkit-scrollbar-track {
-    border-radius: 12px;
+  border-radius: 12px;
 }
 
 .Butt {
-    display: flex;
-        background-color: transparent;
-        border: none;
-        color: var(--decorate-color);
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        font-size: 14px;
-        gap: 8px;
-        line-height: 1.28;
-        padding: 0;
-        position: relative;
-        text-align: start;
-        align-items: center;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  color: var(--decorate-color);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  gap: 8px;
+  line-height: 1.28;
+  padding: 0;
+  position: relative;
+  text-align: start;
+  align-items: center;
 }
 
 .iconStrilka {
-    width: 16px;
-        height: 16px;
-        stroke: #a82b2b;
+  width: 16px;
+  height: 16px;
+  stroke: #a82b2b;
 }
 
 @media screen and (min-width: 768px) {
-    .dayProducts {
-        width: 704px;
-        height: 234px;
-        margin-top: 32px;
+  .dayProducts {
+    width: 704px;
+    height: 234px;
+    margin-top: 32px;
+  }
 
-    }
+  .dayScroll {
+    max-height: 230px;
+  }
 
-    .dayScroll {
-        max-height: 230px;
-    }
-
-    .diaryNav {
-        margin-bottom: 16px;
-    }
-        .diaryMen {
- 
-            margin-bottom: 19px;
-        }
+  .diaryNav {
+    margin-bottom: 16px;
+  }
+  .diaryMen {
+    margin-bottom: 19px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .dayProducts {
-        width: 826px;
-    }
+  .dayProducts {
+    width: 826px;
+  }
 }
-

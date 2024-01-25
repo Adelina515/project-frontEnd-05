@@ -12,16 +12,16 @@ const DayProducts = ({ selectedDate }) => {
 
   return (
     <div className={css.dayProducts}>
+      <div className={css.diaryMen}>
+        <h3 className={css.DiaryZag}>Products</h3>
+        <Link to="/products" className={css.Butt} state={selectedDate}>
+          Add product
+          <svg className={css.iconStrilka} width="16px" height="16px">
+            <use href={`${sprite}#icon-next-arrow`}></use>
+          </svg>
+        </Link>
+      </div>
       <div className={css.dayScroll}>
-        <div className={css.diaryMen}>
-          <h3 className={css.DiaryZag}>Products</h3>
-          <Link to="/products" className={css.Butt} state={selectedDate}>
-            Add product
-            <svg className={css.iconStrilka} width="16px" height="16px">
-              <use href={`${sprite}#icon-next-arrow`}></use>
-            </svg>
-          </Link>
-        </div>
         {productsInDiary.length === 0 ? (
           <EmList itemName={'products'} />
         ) : (
