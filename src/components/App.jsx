@@ -32,9 +32,9 @@ export const App = () => {
   const token = useSelector(selectUserToken);
 
   useEffect(() => {
-    // if (token && !isLogin) {
+    if (token && !isLogin) {
     dispatch(current());
-    // }
+    }
   }, [dispatch, isLogin, token]);
 
   return (

@@ -8,28 +8,35 @@ import { login } from '../../redux/auth/auth-operations';
 import sprite from '../../img/sprite/symbol-defs.svg';
 import toast from 'react-hot-toast';
 
+
+
 const SignInForm = () => {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
+ 
   const initialValues = {
     email: '',
     password: '',
   };
-  const handleSubmit = (values, { resetForm, setSubmitting }) => {
-    try {
-      dispatch(login(values));
-      setTimeout(() => {
-        toast.success('Login successful!', { position: 'top-right' });
-        setSubmitting(false);
-        resetForm();
-      }, 1000);
+  const handleSubmit =  async(values, { resetForm, setSubmitting }) => {
+   
+    try{
+      await dispatch(login(values));
+    setTimeout(() => {
+      toast.success('Login successful!', { position: 'top-right' });
+      setSubmitting(false);
+      resetForm();
+    }, 500); 
+    
     } catch (error) {
       toast.error('Login failed. Please, try again.', {
-        position: 'top-right',
+        position: 'top-center',
       });
       setSubmitting(false);
     }
+
   };
+ 
 
   return (
     <>
