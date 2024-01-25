@@ -1,15 +1,15 @@
 import css from './AddProductSuccess.module.css';
 import img from '../../img/productSuccessFruit.png';
 import svg from '../../img/sprite/symbol-defs.svg';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchAllDiary } from '../../redux/diary/diaryOperations';
 import { useEffect } from 'react';
 export const AddProductSuccess = ({ calories }) => {
   const dispatch = useDispatch();
 
-  const diary = useSelector(state => state.diary);
-  console.log(diary);
+  // const diary = useSelector(state => state.diary);
+  // console.log(diary);
   useEffect(() => {
     dispatch(fetchAllDiary('2024-01-18'));
   }, [dispatch]);

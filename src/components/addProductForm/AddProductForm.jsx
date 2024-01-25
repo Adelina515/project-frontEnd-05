@@ -12,11 +12,11 @@ export const AddProductForm = ({ data, count, date }) => {
   const addError = useSelector(selectDiaryError);
   const { calories, title, _id, allowed } = data;
   const countCalories = (inputCals * calories) / 100;
-  console.log(allowed);
+  // console.log(allowed);
   const handleChange = e => {
     setInputCals(e.target.value);
   };
-  console.log(date);
+  // console.log(date);
   const addToDiary = e => {
     e.preventDefault();
     const add = {

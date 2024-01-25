@@ -1,17 +1,18 @@
 import { NavLink } from 'react-router-dom';
 import css from './UserNav.module.css';
 export const UserNav = ({ page, setOpen }) => {
+  const classNameFunc = ({ isActive }) => (`${css.link} ${isActive && css.linkActive}`);
   return (
     <ul className={`${css.btnList} ${page === 'wide' && css.wide}`}>
       <li>
-        <NavLink to={'/diary'} className={css.link} onClick={page && setOpen}>
+        <NavLink to={'/diary'} className={page === 'wide' ? classNameFunc : css.link}  onClick={page && setOpen}>
           Diary
         </NavLink>
       </li>
       <li>
         <NavLink
           to={'/products'}
-          className={css.link}
+          className={page === 'wide' ? classNameFunc : css.link}
           onClick={page && setOpen}
         >
           Products
@@ -20,7 +21,7 @@ export const UserNav = ({ page, setOpen }) => {
       <li>
         <NavLink
           to={'/exercises'}
-          className={css.link}
+          className={page === 'wide' ? classNameFunc : css.link}
           onClick={page && setOpen}
         >
           Exercises
