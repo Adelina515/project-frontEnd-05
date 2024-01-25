@@ -33,7 +33,9 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
     } else {
       const data = {
         exerciseId: ex._id,
+
         duration: timeCompleted.toFixed(2),
+
         burnedCalories: caloriesBurned,
         date: selectedDate,
       };
@@ -120,7 +122,9 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
               </div>
             </div>
             <button
+
               className={timeCompleted>1 ? css.addBtn : css.addBtnDead}
+
               datatype="close-modal"
               onClick={onClose}
               disabled={timeCompleted<1}
