@@ -7,10 +7,15 @@ export const signup = async credentials => {
   return data;
 };
 export const signin = async credentials => {
+  try{
   const { data } = await instance.post('/api/auth/login', credentials);
   setToken(data.token);
-
   return data;
+  }catch (error) {
+    console.error('Signup failed with error:', error);
+    throw error; 
+  }
+ 
 };
 export const logoutUser = async () => {
   const { data } = await instance.post('/api/auth/logout');

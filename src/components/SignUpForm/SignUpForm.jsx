@@ -1,6 +1,6 @@
 import css from './sign-up-form.module.css';
 import { useDispatch } from 'react-redux';
-import {useState} from "react";
+import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import AuthButton from '../../btn/AuthButton/AuthButton';
 import { signUpSchema } from '../../schemas/auth/auth-schemas';
@@ -8,26 +8,34 @@ import { register } from '../../redux/auth/auth-operations';
 import sprite from '../../img/sprite/symbol-defs.svg';
 import toast from 'react-hot-toast';
 
+
+
 const SignUpForm = () => {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
+ 
   const initialValues = {
     name: '',
     email: '',
     password: '',
   };
 
-  const handleSubmit = (values, { setSubmitting, resetForm, setError }) => {
-    try {
-      dispatch(register(values));
-      setTimeout(() => {
-        toast.success('Registration successful!', { position: 'top-center' });
-        setSubmitting(false);
-        resetForm();
-      }, 1000);
+  const handleSubmit = async (
+    values,
+    { setSubmitting, resetForm, setError }
+  ) => {
+    
+    try{
+      await dispatch(register(values));
+    setTimeout(() => {
+      toast.success('Register successful!', { position: 'top-right' });
+      setSubmitting(false);
+      resetForm();
+    }, 1000); 
+    
     } catch (error) {
-      toast.error('Registration failed. Please, try again.', {
-        position: 'top-right',
+      toast.error('Register failed. Please, try again.', {
+        position: 'top-center',
       });
       setSubmitting(false);
     }
@@ -43,17 +51,17 @@ const SignUpForm = () => {
         {({ errors, touched }) => (
           <Form className={css.form}>
             <div className={css.inputWrapper}>
-            <div className={css.label}>
-              <Field
-                type="text"
-                name="name"
-                placeholder="Name"
-                className={`${css.input} ${
-                  errors.name && touched.name ? css.error : ''
-                }
-                ${touched.name && !errors.name? css.success : ''}`}
-              />
-              {errors.name && touched.name && (
+              <div className={css.label}>
+                <Field
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  className={`${css.input} ${
+                    errors.name && touched.name ? css.error : ''
+                  }
+                ${touched.name && !errors.name ? css.success : ''}`}
+                />
+                {errors.name && touched.name && (
                   <div className={css.messageWrapper}>
                     <svg className={css.iconError}>
                       <use href={`${sprite}#icon-circle-red`}></use>
@@ -73,10 +81,9 @@ const SignUpForm = () => {
                     <p className={css.textSuccess}>Success name</p>
                   </div>
                 )}
-        </div>
+              </div>
 
               <div className={css.label}>
-               
                 <Field
                   type="email"
                   name="email"
@@ -159,8 +166,7 @@ const SignUpForm = () => {
                 )}
               </div>
               <AuthButton children="Sign Up" />
-              </div>
-           
+            </div>
           </Form>
         )}
       </Formik>
