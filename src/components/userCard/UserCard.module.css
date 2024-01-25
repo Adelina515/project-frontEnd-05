@@ -4,7 +4,9 @@
   align-items: center;
   gap: 8px;
 }
-
+.uploadForm{
+  margin-top: -12px;
+}
 .svg-icon {
   width: 16px;
   height: 16px;
