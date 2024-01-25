@@ -32,7 +32,7 @@ export const handleFulfilledDeleteProduct = (state, { payload }) => {
     }
     
  console.log(state.consumedCaloriesByDate, payload, state.productsInDiary)
-//  state.consumedCaloriesByDate = state.consumedCaloriesByDate - payload.calories;
+ state.consumedCaloriesByDate = state.consumedCaloriesByDate - payload.calories;
 };
 
 export const handleFulfilledAddExercises = (state, { payload }) => {
@@ -51,6 +51,6 @@ export const handleFulfilledDeleteExercises = (state, { payload }) => {
     state.exercisesInDiary.splice(index, 1);
     }
 
-//  state.consumedCaloriesByDate = state.consumedCaloriesByDate - payload.duration;
-    
+   state.sportsRemaining = state.sportsRemaining - payload.duration;
+    state.burnedCaloriesByDate = state.burnedCaloriesByDate - payload.burnedCalories;
 };
