@@ -25,14 +25,17 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
       setFinished(false);
     }
   }, [ex]);
+  const timeCompleted = ex.time - (seconds / 60);
   const onClose = () => {
-    if (finished) {
+    if (finished || timeCompleted < 1) {
       setOpen(false);
       setEx(undefined);
     } else {
       const data = {
         exerciseId: ex._id,
-        duration: (ex.time - seconds / 60).toFixed(2),
+
+        duration: timeCompleted.toFixed(2),
+
         burnedCalories: caloriesBurned,
         date: selectedDate,
       };
@@ -119,9 +122,12 @@ function ExerciseModal({ ex, setEx, selectedDate }) {
               </div>
             </div>
             <button
-              className={css.addBtn}
+
+              className={timeCompleted>1 ? css.addBtn : css.addBtnDead}
+
               datatype="close-modal"
               onClick={onClose}
+              disabled={timeCompleted<1}
             >
               Add to diary
             </button>
