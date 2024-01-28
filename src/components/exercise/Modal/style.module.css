@@ -3,7 +3,6 @@
 }
 .modalAnimation {
   margin: auto;
-  margin-top: 48px;
   width: 270px;
   height: 226px;
   border-radius: 12px;
@@ -79,7 +78,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   margin-right: 17px;
-  margin-top: 40px;
 }
 .modalStat {
   color: var(--calendar-arrow-color);
@@ -135,7 +133,7 @@ button:hover {
   margin-bottom: 48px;
   padding: 12px;
 }
-.addBtnDead{
+.addBtnDead {
   margin-top: 24px;
   margin-right: 168px;
   margin-bottom: 48px;
@@ -174,11 +172,10 @@ h1 {
   cursor: pointer;
   outline: none;
   margin-left: -28px;
-  
+
   margin-top: 16px;
   /* display: flex; */
   /* align-items: center; */
-
 }
 .arrow {
   /* width: 16px;
@@ -208,7 +205,6 @@ h1 {
   }
 
   .exerciseChars {
-    margin-top: 48px;
     margin-right: 31px;
     width: 340px;
   }

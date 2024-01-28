@@ -19,6 +19,12 @@ export const AddProductForm = ({ data, count, date }) => {
   // console.log(date);
   const addToDiary = e => {
     e.preventDefault();
+    if (Number(e.target.elements.amount.value) === 0) {
+      toast.error('Please, enter more than 0', {
+        position: 'top-right',
+      });
+      return;
+    }
     const add = {
       allowed,
       productId: _id,

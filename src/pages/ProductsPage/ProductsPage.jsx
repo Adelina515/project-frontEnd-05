@@ -8,9 +8,13 @@ import { AddProductForm } from 'components/addProductForm/AddProductForm';
 import { BasicModalWindow } from '../../modal/basicModalWindow/BasicModalWindow';
 import { useSelector } from 'react-redux';
 import { AddProductSuccess } from 'components/addProductSuccess/AddProductSuccess';
-import { selectSuccess } from '../../redux/products/productsSelectors';
+import {
+  selectSuccess,
+  selectIsLoading,
+} from '../../redux/products/productsSelectors';
 import { useLocation } from 'react-router-dom';
 import formatDate from 'function/formatData';
+import { Loader } from 'components/loader/Loader';
 const ProductsPage = () => {
   const [open, setOpen] = useState(false);
   const [modal, setModal] = useState(null);
@@ -18,7 +22,7 @@ const ProductsPage = () => {
   const location = useLocation();
   const dateDiary = location.state ? location.state : formatDate(new Date());
   const isSuccess = useSelector(selectSuccess);
-
+  const IsLoading = useSelector(selectIsLoading);
   const handleClose = e => {
     setOpen(false);
   };
@@ -38,6 +42,7 @@ const ProductsPage = () => {
         <div className={css.wrapper}>
           <TitlePage children="Products" className={css.wrapper} />
           <ProductsFilters />
+          {IsLoading && <Loader />}
           <ProductsList openModal={handleOpen} />
         </div>
       </Container>

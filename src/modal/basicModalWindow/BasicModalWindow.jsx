@@ -2,10 +2,12 @@ import svg from '../../img/sprite/symbol-defs.svg';
 import css from './BasicModalWindow.module.css';
 export const BasicModalWindow = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
+  document.body.style.overflow = 'hidden';
   const handleEscapeKey = event => {
     if (event.code === 'Escape') {
       console.log('Escape');
       onClose();
+      document.body.style.overflow = 'scroll';
       return document.removeEventListener('keydown', handleEscapeKey);
     }
   };
@@ -15,6 +17,7 @@ export const BasicModalWindow = ({ isOpen, onClose, children }) => {
       e.target.dataset.type === 'backdrop' ||
       e.target.dataset.type === 'close-modal'
     ) {
+      document.body.style.overflow = 'scroll';
       onClose();
     }
   };

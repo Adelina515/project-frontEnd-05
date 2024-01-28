@@ -17,6 +17,7 @@
   background-color: #10100f;
   padding: 48px 24px;
   color: rgba(239, 237, 232, 0.4);
+  max-height: 75%;
 }
 .modalCloseBtn {
   position: absolute;
@@ -49,12 +50,12 @@
 }
 @media screen and (min-width: 768px) {
   .modal {
-    padding: 64px 32px;
+    padding: 48px 32px;
   }
-  .modalCloseBtn{
+  .modalCloseBtn {
     width: 26px;
-  height: 26px;
-  top: 16px;
-  right: 16px;
+    height: 26px;
+    top: 16px;
+    right: 16px;
   }
 }
