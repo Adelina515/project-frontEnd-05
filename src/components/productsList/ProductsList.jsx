@@ -8,14 +8,12 @@ import {
   selectProducts,
 } from '../../redux/products/productsSelectors';
 import { ProductsError } from './productsError/ProductsError';
-import { fetchAllDiary } from '../../redux/diary/diaryOperations';
 export const ProductsList = ({ openModal }) => {
   const dispatch = useDispatch();
   const data = useSelector(selectProducts);
   const error = useSelector(selectError);
 
   useEffect(() => {
-    dispatch(fetchAllDiary('2024-01-18'));
     dispatch(fetchProducts());
   }, [dispatch]);
   return (
