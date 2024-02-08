@@ -95,7 +95,7 @@ Implemented responsiveness and mobile menu for better UI.
 
 To run the application locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/DmytroZhdanov/power-pulse.git`
+1. Clone the repository: `git clone https://github.com/Adelina515/project-frontEnd-05`
 2. Install dependencies: `npm install`
 3. Run the app: `npm run dev`
 4. Open [http://localhost:3000](http://localhost:3000) in your browser (Note: the port may be changed if 3000 port is occupied by another website).
@@ -212,9 +212,9 @@ Power Pulse - це фітнес-додаток для трансформації
 
 Щоб запустити додаток локально, виконайте ці кроки:
 
-   - Клонуйте репозиторій: git clone https://github.com/DmytroZhdanov/power-pulse.git
-   - Встановіть залежності: npm install
-   - Запустіть додаток: npm run dev
+   - Клонуйте репозиторій: `git clone https://github.com/Adelina515/project-frontEnd-05`
+   - Встановіть залежності: `npm install`
+   - Запустіть додаток: `npm run dev`
    - Відкрийте http://localhost:3000 в своєму браузері (Примітка: порт може змінюватися, якщо порт 3000 вже використовується іншим веб-сайтом).
 
 ## Використані технології
